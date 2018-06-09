@@ -2,6 +2,7 @@ const path = require('path');
 const WebpackBar = require('webpackbar');
 const utils = require('./utils');
 const config = require('../config');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '..', dir);
 
@@ -33,6 +34,7 @@ module.exports = {
     },
     module: {
         rules: [
+
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
@@ -40,6 +42,14 @@ module.exports = {
                 options: {
                     cacheDirectory: true
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style", 'css')
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
