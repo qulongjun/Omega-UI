@@ -1,5 +1,5 @@
 //
-//** Demo Stylesheets
+//** Default Stylesheets
 //
 
 
@@ -7,18 +7,25 @@
 ///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
 ////////////////////////////////////////////////////////////////
 
-//== 1: Framework Components
-@import "~sass/framework/config";
-@import "~sass/framework/base/include";
 
-//== 2: Demo
-@import "~sass/framework/component/general/demo/demo";
+//== 1: Framework Config
 
 
-@import "~sass/framework/component/general/demo/icon";
+//== 2: Framework Components Config
+
+
+//== 3: Bootstrap Include
+@import "~sass/framework/vendors/flaticon/css/flaticon.css";
+@import "~sass/framework/vendors/line-awesome/css/line-awesome.css";
+
+//== 4: Framework Components
+
+
+//== 5: Snippets
 
 ////////////////////////////////////////////////////////////////
 ///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
 ////////////////////////////////////////////////////////////////
+
 
 

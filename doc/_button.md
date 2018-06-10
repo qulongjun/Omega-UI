@@ -67,6 +67,7 @@ Button组件的公共配置参数如下
 | handle | object | null | 否 | 设置事件处理Handle
 | handle.click | function | null | 否 | 设置点击事件Handle
 | customStyle | object | null | 否 | 设置自定义样式控制
+| icon | string | 空 | 否 | 设置文字前Icon值，参考 [Icon Component](./_icon.md)
 
 
 
