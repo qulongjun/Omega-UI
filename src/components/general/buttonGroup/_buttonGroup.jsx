@@ -46,7 +46,6 @@ class ButtonGroup extends Component {
                         Object.assign(btnItem, {
                             btnStyle: btnItem.btnStyle || (this.props.groupStyle === 'square' ? 'square' : '') || "normal"
                         });
-                        console.log(btnItem)
                         if (onlyIcon)
                             Object.assign(btnItem, {
                                 isGroup: true,

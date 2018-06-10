@@ -1,4 +1,3 @@
-
 //
 //** Default Stylesheets
 //
@@ -9,17 +8,8 @@
 ////////////////////////////////////////////////////////////////
 
 
-//== 1: Framework Config
-
-
-//== 2: Framework Components Config
-
-
-//== 3: Bootstrap Include
-
-//== 4: Framework Components
-
-//== 5: Snippets
+@import "~sass/framework/config";
+@import "~sass/framework/vendors/bootstrap/bootstrap";
 
 ////////////////////////////////////////////////////////////////
 ///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////

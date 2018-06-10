@@ -1,4 +1,3 @@
-
 //
 //** Default Stylesheets
 //
@@ -10,12 +9,16 @@
 
 
 //== 1: Framework Config
+@import "~sass/framework/config";
 
 
 //== 2: Framework Components Config
 
 
 //== 3: Bootstrap Include
+
+@import "~sass/framework/vendors/bootstrap/bootstrap";
+
 
 //== 4: Framework Components
 

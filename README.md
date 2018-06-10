@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="javascript:;" rel="noopener" target="_blank"><img width="200" src="https://cdn.qulongjun.cn/blog_ico.png" alt="Omega-UI logo"></a></p>
+  <a href="javascript:;" rel="noopener" target="_blank"><img width="70%" src="https://cdn.qulongjun.cn/omega/logo_blue.png" alt="Omega-UI logo"></a></p>
 </p>
 
-<h1 align="center">Omega-UI</h1>
+<hr/>
 
 <div align="center">
 
@@ -56,7 +56,13 @@ Icon: [Icon Component](/doc/_icon.md).
 
 Button: [Button Component](/doc/_button.md).
 
-ButtonGroup: [ButtonGroup Component](/doc/_buttonGroup.md).
+Button Group: [Button Group Component](/doc/_buttonGroup.md).
+
+Button Dropdown: [Button Dropdown Component](/doc/_buttonDropdown.md).
+
+Badge: [Badge Component](/doc/_buttonGroup.md).
+
+Progress Bar: [Progress Bar Component](/doc/_progressBar.md).
 
 
 ## Contributing
