@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[React](http://facebook.github.io/react/) components that implement [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+ Responsive Bootstrap Admin & Powerful UI Kit By [React](http://facebook.github.io/react/).
 
 </div>
 
