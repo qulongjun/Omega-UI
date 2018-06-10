@@ -2,7 +2,7 @@ const path = require('path');
 const WebpackBar = require('webpackbar');
 const utils = require('./utils');
 const config = require('../config');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = dir => path.join(__dirname, '..', dir);
 
@@ -29,7 +29,9 @@ module.exports = {
             'components': resolve('src/components'),
             'routes': resolve('src/routes'),
             'views': resolve('src/views'),
-            '$redux': resolve('src/redux')
+            '$redux': resolve('src/redux'),
+            'sass':resolve('src/sass'),
+            'demo':resolve('src/demo')
         }
     },
     module: {
@@ -42,14 +44,6 @@ module.exports = {
                 options: {
                     cacheDirectory: true
                 }
-            },
-            {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", 'css')
-            },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
