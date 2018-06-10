@@ -45,7 +45,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 Button组件的公共配置参数如下
 
 | 参数名 | 类型 | 默认值 | 是否必须 | 说明 |
-| ---- | ---- | ---- | ----- |
+| ---- |---- | ---- | ---- | ----- |
 | element | string | 'button' | 否 | 设置DOM元素的类型，支持'button', 'input', 'a'
 | type | string | 'button' | 否 | 设置按钮的类型，支持'button', 'submit', 'reset'
 | color | string | 'primary' | 否 | 设置按钮的样式，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger', 'secondary', 'outline-brand', 'outline-metal', 'outline-light', 'outline-accent', 'outline-focus', 'outline-primary', 'outline-success', 'outline-info', 'outline-warning', 'outline-danger'
