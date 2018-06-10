@@ -29,7 +29,11 @@ class Button extends Component {
         handle: {
             click: null
         },
-        isGroup: false
+
+        //Private
+        isGroup: false,
+        _class: [],
+        _attr: {}
     };
 
     static propTypes = {
@@ -78,13 +82,15 @@ class Button extends Component {
             + this.props.state
             + (this.props.isBlock ? ' btn-block' : '')
             + btnStyle
-            + iconClass;
+            + iconClass
+            + ' ' + this.props._class.join(' ');
+
         const value = this.props.value;
         switch (this.props.element) {
             case 'button':
                 return (
                     <button type={this.props.type} style={this.props.customStyle} className={className}
-                            onClick={this.handleEvent}>{value}</button>
+                            onClick={this.handleEvent} {...this.props._attr}>{value}</button>
                 );
                 break;
             case 'input':

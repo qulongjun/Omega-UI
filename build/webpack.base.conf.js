@@ -30,9 +30,10 @@ module.exports = {
             'routes': resolve('src/routes'),
             'views': resolve('src/views'),
             '$redux': resolve('src/redux'),
-            'sass':resolve('src/sass'),
-            'demo':resolve('src/demo'),
-            'node_modules':resolve('node_modules')
+            'sass': resolve('src/sass'),
+            'demo': resolve('src/demo'),
+            'node_modules': resolve('node_modules'),
+            'plugins': resolve('plugins')
         }
     },
     module: {

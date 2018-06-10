@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="javascript:;" rel="noopener" target="_blank"><img width="200" src="https://cdn.qulongjun.cn/blog_ico.png" alt="Omega-UI logo"></a></p>
+  <a href="javascript:;" rel="noopener" target="_blank"><img width="200" src="https://cdn.qulongjun.cn/omega/logo_blue.png" alt="Omega-UI logo"></a></p>
 </p>
 
 <h1 align="center">Omega-UI</h1>
