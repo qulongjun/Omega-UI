@@ -63,12 +63,6 @@ We'd greatly appreciate any [contribution](/CONTRIBUTING.md) you make. :)
 Recently Updated?
 Please read the [changelog](https://github.com/qulongjun/Omega-ui/releases).
 
-## Thanks
-
-[<img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" width="120">](https://www.browserstack.com/)
-
-Thank you to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers.
-
 ## License
 
 This project is licensed under the terms of the
