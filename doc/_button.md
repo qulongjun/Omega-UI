@@ -50,13 +50,13 @@ Button组件的公共配置参数如下
 | type | string | 'button' | 否 | 设置按钮的类型，支持'button', 'submit', 'reset'
 | color | string | 'primary' | 否 | 设置按钮的样式，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger', 'secondary', 'outline-brand', 'outline-metal', 'outline-light', 'outline-accent', 'outline-focus', 'outline-primary', 'outline-success', 'outline-info', 'outline-warning', 'outline-danger'
 | gradient | object | null | 否 | 设置按钮渐变方式
-| gradient.from | string | '' | 否 | 设置按钮的起始颜色，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'
-| gradient.to | string | '' | 否 | 设置按钮的终止颜色，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'
+| gradient.from | string | 空 | 否 | 设置按钮的起始颜色，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'
+| gradient.to | string | 空 | 否 | 设置按钮的终止颜色，支持'brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'
 | isWide | boolean | false | 否 | 设置按钮是否加宽
 | isBlock | boolean | false | 否 | 设置按钮是否显示为Block（宽度占满整行）
 | border | string | 'normal' | 否 | 设置按钮边框，仅在color属性设置为outline-*时支持，支持'normal', 'double'
 | size | string | 'normal' | 否 | 设置按钮字体大小，支持'normal', 'lg', 'sm'
-| value | string | 'Button'' | 否 | 设置按钮字体大小，支持'normal', 'lg', 'sm'
+| value | string | 'Button'' | 否 | 设置按钮显示文字
 | state | string | 'normal' | 否 | 设置按钮当前状态，支持'normal', 'active', 'disabled'
 | labelState | string | 'primary' | 否 | 设置按钮文字状态，支持''brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'
 | btnStyle | string | 'normal' | 否 | 设置按钮样式，支持'normal', 'square', 'pill', 'air'

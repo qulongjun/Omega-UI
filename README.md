@@ -54,7 +54,7 @@ Are you looking for an example project to get started?
 
 ## Documentation
 
-Check out our [documentation website](https://qulongjun.com).
+Button: [Button Component](/doc/_button.md).
 
 ## Contributing
 
