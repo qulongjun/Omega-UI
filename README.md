@@ -28,13 +28,11 @@ Here is a quick example to get you started, **it's all you need**:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
+import Button from 'components/general/button/_button';
 
 function App() {
   return (
-    <Button variant="raised" color="primary">
-      Hello World
-    </Button>
+    <Button value="Hello World" />
   );
 }
 
