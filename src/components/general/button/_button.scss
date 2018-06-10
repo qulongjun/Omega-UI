@@ -1,0 +1,36 @@
+//
+//** Default Stylesheets
+//
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+
+//== 1: Framework Config
+// metronic framework config
+@import "~sass/framework/config";
+
+// metronic bootstrap override config
+@import "~sass/framework/vendors/bootstrap/variables";
+
+//== 2: Framework Components Config
+@import "~sass/framework/component/general/buttons/config";
+@import "~sass/framework/component/general/forms/config";
+
+//== 3: Bootstrap Include
+@import "~sass/framework/vendors/bootstrap/bootstrap.scss";
+
+//== 4: Framework Components
+@import "~sass/framework/base/include";
+@import "~sass/framework/component/general/buttons/buttons";
+
+//== 5: Snippets
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+
+

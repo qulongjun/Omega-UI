@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[React](http://facebook.github.io/react/) components that implement [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+ Responsive Bootstrap Admin & Powerful UI Kit By [React](http://facebook.github.io/react/).
 
 </div>
 
@@ -28,13 +28,11 @@ Here is a quick example to get you started, **it's all you need**:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
+import Button from 'components/general/button/_button';
 
 function App() {
   return (
-    <Button variant="raised" color="primary">
-      Hello World
-    </Button>
+    <Button value="Hello World" />
   );
 }
 
@@ -54,7 +52,7 @@ Are you looking for an example project to get started?
 
 ## Documentation
 
-Check out our [documentation website](https://qulongjun.com).
+Button: [Button Component](/doc/_button.md).
 
 ## Contributing
 
@@ -64,12 +62,6 @@ We'd greatly appreciate any [contribution](/CONTRIBUTING.md) you make. :)
 
 Recently Updated?
 Please read the [changelog](https://github.com/qulongjun/Omega-ui/releases).
-
-## Thanks
-
-[<img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" width="120">](https://www.browserstack.com/)
-
-Thank you to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers.
 
 ## License
 
