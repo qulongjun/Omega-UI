@@ -28,7 +28,8 @@ class Button extends Component {
         state: 'normal',
         handle: {
             click: null
-        }
+        },
+        isGroup: false
     };
 
     static propTypes = {
@@ -62,7 +63,7 @@ class Button extends Component {
             }
         }
         const btnStyle = this.props.btnStyle === 'air' ? ' m-btn--pill m-btn-air' : ' m-btn--' + this.props.btnStyle;
-        const iconClass = this.props.element === 'a' && this.props.icon ? (this.props.value ? ' m-btn--icon' : ' m-btn--icon m-btn--icon-only') : '';
+        const iconClass = !this.props.isGroup && this.props.element === 'a' && this.props.icon ? (this.props.value ? ' m-btn--icon' : ' m-btn--icon m-btn--icon-only') : '';
         const iconContent = this.props.icon ? (this.props.value
                 ? (<span><Icon iconName={this.props.icon}/><span>{this.props.value}</span></span>)
                 : <Icon iconName={this.props.icon}/>) : this.props.value;
