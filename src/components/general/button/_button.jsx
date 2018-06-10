@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './_button.scss';
+import Icon from '../icon/_icon';
 
 const btnState = ['brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'];
 const btnOutlineState = ['secondary', 'outline-brand', 'outline-metal', 'outline-light', 'outline-accent', 'outline-focus', 'outline-primary', 'outline-success', 'outline-info', 'outline-warning', 'outline-danger'];
@@ -12,7 +13,7 @@ class Button extends Component {
     }
 
     static defaultProps = {
-        element: 'button',
+        element: 'a',
         type: 'button',
         color: 'primary',
         gradient: null,
@@ -60,8 +61,11 @@ class Button extends Component {
                 this.props.textStyle[param] ? (textStyle += ' m-btn--' + param) : null;
             }
         }
-        let btnStyle = '';
-        this.props.btnStyle === 'air' ? btnStyle = ' m-btn--pill m-btn-air' : btnStyle = ' m-btn--' + this.props.btnStyle;
+        const btnStyle = this.props.btnStyle === 'air' ? ' m-btn--pill m-btn-air' : ' m-btn--' + this.props.btnStyle;
+        const iconClass = this.props.element === 'a' && this.props.icon ? (this.props.value ? ' m-btn--icon' : ' m-btn--icon m-btn--icon-only') : '';
+        const iconContent = this.props.icon ? (this.props.value
+                ? (<span><Icon iconName={this.props.icon}/><span>{this.props.value}</span></span>)
+                : <Icon iconName={this.props.icon}/>) : this.props.value;
         const className =
             'btn '
             + 'btn-' + this.props.color
@@ -72,14 +76,14 @@ class Button extends Component {
             + ' btn-' + this.props.size + ' '
             + this.props.state
             + (this.props.isBlock ? ' btn-block' : '')
-            + btnStyle;
+            + btnStyle
+            + iconClass;
         const value = this.props.value;
         switch (this.props.element) {
             case 'button':
                 return (
                     <button type={this.props.type} style={this.props.customStyle} className={className}
-                            onClick={this.handleEvent}
-                    >{value}</button>
+                            onClick={this.handleEvent}>{value}</button>
                 );
                 break;
             case 'input':
@@ -92,7 +96,9 @@ class Button extends Component {
             case 'a':
                 return (
                     <a href='javascript:;' className={className} style={this.props.customStyle} role={this.props.type}
-                       onClick={this.handleEvent}>{value}</a>
+                       onClick={this.handleEvent}>
+                        {iconContent}
+                    </a>
                 );
                 break;
             default:
