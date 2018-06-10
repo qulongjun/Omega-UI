@@ -53,6 +53,8 @@ Are you looking for an example project to get started?
 ## Documentation
 
 Button: [Button Component](/doc/_button.md).
+Icon: [Icon Component](/doc/_icon.md).
+
 
 ## Contributing
 

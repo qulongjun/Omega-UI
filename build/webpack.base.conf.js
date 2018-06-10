@@ -31,7 +31,8 @@ module.exports = {
             'views': resolve('src/views'),
             '$redux': resolve('src/redux'),
             'sass':resolve('src/sass'),
-            'demo':resolve('src/demo')
+            'demo':resolve('src/demo'),
+            'node_modules':resolve('node_modules')
         }
     },
     module: {
