@@ -62,6 +62,8 @@ Button Dropdown: [Button Dropdown Component](/doc/_buttonDropdown.md).
 
 Badge: [Badge Component](/doc/_buttonGroup.md).
 
+Progress Bar: [Progress Bar Component](/doc/_progressBar.md).
+
 
 ## Contributing
 
