@@ -53,7 +53,9 @@ Are you looking for an example project to get started?
 ## Documentation
 
 Icon: [Icon Component](/doc/_icon.md).
+
 Button: [Button Component](/doc/_button.md).
+
 ButtonGroup: [ButtonGroup Component](/doc/_buttonGroup.md).
 
 
