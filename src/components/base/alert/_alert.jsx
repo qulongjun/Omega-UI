@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 
 import Icon from 'components/general/icon/_icon'
 import './_alert.scss'
+import Button from "../../general/button/_button";
 
 const _styles = ['normal', 'outline', 'outline-2x', 'square', 'air'];
 
@@ -25,7 +26,8 @@ class Alert extends Component {
         message: 'This is a default message',
         bgColor: 'default',
         closeBtn: true,
-        styles: []
+        styles: [],
+        actions: []
     };
     static propTypes = {};
 
@@ -56,16 +58,18 @@ class Alert extends Component {
             closeBtn,
             styles,
             icon,
-            iconStyle
+            iconStyle,
+            actions,
+            actionStyle
         } = _props;
-        const className = ['alert m-alert m-alert--default'];
+        const className = ['alert m-alert '];
         bgColor && className.push('alert-' + bgColor);
-        closeBtn && className.concat(['alert-dismissible ', 'fade', 'show']);
+        closeBtn && className.concat([' alert-dismissible ', 'fade', 'show']);
         styles.map((item) => {
             if (_styles.includes(item)) {
                 item === 'outline-2x'
-                    ? className.push(' m-alert--outline m-alert--outline' + item)
-                    : className.push('m-alert--' + item);
+                    ? className.push(' m-alert--outline m-alert--outline-2x')
+                    : className.push(' m-alert--' + item);
             }
         });
         icon && className.push('m-alert--icon');
@@ -80,21 +84,44 @@ class Alert extends Component {
                     )}
                     <div className="m-alert__text">
                         {closeBtn && !icon &&
-                        <button type="button" className="close" data-dismiss="alert" aria-label="Close" style={{paddingTop:0}}/>}
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close"
+                                aria-hidden="true"
+                                style={{paddingTop: 0}}/>}
                         {title && (<strong>
                             {title}
                         </strong>)}
                         {message}
                     </div>
 
-                    {closeBtn && icon &&
+                    {closeBtn && icon && actions.length === 0 &&
                     <div className="m-alert__close">
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close"/>
                     </div>}
+                    {
+                        !closeBtn && actions.length !== 0 && (
+                            <div className="m-alert__actions" style={actionStyle}>
+                                {
+                                    actions.map((item, index) => {
+                                        if (item.closeBtn) {
+                                            return <Button key={index} {...item} _attr={
+                                                {
+                                                    "data-dismiss": "alert",
+                                                    "aria-label": "Close"
+                                                }
+                                            }/>
+                                        } else {
+                                            return <Button key={index} {...item} />
+                                        }
+                                    })
+                                }
+                            </div>
+                        )
+                    }
 
                 </div>
             </Fragment>
         );
     }
 }
+
 export default Alert;

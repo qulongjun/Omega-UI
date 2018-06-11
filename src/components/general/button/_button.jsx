@@ -96,14 +96,14 @@ class Button extends Component {
             case 'input':
                 return (
                     <input type={this.props.type} value={value} style={this.props.customStyle} className={className}
-                           onClick={this.handleEvent}
+                           onClick={this.handleEvent} {...this.props._attr}
                     />
                 );
                 break;
             case 'a':
                 return (
                     <a href='javascript:;' className={className} style={this.props.customStyle} role={this.props.type}
-                       onClick={this.handleEvent}>
+                       onClick={this.handleEvent} {...this.props._attr}>
                         {iconContent}
                     </a>
                 );

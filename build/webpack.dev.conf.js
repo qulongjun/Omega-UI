@@ -23,9 +23,9 @@ module.exports = merge(baseWebpackConfig, {
     // cheap-module-eval-source-map is faster for development
     devtool: '#cheap-module-eval-source-map',
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: utils.assetsPath('css/[name].[contenthash].css')
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: utils.assetsPath('css/[name].[contenthash].css')
+        // }),
         new webpack.DefinePlugin({
             'process.env': config.dev.env
         }),
