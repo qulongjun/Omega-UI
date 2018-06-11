@@ -57,7 +57,7 @@
 
 @mixin m--build-classic-arrow($direction, $size) {
     display: inline-block;
-    width: 0; 
+    width: $size; 
     height: 0; 
     position: absolute;
     border: 0;

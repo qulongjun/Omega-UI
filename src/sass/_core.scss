@@ -1,0 +1,60 @@
+/**
+ * 
+ * @User: Longjun.Qu
+ * @Date: 2018-06-11
+ * @Time: 16:19
+ * 
+ */
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+//== 1: Framework Config
+@import './framework-config';
+@import './framework/config';
+@import './framework/vendors/bootstrap/variables';
+
+//== 2: Framework Components Config
+@import './framework/component/base/config';
+
+//== 3: Bootstrap Include
+@import './framework/vendors/bootstrap/bootstrap';
+
+//== 4: Framework Components
+@import './framework/include';
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+//== 5: Page Config
+//@import './page/page-config';
+//@import './page/base/config';
+//@import './page/header/_config';
+//@import "./page/aside/_config";
+//@import "./page/menu-header/_config";
+//@import "./page/menu-aside/_config";
+//@import "./page/footer/_config";
+
+//== 6: Layout
+//@import './page/base/page';
+//@import './page/base/body';
+
+//@import "./page/header/brand";
+//@import "./page/header/header";
+//@import "./page/header/topbar";
+//@import "./page/header/search";
+
+//@import "./page/aside/aside-left";
+//@import "./page/aside/aside-right";
+//@import "./page/aside/aside-header-menu-mobile";
+
+//@import "./page/menu-header/menu";
+//@import "./page/menu-aside/menu";
+
+@import "./page/subheader/default";
+
+//@import "./page/footer/default";

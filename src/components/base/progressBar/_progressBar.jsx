@@ -11,7 +11,7 @@ class ProgressBar extends Component {
     static defaultProps = {
         start: 0,
         end: 100,
-        size: "",
+        size: "normal",
         items: []
     };
 
@@ -47,7 +47,9 @@ class BarItem extends Component {
                          "aria-valuemin": this.props.start,
                          "aria-valuemax": this.props.end
                      }
-                 }></div>
+                 }>
+                {this.props.showValue && (this.props.now / (this.props.end - this.props.start) * 100 + '%')}
+            </div>
         );
     }
 }

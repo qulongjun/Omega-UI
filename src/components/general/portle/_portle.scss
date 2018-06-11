@@ -1,0 +1,29 @@
+/**
+ * 
+ * @User: Longjun.Qu
+ * @Date: 2018-06-11
+ * @Time: 15:29
+ * 
+ */
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+//== 1: Core Config
+@import "~sass/framework/config";
+
+//== 2: Core Stylesheets
+@import "~sass/framework/base/include";
+
+
+//== 3: Component Custom Config
+@import "~sass/framework/component/general/portlets/_config";
+
+
+//== 4: Component Custom Stylesheets
+@import "~sass/framework/component/general/portlets/_portlets";
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////

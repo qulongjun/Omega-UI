@@ -33,7 +33,7 @@ module.exports = {
             'sass': resolve('src/sass'),
             'demo': resolve('src/demo'),
             'node_modules': resolve('node_modules'),
-            'plugins': resolve('plugins')
+            'plugins': resolve('src/plugins')
         }
     },
     module: {

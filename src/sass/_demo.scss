@@ -1,0 +1,32 @@
+/**
+ * 
+ * @User: Longjun.Qu
+ * @Date: 2018-06-11
+ * @Time: 17:49
+ * 
+ */
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+//== 1: Core Stylesheets
+@import "./core";
+
+//== 5: Page Config
+@import './page/page-config';
+@import './page/base/config';
+@import './page/header/_config';
+@import "./page/aside/_config";
+@import "./page/menu-header/_config";
+@import "./page/menu-aside/_config";
+@import "./page/footer/_config";
+
+//== 6: Layout
+@import './page/base/page';
+@import './page/base/body';
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
