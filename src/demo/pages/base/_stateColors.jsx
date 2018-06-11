@@ -9,7 +9,8 @@
 
 import React, {Component, Fragment} from 'react';
 
-
+import Text from 'components/framework/text/_text';
+import Paragraph from 'components/framework/paragraph/_paragraph';
 import SubHeader from '../_subheader';
 import Wrapper from 'components/framework/wrapper/_wrapper';
 import Content from 'components/framework/content/_content';
@@ -20,18 +21,14 @@ import Badge from 'components/base/badge/_badge'
 import ProgressBar from 'components/base/progressBar/_progressBar'
 import Code from 'components/base/code/_code'
 import Alert from 'components/base/alert/_alert'
-
 import Portle from 'components/general/portle/_portle';
 import Button from 'components/general/button/_button'
-
 
 import Demo from "../_demo";
 
 import 'sass/_demo.scss';
 import '../../_demo.scss';
 
-
-const rightPortle = {};
 
 class StateColor extends Component {
     constructor(props) {
@@ -56,7 +53,18 @@ class StateColor extends Component {
                                     }
                                 }} >
                                     <Section
-                                        describe="Metronic comes with a number of state colors that can be applied to the most of elements and components. It reuses Bootstrap's original 6 states:">
+                                        describe={
+                                            <Text>Metronic comes with a number of state colors that can be applied to
+                                                the most of elements and components. It reuses Bootstrap's original 6
+                                                states:</Text>
+                                        }>
+
+                                    </Section>
+                                    <Section
+                                        describe={
+                                            <Text> And also adds its own <Code>brand</Code> and <Code>metal</Code>
+                                                states:</Text>
+                                        }>
 
                                     </Section>
 
@@ -72,12 +80,12 @@ class StateColor extends Component {
                                     <Section
                                         {...{describe: 'Apply state classes to any typography element:'}}>
                                         <Demo>
-                                            <p className="m--font-success">Success state text </p>
-                                            <p className="m--font-warning">Warning state text </p>
-                                            <p className="m--font-info">Info state text </p>
-                                            <p className="m--font-danger">Danger state text </p>
-                                            <p className="m--font-primary">Primary state text </p>
-                                            <p className="m--font-focus">Focus state text </p>
+                                            <Paragraph state="success">Success state text</Paragraph>
+                                            <Paragraph state="warning">Warning state text</Paragraph>
+                                            <Paragraph state="info">Info state text</Paragraph>
+                                            <Paragraph state="danger">Danger state text</Paragraph>
+                                            <Paragraph state="primary">Primary state text</Paragraph>
+                                            <Paragraph state="focus">Focus state text</Paragraph>
                                         </Demo>
                                     </Section>
                                     <Section
@@ -92,15 +100,6 @@ class StateColor extends Component {
                                             <Button color="focus" value="Focus"/>
                                         </Demo>
                                         <Demo>
-                                            <Alert {...{
-                                                title:'Hello World! ',
-                                                message:'This is default alert message box style.',
-                                                closeBtn:true,
-                                                bgColor:'success',
-                                                styles:['outline','outline-2x','air'],
-                                                icon:'la la-warning',
-                                                iconStyle:'solid'
-                                            }}/>
                                             <Badge color="brand">new</Badge>
                                             <Badge color="metal">pendding</Badge>
                                             <Badge color="primary">203</Badge>
@@ -112,6 +111,16 @@ class StateColor extends Component {
                                             <Badge color="accent">accent</Badge>
                                         </Demo>
                                         <Demo>
+                                            <Alert {...{
+                                                title: 'Well done! ',
+                                                message: 'You successfully read this important alert message.',
+                                                bgColor: 'success',
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Well done! ',
+                                                message: 'You successfully read this important alert message.',
+                                                bgColor: 'primary',
+                                            }}/>
                                             <ProgressBar {...{
                                                 items: [{
                                                     now: 25,
@@ -143,4 +152,5 @@ class StateColor extends Component {
         );
     }
 }
+
 export default StateColor;

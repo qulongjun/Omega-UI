@@ -15,7 +15,7 @@ import './_alert.scss'
 
 const _styles = ['normal', 'outline', 'outline-2x', 'square', 'air'];
 
-class AlertBar extends Component {
+class Alert extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -80,7 +80,7 @@ class AlertBar extends Component {
                     )}
                     <div className="m-alert__text">
                         {closeBtn && !icon &&
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style={{paddingTop:0}}/>}
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close" style={{paddingTop:0}}/>}
                         {title && (<strong>
                             {title}
                         </strong>)}
@@ -88,8 +88,8 @@ class AlertBar extends Component {
                     </div>
 
                     {closeBtn && icon &&
-                    <div class="m-alert__close">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"/>
+                    <div className="m-alert__close">
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close"/>
                     </div>}
 
                 </div>
@@ -97,4 +97,4 @@ class AlertBar extends Component {
         );
     }
 }
-export default AlertBar;
+export default Alert;
