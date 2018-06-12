@@ -10,7 +10,7 @@ import Alerts from './demo/pages/base/_alerts';
 const App = () => (
     <div className="m-grid m-grid--hor m-grid--root m-page">
         <Aside />
-        <Alerts />
+        <StateColors />
     </div>
 );
 

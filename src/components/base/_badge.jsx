@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './_badge.scss'
-
 class Badge extends Component {
     constructor(props) {
         super(props);

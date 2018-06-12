@@ -10,9 +10,8 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'components/general/icon/_icon'
-import './_alert.scss'
-import Button from "../../general/button/_button";
+import Icon from 'components/general/_icon'
+import Button from "components/general/_button";
 
 const _styles = ['normal', 'outline', 'outline-2x', 'square', 'air'];
 

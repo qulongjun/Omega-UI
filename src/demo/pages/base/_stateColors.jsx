@@ -9,25 +9,24 @@
 
 import React, {Component, Fragment} from 'react';
 
-import Text from 'components/framework/text/_text';
-import Paragraph from 'components/framework/paragraph/_paragraph';
+import Text from 'components/framework/_text';
+import Paragraph from 'components/framework/_paragraph';
 import SubHeader from '../_subheader';
-import Wrapper from 'components/framework/wrapper/_wrapper';
-import Content from 'components/framework/content/_content';
-import Section from 'components/framework/section/_section';
+import Wrapper from 'components/framework/_wrapper';
+import Content from 'components/framework/_content';
+import Section from 'components/framework/_section';
 
-import Space from 'components/base/space/_space'
-import Badge from 'components/base/badge/_badge'
-import ProgressBar from 'components/base/progressBar/_progressBar'
-import Code from 'components/base/code/_code'
-import Alert from 'components/base/alert/_alert'
-import Portle from 'components/general/portle/_portle';
-import Button from 'components/general/button/_button'
+import Space from 'components/base/_space'
+import Badge from 'components/base/_badge'
+import ProgressBar from 'components/base/_progressBar'
+import Code from 'components/base/_code'
+import Alert from 'components/base/_alert'
+import Portle from 'components/general/_portle';
+import Button from 'components/general/_button'
 
 import Demo from "../_demo";
 
 import 'sass/_demo.scss';
-import '../../_demo.scss';
 
 
 class StateColor extends Component {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './_button.scss';
-import Icon from '../icon/_icon';
+
+import Icon from 'components/general/_icon';
 
 const btnState = ['brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger'];
 const btnOutlineState = ['secondary', 'outline-brand', 'outline-metal', 'outline-light', 'outline-accent', 'outline-focus', 'outline-primary', 'outline-success', 'outline-info', 'outline-warning', 'outline-danger'];

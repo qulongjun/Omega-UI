@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import 'font-awesome/css/font-awesome.css';
 import 'socicon/css/socicon.css';
-import './_icon.scss';
 
 class Icon extends Component {
     constructor(props) {

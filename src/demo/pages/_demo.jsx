@@ -9,8 +9,6 @@
 
 import React, {Component, Fragment} from 'react';
 
-import '../_demo.scss'
-
 class Demo extends Component {
     constructor(props) {
         super(props);

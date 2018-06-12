@@ -10,7 +10,7 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-import {_state} from '../../_config';
+import {_state} from '../_config';
 
 class Text extends Component {
     constructor(props) {

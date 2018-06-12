@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './_progressBar.scss'
-
 class ProgressBar extends Component {
     constructor(props) {
         super(props);

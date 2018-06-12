@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../button/_button';
-import Icon from '../icon/_icon';
+import Button from 'components/general/_button';
+import Icon from 'components/general/_icon';
 
 import 'plugins/config'
-import './_buttonDropdown.scss'
 
 class ButtonDropdown extends Component {
     constructor(props) {

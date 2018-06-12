@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../button/_button';
+import Button from 'components/general/_button';
 
 class ButtonGroup extends Component {
     constructor(props) {
