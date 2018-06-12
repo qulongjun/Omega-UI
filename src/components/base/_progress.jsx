@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class ProgressBar extends Component {
+class Progress extends Component {
     constructor(props) {
         super(props);
     }
@@ -46,7 +46,7 @@ class BarItem extends Component {
     render() {
         const pattern = this.props.pattern === 'striped' ? ' progress-bar-striped' : (this.props.pattern === 'animated' ? ' progress-bar-striped progress-bar-animated' : '');
         return (
-            <div className={'progress-bar' + ' bg-' + this.props.color + (pattern ? ' progress-bar-' + pattern : '')}
+            <div className={'progress-bar' + ' m--bg-' + this.props.color + (pattern ? ' progress-bar-' + pattern : '')}
                  style={{width: (this.props.now / (this.props.end - this.props.start) * 100 + '%')}}
                  role="progressbar" {
                      ...{
@@ -60,4 +60,4 @@ class BarItem extends Component {
         );
     }
 }
-export default ProgressBar;
+export default Progress;
