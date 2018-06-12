@@ -43,75 +43,73 @@ class Typography extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="Typography"/>
+                    <SubHeader title="排版"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Heading'
+                                        title: '标题'
                                     }
                                 }} >
-                                    <Section title="Default headings"
-                                             describe={<Text>All HTML headings, <Code>&lt;h1&gt;</Code> through
-                                                 <Code>&lt;h6&gt;</Code> , are available.</Text>}>
+                                    <Section title="默认标题"
+                                             describe={<Text>所有HTML的标题,均可以通过 <Code>&lt;Head&gt;</Code> 组件设置，只需指定
+                                                 <Code>&lt;tag&gt;</Code> 属性。</Text>}>
                                         <Demo>
                                             <div className="row">
                                                 <div className="col-md-6">
-                                                    <Head tag="h1">h1. Heading 1</Head><Space size={10}/>
-                                                    <Head tag="h2">h2. Heading 2</Head><Space size={10}/>
-                                                    <Head tag="h3">h3. Heading 3</Head><Space size={10}/>
-                                                    <Head tag="h4">h4. Heading 4</Head><Space size={10}/>
-                                                    <Head tag="h5">h5. Heading 5</Head><Space size={10}/>
-                                                    <Head tag="h6">h6. Heading 6</Head>
+                                                    <Head tag="h1">h1. 标题 1</Head><Space size={10}/>
+                                                    <Head tag="h2">h2. 标题 2</Head><Space size={10}/>
+                                                    <Head tag="h3">h3. 标题 3</Head><Space size={10}/>
+                                                    <Head tag="h4">h4. 标题 4</Head><Space size={10}/>
+                                                    <Head tag="h5">h5. 标题 5</Head><Space size={10}/>
+                                                    <Head tag="h6">h6. 标题 6</Head>
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <Head tag="h1" state="success">h1. Heading 1</Head><Space
+                                                    <Head tag="h1" state="success">h1. 标题 1</Head><Space
                                                     size={10}/>
-                                                    <Head tag="h2" state="info">h2. Heading 2</Head><Space size={10}/>
-                                                    <Head tag="h3" state="warning">h3. Heading 3</Head><Space
+                                                    <Head tag="h2" state="info">h2. 标题 2</Head><Space size={10}/>
+                                                    <Head tag="h3" state="warning">h3. 标题 3</Head><Space
                                                     size={10}/>
-                                                    <Head tag="h4" state="danger">h4. Heading 4</Head><Space size={10}/>
-                                                    <Head tag="h5" state="primary">h5. Heading 5</Head><Space
+                                                    <Head tag="h4" state="danger">h4. 标题 4</Head><Space size={10}/>
+                                                    <Head tag="h5" state="primary">h5. 标题 5</Head><Space
                                                     size={10}/>
-                                                    <Head tag="h6" state="brand">h6. Heading 6</Head>
+                                                    <Head tag="h6" state="brand">h6. 标题 6</Head>
                                                 </div>
                                             </div>
                                         </Demo>
                                     </Section>
-                                    <Section title="Customizing headings"
-                                             describe="Use the included utility classes to recreate the small secondary heading text.">
+                                    <Section title="自定义标题"
+                                             describe="使用 Omega 预留的 Class 标签，或自定义样式，可以设计出个性化的标题。">
                                         <Demo>
                                             <Head tag="h3">
-                                                Fancy display heading &nbsp;
+                                                这是主标题 &nbsp;
                                                 <small className="text-muted">
-                                                    With faded secondary text
+                                                    这是副标题
                                                 </small>
                                             </Head>
                                         </Demo>
                                     </Section>
-                                    <Section title="Display headings"
-                                             describe="Larger, slightly more opinionated heading styles.">
+                                    <Section title="展示型标题"
+                                             describe="字体更大，更吸引人的标题形式。">
                                         <Demo>
                                             <Head tag="h3" classList={['display-1']}>
-                                                Display 1
+                                                展示 1
                                             </Head>
                                             <Head tag="h3" classList={['display-2']}>
-                                                Display 2
+                                                展示 2
                                             </Head>
                                             <Head tag="h3" classList={['display-3']}>
-                                                Display 3
+                                                展示 3
                                             </Head>
                                         </Demo>
                                     </Section>
-                                    <Section title="Lead"
-                                             describe={<Text>Make a paragraph stand out by adding <Code>.lead</Code>
-                                                 .</Text>}>
+                                    <Section title="导言"
+                                             describe={<Text>通过添加 <Code>.lead</Code> 标签，让一个段落凸出成为导言。</Text>}>
                                         <Demo>
                                             <Paragraph classList={['lead']}>
-                                                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                                                Duis mollis, est non commodo luctus.
+                                                孤独是生命圆满的开始，没有与自己独处的经验，不会懂得和别人相处。
                                             </Paragraph>
                                         </Demo>
                                     </Section>
@@ -119,93 +117,86 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'General'
+                                        title: '通用'
                                     }
                                 }} >
-                                    <Section title="Inline text elements"
-                                             describe="Styling for common inline HTML5 elements.">
+                                    <Section title="行间元素"
+                                             describe="以下样式可以通过被使用在行间元素上：">
                                         <Demo>
                                             <Paragraph>
-                                                You can use the mark tag to &nbsp;
+                                                你可以使用 <Code>mark</Code> 标签 来 &nbsp;
                                                 <mark>
-                                                    highlight
+                                                    高亮
                                                 </mark>
-                                                &nbsp; text.
+                                                &nbsp; 某些文本。
                                             </Paragraph>
                                             <Paragraph>
                                                 <del>
-                                                    This line of text is meant to be treated as deleted text.
+                                                    这行文本已经被处理且删除了。
                                                 </del>
                                             </Paragraph>
                                             <Paragraph>
                                                 <s>
-                                                    This line of text is meant to be treated as no longer accurate.
+                                                    这行文本的描述不再准确了。
                                                 </s>
                                             </Paragraph>
                                             <Paragraph>
                                                 <ins>
-                                                    This line of text is meant to be treated as an addition to the
-                                                    document.
+                                                    这行文本被视为文档的补充。
                                                 </ins>
                                             </Paragraph>
                                             <Paragraph>
                                                 <u>
-                                                    This line of text will render as underlined
+                                                    这行文本添加了下划线。
                                                 </u>
                                             </Paragraph>
                                             <Paragraph>
                                                 <small>
-                                                    This line of text is meant to be treated as fine print.
+                                                    这行文本是印刷的最佳尺寸。
                                                 </small>
                                             </Paragraph>
                                             <Paragraph>
                                                 <strong>
-                                                    This line rendered as bold text.
+                                                    这行文本以粗体显示。
                                                 </strong>
                                             </Paragraph>
                                             <Paragraph>
                                                 <em>
-                                                    This line rendered as italicized text.
+                                                    这行文本以斜体显示。
                                                 </em>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
-                                    <Section title="Abbreviations"
-                                             describe={<Text>Stylized implementation of HTML’s <Code>&lt;abbr&gt;</Code>
-                                                 element.</Text>}>
+                                    <Section title="缩略"
+                                             describe={<Text>你可以使用 <Code>&lt;abbr&gt;</Code> 标签实现缩略效果。
+                                                 </Text>}>
                                         <Demo>
                                             <Paragraph>
                                                 <abbr title="attribute">
-                                                    attr
+                                                    地址
                                                 </abbr>
                                             </Paragraph>
                                             <Paragraph>
                                                 <abbr title="HyperText Markup Language" className="initialism">
-                                                    HTML
+                                                    超文本标记
                                                 </abbr>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
-                                    <Section title="Blockquotes"
-                                             describe="Quoting blocks of content.">
+                                    <Section title="引用"
+                                             describe="引用文本内容。">
                                         <Demo>
                                             <Blockquote {...{
-                                                content: <Paragraph classList={['mb-0']}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipiscing elit. Integer posuere erat a
-                                                    ante.</Paragraph>,
-                                                quote: <Text>Someone famous in <cite title="Source Title">Source
-                                                    Title</cite></Text>
+                                                content: <Paragraph classList={['mb-0']}>她那时候还太年轻，不知道所有命运赠送的礼物，早已在暗中标好了价格。</Paragraph>,
+                                                quote: <Text>斯蒂芬·茨威格 <cite title="Source Title">《断头王后》</cite></Text>
                                             }
                                                         }/>
 
                                         </Demo>
                                         <Demo>
                                             <Blockquote {...{
-                                                content: <Paragraph classList={['mb-0']}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipiscing elit. Integer posuere erat a
-                                                    ante.</Paragraph>,
-                                                quote: <Text>Someone famous in <cite title="Source Title">Source
-                                                    Title</cite></Text>,
+                                                content: <Paragraph classList={['mb-0']}>一个人只要学会了回忆，就再不会孤独，哪怕只在世上生活一日，你也能毫无困难地凭回忆在囚牢中独处百年。</Paragraph>,
+                                                quote: <Text>加缪 <cite title="Source Title">《局外人》</cite></Text>,
                                                 reverse: true
                                             }
                                                         }/>
@@ -216,10 +207,10 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Badges'
+                                        title: '徽章'
                                     }
                                 }} >
-                                    <Section title="Basic Badges" describe="Basic state color badges">
+                                    <Section title="基础徽章" describe="不同状态的基础徽章">
                                         <Demo>
                                             <Badge color="brand">3</Badge>
                                             <Badge color="metal">4</Badge>
@@ -236,44 +227,44 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Text'
+                                        title: '文本'
                                     }
                                 }} >
-                                    <Section title="Basic text" describe="Basic text examples">
+                                    <Section title="基础文本" describe="基础文本示例">
                                         <Demo>
                                             <Paragraph>
-                                                <Text>Example text</Text>
+                                                <Text>示例文本</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text classList={['m--font-bold']}>Example bold text</Text>
+                                                <Text classList={['m--font-bold']}>示例加粗文本</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text classList={['m--font-bolder']}>Example bolder text</Text>
+                                                <Text classList={['m--font-bolder']}>示例更粗文本</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text classList={['m--font-boldest']}>Example boldest text</Text>
+                                                <Text classList={['m--font-boldest']}>示例最粗文本</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text classList={['m--font-transform-u']}>Example uppercase text</Text>
+                                                <Text classList={['m--font-transform-u']}>示例 uppercase 文本</Text>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
-                                    <Section describe="State colors">
+                                    <Section describe="状态文字">
                                         <Demo>
                                             <Paragraph>
-                                                <Text state='success'>Success state text</Text>
+                                                <Text state='success'>Success 状态文字</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text state='warning'>Warning state text</Text>
+                                                <Text state='warning'>Warning 状态文字</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text state='info'>Info state text</Text>
+                                                <Text state='info'>Info 状态文字</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text state='danger'>Danger state text</Text>
+                                                <Text state='danger'>Danger 状态文字</Text>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Text state='primary'>Primary state text</Text>
+                                                <Text state='primary'>Primary 状态文字</Text>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
@@ -281,44 +272,44 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Links'
+                                        title: '链接'
                                     }
                                 }} >
-                                    <Section title="Basic Links" describe="Basic link examples">
+                                    <Section title="基础链接" describe="基础链接示例">
                                         <Demo>
                                             <Paragraph>
-                                                <Link>Example text</Link>
+                                                <Link>示例文本</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link classList={['m--font-bold']}>Example bold text</Link>
+                                                <Link classList={['m--font-bold']}>示例加粗文本</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link classList={['m--font-bolder']}>Example bolder text</Link>
+                                                <Link classList={['m--font-bolder']}>示例更粗文本</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link classList={['m--font-boldest']}>Example boldest text</Link>
+                                                <Link classList={['m--font-boldest']}>示例最粗文本</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link classList={['m--font-transform-u']}>Example uppercase text</Link>
+                                                <Link classList={['m--font-transform-u']}>示例 uppercase 文本</Link>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
                                     <Section describe="State colors">
                                         <Demo>
                                             <Paragraph>
-                                                <Link state='success'>Success state text</Link>
+                                                <Link state='success'>Success 状态文字</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link state='warning'>Warning state text</Link>
+                                                <Link state='warning'>Warning 状态文字</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link state='info'>Info state text</Link>
+                                                <Link state='info'>Info 状态文字</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link state='danger'>Danger state text</Link>
+                                                <Link state='danger'>Danger 状态文字</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link state='primary'>Primary state text</Link>
+                                                <Link state='primary'>Primary 状态文字</Link>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
@@ -326,10 +317,10 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Badges'
+                                        title: '徽章'
                                     }
                                 }} >
-                                    <Section title="Basic Badges" describe="Basic state color badges">
+                                    <Section title="基础徽章" describe="不同状态的基础徽章">
                                         <Demo>
                                             <Badge color="brand">3</Badge>
                                             <Badge color="metal">4</Badge>
@@ -340,7 +331,7 @@ class Typography extends Component {
                                             <Badge color="danger">5</Badge>
                                         </Demo>
                                     </Section>
-                                    <Section title="Dot Badges" describe="State color dot badges">
+                                    <Section title="点型徽章" describe="不同状态的点型徽章">
                                         <Demo badgeStyle={false}>
                                             <Badge color="brand" type="dot"/>&nbsp;
                                             <Badge color="metal" type="dot"/>&nbsp;
@@ -370,7 +361,7 @@ class Typography extends Component {
 
                                         </Demo>
                                     </Section>
-                                    <Section title="Wide Badges" describe="Wide badges for longer text">
+                                    <Section title="加宽徽章" describe="为较长为本准备的加宽徽章">
                                         <Demo>
                                             <Badge color="brand" type="wide">new</Badge>
                                             <Badge color="metal" type="wide">pending</Badge>
@@ -381,7 +372,7 @@ class Typography extends Component {
                                             <Badge color="danger" type="wide">completed</Badge>
                                         </Demo>
                                     </Section>
-                                    <Section title="Rounded Badges" describe="Rounded badges examples">
+                                    <Section title="圆形徽章" describe="圆形徽章示例">
                                         <Demo>
                                             <Badge color="brand" type="rounded">new</Badge>
                                             <Badge color="metal" type="rounded">pending</Badge>
@@ -396,10 +387,10 @@ class Typography extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Bordered Badges'
+                                        title: '边框徽章'
                                     }
                                 }} >
-                                    <Section title="Basic Badges" describe="Basic state color badges">
+                                    <Section title="边框徽章" describe="基础边框徽章示例">
                                         <Demo>
                                             <Badge {...{
                                                 color: 'default',
