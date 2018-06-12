@@ -17,17 +17,26 @@ class ProgressBar extends Component {
         start: PropTypes.number,
         end: PropTypes.number,
         size: PropTypes.oneOf(['lg', 'sm', 'normal']),
-        items: PropTypes.array
+        items: PropTypes.array,
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
     };
 
     render() {
-        const size = ['lg', 'sm'].includes(this.props.size) ? this.props.size : '',
-            items = this.props.items;
-        const className = 'progress ' + (size ? ' m-progress--' + size : '');
+        const _props = this.props;
+        const {
+            size, height, start, end, items, styles, classList, attr
+        } = _props;
+        let className = ['progress'];
+        ['lg', 'sm'].includes(size) && className.push('m-progress--' + size);
+        className.concat(classList);
+        let style = {height};
+        Object.assign(style, styles);
         return (
-            <div className={className} style={{height: this.props.height}}>
+            <div className={className.join(' ')} {...attr} style={style}>
                 {items.map((item, index) => (
-                    <BarItem key={index} {...item} start={this.props.start} end={this.props.end}/>))}
+                    <BarItem key={index} {...item} start={start} end={end}/>))}
             </div>
         );
     }

@@ -1,6 +1,6 @@
 /**
  *
- * @Component: AlertBar
+ * @Component: Alert
  * @User: Longjun.Qu
  * @Date: 2018-06-11
  * @Time: 19:16
@@ -22,49 +22,34 @@ class Alert extends Component {
     }
 
     static defaultProps = {
+        title: 'Note!',
         message: 'This is a default message',
+        types: [],
         bgColor: 'default',
         closeBtn: true,
-        styles: [],
         actions: []
     };
-    static propTypes = {};
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
+    static propTypes = {
+        types: PropTypes.array,
+        classList: PropTypes.array,
+        attr: PropTypes.object,
+        styles: PropTypes.object,
+        bgColor: PropTypes.string,
+        closeBtn: PropTypes.bool,
+        actions: PropTypes.array,
+        icon: PropTypes.string,
+        iconStyle: PropTypes.oneOf(["normal", "solid"])
+    };
 
     render() {
         const _props = this.props;
         const {
-            title,
-            message,
-            bgColor,
-            closeBtn,
-            styles,
-            icon,
-            iconStyle,
-            actions,
-            actionStyle
+            title, message, bgColor, closeBtn, types, icon, iconStyle, actions, actionStyle, classList, attr, styles
         } = _props;
         const className = ['alert m-alert '];
         bgColor && className.push('alert-' + bgColor);
         closeBtn && className.concat([' alert-dismissible ', 'fade', 'show']);
-        styles.map((item) => {
+        types.map((item) => {
             if (_styles.includes(item)) {
                 item === 'outline-2x'
                     ? className.push(' m-alert--outline m-alert--outline-2x')
@@ -73,9 +58,10 @@ class Alert extends Component {
         });
         icon && className.push('m-alert--icon');
         iconStyle === 'solid' && icon && className.push('m-alert--icon-solid');
+        className.concat(classList)
         return (
             <Fragment>
-                <div className={className.join(' ')} role="alert">
+                <div className={className.join(' ')} role="alert" style={styles} {...attr}>
                     {icon && (
                         <div className="m-alert__icon">
                             <Icon iconName={icon}/>

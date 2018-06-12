@@ -17,7 +17,11 @@ class Code extends Component {
     }
 
     static defaultProps = {};
-    static propTypes = {};
+    static propTypes = {
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
+    };
 
     render() {
         const _props = this.props;

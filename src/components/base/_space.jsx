@@ -20,40 +20,26 @@ class Space extends Component {
         size: 10
     };
     static propTypes = {
-        size: PropTypes.number
+        size: PropTypes.number,
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
     };
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
 
     render() {
         const _props = this.props;
-        const {
-            size
-        } = _props;
+        const {size, styles, classList, attr} = _props;
         const style = [5, 10, 15, 20, 25, 30, 35, 40].includes(size) ? {} : {
             display: 'block',
             height: 0,
             marginBottom: size + 'px'
         };
+        Object.assign(style, styles);
+        let className = ['m--space-' + size];
+        className.concat(classList);
         return (
             <Fragment>
-                <div className={'m--space-' + size} style={style}/>
+                <div className={className.join(' ')} {...attr} style={style}/>
             </Fragment>
         );
     }

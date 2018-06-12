@@ -10,7 +10,7 @@ import Typography from './demo/pages/base/_typography'
 const App = () => (
     <div className="m-grid m-grid--hor m-grid--root m-page">
         <Aside />
-        <Typography />
+        <StateColors />
     </div>
 );
 

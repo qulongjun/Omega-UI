@@ -147,7 +147,7 @@ class Alerts extends Component {
                                             closeBtn: true,
                                             bgColor: 'success',
                                             icon: 'la la-warning',
-                                            styles: ['outline']
+                                            types: ['outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
@@ -155,7 +155,7 @@ class Alerts extends Component {
                                             closeBtn: false,
                                             bgColor: 'primary',
                                             icon: 'la la-warning',
-                                            styles: ['outline'],
+                                            types: ['outline'],
                                             actions: [{
                                                 value: 'Fix',
                                                 color: 'primary',
@@ -192,7 +192,7 @@ class Alerts extends Component {
                                             bgColor: 'brand',
                                             icon: 'flaticon-exclamation-1',
                                             iconStyle: 'solid',
-                                            styles: ['outline']
+                                            types: ['outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
@@ -201,7 +201,7 @@ class Alerts extends Component {
                                             bgColor: 'danger',
                                             icon: 'flaticon-exclamation-1',
                                             iconStyle: 'solid',
-                                            styles: ['outline']
+                                            types: ['outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
@@ -259,14 +259,14 @@ class Alerts extends Component {
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'success',
-                                            styles: ['outline']
+                                            types: ['outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
                                             bgColor: 'info',
-                                            styles: ['outline']
+                                            types: ['outline']
 
                                         }}/>
                                         <Alert {...{
@@ -274,7 +274,7 @@ class Alerts extends Component {
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
                                             bgColor: 'warning',
-                                            styles: ['outline']
+                                            types: ['outline']
 
                                         }}/>
                                         <Alert {...{
@@ -282,7 +282,7 @@ class Alerts extends Component {
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
                                             bgColor: 'danger',
-                                            styles: ['outline']
+                                            types: ['outline']
                                         }}/>
                                     </Section>
                                     <Section title="Outline 2x Style">
@@ -291,14 +291,14 @@ class Alerts extends Component {
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'success',
-                                            styles: ['outline-2x']
+                                            types: ['outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
                                             bgColor: 'info',
-                                            styles: ['outline-2x']
+                                            types: ['outline-2x']
 
                                         }}/>
                                         <Alert {...{
@@ -306,7 +306,7 @@ class Alerts extends Component {
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
                                             bgColor: 'warning',
-                                            styles: ['outline-2x']
+                                            types: ['outline-2x']
 
                                         }}/>
                                         <Alert {...{
@@ -314,7 +314,7 @@ class Alerts extends Component {
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
                                             bgColor: 'danger',
-                                            styles: ['outline-2x']
+                                            types: ['outline-2x']
                                         }}/>
                                     </Section>
                                     <Section title="Square Style">
@@ -323,21 +323,21 @@ class Alerts extends Component {
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'primary',
-                                            styles: ['square']
+                                            types: ['square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'success',
-                                            styles: ['square', 'outline-2x']
+                                            types: ['square', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'info',
-                                            styles: ['square', 'outline-2x']
+                                            types: ['square', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
@@ -345,14 +345,14 @@ class Alerts extends Component {
                                             closeBtn: true,
                                             bgColor: 'success',
                                             icon: 'la la-warning',
-                                            styles: ['air', 'square']
+                                            types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             icon: 'la la-warning',
-                                            styles: ['air', 'square']
+                                            types: ['air', 'square']
                                         }}/>
                                     </Section>
                                     <Section title="Air Style">
@@ -360,63 +360,63 @@ class Alerts extends Component {
                                             title: 'Heads up! ',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
-                                            styles: ['air', 'square']
+                                            types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'primary',
-                                            styles: ['air', 'square']
+                                            types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'info',
-                                            styles: ['air', 'square']
+                                            types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'danger',
-                                            styles: ['air']
+                                            types: ['air']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'warning',
-                                            styles: ['air', 'outline-2x']
+                                            types: ['air', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'metal',
-                                            styles: ['air', 'outline-2x']
+                                            types: ['air', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'primary',
-                                            styles: ['air', 'outline']
+                                            types: ['air', 'outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             bgColor: 'success',
-                                            styles: ['air'],
+                                            types: ['air'],
                                             icon: 'la la-warning'
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            styles: ['air'],
+                                            types: ['air'],
                                             icon: 'la la-warning'
                                         }}/>
                                     </Section>
