@@ -46,7 +46,7 @@ class Alert extends Component {
         const {
             title, message, bgColor, closeBtn, types, icon, iconStyle, actions, actionStyle, classList, attr, styles
         } = _props;
-        const className = ['alert m-alert '];
+        let className = ['alert m-alert '];
         bgColor && className.push('alert-' + bgColor);
         closeBtn && className.concat([' alert-dismissible ', 'fade', 'show']);
         types.map((item) => {
@@ -58,7 +58,7 @@ class Alert extends Component {
         });
         icon && className.push('m-alert--icon');
         iconStyle === 'solid' && icon && className.push('m-alert--icon-solid');
-        className.concat(classList)
+        className = className.concat(classList)
         return (
             <Fragment>
                 <div className={className.join(' ')} role="alert" style={styles} {...attr}>

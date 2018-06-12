@@ -36,7 +36,7 @@ class Space extends Component {
         };
         Object.assign(style, styles);
         let className = ['m--space-' + size];
-        className.concat(classList);
+        className = className.concat(classList);
         return (
             <Fragment>
                 <div className={className.join(' ')} {...attr} style={style}/>

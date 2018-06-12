@@ -27,7 +27,7 @@ class Code extends Component {
         const _props = this.props;
         const {children, styles, classList, attr} = _props;
         let className = [];
-        className.concat(classList);
+        className = className.concat(classList);
         return (
             <Fragment>
                 <code className={className.join(' ')} style={styles} {...attr}>{children}</code>

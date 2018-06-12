@@ -30,7 +30,7 @@ class ProgressBar extends Component {
         } = _props;
         let className = ['progress'];
         ['lg', 'sm'].includes(size) && className.push('m-progress--' + size);
-        className.concat(classList);
+        className = className.concat(classList);
         let style = {height};
         Object.assign(style, styles);
         return (

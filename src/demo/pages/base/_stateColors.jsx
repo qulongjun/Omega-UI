@@ -17,7 +17,7 @@ import Wrapper from 'components/framework/_wrapper';
 import Content from 'components/framework/_content';
 import Section from 'components/framework/_section';
 
-import Space from 'components/base/_space'
+import Space from 'components/framework/_space'
 import Badge from 'components/base/_badge'
 import ProgressBar from 'components/base/_progressBar'
 import Alert from 'components/base/_alert'

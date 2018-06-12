@@ -30,7 +30,7 @@ class Paragraph extends Component {
         const {children, styles, classList, attr, state} = _props;
         let className = [];
         if (state) className.push('m--font-' + state);
-        className.concat(classList);
+        className = className.concat(classList);
         return (
             <Fragment>
                 <p style={styles} className={className.join(' ')} {...attr}>

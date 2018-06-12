@@ -9,7 +9,8 @@ class Badge extends Component {
     static defaultProps = {
         element: 'span',
         color: 'info',
-        isWide: true,
+        type: 'normal',
+        inverse: false
     };
 
     static propTypes = {
@@ -18,17 +19,21 @@ class Badge extends Component {
         attr: PropTypes.object,
         element: PropTypes.string,
         color: PropTypes.string,
-        isWide: PropTypes.bool
+        type: PropTypes.oneOf(['dot', 'dot-small', 'rounded', 'wide', 'normal']),
+        inverse: PropTypes.bool
     };
 
     render() {
+
         const _props = this.props;
         const Element = _props.element;
-        const {children, color, isWide, styles, classList, attr} = _props;
+        const {children, color, inverse, type, styles, classList, attr} = _props;
         let className = ['m-badge'];
-        color && className.push('m-badge--' + color);
-        isWide && className.push('m-badge--wide');
-        className.concat(classList);
+        color && !inverse && className.push('m-badge--' + color);
+        color && inverse && className.push('m-badge--light') && className.push('m-badge--bordered') && className.push('m-badge-bordered--' + color);
+        type !== 'normal' && className.push('m-badge--' + type);
+        type === 'rounded' && className.push('m-badge--wide');
+        className = className.concat(classList);
         return (
             <Element className={className.join(' ')} style={styles} {...attr}>{children}</Element>
         );

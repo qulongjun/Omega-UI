@@ -28,7 +28,7 @@ class Wrapper extends Component {
         const _props = this.props;
         const {children, styles, classList, attr} = _props;
         let className = ['m-grid__item', 'm-grid__item--fluid', 'm-wrapper'];
-        className.concat(classList);
+        className = className.concat(classList);
         return (
             <Fragment>
                 <div className={className.join(' ')} style={styles} {...attr}>

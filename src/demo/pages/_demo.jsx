@@ -15,15 +15,25 @@ class Demo extends Component {
         this.state = {}
     }
 
+    static defaultProps = {
+        btnStyle: true,
+        badgeStyle: true
+    };
+
     render() {
         const _props = this.props;
         const {
+            btnStyle,
+            badgeStyle,
             children
         } = _props;
+        let className = ['m-demo__preview'];
+        btnStyle && className.push('m-demo__preview--btn');
+        badgeStyle && className.push('m-demo__preview--badge');
         return (
             <Fragment>
                 <div className="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
-                    <div className="m-demo__preview m-demo__preview--btn m-demo__preview--badge">
+                    <div className={className.join(' ')}>
                         {children}
                     </div>
                 </div>

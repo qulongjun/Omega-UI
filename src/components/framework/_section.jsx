@@ -27,7 +27,7 @@ class Section extends Component {
         const _props = this.props;
         const {title, describe, styles, classList, attr, children} = _props;
         let className = ['m-section'];
-        className.concat(classList);
+        className = className.concat(classList);
         return (
             <Fragment>
                 <div className={className.join(' ')} style={styles} {...attr}>
