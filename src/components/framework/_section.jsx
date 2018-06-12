@@ -17,34 +17,20 @@ class Section extends Component {
     }
 
     static defaultProps = {};
-    static propTypes = {};
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
+    static propTypes = {
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
+    };
 
     render() {
         const _props = this.props;
-        const {
-            title, describe, children
-        } = _props;
+        const {title, describe, styles, classList, attr, children} = _props;
+        let className = ['m-section'];
+        className.concat(classList);
         return (
             <Fragment>
-                <div className="m-section">
+                <div className={className.join(' ')} style={styles} {...attr}>
                     <h3 className="m-section__heading">
                         {title}
                     </h3>

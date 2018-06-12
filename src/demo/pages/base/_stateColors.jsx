@@ -10,6 +10,7 @@
 import React, {Component, Fragment} from 'react';
 
 import Text from 'components/framework/_text';
+import Code from 'components/framework/_code'
 import Paragraph from 'components/framework/_paragraph';
 import SubHeader from '../_subheader';
 import Wrapper from 'components/framework/_wrapper';
@@ -19,7 +20,6 @@ import Section from 'components/framework/_section';
 import Space from 'components/base/_space'
 import Badge from 'components/base/_badge'
 import ProgressBar from 'components/base/_progressBar'
-import Code from 'components/base/_code'
 import Alert from 'components/base/_alert'
 import Portle from 'components/general/_portle';
 import Button from 'components/general/_button'

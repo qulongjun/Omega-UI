@@ -21,41 +21,19 @@ class Paragraph extends Component {
     };
     static propTypes = {
         styles: PropTypes.object,
+        classList: PropTypes.array,
         attr: PropTypes.object
     };
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
     render() {
         const _props = this.props;
-        const {
-            children,
-            styles,
-            classList,
-            attr,
-            state
-        } = _props;
-        const className = (state ? 'm--font-' + state : '')
-            + ' ' + classList.join(' ');
+        const {children, styles, classList, attr, state} = _props;
+        let className = [];
+        if (state) className.push('m--font-' + state);
+        className.concat(classList);
         return (
             <Fragment>
-                <p style={styles} className={className} {...attr}>
+                <p style={styles} className={className.join(' ')} {...attr}>
                     {children}
                 </p>
             </Fragment>

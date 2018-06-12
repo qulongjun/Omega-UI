@@ -7,7 +7,7 @@
  *
  */
 
-import React, {Component,Fragment} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -16,22 +16,22 @@ class Content extends Component {
         super(props);
         this.state = {}
     }
+
     static defaultProps = {};
-    static propTypes = {};
-    componentWillMount () {}
-    componentDidMount () {}
-    componentWillReceiveProps (nextProps) {}
-    shouldComponentUpdate (nextProps,nextState) {}
-    componentWillUpdate (nextProps,nextState) {}
-    componentDidUpdate (prevProps,prevState) {}
+    static propTypes = {
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
+    };
+
     render() {
         const _props = this.props;
-        const {
-            children
-        } = _props;
+        const {children, styles, classList, attr} = _props;
+        let className = ['m-content'];
+        className.concat(classList);
         return (
             <Fragment>
-                <div className="m-content">
+                <div style={styles} className={className.join(' ')} {...attr}>
                     {children}
                 </div>
             </Fragment>

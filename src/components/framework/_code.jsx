@@ -7,7 +7,7 @@
  *
  */
 
-import React, {Component,Fragment} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 class Code extends Component {
@@ -15,22 +15,18 @@ class Code extends Component {
         super(props);
         this.state = {}
     }
+
     static defaultProps = {};
     static propTypes = {};
-    componentWillMount () {}
-    componentDidMount () {}
-    componentWillReceiveProps (nextProps) {}
-    shouldComponentUpdate (nextProps,nextState) {}
-    componentWillUpdate (nextProps,nextState) {}
-    componentDidUpdate (prevProps,prevState) {}
+
     render() {
         const _props = this.props;
-        const {
-            children
-        } = _props;
+        const {children, styles, classList, attr} = _props;
+        let className = [];
+        className.concat(classList);
         return (
             <Fragment>
-                <code>{children}</code>
+                <code className={className.join(' ')} style={styles} {...attr}>{children}</code>
             </Fragment>
         );
     }
