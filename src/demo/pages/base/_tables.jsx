@@ -84,7 +84,7 @@ class Tables extends Component {
                                     }
                                 }} >
                                     <Section
-                                        describe='Similar to default and inverse tables, use one of two modifier classes to make <thead>s appear light or dark gray.'>
+                                        describe={<Text>类似于基础表格，可以通过设置部分属性，显示不同的 <Code>thead</Code> 样式。</Text>}>
                                         <Table {
                                                    ...{
                                                        head: {
@@ -98,9 +98,7 @@ class Tables extends Component {
                                                    }
                                                }/>
                                     </Section>
-                                    <Section
-                                        describe={<Text>You can also invert the colors—with light text on dark
-                                            backgrounds—with <Code>.table-inverse</Code> .</Text>}>
+                                    <Section>
                                         <Table {
                                                    ...{
                                                        head: {
@@ -142,8 +140,7 @@ class Tables extends Component {
                                     }
                                 }} >
                                     <Section
-                                        describe={<Text>Add <Code>.table-sm</Code> to make tables more compact by
-                                            cutting cell padding in half.</Text>}>
+                                        describe={<Text>设置 <Code>size</Code> 属性为 <Code>sm</Code> 让表格以基础表格一半行高显示，使表格显示更紧凑。</Text>}>
                                         <Table {
                                                    ...{
                                                        head: {
@@ -400,9 +397,7 @@ class Tables extends Component {
                                         title: '响应式表格'
                                     }
                                 }} >
-                                    <Section describe={<Text>Create responsive tables by wrapping any table with <Code>.table-responsive
-                                        DIV</Code> to make them scroll horizontally on small devices (under
-                                        768px)</Text>}>
+                                    <Section describe={<Text>通过设置 <Code>responsive</Code> 可以让表格实现响应式，在低分辨率设备（低于768px）上可以出现滚动条。</Text>}>
                                         <Table {
                                                    ...{
                                                        responsive: true,
