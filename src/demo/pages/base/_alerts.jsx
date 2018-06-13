@@ -37,7 +37,7 @@ class Alerts extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="提醒"/>
+                    <SubHeader  title="提醒"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">

@@ -39,7 +39,7 @@ class ProgressBar extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="进度条"/>
+                    <SubHeader  title="进度条"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">

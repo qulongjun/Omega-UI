@@ -37,7 +37,7 @@ class Tables extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="表格"/>
+                    <SubHeader  title="表格"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">

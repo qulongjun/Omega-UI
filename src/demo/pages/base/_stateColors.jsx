@@ -44,7 +44,7 @@ class StateColor extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="状态与颜色"/>
+                    <SubHeader  title="状态与颜色"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
@@ -91,7 +91,8 @@ class StateColor extends Component {
                                     </Section>
                                     <Section
                                         describe={
-                                            <Text> 与此同时，我们也增加了一些独特的状态，例如 <Code>brand</Code> 和 <Code>metal</Code> 等:</Text>
+                                            <Text> 与此同时，我们也增加了一些独特的状态，例如 <Code>brand</Code> 和 <Code>metal</Code>
+                                                等:</Text>
                                         }>
                                         <Table {...{
                                             head: ['状态', '预览', 'Class 前缀', '使用示例'],
@@ -141,7 +142,10 @@ class StateColor extends Component {
                                         </Demo>
                                     </Section>
                                     <Section
-                                        {...{describe: <Text>使用 <Code>color</Code> 或 <Code>classList</Code> 属性可以为绝大部分组件增加状态：</Text>}}>
+                                        {...{
+                                            describe: <Text>使用 <Code>color</Code> 或 <Code>classList</Code>
+                                                属性可以为绝大部分组件增加状态：</Text>
+                                        }}>
                                         <Demo>
                                             <Button color="primary" value="Primary"/>
                                             <Button color="success" value="Success"/>
