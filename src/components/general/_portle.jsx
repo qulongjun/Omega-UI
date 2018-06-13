@@ -18,32 +18,20 @@ class Portle extends Component {
     }
 
     static defaultProps = {};
-    static propTypes = {};
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
+    static propTypes = {
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
+    };
 
     render() {
         const _props = this.props;
-        const {header, children} = _props;
+        const {header, children, styles, classList, attr} = _props;
+        let className = ['m-portlet', 'm-portlet--mobile'];
+        className = className.concat(classList);
         return (
             <Fragment>
-                <div className="m-portlet m-portlet--mobile">
+                <div className={className.join(' ')} style={styles} {...attr}>
                     {header.show && <Header {...header}/>}
                     <div className="m-portlet__body">
                         {children}

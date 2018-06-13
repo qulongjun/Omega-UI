@@ -11,12 +11,19 @@ class Icon extends Component {
 
     static propTypes = {
         iconName: PropTypes.string.isRequired,
-        style: PropTypes.object
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
     };
 
     render() {
+        const _props = this.props;
+        const {iconName, styles, classList, attr} = _props;
+        let className = [];
+        if (iconName) className.push(iconName);
+        className = className.concat(classList);
         return (
-            <i className={this.props.iconName} style={this.props.style}/>
+            <i className={className.join(' ')} style={styles} {...attr}/>
         );
     }
 }
