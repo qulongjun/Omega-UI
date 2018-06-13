@@ -37,18 +37,18 @@ class Tables extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="Tables"/>
+                    <SubHeader title="表格"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Basic Tables'
+                                        title: '基础表格'
                                     }
                                 }} >
                                     <Section
-                                        describe='Using the most basic table markup, here’s how tables look in Metronic:'>
+                                        describe={<Text>使用 <Code>Table</Code> 组件可以快速构建一个简易表格：</Text>}>
                                         <Table {
                                                    ...{
                                                        head: ['#', 'First Name', 'Last Name', 'Username'],
@@ -61,8 +61,7 @@ class Tables extends Component {
                                                }/>
                                     </Section>
                                     <Section
-                                        describe={<Text>You can also invert the colors—with light text on dark
-                                            backgrounds—with <Code>.table-inverse</Code> .</Text>}>
+                                        describe={<Text>也可以使用 <Code>inverse</Code> 属性对样式进行颠倒——在深色背景下显示亮色的文字。</Text>}>
                                         <Table {
                                                    ...{
                                                        head: ['#', 'First Name', 'Last Name', 'Username'],
@@ -81,7 +80,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Table Head Options'
+                                        title: '表头选项'
                                     }
                                 }} >
                                     <Section
@@ -117,13 +116,29 @@ class Tables extends Component {
                                                    }
                                                }/>
                                     </Section>
+                                    <Section>
+                                        <Table {
+                                                   ...{
+                                                       head: {
+                                                           value: ['#', 'First Name', 'Last Name', 'Username'],
+                                                           hideBorder: true
+                                                       },
+                                                       data: [
+                                                           [1, 'Jhon', 'Stone', '@jhon'],
+                                                           [2, 'Lisa', 'Nilson', '@lisa'],
+                                                           [3, 'Larry', 'the Bird', '@twitter']
+                                                       ],
+                                                       inverse: true
+                                                   }
+                                               }/>
+                                    </Section>
 
                                 </Portle>
 
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Table Head Options'
+                                        title: '细表格'
                                     }
                                 }} >
                                     <Section
@@ -133,7 +148,7 @@ class Tables extends Component {
                                                    ...{
                                                        head: {
                                                            value: ['#', 'First Name', 'Last Name', 'Username'],
-                                                           bgColor:'brand'
+                                                           bgColor: 'brand'
                                                        },
                                                        data: [
                                                            [1, 'Jhon', 'Stone', '@jhon'],
@@ -149,7 +164,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Striped Rows'
+                                        title: '带有条纹的行'
                                     }
                                 }} >
                                     <Section>
@@ -172,7 +187,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Bordered Table'
+                                        title: '带有边框的表格'
                                     }
                                 }} >
                                     <Section>
@@ -195,7 +210,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Hoverable Table'
+                                        title: '带有悬停的表格'
                                     }
                                 }} >
                                     <Section>
@@ -220,7 +235,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Table Head States'
+                                        title: '表头状态'
                                     }
                                 }} >
                                     <Section>
@@ -287,7 +302,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Table Bordered States'
+                                        title: '表格边框状态'
                                     }
                                 }} >
                                     <Section>
@@ -341,7 +356,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Table Row States'
+                                        title: '表格行状态'
                                     }
                                 }} >
                                     <Section>
@@ -382,7 +397,7 @@ class Tables extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Responsive tables'
+                                        title: '响应式表格'
                                     }
                                 }} >
                                     <Section describe={<Text>Create responsive tables by wrapping any table with <Code>.table-responsive
@@ -396,16 +411,16 @@ class Tables extends Component {
                                                        },
                                                        data: [
                                                            {
-                                                               value: [1, 'Table cell', 'Table cell', 'Table cell','Table cell','Table cell','Table cell','Table cell']
+                                                               value: [1, 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell']
                                                            },
                                                            {
-                                                               value: [2, 'Table cell', 'Table cell', 'Table cell','Table cell','Table cell','Table cell','Table cell']
+                                                               value: [2, 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell']
                                                            },
                                                            {
-                                                               value: [3, 'Table cell', 'Table cell', 'Table cell','Table cell','Table cell','Table cell','Table cell']
+                                                               value: [3, 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell']
                                                            },
                                                            {
-                                                               value: [4, 'Table cell', 'Table cell', 'Table cell','Table cell','Table cell','Table cell','Table cell']
+                                                               value: [4, 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell']
                                                            }
                                                        ]
                                                    }

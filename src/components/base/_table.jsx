@@ -44,7 +44,7 @@ class Table extends Component {
     render() {
         const _props = this.props;
         const {responsive, head, data, inverse, size, stripe, bordered, hover, borderColor, styles, classList, attr} = _props;
-        const {bgColor, separateColor} = head;
+        const {bgColor, separateColor,hideBorder} = head;
         let className = ['table', 'm-table'];
         inverse && className.push('table-inverse');
         size === 'sm' && className.push('table-sm');
@@ -54,6 +54,7 @@ class Table extends Component {
         bgColor && className.push('m-table--head-bg-' + bgColor);
         separateColor && className.push('m-table--head-separator-' + separateColor);
         borderColor && className.push('table-bordered') && className.push('m-table--border-' + borderColor);
+        hideBorder && className.push('m-table--head-no-border');
         className = className.concat(classList);
         return (
             <Fragment>

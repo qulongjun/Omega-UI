@@ -37,14 +37,14 @@ class Alerts extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="Alerts"/>
+                    <SubHeader title="提醒"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Basic Contextual Alerts'
+                                        title: '基础提醒'
                                     }
                                 }} >
                                     <Section>
@@ -94,7 +94,7 @@ class Alerts extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Dismissible Alerts'
+                                        title: '可关闭的提醒'
                                     }
                                 }} >
                                     <Section>
@@ -139,7 +139,7 @@ class Alerts extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Alert Icons & Action Buttons'
+                                        title: '带图标或按钮的提醒'
                                     }
                                 }} >
                                     <Section>
@@ -252,10 +252,10 @@ class Alerts extends Component {
                                 <Portle {...{
                                     header: {
                                         show: true,
-                                        title: 'Alert Styles'
+                                        title: '提醒样式'
                                     }
                                 }} >
-                                    <Section title="Outline Style">
+                                    <Section title="Outline 样式">
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
@@ -287,7 +287,7 @@ class Alerts extends Component {
                                             types: ['outline']
                                         }}/>
                                     </Section>
-                                    <Section title="Outline 2x Style">
+                                    <Section title="Outline 2x 样式">
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
@@ -319,7 +319,7 @@ class Alerts extends Component {
                                             types: ['outline-2x']
                                         }}/>
                                     </Section>
-                                    <Section title="Square Style">
+                                    <Section title="Square 样式">
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
@@ -357,7 +357,7 @@ class Alerts extends Component {
                                             types: ['air', 'square']
                                         }}/>
                                     </Section>
-                                    <Section title="Air Style">
+                                    <Section title="Air 样式">
                                         <Alert {...{
                                             title: 'Heads up! ',
                                             message: ' This alert needs your attention, but it\'s not super important.',

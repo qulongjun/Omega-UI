@@ -10,8 +10,8 @@ import Progress from './demo/pages/base/_progress'
 import Tables from './demo/pages/base/_tables'
 const App = () => (
     <div className="m-grid m-grid--hor m-grid--root m-page">
-        <Aside />
-        <Alerts />
+        {/*<Aside />*/}
+        <Tables />
     </div>
 );
 
