@@ -17,7 +17,10 @@ class Progress extends Component {
         start: PropTypes.number,
         end: PropTypes.number,
         size: PropTypes.oneOf(['lg', 'sm', 'normal']),
-        items: PropTypes.array,
+        items: PropTypes.oneOfType([
+            PropTypes.array,
+            PropTypes.object
+        ]),
         styles: PropTypes.object,
         classList: PropTypes.array,
         attr: PropTypes.object
@@ -26,17 +29,25 @@ class Progress extends Component {
     render() {
         const _props = this.props;
         const {
-            size, height, start, end, items, styles, classList, attr
+            size, height, start, end, item, styles, classList, attr
         } = _props;
         let className = ['progress'];
         ['lg', 'sm'].includes(size) && className.push('m-progress--' + size);
         className = className.concat(classList);
         let style = {height};
         Object.assign(style, styles);
+        let single = null;
+        if (Array.isArray(item)) {
+            single = (item.map((item, index) => (
+                <BarItem key={index} {...item} start={start} end={end}/>)));
+        } else {
+            if (typeof item === "object") {
+                single = (<BarItem {...item} start={start} end={end}/>);
+            }
+        }
         return (
             <div className={className.join(' ')} {...attr} style={style}>
-                {items.map((item, index) => (
-                    <BarItem key={index} {...item} start={start} end={end}/>))}
+                {single}
             </div>
         );
     }
@@ -60,4 +71,5 @@ class BarItem extends Component {
         );
     }
 }
+
 export default Progress;

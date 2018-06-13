@@ -8,11 +8,15 @@
  */
 
 import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+
+import Button from "../../components/general/_button";
+
 
 // import './_subheader.scss'
 
 class SubHeader extends Component {
-    constructor(props) {
+    constructor(props, context) {
         super(props);
         this.state = {}
     }
@@ -20,6 +24,7 @@ class SubHeader extends Component {
     render() {
         const _props = this.props;
         const {title} = _props;
+        const router = this.context.router;
         return (
             <Fragment>
                 <div className="m-subheader">
@@ -29,10 +34,24 @@ class SubHeader extends Component {
                                 {title}
                             </h3>
                         </div>
+                        <Button {...{
+                            value: '返回',
+                            color: 'outline-metal',
+                            handle: {
+                                click: () => {
+                                    router.history.push('/');
+                                }
+                            }
+                        }}/>
                     </div>
                 </div>
             </Fragment>
         );
     }
 }
+
+SubHeader.contextTypes = {
+    router: PropTypes.object
+};
+
 export default SubHeader;
