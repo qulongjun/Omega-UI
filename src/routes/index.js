@@ -12,6 +12,11 @@ import Alerts from '../demo/pages/base/_alerts';
 import Div from "../components/_element/Div";
 import Separator from "../components/_element/Separator";
 import Text from "../components/_element/Text";
+import Link from "../components/_element/Link";
+import Code from "../components/_element/Code";
+import Blockquote from "../components/_element/Blockquote";
+import Title from "../components/_element/Title";
+import Demo from "../demo/pages/_demo";
 
 export default (
     <BrowserRouter>
@@ -22,27 +27,11 @@ export default (
             <Route path="/Tables" component={Tables}/>
             <Route path="/Alerts" component={Alerts}/>
             <Route path="/Progress" component={Progress}/>
-            <Div {...{
-                _fontColor: '#DDD',
-                _includeStyle: {
-                    fontSize: '40px'
-                },
-                _handle: {}
-            }}>This is a text
-                <Separator {...{
-                    size: 'lg',
-                    // color: 'success',
-                    dashed:true,
-                    _fontColor:'danger',
-                    _handle:{
-                        onClick:function () {
-                            alert('aaa');
-                        }
-                    }
-                }}/>
-                sdds
-            </Div>
-
+            <Demo>
+                <Title {...{
+                    level: 1
+                }}>h1. 标题 1</Title>
+            </Demo>
         </div>
     </BrowserRouter>
 );
