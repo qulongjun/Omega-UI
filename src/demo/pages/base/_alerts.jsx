@@ -10,7 +10,7 @@
 import React, {Component, Fragment} from 'react';
 
 
-import SubHeader from '../_subheader';
+import SubHeader from 'components/_framework/SubHeader';
 
 
 import Wrapper from 'components/framework/_wrapper';
