@@ -17,12 +17,12 @@ import Wrapper from 'components/framework/_wrapper';
 import Content from 'components/framework/_content';
 import Section from 'components/framework/_section';
 
-import Alert from 'components/base/_alert'
-import Portle from 'components/general/_portle';
+import Alert from 'components/_base/Alert'
+import Portle from 'components/_portlet/Portlet';
 
 import 'sass/_demo.scss';
 
-import '../../../plugins/config'
+import 'plugins/config'
 
 
 class Alerts extends Component {
@@ -37,7 +37,7 @@ class Alerts extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader  title="提醒"/>
+                    <SubHeader title="提醒"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
@@ -57,37 +57,37 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: false,
-                                            bgColor: 'success'
+                                            alertColor: 'success'
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: false,
-                                            bgColor: 'info'
+                                            alertColor: 'info'
                                         }}/>
                                         <Alert {...{
                                             title: 'Warning!',
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: false,
-                                            bgColor: 'warning'
+                                            alertColor: 'warning'
                                         }}/>
                                         <Alert {...{
                                             title: 'Oh snap!',
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: false,
-                                            bgColor: 'danger'
+                                            alertColor: 'danger'
                                         }}/>
                                         <Alert {...{
                                             title: 'Brand!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: false,
-                                            bgColor: 'brand'
+                                            alertColor: 'brand'
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: false,
-                                            bgColor: 'primary'
+                                            alertColor: 'primary'
                                         }}/>
                                     </Section>
                                 </Portle>
@@ -102,37 +102,37 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success'
+                                            alertColor: 'success'
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
-                                            bgColor: 'info'
+                                            alertColor: 'info'
                                         }}/>
                                         <Alert {...{
                                             title: 'Warning!',
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
-                                            bgColor: 'warning'
+                                            alertColor: 'warning'
                                         }}/>
                                         <Alert {...{
                                             title: 'Oh snap!',
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
-                                            bgColor: 'danger'
+                                            alertColor: 'danger'
                                         }}/>
                                         <Alert {...{
                                             title: 'Brand!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'brand'
+                                            alertColor: 'brand'
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
-                                            bgColor: 'primary'
+                                            alertColor: 'primary'
                                         }}/>
                                     </Section>
                                 </Portle>
@@ -147,7 +147,7 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
+                                            alertColor: 'success',
                                             icon: 'la la-warning',
                                             types: ['outline']
                                         }}/>
@@ -155,29 +155,29 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: false,
-                                            bgColor: 'primary',
+                                            alertColor: 'primary',
                                             icon: 'la la-warning',
                                             types: ['outline'],
                                             actions: [{
                                                 value: 'Fix',
-                                                color: 'primary',
+                                                btnColor: 'primary',
                                                 size: 'sm',
                                                 isWide: true,
                                                 btnStyle: 'pill',
                                                 closeBtn: true,
-                                                handle: {
-                                                    click: (e) => {
+                                                _handle: {
+                                                    onClick: (e) => {
                                                         console.log(e)
                                                     }
                                                 }
                                             }, {
                                                 value: 'Dismiss',
-                                                color: 'danger',
+                                                btnColor: 'danger',
                                                 size: 'sm',
                                                 isWide: true,
                                                 btnStyle: 'pill',
-                                                handle: {
-                                                    click: (e) => {
+                                                _handle: {
+                                                    onClick: (e) => {
                                                         $(e.target).alert('close')
                                                     }
                                                 }
@@ -191,7 +191,7 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'brand',
+                                            alertColor: 'brand',
                                             icon: 'flaticon-exclamation-1',
                                             iconStyle: 'solid',
                                             types: ['outline']
@@ -200,7 +200,7 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'danger',
+                                            alertColor: 'danger',
                                             icon: 'flaticon-exclamation-1',
                                             iconStyle: 'solid',
                                             types: ['outline']
@@ -209,40 +209,50 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'accent',
+                                            alertColor: 'accent',
                                             icon: 'la la-warning',
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'warning',
+                                            alertColor: 'warning',
                                             icon: 'la la-warning',
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: false,
-                                            bgColor: 'primary',
+                                            alertColor: 'primary',
                                             icon: 'la la-warning',
                                             actions: [{
                                                 value: 'Fix',
-                                                color: 'warning',
+                                                btnColor: 'warning',
                                                 size: 'sm',
                                                 isWide: true,
-                                                btnStyle: 'pill'
+                                                btnStyle: 'pill',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        alert('Fixed');
+                                                    }
+                                                }
                                             }]
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: false,
-                                            bgColor: 'danger',
+                                            alertColor: 'danger',
                                             icon: 'la la-warning',
                                             actions: [{
                                                 value: 'Dismiss',
-                                                color: 'outline-light',
-                                                size: 'sm'
+                                                btnColor: 'outline-light',
+                                                size: 'sm',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        alert('Click');
+                                                    }
+                                                }
                                             }]
                                         }}/>
                                     </Section>
@@ -260,14 +270,14 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
+                                            alertColor: 'success',
                                             types: ['outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
-                                            bgColor: 'info',
+                                            alertColor: 'info',
                                             types: ['outline']
 
                                         }}/>
@@ -275,7 +285,7 @@ class Alerts extends Component {
                                             title: 'Warning!',
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
-                                            bgColor: 'warning',
+                                            alertColor: 'warning',
                                             types: ['outline']
 
                                         }}/>
@@ -283,7 +293,7 @@ class Alerts extends Component {
                                             title: 'Oh snap!',
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
-                                            bgColor: 'danger',
+                                            alertColor: 'danger',
                                             types: ['outline']
                                         }}/>
                                     </Section>
@@ -292,31 +302,31 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
-                                            types: ['outline-2x']
+                                            alertColor: 'success',
+                                            types: ['outline','outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
-                                            bgColor: 'info',
-                                            types: ['outline-2x']
+                                            alertColor: 'info',
+                                            types: ['outline','outline-2x']
 
                                         }}/>
                                         <Alert {...{
                                             title: 'Warning!',
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
-                                            bgColor: 'warning',
-                                            types: ['outline-2x']
+                                            alertColor: 'warning',
+                                            types: ['outline','outline-2x']
 
                                         }}/>
                                         <Alert {...{
                                             title: 'Oh snap!',
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
-                                            bgColor: 'danger',
-                                            types: ['outline-2x']
+                                            alertColor: 'danger',
+                                            types: ['outline','outline-2x']
                                         }}/>
                                     </Section>
                                     <Section title="Square 样式">
@@ -324,28 +334,28 @@ class Alerts extends Component {
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'primary',
+                                            alertColor: 'primary',
                                             types: ['square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
+                                            alertColor: 'success',
                                             types: ['square', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'info',
+                                            alertColor: 'info',
                                             types: ['square', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
+                                            alertColor: 'success',
                                             icon: 'la la-warning',
                                             types: ['air', 'square']
                                         }}/>
@@ -368,49 +378,49 @@ class Alerts extends Component {
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'primary',
+                                            alertColor: 'primary',
                                             types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'info',
+                                            alertColor: 'info',
                                             types: ['air', 'square']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'danger',
+                                            alertColor: 'danger',
                                             types: ['air']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'warning',
+                                            alertColor: 'warning',
                                             types: ['air', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'metal',
+                                            alertColor: 'metal',
                                             types: ['air', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'primary',
+                                            alertColor: 'primary',
                                             types: ['air', 'outline']
                                         }}/>
                                         <Alert {...{
                                             title: 'Well done!  ',
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
-                                            bgColor: 'success',
+                                            alertColor: 'success',
                                             types: ['air'],
                                             icon: 'la la-warning'
                                         }}/>
