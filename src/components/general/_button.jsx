@@ -71,6 +71,7 @@ class Button extends Component {
         const iconContent = this.props.icon ? (this.props.value
                 ? (<span><Icon iconName={this.props.icon}/><span>{this.props.value}</span></span>)
                 : <Icon iconName={this.props.icon}/>) : this.props.value;
+
         const className =
             'btn '
             + 'btn-' + this.props.color

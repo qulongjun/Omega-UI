@@ -9,6 +9,9 @@ import Tables from '../demo/pages/base/_tables';
 import Progress from '../demo/pages/base/_progress';
 import Alerts from '../demo/pages/base/_alerts';
 
+import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
+
+
 import Div from "../components/_element/Div";
 import Separator from "../components/_element/Separator";
 import Text from "../components/_element/Text";
@@ -27,6 +30,8 @@ export default (
             <Route path="/Tables" component={Tables}/>
             <Route path="/Alerts" component={Alerts}/>
             <Route path="/Progress" component={Progress}/>
+
+            <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Demo>
                 <Title {...{
                     level: 1

@@ -99,6 +99,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'Default Style',
+                                                color: 'outline-danger',
+                                                handle: {
+                                                    click: () => {
+                                                        history.push('/buttons/base/default');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
 

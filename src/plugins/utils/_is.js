@@ -118,4 +118,14 @@ export const isNotExist = function (val) {
     return isUndefined(val) || isNull(val);
 }
 
+/**
+ * Check if args is Object
+ * @param {Object} val
+ */
+export const isObject = function (val) {
+    return !isUndefined(val) &&
+        typeof val === 'object' &&
+        Object.prototype.toString.call(val) === '[object Object]'
+}
+
 
