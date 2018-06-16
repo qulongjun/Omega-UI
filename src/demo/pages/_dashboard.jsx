@@ -149,16 +149,43 @@ class Dashboard extends Component {
                             </div>
                             <div className="col-xl-6">
                                 <Portlet {...{
-                                    header: 'Buttons'
+                                    header: 'Button'
                                 }} >
-                                    <Section title="Button">
+                                    <Section title="Button Base">
                                         <Demo>
                                             <Button {...{
-                                                value: 'Default Style',
+                                                value: 'Default',
                                                 btnColor: 'outline-danger',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/base/default');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Square',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/square');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Pill',
+                                                btnColor: 'outline-success',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/pill');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Air',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/air');
                                                     }
                                                 }
                                             }}/>

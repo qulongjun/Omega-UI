@@ -16,6 +16,9 @@ import BlockUI from '../demo/pages/base/_blockUI';
 import Spinner from '../demo/pages/base/_spinners';
 
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
+import Square from '../demo/pages/_button/_buttonBase/_square';
+import Pill from '../demo/pages/_button/_buttonBase/_pill';
+import Air from '../demo/pages/_button/_buttonBase/_air';
 
 export default (
     <BrowserRouter>
@@ -28,11 +31,17 @@ export default (
             <Route path="/Alerts" component={Alerts}/>
             <Route path="/Progress" component={Progress}/>
             <Route path="/Popover" component={Popover}/>
-            <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Route path="/Tooltip" component={Tooltip}/>
             <Route path="/Scrollable" component={Scrollable}/>
             <Route path="/BlockUI" component={BlockUI}/>
             <Route path='/Spinner' component={Spinner}/>
+
+            <Route path="/buttons/base/default" component={DefaultStyle}/>
+            <Route path="/buttons/base/square" component={Square}/>
+            <Route path='/buttons/base/pill' component={Pill}/>
+            <Route path='/buttons/base/air' component={Air}/>
+
+
         </div>
     </BrowserRouter>
 );
