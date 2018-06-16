@@ -117,11 +117,29 @@ class Dashboard extends Component {
                                                 }
                                             }}/>
                                             <Button {...{
+                                                value: 'BlockUI',
+                                                btnColor: 'outline-primary',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/BlockUI');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
                                                 value: 'Scrollable',
                                                 btnColor: 'outline-accent',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Scrollable');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Spinner',
+                                                btnColor: 'outline-metal',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Spinner');
                                                     }
                                                 }
                                             }}/>

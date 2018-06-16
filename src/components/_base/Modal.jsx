@@ -17,6 +17,7 @@ import Button from 'components/_button/Button';
 
 import {_delivery} from 'plugins/utils/_props';
 import {isNotExist, isArray, isObject} from 'plugins/utils/_is';
+import BlockUI from "./BlockUI";
 
 
 class Modal extends Component {
@@ -30,7 +31,7 @@ class Modal extends Component {
 
     render() {
         const _props = this.props;
-        const {id, title, closeBtn, actions, scroll, centered, size, children} = _props;
+        const {id, title, closeBtn, actions, scroll, centered, size, blockUI, children} = _props;
         let _sysClass = ['modal', 'fade'];
         let _dialogClass = ['modal-dialog'];
         !isNotExist(centered) && centered && _dialogClass.push('modal-dialog-centered');
@@ -46,7 +47,8 @@ class Modal extends Component {
                                     '_uniqueClass': 'close',
                                     'data-dismiss': 'modal',
                                     'aria-label': 'Close',
-                                    'value': (<Text _includeAttribute={{"aria-hidden": true}}>&times;</Text>)
+                                    'value': (
+                                        <Text _includeAttribute={{"aria-hidden": true}}>&times;</Text>)
                                 }}/>}
                             </Div>
                             <Div _includeClass='modal-body'>
@@ -58,7 +60,8 @@ class Modal extends Component {
                                 {!isNotExist(actions) && isArray(actions) && actions.map((item, index) => (
                                     <Button key={index} {..._delivery(item)}/>
                                 ))}
-                                {!isNotExist(actions) && isObject(actions) && ( <Button {..._delivery(actions)}/>)}
+                                {!isNotExist(actions) && isObject(actions) && (
+                                    <Button {..._delivery(actions)}/>)}
                             </Div>
                         </Div>
                     </Div>

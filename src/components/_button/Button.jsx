@@ -25,27 +25,9 @@ class Button extends Component {
     };
     static propTypes = {};
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
     render() {
         const _props = this.props;
-        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom} = _props;
+        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader} = _props;
         let _sysClass = ['btn', 'm-btn'];
         //背景颜色
         btnColor && _sysClass.push('btn-' + btnColor);
@@ -71,6 +53,12 @@ class Button extends Component {
         //边框变厚（仅Outline'）
         thicken && _sysClass.push('m-btn--outline-2x');
         ['regular', 'bold', 'bolder', 'boldest'].includes(fontBold) && _sysClass.push('m-btn--' + fontBold);
+        if (!isNotExist(loader) && loader.show) {
+            _sysClass.push('m-loader');
+            !isNotExist(loader.color) && _sysClass.push('m-loader--' + loader.color);
+            !isNotExist(loader.size) && ['sm', 'lg'].includes(loader.size) && _sysClass.push('m-loader--' + loader.size);
+            !isNotExist(loader.align) && ['center', 'left', 'right'].includes(loader.align) && _sysClass.push('m-loader--' + loader.align);
+        }
         let componentDom = null;
         switch (label) {
             case 'button':

@@ -449,7 +449,6 @@ export const mApp = function () {
          */
         block: function (target, options) {
             var el = $(target);
-
             options = $.extend(true, {
                 opacity: 0.03,
                 overlayColor: '#000000',
@@ -474,14 +473,14 @@ export const mApp = function () {
             } else {
                 skin = options.skin ? 'm-loader--skin-' + options.skin : '';
                 state = options.state ? 'm-loader--' + options.state : '';
-                size = options.size ? 'm-loader--' + options.size : '';
+                var size = options.size ? 'm-loader--' + options.size : '';
                 loading = '<div class="m-loader ' + skin + ' ' + state + ' ' + size + '"></div';
             }
 
             if (options.message && options.message.length > 0) {
                 var classes = 'm-blockui ' + (options.shadow === false ? 'm-blockui-no-shadow' : '');
 
-                html = '<div class="' + classes + '"><span>' + options.message + '</span><span>' + loading + '</span></div>';
+                var html = '<div class="' + classes + '"><span>' + options.message + '</span><span>' + loading + '</span></div>';
 
                 var el = document.createElement('div');
                 mUtil.get('body').prepend(el);

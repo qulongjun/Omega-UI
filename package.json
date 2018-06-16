@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "block-ui": "^2.70.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "imports-loader": "^0.8.0",

@@ -42,6 +42,14 @@
 // Popover Component
 //Scroll Component
 @import "./framework/component/plugins/base/scrollable";
+//Block UI Component
+@import "./framework/component/plugins/base/blockui";
+@import "./framework/component/general/spinners/config";
+@import "./framework/component/general/spinners/loader";
+// Loader Components
+@import "./framework/component/general/spinners/loader";
+//Spinner Components
+@import "./framework/component/general/spinners/spinner";
 //== 3: Page Config
 @import './page/page-config';
 @import './page/base/config';

@@ -12,6 +12,9 @@ import Alerts from '../demo/pages/base/_alerts';
 import Popover from '../demo/pages/base/_popover';
 import Tooltip from '../demo/pages/base/_tooltip';
 import Scrollable from '../demo/pages/base/_scrollable';
+import BlockUI from '../demo/pages/base/_blockUI';
+import Spinner from '../demo/pages/base/_spinners';
+
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 
 export default (
@@ -28,6 +31,8 @@ export default (
             <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Route path="/Tooltip" component={Tooltip}/>
             <Route path="/Scrollable" component={Scrollable}/>
+            <Route path="/BlockUI" component={BlockUI}/>
+            <Route path='/Spinner' component={Spinner}/>
         </div>
     </BrowserRouter>
 );

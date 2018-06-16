@@ -28,7 +28,7 @@ class Content extends Component {
                     <Text _includeClass='m-section__sub'>
                         {describe}
                     </Text>
-                    <Div _includeClass='m-section__conten'>
+                    <Div _includeClass='m-section__content'>
                         {children}
                     </Div>
                 </Div>
