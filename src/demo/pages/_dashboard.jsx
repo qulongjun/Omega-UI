@@ -107,6 +107,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'Tooltip',
+                                                btnColor: 'outline-success',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Tooltip');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                 </Portlet>

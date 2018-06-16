@@ -10,7 +10,7 @@ import Modal from '../demo/pages/base/_modals';
 import Progress from '../demo/pages/base/_progress';
 import Alerts from '../demo/pages/base/_alerts';
 import Popover from '../demo/pages/base/_popover';
-
+import Tooltip from '../demo/pages/base/_tooltip';
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 
 export default (
@@ -25,6 +25,7 @@ export default (
             <Route path="/Progress" component={Progress}/>
             <Route path="/Popover" component={Popover}/>
             <Route path="/buttons/base/default" component={DefaultStyle}/>
+            <Route path="/Tooltip" component={Tooltip}/>
         </div>
     </BrowserRouter>
 );
