@@ -6,20 +6,12 @@ import Dashboard from '../demo/pages/_dashboard';
 import StateColor from '../demo/pages/base/_stateColors';
 import Typography from '../demo/pages/base/_typography';
 import Tables from '../demo/pages/base/_tables';
+import Modal from '../demo/pages/base/_modals';
 import Progress from '../demo/pages/base/_progress';
 import Alerts from '../demo/pages/base/_alerts';
+import Popover from '../demo/pages/base/_popover';
 
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
-
-
-import Div from "../components/_element/Div";
-import Separator from "../components/_element/Separator";
-import Text from "../components/_element/Text";
-import Link from "../components/_element/Link";
-import Code from "../components/_element/Code";
-import Blockquote from "../components/_element/Blockquote";
-import Title from "../components/_element/Title";
-import Demo from "../demo/pages/_demo";
 
 export default (
     <BrowserRouter>
@@ -28,15 +20,11 @@ export default (
             <Route path="/StateColor" component={StateColor}/>
             <Route path="/Typography" component={Typography}/>
             <Route path="/Tables" component={Tables}/>
+            <Route path="/Modal" component={Modal}/>
             <Route path="/Alerts" component={Alerts}/>
             <Route path="/Progress" component={Progress}/>
-
+            <Route path="/Popover" component={Popover}/>
             <Route path="/buttons/base/default" component={DefaultStyle}/>
-            <Demo>
-                <Title {...{
-                    level: 1
-                }}>h1. 标题 1</Title>
-            </Demo>
         </div>
     </BrowserRouter>
 );

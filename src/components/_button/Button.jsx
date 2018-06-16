@@ -75,18 +75,18 @@ class Button extends Component {
         switch (label) {
             case 'button':
                 componentDom = (<Fragment>
-                    <button {..._sysBind(_props, _sysClass, null, {
+                    <button ref="button" {..._sysBind(_props, _sysClass, null, {
                         type
                     })}>{value}</button>
                 </Fragment>);
                 break;
             case 'input':
-                componentDom = ( <Fragment><input {..._sysBind(_props, _sysClass, null, {
+                componentDom = ( <Fragment><input ref="button" {..._sysBind(_props, _sysClass, null, {
                     value, type
                 })} /></Fragment>);
                 break;
             case 'a':
-                componentDom = (<Fragment><a {..._sysBind(_props, _sysClass, null, {
+                componentDom = (<Fragment><a ref="button" {..._sysBind(_props, _sysClass, null, {
                         href,
                         role: type
                     })}>{value}</a></Fragment>

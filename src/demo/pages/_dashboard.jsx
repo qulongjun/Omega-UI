@@ -10,18 +10,14 @@
 
 import React, {Component, Fragment} from 'react';
 
-import Text from 'components/framework/_text';
-import Code from 'components/framework/_code'
-import Paragraph from 'components/framework/_paragraph';
-import SubHeader from './_subheader';
-import Wrapper from 'components/framework/_wrapper';
-import Content from 'components/framework/_content';
-import Section from 'components/framework/_section';
+import Wrapper from 'components/_framework/Wrapper';
+import Content from 'components/_framework/Content';
+import Section from 'components/_framework/Section';
 
-import Portle from 'components/general/_portle';
-import Button from "components/general/_button";
+import Portlet from 'components/_portlet/Portlet';
+import Button from "components/_button/Button";
 
-import Demo from "./_demo";
+import Demo from "components/_framework/Demo";
 
 import 'sass/_demo.scss';
 
@@ -42,22 +38,16 @@ class Dashboard extends Component {
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
-                                <Portle {...{
-                                    header: {
-                                        show: true,
-                                        title: '页面导航'
-                                    }
+                                <Portlet {...{
+                                    header: 'Base'
                                 }} >
-                                    <Paragraph>
-                                        <Text>这是一个临时导航，当所有组件开发完成后会使用 <Code>Menu</Code> 组件重构。</Text>
-                                    </Paragraph>
                                     <Section title="Base">
                                         <Demo>
                                             <Button {...{
                                                 value: 'State Color',
-                                                color: 'outline-brand',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/StateColor');
                                                     }
                                                 }
@@ -65,56 +55,81 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Typography',
-                                                color: 'outline-focus',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-focus',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Typography');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
                                                 value: 'Tables',
-                                                color: 'outline-accent',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-accent',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Tables');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
-                                                value: 'Alerts',
-                                                color: 'outline-primary',
-                                                handle: {
-                                                    click: () => {
-                                                        history.push('/Alerts');
-                                                    }
-                                                }
-                                            }}/>
-                                            <Button {...{
                                                 value: 'Progress',
-                                                color: 'outline-success',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-success',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Progress');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
-                                                value: 'Default Style',
-                                                color: 'outline-danger',
-                                                handle: {
-                                                    click: () => {
-                                                        history.push('/buttons/base/default');
+                                                value: 'Modal',
+                                                btnColor: 'outline-metal',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Modal');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Alerts',
+                                                btnColor: 'outline-primary',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Alerts');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Popover',
+                                                btnColor: 'outline-warning',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Popover');
                                                     }
                                                 }
                                             }}/>
                                         </Demo>
                                     </Section>
-
-                                </Portle>
+                                </Portlet>
                             </div>
                             <div className="col-xl-6">
+                                <Portlet {...{
+                                    header: 'Buttons'
+                                }} >
+                                    <Section title="Button">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Default Style',
+                                                btnColor: 'outline-danger',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/default');
+                                                    }
+                                                }
+                                            }}/>
 
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
                             </div>
                         </div>
                     </Content>
