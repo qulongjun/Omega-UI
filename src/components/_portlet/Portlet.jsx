@@ -12,20 +12,25 @@ import PropTypes from 'prop-types';
 
 import Div from 'components/_element/Div';
 import Title from 'components/_element/Title'
+import Scroll from 'components/_base/Scroll';
 import {_delivery} from 'plugins/utils/_props';
-import {isString, isObject} from 'plugins/utils/_is';
+import {isString, isObject, isNotExist} from 'plugins/utils/_is';
 
 class Portlet extends Component {
     render() {
         const _props = this.props;
-        const {header, children} = _props;
+        const {header, scroll, children} = _props;
+
         return (
             <Fragment>
                 <Div {..._delivery(_props, ['m-portlet', 'm-portlet--mobile'])}>
                     {header && isObject(header) && <PortletHeader {...header}/>}
                     {header && isString(header) && <PortletHeader {...{title: header}}/>}
                     <Div _includeClass="m-portlet__body">
-                        {children}
+                        {!isNotExist(scroll) && scroll.show ? <Scroll {...scroll}>
+                            {children}
+                        </Scroll> : children}
+
                     </Div>
 
                 </Div>

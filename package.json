@@ -19,7 +19,10 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
+    "jquery-mousewheel": "^3.1.13",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "node-sass": "^4.9.0",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.1",

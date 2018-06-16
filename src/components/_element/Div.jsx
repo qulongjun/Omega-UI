@@ -16,7 +16,7 @@ class Div extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <div {..._sysBind(_props)}>{children}</div>
+                <div ref="div" {..._sysBind(_props)}>{children}</div>
             </Fragment>
         );
     }

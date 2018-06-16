@@ -29,8 +29,8 @@ import Table from "components/_base/Table";
 import Portlet from 'components/_portlet/Portlet';
 
 
-import Progress from 'components/base/_progress'
-import Alert from 'components/base/_alert'
+import Progress from 'components/_base/Progress'
+import Alert from 'components/_base/Alert'
 
 
 import 'sass/_demo.scss';

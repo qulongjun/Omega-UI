@@ -5,7 +5,7 @@
  * @class mUtil  Metronic base utilize class that privides helper functions
  */
 
-var mUtil = function() {
+export const mUtil = function () {
     var resizeHandlers = [];
 
     /** @type {object} breakpoints The device width breakpoints **/
@@ -18,23 +18,23 @@ var mUtil = function() {
 
     /** @type {object} colors State colors **/
     var colors = {
-        brand:      '#716aca',
-        metal:      '#c4c5d6',
-        light:      '#ffffff',
-        accent:     '#00c5dc',
-        primary:    '#5867dd',
-        success:    '#34bfa3',
-        info:       '#36a3f7',
-        warning:    '#ffb822',
-        danger:     '#f4516c'
+        brand: '#716aca',
+        metal: '#c4c5d6',
+        light: '#ffffff',
+        accent: '#00c5dc',
+        primary: '#5867dd',
+        success: '#34bfa3',
+        info: '#36a3f7',
+        warning: '#ffb822',
+        danger: '#f4516c'
     };
 
     /**
      * Handle window resize event with some
      * delay to attach event handlers upon resize complete
      */
-    var _windowResizeHandler = function() {
-        var _runResizeHandlers = function() {
+    var _windowResizeHandler = function () {
+        var _runResizeHandlers = function () {
             // reinitialize other subscribed elements
             for (var i = 0; i < resizeHandlers.length; i++) {
                 var each = resizeHandlers[i];
@@ -45,9 +45,9 @@ var mUtil = function() {
         var timeout = false; // holder for timeout id
         var delay = 250; // delay after event is "complete" to run callback
 
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             clearTimeout(timeout);
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function () {
                 _runResizeHandlers();
             }, delay); // wait 50ms until window resize finishes.
         });
@@ -60,7 +60,7 @@ var mUtil = function() {
          * @returns null
          */
         //main function to initiate the theme
-        init: function(options) {
+        init: function (options) {
             if (options && options.breakpoints) {
                 breakpoints = options.breakpoints;
             }
@@ -76,14 +76,14 @@ var mUtil = function() {
          * Adds window resize event handler.
          * @param {function} callback function.
          */
-        addResizeHandler: function(callback) {
+        addResizeHandler: function (callback) {
             resizeHandlers.push(callback);
         },
 
         /**
          * Trigger window resize handlers.
          */
-        runResizeHandlers: function() {
+        runResizeHandlers: function () {
             _runResizeHandlers();
         },
 
@@ -92,7 +92,7 @@ var mUtil = function() {
          * @param {string} paramName Parameter name.
          * @returns {string}
          */
-        getURLParam: function(paramName) {
+        getURLParam: function (paramName) {
             var searchString = window.location.search.substring(1),
                 i, val, params = searchString.split("&");
 
@@ -110,7 +110,7 @@ var mUtil = function() {
          * Checks whether current device is mobile touch.
          * @returns {boolean}
          */
-        isMobileDevice: function() {
+        isMobileDevice: function () {
             return (this.getViewPort().width < this.getBreakpoint('lg') ? true : false);
         },
 
@@ -118,7 +118,7 @@ var mUtil = function() {
          * Checks whether current device is desktop.
          * @returns {boolean}
          */
-        isDesktopDevice: function() {
+        isDesktopDevice: function () {
             return mUtil.isMobileDevice() ? false : true;
         },
 
@@ -126,7 +126,7 @@ var mUtil = function() {
          * Gets browser window viewport size. Ref: http://andylangton.co.uk/articles/javascript/get-viewport-size-javascript/
          * @returns {object}
          */
-        getViewPort: function() {
+        getViewPort: function () {
             var e = window,
                 a = 'inner';
             if (!('innerWidth' in window)) {
@@ -145,7 +145,7 @@ var mUtil = function() {
          * @param {string} mode Responsive mode name(e.g: desktop, desktop-and-tablet, tablet, tablet-and-mobile, mobile)
          * @returns {boolean}
          */
-        isInResponsiveRange: function(mode) {
+        isInResponsiveRange: function (mode) {
             var breakpoint = this.getViewPort().width;
 
             if (mode == 'general') {
@@ -172,7 +172,7 @@ var mUtil = function() {
          * @param {string} prefix Prefix for generated ID
          * @returns {boolean}
          */
-        getUniqueID: function(prefix) {
+        getUniqueID: function (prefix) {
             return prefix + Math.floor(Math.random() * (new Date()).getTime());
         },
 
@@ -181,7 +181,7 @@ var mUtil = function() {
          * @param {string} mode Responsive mode name(e.g: xl, lg, md, sm)
          * @returns {number}
          */
-        getBreakpoint: function(mode) {
+        getBreakpoint: function (mode) {
             if ($.inArray(mode, breakpoints)) {
                 return breakpoints[mode];
             }
@@ -193,7 +193,7 @@ var mUtil = function() {
          * @param {string} keys Keys path seperated with dots
          * @returns {object}
          */
-        isset: function(obj, keys) {
+        isset: function (obj, keys) {
             var stone;
 
             keys = keys || '';
@@ -227,7 +227,7 @@ var mUtil = function() {
          * @param {object} el jQuery element object
          * @returns {number}
          */
-        getHighestZindex: function(el) {
+        getHighestZindex: function (el) {
             var elem = $(el),
                 position, value;
 
@@ -257,11 +257,11 @@ var mUtil = function() {
          * @param {string} Classes string
          * @returns {boolean}
          */
-        hasClasses: function(el, classes) {
+        hasClasses: function (el, classes) {
             var classesArr = classes.split(" ");
 
-            for ( var i = 0; i < classesArr.length; i++ ) {
-                if ( el.hasClass( classesArr[i] ) == false ) {
+            for (var i = 0; i < classesArr.length; i++) {
+                if (el.hasClass(classesArr[i]) == false) {
                     return false;
                 }
             }
@@ -274,11 +274,11 @@ var mUtil = function() {
          * @param {object} el jQuery element object
          * @returns {number}
          */
-        realWidth: function(el){
+        realWidth: function (el) {
             var clone = $(el).clone();
-            clone.css("visibility","hidden");
+            clone.css("visibility", "hidden");
             clone.css('overflow', 'hidden');
-            clone.css("height","0");
+            clone.css("height", "0");
             $('body').append(clone);
             var width = clone.outerWidth();
             clone.remove();
@@ -291,7 +291,7 @@ var mUtil = function() {
          * @param {object} el jQuery element object
          * @returns {boolean}
          */
-        hasFixedPositionedParent: function(el) {
+        hasFixedPositionedParent: function (el) {
             var result = false;
 
             el.parents().each(function () {
@@ -307,10 +307,10 @@ var mUtil = function() {
         /**
          * Simulates delay
          */
-        sleep: function(milliseconds) {
+        sleep: function (milliseconds) {
             var start = new Date().getTime();
             for (var i = 0; i < 1e7; i++) {
-                if ((new Date().getTime() - start) > milliseconds){
+                if ((new Date().getTime() - start) > milliseconds) {
                     break;
                 }
             }
@@ -322,7 +322,7 @@ var mUtil = function() {
          * @param {number} min Range end value
          * @returns {number}
          */
-        getRandomInt: function(min, max) {
+        getRandomInt: function (min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         },
 
@@ -331,7 +331,7 @@ var mUtil = function() {
          * @param {string} name Color name
          * @returns {string}
          */
-        getColor: function(name) {
+        getColor: function (name) {
             return colors[name];
         },
 
@@ -339,15 +339,8 @@ var mUtil = function() {
          * Checks whether Angular library is included
          * @returns {boolean}
          */
-        isAngularVersion: function() {
-            return window.Zone !== undefined  ? true : false;
+        isAngularVersion: function () {
+            return window.Zone !== undefined ? true : false;
         }
     }
 }();
-
-//== Initialize mUtil class on document ready
-// $(document).ready(function() {
-//     mUtil.init();
-// });
-
-export default mUtil;

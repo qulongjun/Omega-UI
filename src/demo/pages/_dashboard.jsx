@@ -116,6 +116,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'Scrollable',
+                                                btnColor: 'outline-accent',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Scrollable');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                 </Portlet>

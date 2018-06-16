@@ -13,21 +13,16 @@ import React, {Component, Fragment} from 'react';
 import SubHeader from 'components/_framework/SubHeader';
 import Wrapper from 'components/_framework/Wrapper';
 import Content from 'components/_framework/Content';
-import Section from 'components/_framework/Section';
 import Div from 'components/_element/Div';
-import Text from "components/_element/Text";
 import Paragraph from "components/_element/Paragraph";
-
-
-import Demo from "components/_framework/Demo";
-
+import Separator from "components/_element/Separator";
+import Title from "components/_element/Title";
+import Popover from "components/_base/Popover";
+import Tooltip from "components/_base/Tooltip";
 import Table from "components/_base/Table";
 import Modal from "components/_base/Modal";
-
 import Portlet from 'components/_portlet/Portlet';
-
 import Button from "components/_button/Button";
-
 
 import 'sass/_demo.scss';
 
@@ -44,7 +39,7 @@ class Modals extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    <SubHeader title="Modal"/>
+                    <SubHeader title="模态框"/>
                     <Content>
                         <Div _includeClass="row">
                             <Div _includeClass="col-xl-12">
@@ -54,7 +49,7 @@ class Modals extends Component {
                                     <Table {...{
                                         data: [
                                             [{
-                                                value: 'Basic demo',
+                                                value: '基础模态框',
                                                 _includeStyle: {
                                                     width: '30%'
                                                 }
@@ -67,7 +62,7 @@ class Modals extends Component {
                                                     "data-target": "#m_modal_1"
                                                 }}/>)
                                             }],
-                                            ['Scrollable fixed content', {
+                                            ['带滚动条的模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'metal'
@@ -78,7 +73,7 @@ class Modals extends Component {
                                             }],
 
 
-                                            ['Scrolling long content', {
+                                            ['长内容模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'brand'
@@ -89,7 +84,7 @@ class Modals extends Component {
                                             }],
 
 
-                                            ['Tooltips and popovers', {
+                                            ['带组件的模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'success'
@@ -100,7 +95,7 @@ class Modals extends Component {
                                             }],
 
 
-                                            ['Large modal', {
+                                            ['宽模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'warning'
@@ -111,7 +106,7 @@ class Modals extends Component {
                                             }],
 
 
-                                            ['Small modal', {
+                                            ['窄模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'danger'
@@ -122,7 +117,7 @@ class Modals extends Component {
                                             }],
 
 
-                                            ['Vertically centered', {
+                                            ['垂直居中模态框', {
                                                 value: (<Button {...{
                                                     value: 'Launch Modal',
                                                     btnColor: 'focus'
@@ -172,7 +167,10 @@ class Modals extends Component {
 
                         <Modal {...{
                             id: "m_modal_1_2",
-                            scrollable: true,
+                            scroll: {
+                                show: true,
+                                fixHeight: 200
+                            },
                             title: 'Modal title',
                             actions: [
                                 {
@@ -223,7 +221,6 @@ class Modals extends Component {
 
                         <Modal {...{
                             id: "m_modal_2",
-                            scrollable: true,
                             title: 'Modal title',
                             actions: [
                                 {
@@ -279,6 +276,152 @@ class Modals extends Component {
                                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
                                 in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
                             </Paragraph>
+                            <Paragraph>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                            </Paragraph>
+                        </Modal>
+
+
+                        <Modal {...{
+                            id: "m_modal_3",
+                            title: 'Modal title',
+                            actions: [
+                                {
+                                    value: 'Close',
+                                    btnColor: 'secondary',
+                                    _includeAttribute: {
+                                        'data-dismiss': 'modal'
+                                    }
+                                }, {
+                                    value: 'Save changes',
+                                    btnColor: 'primary',
+                                    _handle: {
+                                        onClick: (event) => {
+                                            console.log(event);
+                                        }
+                                    }
+                                }
+                            ]
+                        }}>
+                            <Title level={5}>Popover in a modal</Title>
+                            <Paragraph>
+                                This <Popover {...{
+                                title: 'Popover title',
+                                value: 'button',
+                                btnColor: 'secondary'
+                            }}>
+                                Popover body content is set in this attribute.
+                            </Popover> triggers a popover on click.
+                            </Paragraph>
+                            <Separator/>
+                            <Title level={5}>Tooltips in a modal</Title>
+                            <Paragraph>
+                                <Tooltip {...{
+                                    label: 'a',
+                                    value: 'This link',
+                                    _uniqueClass: []
+                                }}>Tooltip</Tooltip> and <Tooltip {...{
+                                label: 'a',
+                                value: 'That link',
+                                _uniqueClass: []
+                            }}>Tooltip</Tooltip> have tooltips on hover.
+                            </Paragraph>
+                        </Modal>
+                        <Modal {...{
+                            id: "m_modal_4",
+                            size: 'lg',
+                            title: 'Modal title',
+                            actions: [
+                                {
+                                    value: 'Close',
+                                    btnColor: 'secondary',
+                                    _includeAttribute: {
+                                        'data-dismiss': 'modal'
+                                    }
+                                }, {
+                                    value: 'Save changes',
+                                    btnColor: 'primary',
+                                    _handle: {
+                                        onClick: (event) => {
+                                            console.log(event);
+                                        }
+                                    }
+                                }
+                            ]
+                        }}>
+                            <Paragraph>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                            </Paragraph>
+                            <Paragraph>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                            </Paragraph>
+                        </Modal>
+                        <Modal {...{
+                            id: "m_modal_5",
+                            size: 'sm',
+                            title: 'Modal title',
+                            actions: [
+                                {
+                                    value: 'Close',
+                                    btnColor: 'secondary',
+                                    _includeAttribute: {
+                                        'data-dismiss': 'modal'
+                                    }
+                                }, {
+                                    value: 'Save changes',
+                                    btnColor: 'primary',
+                                    _handle: {
+                                        onClick: (event) => {
+                                            console.log(event);
+                                        }
+                                    }
+                                }
+                            ]
+                        }}>
+                            <Paragraph>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                            </Paragraph>
+                            <Paragraph>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                            </Paragraph>
+                        </Modal>
+                        <Modal {...{
+                            id: "m_modal_6",
+                            centered: true,
+                            title: 'Modal title',
+                            actions: [
+                                {
+                                    value: 'Close',
+                                    btnColor: 'secondary',
+                                    _includeAttribute: {
+                                        'data-dismiss': 'modal'
+                                    }
+                                }, {
+                                    value: 'Save changes',
+                                    btnColor: 'primary',
+                                    _handle: {
+                                        onClick: (event) => {
+                                            console.log(event);
+                                        }
+                                    }
+                                }
+                            ]
+                        }}>
                             <Paragraph>
                                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
                                 in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.

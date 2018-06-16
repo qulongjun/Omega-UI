@@ -13,9 +13,9 @@ import React, {Component, Fragment} from 'react';
 import SubHeader from 'components/_framework/SubHeader';
 
 
-import Wrapper from 'components/framework/_wrapper';
-import Content from 'components/framework/_content';
-import Section from 'components/framework/_section';
+import Wrapper from 'components/_framework/Wrapper';
+import Content from 'components/_framework/Content';
+import Section from 'components/_framework/Section';
 
 import Alert from 'components/_base/Alert'
 import Portle from 'components/_portlet/Portlet';
@@ -303,14 +303,14 @@ class Alerts extends Component {
                                             message: ' You successfully read this important alert message.',
                                             closeBtn: true,
                                             alertColor: 'success',
-                                            types: ['outline','outline-2x']
+                                            types: ['outline', 'outline-2x']
                                         }}/>
                                         <Alert {...{
                                             title: 'Heads up!',
                                             message: ' This alert needs your attention, but it\'s not super important.',
                                             closeBtn: true,
                                             alertColor: 'info',
-                                            types: ['outline','outline-2x']
+                                            types: ['outline', 'outline-2x']
 
                                         }}/>
                                         <Alert {...{
@@ -318,7 +318,7 @@ class Alerts extends Component {
                                             message: ' Better check yourself, you\'re not looking too good.',
                                             closeBtn: true,
                                             alertColor: 'warning',
-                                            types: ['outline','outline-2x']
+                                            types: ['outline', 'outline-2x']
 
                                         }}/>
                                         <Alert {...{
@@ -326,7 +326,7 @@ class Alerts extends Component {
                                             message: ' Change a few things up and try submitting again.',
                                             closeBtn: true,
                                             alertColor: 'danger',
-                                            types: ['outline','outline-2x']
+                                            types: ['outline', 'outline-2x']
                                         }}/>
                                     </Section>
                                     <Section title="Square 样式">

@@ -11,6 +11,7 @@ import Progress from '../demo/pages/base/_progress';
 import Alerts from '../demo/pages/base/_alerts';
 import Popover from '../demo/pages/base/_popover';
 import Tooltip from '../demo/pages/base/_tooltip';
+import Scrollable from '../demo/pages/base/_scrollable';
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 
 export default (
@@ -26,6 +27,7 @@ export default (
             <Route path="/Popover" component={Popover}/>
             <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Route path="/Tooltip" component={Tooltip}/>
+            <Route path="/Scrollable" component={Scrollable}/>
         </div>
     </BrowserRouter>
 );

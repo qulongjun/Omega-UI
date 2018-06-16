@@ -22,7 +22,7 @@ import Div from 'components/_element/Div';
 import Wrapper from 'components/_framework/Wrapper';
 import Content from 'components/_framework/Content';
 import Section from 'components/_framework/Section';
-import SubHeader from 'components/_framework/Subheader';
+import SubHeader from 'components/_framework/SubHeader';
 import Demo from 'components/_framework/Demo'
 
 import Badge from "components/_base/Badge";
