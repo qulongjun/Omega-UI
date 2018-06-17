@@ -20,6 +20,8 @@ import Square from '../demo/pages/_button/_buttonBase/_square';
 import Pill from '../demo/pages/_button/_buttonBase/_pill';
 import Air from '../demo/pages/_button/_buttonBase/_air';
 
+import ButtonGroup from '../demo/pages/_button/_buttonGroup'
+import LineawesomeIcon from '../demo/pages/_button/_buttonIcon/_lineawesomeIcon';
 export default (
     <BrowserRouter>
         <div className="m-grid m-grid--hor m-grid--root m-page">
@@ -40,7 +42,8 @@ export default (
             <Route path="/buttons/base/square" component={Square}/>
             <Route path='/buttons/base/pill' component={Pill}/>
             <Route path='/buttons/base/air' component={Air}/>
-
+            <Route path='/buttons/buttonGroup' component={ButtonGroup}/>
+            <Route path='/buttons/buttonIcon/LineawesomeIcon' component={LineawesomeIcon}/>
 
         </div>
     </BrowserRouter>

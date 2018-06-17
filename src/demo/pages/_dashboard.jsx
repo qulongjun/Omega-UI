@@ -13,6 +13,7 @@ import React, {Component, Fragment} from 'react';
 import Wrapper from 'components/_framework/Wrapper';
 import Content from 'components/_framework/Content';
 import Section from 'components/_framework/Section';
+import SubHeader from 'components/_framework/SubHeader';
 
 import Portlet from 'components/_portlet/Portlet';
 import Button from "components/_button/Button";
@@ -34,7 +35,7 @@ class Dashboard extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    {/*<SubHeader title="Dashboard"/>*/}
+                    <SubHeader title="临时导航页"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
@@ -190,6 +191,36 @@ class Dashboard extends Component {
                                                 }
                                             }}/>
 
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Group">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Button Group',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonGroup');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Dropdown">
+                                        <Demo>
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Icon">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Lineawesome Icon',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/LineawesomeIcon');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                 </Portlet>

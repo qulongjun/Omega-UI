@@ -9,6 +9,8 @@
 
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
+import Icon from "components/_base/Icon";
+import Text from 'components/_element/Text';
 import {_sysBind, stateColor} from 'plugins/utils/_props';
 import {isNotExist, isArray, isString} from 'plugins/utils/_is';
 
@@ -27,7 +29,7 @@ class Button extends Component {
 
     render() {
         const _props = this.props;
-        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader} = _props;
+        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader, icon, children} = _props;
         let _sysClass = ['btn', 'm-btn'];
         //背景颜色
         btnColor && _sysClass.push('btn-' + btnColor);
@@ -59,13 +61,28 @@ class Button extends Component {
             !isNotExist(loader.size) && ['sm', 'lg'].includes(loader.size) && _sysClass.push('m-loader--' + loader.size);
             !isNotExist(loader.align) && ['center', 'left', 'right'].includes(loader.align) && _sysClass.push('m-loader--' + loader.align);
         }
+        if (!isNotExist(icon) && icon.show) {
+            //显示Icon
+            _sysClass.push('m-btn--icon');
+            if (isNotExist(value)) {
+                _sysClass.push('m-btn--icon-only');
+            }
+
+        }
         let componentDom = null;
         switch (label) {
             case 'button':
                 componentDom = (<Fragment>
                     <button ref="button" {..._sysBind(_props, _sysClass, null, {
                         type
-                    })}>{value}</button>
+                    })}>{
+                        !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
+                            <Icon iconName={icon.name}/>
+                        ) : (<Text>
+                            <Icon iconName={icon.name}/>
+                            <Text>{value}</Text>
+                        </Text>)) : value
+                    }</button>
                 </Fragment>);
                 break;
             case 'input':
@@ -77,7 +94,16 @@ class Button extends Component {
                 componentDom = (<Fragment><a ref="button" {..._sysBind(_props, _sysClass, null, {
                         href,
                         role: type
-                    })}>{value}</a></Fragment>
+                    })}>
+                        {
+                            !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
+                                <Icon iconName={icon.name}/>
+                            ) : (<Text>
+                                <Icon iconName={icon.name}/>
+                                <Text>{value}</Text>
+                            </Text>)) : value
+                        }
+                    </a></Fragment>
                 )
         }
         return (componentDom);
