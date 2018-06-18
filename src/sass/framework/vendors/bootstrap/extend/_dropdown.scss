@@ -8,13 +8,13 @@
 @mixin m-build-component--dropdown-menu-base() {
     // dropdown menu
     .dropdown-menu {
-    	border: 0;
-    	margin: 0;
+        border: 0;
+        margin: 0;
 
-    	@include border-radius(0);
+        @include border-radius(0);
 
         @include rounded {
-        	@include border-radius(array-get($m--border-radius, dropdown));
+            @include border-radius(array-get($m--border-radius, dropdown));
         }
 
         &:before,
@@ -23,7 +23,7 @@
         }
 
         > li > a,
-        > .dropdown-item {            
+        > .dropdown-item {
             display: block;
             padding: 0.7rem 1.2rem;
 
@@ -47,7 +47,7 @@
             text-align: center;
             display: inline;
             border: 0;
-            @include m-generate-arrow-icon(down, true);  
+            @include m-generate-arrow-icon(down, true);
             font-size: 0.8rem;
             line-height: 0;
             vertical-align: middle;
@@ -62,7 +62,16 @@
         }
     }
 
-    //== Dropright 
+    .m-dropdown.m-dropdown--up {
+        .nav-link.dropdown-toggle,
+        .btn.dropdown-toggle {
+            &:after {
+                @include m-generate-arrow-icon(up, true);
+            }
+        }
+    }
+
+    //== Dropright
     .btn-group.dropright {
         .nav-link.dropdown-toggle,
         .btn.dropdown-toggle {
@@ -71,12 +80,22 @@
             }
 
             &:after {
-                @include m-generate-arrow-icon(right, true);  
+                @include m-generate-arrow-icon(right, true);
             }
         }
     }
 
-    //== Dropleft 
+    //== Dropup
+    .btn-group.dropup {
+        .nav-link.dropdown-toggle,
+        .btn.dropdown-toggle {
+            &:after {
+                @include m-generate-arrow-icon(up, true);
+            }
+        }
+    }
+
+    //== Dropleft
     .btn-group.dropleft {
         .nav-link.dropdown-toggle,
         .btn.dropdown-toggle {
@@ -85,7 +104,7 @@
             }
 
             &:after {
-                @include m-generate-arrow-icon(left, true);  
+                @include m-generate-arrow-icon(left, true);
             }
         }
     }
@@ -124,14 +143,18 @@
             }
 
             &:hover {
-                background: get-color($skin, panel, '-');        
-                text-decoration: none;        
+                background: get-color($skin, panel, '-');
+                text-decoration: none;
+            }
+
+            &.disabled {
+                @include opacity(0.7);
             }
 
             &.active {
                 background: get-state-color(primary, base);
                 color: get-state-color(primary, inverse);
-                text-decoration: none;        
+                text-decoration: none;
             }
         }
     }

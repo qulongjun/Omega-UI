@@ -208,6 +208,15 @@ class Dashboard extends Component {
                                     </Section>
                                     <Section title="Button Dropdown">
                                         <Demo>
+                                            <Button {...{
+                                                value: 'Button Dropdown',
+                                                btnColor: 'outline-warning',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/ButtonDropdown');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                     <Section title="Button Icon">
@@ -218,6 +227,24 @@ class Dashboard extends Component {
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/buttonIcon/LineawesomeIcon');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Fontawesome Icon',
+                                                btnColor: 'outline-primary',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/FontawesomeIcon');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Flaticon Icon',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/FlaticonIcon');
                                                     }
                                                 }
                                             }}/>

@@ -22,6 +22,9 @@ import Air from '../demo/pages/_button/_buttonBase/_air';
 
 import ButtonGroup from '../demo/pages/_button/_buttonGroup'
 import LineawesomeIcon from '../demo/pages/_button/_buttonIcon/_lineawesomeIcon';
+import FontawesomeIcon from '../demo/pages/_button/_buttonIcon/_fontAwesomeIcon';
+import FlaticonIcon from '../demo/pages/_button/_buttonIcon/_flaticonIcon';
+import ButtonDropdown from '../demo/pages/_button/_buttonDropdown';
 export default (
     <BrowserRouter>
         <div className="m-grid m-grid--hor m-grid--root m-page">
@@ -44,7 +47,9 @@ export default (
             <Route path='/buttons/base/air' component={Air}/>
             <Route path='/buttons/buttonGroup' component={ButtonGroup}/>
             <Route path='/buttons/buttonIcon/LineawesomeIcon' component={LineawesomeIcon}/>
-
+            <Route path='/buttons/buttonIcon/FontawesomeIcon' component={FontawesomeIcon}/>
+            <Route path='/buttons/buttonIcon/FlaticonIcon' component={FlaticonIcon}/>
+            <Route path='/buttons/buttonDropdown' component={ButtonDropdown}/>
         </div>
     </BrowserRouter>
 );

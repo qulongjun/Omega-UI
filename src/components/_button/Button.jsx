@@ -29,7 +29,7 @@ class Button extends Component {
 
     render() {
         const _props = this.props;
-        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader, icon, children} = _props;
+        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader, icon, _specialIcon, children} = _props;
         let _sysClass = ['btn', 'm-btn'];
         //背景颜色
         btnColor && _sysClass.push('btn-' + btnColor);
@@ -75,14 +75,26 @@ class Button extends Component {
                 componentDom = (<Fragment>
                     <button ref="button" {..._sysBind(_props, _sysClass, null, {
                         type
-                    })}>{
-                        !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
-                            <Icon iconName={icon.name}/>
-                        ) : (<Text>
-                            <Icon iconName={icon.name}/>
-                            <Text>{value}</Text>
-                        </Text>)) : value
-                    }</button>
+                    })}>
+                        {
+                            !_specialIcon && (
+                                !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
+                                    <Icon iconName={icon.name}/>
+                                ) : (<Text>
+                                    <Icon iconName={icon.name}/>
+                                    <Text>{value}</Text>
+                                </Text>)) : value
+                            )
+                        }
+                        {
+                            _specialIcon && (
+                                <Fragment>
+                                    <Icon iconName={icon.name}/>
+                                    {value}
+                                </Fragment>
+                            )
+                        }
+                    </button>
                 </Fragment>);
                 break;
             case 'input':
@@ -96,12 +108,22 @@ class Button extends Component {
                         role: type
                     })}>
                         {
-                            !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
-                                <Icon iconName={icon.name}/>
-                            ) : (<Text>
-                                <Icon iconName={icon.name}/>
-                                <Text>{value}</Text>
-                            </Text>)) : value
+                            !_specialIcon && (
+                                !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
+                                    <Icon iconName={icon.name}/>
+                                ) : (<Text>
+                                    <Icon iconName={icon.name}/>
+                                    <Text>{value}</Text>
+                                </Text>)) : value
+                            )
+                        }
+                        {
+                            _specialIcon && (
+                                <Fragment>
+                                    <Icon iconName={icon.name}/>
+                                    {value}
+                                </Fragment>
+                            )
                         }
                     </a></Fragment>
                 )

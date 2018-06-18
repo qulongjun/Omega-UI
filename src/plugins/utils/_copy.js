@@ -19,7 +19,9 @@ export const _copy = (obj, exclude = []) => {
                         }
                     }
                 } else {
-                    if (!(prop.$$typeof && prop.$$typeof.toString() === 'Symbol(react.element)')) {
+                    if ((prop && (prop.$$typeof && prop.$$typeof.toString() === 'Symbol(react.element)')) || !prop) {
+                        continue
+                    } else {
                         c[i] = _copy(prop);
                     }
                 }
