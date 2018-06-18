@@ -25,6 +25,7 @@ import LineawesomeIcon from '../demo/pages/_button/_buttonIcon/_lineawesomeIcon'
 import FontawesomeIcon from '../demo/pages/_button/_buttonIcon/_fontAwesomeIcon';
 import FlaticonIcon from '../demo/pages/_button/_buttonIcon/_flaticonIcon';
 import ButtonDropdown from '../demo/pages/_button/_buttonDropdown';
+import BootstrapTabs from '../demo/pages/base/_tabs/_bootstrapTabs';
 export default (
     <BrowserRouter>
         <div className="m-grid m-grid--hor m-grid--root m-page">
@@ -40,6 +41,9 @@ export default (
             <Route path="/Scrollable" component={Scrollable}/>
             <Route path="/BlockUI" component={BlockUI}/>
             <Route path='/Spinner' component={Spinner}/>
+
+            <Route path='/base/tabs/BootstrapTabs' component={BootstrapTabs}/>
+
 
             <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Route path="/buttons/base/square" component={Square}/>

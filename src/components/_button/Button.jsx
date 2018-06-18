@@ -11,7 +11,7 @@ import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Icon from "components/_base/Icon";
 import Text from 'components/_element/Text';
-import {_sysBind, stateColor} from 'plugins/utils/_props';
+import {_sysBind, stateColor, _delivery} from 'plugins/utils/_props';
 import {isNotExist, isArray, isString} from 'plugins/utils/_is';
 
 class Button extends Component {
@@ -79,9 +79,9 @@ class Button extends Component {
                         {
                             !_specialIcon && (
                                 !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
-                                    <Icon iconName={icon.name}/>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
                                 ) : (<Text>
-                                    <Icon iconName={icon.name}/>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
                                     <Text>{value}</Text>
                                 </Text>)) : value
                             )
@@ -110,9 +110,9 @@ class Button extends Component {
                         {
                             !_specialIcon && (
                                 !isNotExist(icon) && icon.show ? (isNotExist(value) ? (
-                                    <Icon iconName={icon.name}/>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
                                 ) : (<Text>
-                                    <Icon iconName={icon.name}/>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
                                     <Text>{value}</Text>
                                 </Text>)) : value
                             )
@@ -120,7 +120,7 @@ class Button extends Component {
                         {
                             _specialIcon && (
                                 <Fragment>
-                                    <Icon iconName={icon.name}/>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
                                     {value}
                                 </Fragment>
                             )

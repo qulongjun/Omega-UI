@@ -1,14 +1,13 @@
 /**
  * Created by qulongjun on 2018/6/14.
  */
-import {isArray, isNotExist} from './_is';
 import {_copy} from './_copy';
-
+import {isNotExist, isString, isObject, isArray} from 'plugins/utils/_is';
 
 const stateColor = ['brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger', 'secondary'];
 
-export const _computedClass = (props={}, _sysClass=[]) => {
-    const {_includeClass=[], _excludeClass=[], _uniqueClass} = props;
+export const _computedClass = (props = {}, _sysClass = []) => {
+    const {_includeClass = [], _excludeClass = [], _uniqueClass} = props;
     if (isNotExist(_uniqueClass)) {
         //不存在唯一性约束
         let _computed = !isNotExist(_sysClass) ? (_copy(isArray(_sysClass) ? _sysClass : [_sysClass])) : [];
@@ -21,8 +20,8 @@ export const _computedClass = (props={}, _sysClass=[]) => {
     } else return isArray(_uniqueClass) ? _uniqueClass : [_uniqueClass];
 };
 
-export const _computedStyle = (props={}, _sysStyle={}) => {
-    const {_includeStyle={}} = props;
+export const _computedStyle = (props = {}, _sysStyle = {}) => {
+    const {_includeStyle = {}} = props;
     if (!isNotExist(_includeStyle)) {
         let styles = {};
         Object.assign(styles, _sysStyle, _includeStyle);
@@ -30,8 +29,8 @@ export const _computedStyle = (props={}, _sysStyle={}) => {
     } else return _sysStyle || {};
 };
 
-export const _computedAttribute = (props={}, _sysAttribute={}) => {
-    const {_includeAttribute={}} = props;
+export const _computedAttribute = (props = {}, _sysAttribute = {}) => {
+    const {_includeAttribute = {}} = props;
     if (!isNotExist(_includeAttribute)) {
         let _attr = {};
         Object.assign(_attr, _sysAttribute, _includeAttribute);
@@ -40,8 +39,8 @@ export const _computedAttribute = (props={}, _sysAttribute={}) => {
 };
 
 
-export const _computedHandle = (props={}, _sysHandle={}) => {
-    const {_handle={}} = props;
+export const _computedHandle = (props = {}, _sysHandle = {}) => {
+    const {_handle = {}} = props;
     if (!isNotExist(_handle)) {
         let _attr = {};
         Object.assign(_attr, _sysHandle, _handle);
@@ -49,8 +48,9 @@ export const _computedHandle = (props={}, _sysHandle={}) => {
     } else return _sysHandle || {};
 };
 
-export const _sysBind = (props={}, _sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}) => {
+export const _sysBind = (props = {}, _sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}) => {
     const {_fontColor, _bgColor} = props;
+    !isArray(_sysClass) ? (!isNotExist(_sysClass) ? _sysClass = [_sysClass] : []) : null;
     _fontColor && ((_fontStateClass(_fontColor) && _sysClass.push(_fontStateClass(_fontColor))) || (Object.assign(_sysStyle, _fontStateStyle(_fontColor))));
     _bgColor && ((_bgStateClass(_bgColor) && _sysClass.push(_bgStateClass(_bgColor))) || (Object.assign(_sysStyle, _bgStateStyle(_bgColor))));
     let _includeConfig = {
@@ -78,7 +78,7 @@ export const _bgStateStyle = (state) => {
 };
 
 
-export const _delivery = (props={}, _sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}) => {
+export const _delivery = (props = {}, _sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}) => {
     const props_copy = _copy(props, ['children']);
     Object.assign(props_copy, {
         _includeClass: _computedClass(props, _sysClass),

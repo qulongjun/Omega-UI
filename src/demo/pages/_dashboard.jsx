@@ -146,6 +146,19 @@ class Dashboard extends Component {
                                             }}/>
                                         </Demo>
                                     </Section>
+                                    <Section title="Tabs">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Bootstrap Tabs',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/base/tabs/BootstrapTabs');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
                                 </Portlet>
                             </div>
                             <div className="col-xl-6">
