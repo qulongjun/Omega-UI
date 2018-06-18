@@ -56,7 +56,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Typography',
-                                                btnColor: 'outline-focus',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Typography');
@@ -65,7 +65,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Tables',
-                                                btnColor: 'outline-accent',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Tables');
@@ -74,7 +74,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Progress',
-                                                btnColor: 'outline-success',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Progress');
@@ -83,7 +83,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Modal',
-                                                btnColor: 'outline-metal',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Modal');
@@ -92,7 +92,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Alerts',
-                                                btnColor: 'outline-primary',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Alerts');
@@ -101,7 +101,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Popover',
-                                                btnColor: 'outline-warning',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Popover');
@@ -110,7 +110,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Tooltip',
-                                                btnColor: 'outline-success',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Tooltip');
@@ -119,7 +119,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'BlockUI',
-                                                btnColor: 'outline-primary',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/BlockUI');
@@ -128,7 +128,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Scrollable',
-                                                btnColor: 'outline-accent',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Scrollable');
@@ -137,7 +137,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Spinner',
-                                                btnColor: 'outline-metal',
+                                                btnColor: 'outline-brand',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/Spinner');
@@ -157,6 +157,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'Line Tabs',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/base/tabs/LineTabs');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                 </Portlet>
@@ -169,7 +178,7 @@ class Dashboard extends Component {
                                         <Demo>
                                             <Button {...{
                                                 value: 'Default',
-                                                btnColor: 'outline-danger',
+                                                btnColor: 'outline-focus',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/base/default');
@@ -178,7 +187,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Square',
-                                                btnColor: 'outline-info',
+                                                btnColor: 'outline-focus',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/base/square');
@@ -187,7 +196,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Pill',
-                                                btnColor: 'outline-success',
+                                                btnColor: 'outline-focus',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/base/pill');
@@ -196,7 +205,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Air',
-                                                btnColor: 'outline-brand',
+                                                btnColor: 'outline-focus',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/base/air');
@@ -210,7 +219,7 @@ class Dashboard extends Component {
                                         <Demo>
                                             <Button {...{
                                                 value: 'Button Group',
-                                                btnColor: 'outline-brand',
+                                                btnColor: 'outline-success',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/buttonGroup');
@@ -223,7 +232,7 @@ class Dashboard extends Component {
                                         <Demo>
                                             <Button {...{
                                                 value: 'Button Dropdown',
-                                                btnColor: 'outline-warning',
+                                                btnColor: 'outline-danger',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/ButtonDropdown');
@@ -236,7 +245,7 @@ class Dashboard extends Component {
                                         <Demo>
                                             <Button {...{
                                                 value: 'Lineawesome Icon',
-                                                btnColor: 'outline-brand',
+                                                btnColor: 'outline-warning',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/buttonIcon/LineawesomeIcon');
@@ -245,7 +254,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Fontawesome Icon',
-                                                btnColor: 'outline-primary',
+                                                btnColor: 'outline-warning',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/buttonIcon/FontawesomeIcon');
@@ -254,7 +263,7 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Flaticon Icon',
-                                                btnColor: 'outline-info',
+                                                btnColor: 'outline-warning',
                                                 _handle: {
                                                     onClick: () => {
                                                         history.push('/buttons/buttonIcon/FlaticonIcon');

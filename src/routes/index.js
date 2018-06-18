@@ -26,6 +26,7 @@ import FontawesomeIcon from '../demo/pages/_button/_buttonIcon/_fontAwesomeIcon'
 import FlaticonIcon from '../demo/pages/_button/_buttonIcon/_flaticonIcon';
 import ButtonDropdown from '../demo/pages/_button/_buttonDropdown';
 import BootstrapTabs from '../demo/pages/base/_tabs/_bootstrapTabs';
+import LineTabs from '../demo/pages/base/_tabs/_lineTabs';
 export default (
     <BrowserRouter>
         <div className="m-grid m-grid--hor m-grid--root m-page">
@@ -43,7 +44,7 @@ export default (
             <Route path='/Spinner' component={Spinner}/>
 
             <Route path='/base/tabs/BootstrapTabs' component={BootstrapTabs}/>
-
+            <Route path='/base/tabs/LineTabs' component={LineTabs}/>
 
             <Route path="/buttons/base/default" component={DefaultStyle}/>
             <Route path="/buttons/base/square" component={Square}/>
