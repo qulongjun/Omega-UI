@@ -144,6 +144,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'Navs',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Navs');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                     <Section title="Tabs">

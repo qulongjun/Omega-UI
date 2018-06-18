@@ -14,6 +14,7 @@ import Tooltip from '../demo/pages/base/_tooltip';
 import Scrollable from '../demo/pages/base/_scrollable';
 import BlockUI from '../demo/pages/base/_blockUI';
 import Spinner from '../demo/pages/base/_spinners';
+import Navs from '../demo/pages/base/_navs';
 
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 import Square from '../demo/pages/_button/_buttonBase/_square';
@@ -42,6 +43,7 @@ export default (
             <Route path="/Scrollable" component={Scrollable}/>
             <Route path="/BlockUI" component={BlockUI}/>
             <Route path='/Spinner' component={Spinner}/>
+            <Route path='/Navs' component={Navs}/>
 
             <Route path='/base/tabs/BootstrapTabs' component={BootstrapTabs}/>
             <Route path='/base/tabs/LineTabs' component={LineTabs}/>
