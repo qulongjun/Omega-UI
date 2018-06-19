@@ -153,6 +153,15 @@ class Dashboard extends Component {
                                                     }
                                                 }
                                             }}/>
+                                            <Button {...{
+                                                value: 'SweetAlert2',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/SweetAlert2');
+                                                    }
+                                                }
+                                            }}/>
                                         </Demo>
                                     </Section>
                                     <Section title="Tabs">

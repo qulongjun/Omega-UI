@@ -15,6 +15,7 @@ import Scrollable from '../demo/pages/base/_scrollable';
 import BlockUI from '../demo/pages/base/_blockUI';
 import Spinner from '../demo/pages/base/_spinners';
 import Navs from '../demo/pages/base/_navs';
+import SweetAlert from '../demo/pages/base/_sweetAlert2';
 
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 import Square from '../demo/pages/_button/_buttonBase/_square';
@@ -44,6 +45,7 @@ export default (
             <Route path="/BlockUI" component={BlockUI}/>
             <Route path='/Spinner' component={Spinner}/>
             <Route path='/Navs' component={Navs}/>
+            <Route path='/SweetAlert2' component={SweetAlert}/>
 
             <Route path='/base/tabs/BootstrapTabs' component={BootstrapTabs}/>
             <Route path='/base/tabs/LineTabs' component={LineTabs}/>

@@ -244,9 +244,380 @@ class Navs extends Component {
                                         </Demo>
                                     </Section>
                                 </Portlet>
+                                <Portlet {...{
+                                    header: '多级导航'
+                                }} >
+                                    <Section>
+                                        <Demo>
+                                            <Nav {...{
+                                                items: [{
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-share'
+                                                    },
+                                                    text: {
+                                                        value: 'Activity',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    type: 'child',
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-chat-1'
+                                                    },
+                                                    text: {
+                                                        value: 'Message',
+                                                        href: '#',
+                                                        child: (<Nav {...{
+                                                            type: 'sub',
+                                                            items: [{
+                                                                bullet: {
+                                                                    show: true,
+                                                                    type: 'dot'
+                                                                },
+                                                                text: {
+                                                                    value: 'Activity',
+                                                                    href: '#'
+                                                                }
+                                                            }, {
+                                                                bullet: {
+                                                                    show: true,
+                                                                    type: 'dot'
+                                                                },
+                                                                text: {
+                                                                    value: 'Message',
+                                                                    href: '#'
+                                                                },
+                                                                badge: (<Badge {...{
+                                                                    bgColor: 'danger',
+                                                                    type: ['wide', 'rounded']
+                                                                }}>new</Badge>)
+                                                            }, {
+                                                                type:'child',
+                                                                bullet: {
+                                                                    show: true,
+                                                                    type: 'line'
+                                                                },
+                                                                text: {
+                                                                    value: 'FAQ',
+                                                                    href: '#',
+                                                                    child:(<Nav {...{
+                                                                        type: 'sub',
+                                                                        items: [{
+                                                                            bullet: {
+                                                                                show: true,
+                                                                                type: 'dot'
+                                                                            },
+                                                                            text: {
+                                                                                value: 'Activity',
+                                                                                href: '#'
+                                                                            }
+                                                                        }, {
+                                                                            bullet: {
+                                                                                show: true,
+                                                                                type: 'dot'
+                                                                            },
+                                                                            text: {
+                                                                                value: 'Message',
+                                                                                href: '#'
+                                                                            },
+                                                                            badge: (<Badge {...{
+                                                                                bgColor: 'danger',
+                                                                                type: ['wide', 'rounded']
+                                                                            }}>new</Badge>)
+                                                                        }, {
+                                                                            bullet: {
+                                                                                show: true,
+                                                                                type: 'line'
+                                                                            },
+                                                                            text: {
+                                                                                value: 'FAQ',
+                                                                                href: '#'
+                                                                            }
+                                                                        }, {
+                                                                            bullet: {
+                                                                                show: true,
+                                                                                type: 'line'
+                                                                            },
+                                                                            text: {
+                                                                                value: 'Settings',
+                                                                                href: '#'
+                                                                            }
+                                                                        }]
+                                                                    }}/>)
+                                                                }
+                                                            }, {
+                                                                bullet: {
+                                                                    show: true,
+                                                                    type: 'line'
+                                                                },
+                                                                text: {
+                                                                    value: 'Settings',
+                                                                    href: '#'
+                                                                }
+                                                            }]
+                                                        }}/>)
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'danger',
+                                                        type: ['wide', 'rounded']
+                                                    }}>new</Badge>)
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-info'
+                                                    },
+                                                    text: {
+                                                        value: 'FAQ',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-cogwheel-2'
+                                                    },
+                                                    text: {
+                                                        value: 'Settings',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-lifebuoy'
+                                                    },
+                                                    text: {
+                                                        value: 'Support',
+                                                        href: '#'
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'success',
+                                                        type: ['wide']
+                                                    }}>23</Badge>)
+                                                }]
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
                             </Div>
                             <Div _includeClass="col-xl-6">
-
+                                <Portlet {...{
+                                    header: '其他导航前缀'
+                                }} >
+                                    <Section>
+                                        <Demo>
+                                            <Nav {...{
+                                                items: [{
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'dot'
+                                                    },
+                                                    text: {
+                                                        value: 'Activity',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'dot'
+                                                    },
+                                                    text: {
+                                                        value: 'Message',
+                                                        href: '#'
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'danger',
+                                                        type: ['wide', 'rounded']
+                                                    }}>new</Badge>)
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'line'
+                                                    },
+                                                    text: {
+                                                        value: 'FAQ',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'line'
+                                                    },
+                                                    text: {
+                                                        value: 'Settings',
+                                                        href: '#'
+                                                    }
+                                                }]
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
+                                <Portlet {...{
+                                    header: '嵌套导航'
+                                }} >
+                                    <Section>
+                                        <Demo>
+                                            <Nav {...{
+                                                items: [{
+                                                    type: 'child',
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-share'
+                                                    },
+                                                    text: {
+                                                        value: 'Activity',
+                                                        href: '#',
+                                                        child: (
+                                                            <Nav {...{
+                                                                type: 'sub',
+                                                                items: [{
+                                                                    icon: {
+                                                                        show: true,
+                                                                        name: 'flaticon-share'
+                                                                    },
+                                                                    text: {
+                                                                        value: 'Activity',
+                                                                        href: '#'
+                                                                    }
+                                                                }, {
+                                                                    icon: {
+                                                                        show: true,
+                                                                        name: 'flaticon-chat-1'
+                                                                    },
+                                                                    text: {
+                                                                        value: 'Message',
+                                                                        href: '#'
+                                                                    },
+                                                                    badge: (<Badge {...{
+                                                                        bgColor: 'danger',
+                                                                        type: ['wide', 'rounded']
+                                                                    }}>new</Badge>)
+                                                                }]
+                                                            }}/>
+                                                        )
+                                                    }
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-chat-1'
+                                                    },
+                                                    text: {
+                                                        value: 'Message',
+                                                        href: '#'
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'danger',
+                                                        type: ['wide', 'rounded']
+                                                    }}>new</Badge>)
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-info'
+                                                    },
+                                                    text: {
+                                                        value: 'FAQ',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-cogwheel-2'
+                                                    },
+                                                    text: {
+                                                        value: 'Settings',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    icon: {
+                                                        show: true,
+                                                        name: 'flaticon-lifebuoy'
+                                                    },
+                                                    text: {
+                                                        value: 'Support',
+                                                        href: '#'
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'success',
+                                                        type: ['wide']
+                                                    }}>23</Badge>)
+                                                }]
+                                            }}/>
+                                        </Demo>
+                                        <Demo>
+                                            <Nav {...{
+                                                items: [{
+                                                    type: 'child',
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'dot'
+                                                    },
+                                                    text: {
+                                                        value: 'Activity',
+                                                        href: '#',
+                                                        child: (
+                                                            <Nav {...{
+                                                                type: 'sub',
+                                                                items: [{
+                                                                    bullet: {
+                                                                        show: true,
+                                                                        type: 'dot'
+                                                                    },
+                                                                    text: {
+                                                                        value: 'Activity',
+                                                                        href: '#'
+                                                                    }
+                                                                }, {
+                                                                    bullet: {
+                                                                        show: true,
+                                                                        type: 'dot'
+                                                                    },
+                                                                    text: {
+                                                                        value: 'Message',
+                                                                        href: '#'
+                                                                    },
+                                                                    badge: (<Badge {...{
+                                                                        bgColor: 'danger',
+                                                                        type: ['wide', 'rounded']
+                                                                    }}>new</Badge>)
+                                                                }]
+                                                            }}/>
+                                                        )
+                                                    }
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'dot'
+                                                    },
+                                                    text: {
+                                                        value: 'Message',
+                                                        href: '#'
+                                                    },
+                                                    badge: (<Badge {...{
+                                                        bgColor: 'danger',
+                                                        type: ['wide', 'rounded']
+                                                    }}>new</Badge>)
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'line'
+                                                    },
+                                                    text: {
+                                                        value: 'FAQ',
+                                                        href: '#'
+                                                    }
+                                                }, {
+                                                    bullet: {
+                                                        show: true,
+                                                        type: 'line'
+                                                    },
+                                                    text: {
+                                                        value: 'Settings',
+                                                        href: '#'
+                                                    }
+                                                }]
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
                             </Div>
                         </Div>
                     </Content>

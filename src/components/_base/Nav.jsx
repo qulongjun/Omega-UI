@@ -45,10 +45,10 @@ class Nav extends Component {
 
     render() {
         const _props = this.props;
-        const {items} = _props;
+        const {items, type} = _props;
         let _items = [];
         !isNotExist(items) && isArray(items) && (items.map((item) => {
-            const {icon, badge, text, type, state} = item;
+            const {icon, badge, text, type, state, bullet} = item;
             let value = null;
             switch (type) {
                 case "section": {
@@ -83,6 +83,10 @@ class Nav extends Component {
                             <Link _uniqueClass="m-nav__link" href={(text && text.href) || ''}>
                                 {!isNotExist(icon) && icon.show &&
                                 <Icon iconName={icon.name} {..._delivery(icon, ['m-nav__link-icon'])}/>}
+                                {!isNotExist(bullet) && bullet.show &&
+                                <Text {..._delivery(bullet, ['m-nav__link-bullet', 'm-nav__link-bullet--' + bullet.type])}>
+                                    <Text>&nbsp;</Text>
+                                </Text>}
                                 {
                                     !isNotExist(badge) ? (<Text _includeClass="m-nav__link-title">
                                         <Text _includeClass="m-nav__link-wrap">
@@ -100,6 +104,7 @@ class Nav extends Component {
                                     )
                                 }
                             </Link>
+                            {type === 'child' ? text.child : ''}
                         </Fragment>
                     );
                     _items.push({
@@ -111,9 +116,15 @@ class Nav extends Component {
         }));
         return (
             <Fragment>
-                <Ul {..._delivery(_props, ['m-nav'])} {...{
-                    items: _items
-                }}/>
+                {type === 'sub' ? (
+                    <Ul {..._delivery(_props, ['m-nav__sub'])} {...{
+                        items: _items
+                    }}/>
+                ) : (
+                    <Ul {..._delivery(_props, ['m-nav'])} {...{
+                        items: _items
+                    }}/>
+                )}
             </Fragment>
         );
     }

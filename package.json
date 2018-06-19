@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "block-ui": "^2.70.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
@@ -36,7 +37,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "sass-loader": "^7.0.3",
-    "socicon": "^3.0.5"
+    "socicon": "^3.0.5",
+    "sweetalert2": "^7.22.2"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",

@@ -53,6 +53,8 @@
 //Nav Components
 @import "./framework/component/general/nav/config";
 @import "./framework/component/general/nav/nav";
+//SweetAlert2 Components
+@import "./framework/component/plugins/base/sweetalert2";
 //== 3: Page Config
 @import './page/page-config';
 @import './page/base/config';
