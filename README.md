@@ -2,7 +2,7 @@
   <a href="javascript:;" rel="noopener" target="_blank"><img width="70%" src="https://cdn.qulongjun.cn/omega/logo_blue.png" alt="Omega-UI logo"></a></p>
 </p>
 
-<hr/>
+------
 
 <div align="center">
 
@@ -10,71 +10,51 @@
 
 </div>
 
-## Installation
+## 安装方式
 
-Omega-UI is available as an [npm package](https://www.npmjs.com/package/@material-ui/core).
+您可以使用 `NPM` 命令进行安装，命令如下：
 
-**[Stable Version](https://material-ui.com/)**
-```sh
+```shell
 // with npm
-npm install omega-ui
+npm i omega-ui
 
 ```
 
-## Usage
+## 用法
 
-Here is a quick example to get you started, **it's all you need**:
-
+以下是一个组件的简单使用示例, **你只需做如下事情**:
 ```jsx
-import React from 'react';
+import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'components/general/button/_button';
+//导入按钮组件
+import Button from '@Button';
 
-function App() {
-  return (
-    <Button value="Hello World" />
-  );
+class App extends Component {
+    render(){
+        return (<Button value="Hello World" />);
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-Yes, it's really all you need to get started!
+## 遇到问题
 
-## Questions
+你可以使用 Github 的 [Issue](https://github.com/qulongjun/Omega-UI/issues) 功能 进行提问，我们会随时进行解答。
 
-For *how-to* questions and other non-issues, Github Issues that you can use to tag your questions.
+## 官网示例
 
-## Examples
+是否正在寻找一些示例来开始您的项目? 点击 [此处](https://omega.qulongjun.com) 查看使用示例。
 
-Are you looking for an example project to get started?
-[We host some](https://qulongjun.com).
+## 技术文档
 
-## Documentation
+使用过程中存在任何问题，建议浏览文档获得技术支持。点击 [此处](https://omega-doc.qulongjun.com) 查看技术文档。
 
-Icon: [Icon Component](/doc/_icon.md).
+## 参与项目
 
-Button: [Button Component](/doc/_button.md).
+我们很期待您能参与进来一起开发。 :)
 
-Button Group: [Button Group Component](/doc/_buttonGroup.md).
-
-Button Dropdown: [Button Dropdown Component](/doc/_buttonDropdown.md).
-
-Badge: [Badge Component](/doc/_buttonGroup.md).
-
-Progress Bar: [Progress Bar Component](/doc/_progressBar.md).
-
-
-## Contributing
-
-We'd greatly appreciate any [contribution](/CONTRIBUTING.md) you make. :)
-
-## Changelog
-
-Recently Updated?
-Please read the [changelog](https://github.com/qulongjun/Omega-ui/releases).
 
 ## License
 
-This project is licensed under the terms of the
-[MIT license](/LICENSE).
+本项目基于 MIT license 开源。

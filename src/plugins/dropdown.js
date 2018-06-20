@@ -1,4 +1,4 @@
-import mUtil from './util';
+import mUtil from './_framework/_base/util';
 
 mUtil.init();
 

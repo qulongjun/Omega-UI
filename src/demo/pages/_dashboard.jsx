@@ -10,18 +10,15 @@
 
 import React, {Component, Fragment} from 'react';
 
-import Text from 'components/framework/_text';
-import Code from 'components/framework/_code'
-import Paragraph from 'components/framework/_paragraph';
-import SubHeader from './_subheader';
-import Wrapper from 'components/framework/_wrapper';
-import Content from 'components/framework/_content';
-import Section from 'components/framework/_section';
+import Wrapper from 'components/_framework/Wrapper';
+import Content from 'components/_framework/Content';
+import Section from 'components/_framework/Section';
+import SubHeader from 'components/_framework/SubHeader';
 
-import Portle from 'components/general/_portle';
-import Button from "components/general/_button";
+import Portlet from 'components/_portlet/Portlet';
+import Button from "components/_button/Button";
 
-import Demo from "./_demo";
+import Demo from "components/_framework/Demo";
 
 import 'sass/_demo.scss';
 
@@ -38,26 +35,20 @@ class Dashboard extends Component {
         return (
             <Fragment>
                 <Wrapper>
-                    {/*<SubHeader title="Dashboard"/>*/}
+                    <SubHeader title="临时导航页"/>
                     <Content>
                         <div className="row">
                             <div className="col-xl-6">
-                                <Portle {...{
-                                    header: {
-                                        show: true,
-                                        title: '页面导航'
-                                    }
+                                <Portlet {...{
+                                    header: 'Base'
                                 }} >
-                                    <Paragraph>
-                                        <Text>这是一个临时导航，当所有组件开发完成后会使用 <Code>Menu</Code> 组件重构。</Text>
-                                    </Paragraph>
                                     <Section title="Base">
                                         <Demo>
                                             <Button {...{
                                                 value: 'State Color',
-                                                color: 'outline-brand',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/StateColor');
                                                     }
                                                 }
@@ -65,47 +56,241 @@ class Dashboard extends Component {
                                             }}/>
                                             <Button {...{
                                                 value: 'Typography',
-                                                color: 'outline-focus',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Typography');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
                                                 value: 'Tables',
-                                                color: 'outline-accent',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Tables');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
+                                                value: 'Progress',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Progress');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Modal',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Modal');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
                                                 value: 'Alerts',
-                                                color: 'outline-primary',
-                                                handle: {
-                                                    click: () => {
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
                                                         history.push('/Alerts');
                                                     }
                                                 }
                                             }}/>
                                             <Button {...{
-                                                value: 'Progress',
-                                                color: 'outline-success',
-                                                handle: {
-                                                    click: () => {
-                                                        history.push('/Progress');
+                                                value: 'Popover',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Popover');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Tooltip',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Tooltip');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'BlockUI',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/BlockUI');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Scrollable',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Scrollable');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Spinner',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Spinner');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Navs',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/Navs');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'SweetAlert2',
+                                                btnColor: 'outline-brand',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/SweetAlert2');
                                                     }
                                                 }
                                             }}/>
                                         </Demo>
                                     </Section>
-
-                                </Portle>
+                                    <Section title="Tabs">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Bootstrap Tabs',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/base/tabs/BootstrapTabs');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Line Tabs',
+                                                btnColor: 'outline-info',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/base/tabs/LineTabs');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
                             </div>
                             <div className="col-xl-6">
+                                <Portlet {...{
+                                    header: 'Button'
+                                }} >
+                                    <Section title="Button Base">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Default',
+                                                btnColor: 'outline-focus',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/default');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Square',
+                                                btnColor: 'outline-focus',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/square');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Pill',
+                                                btnColor: 'outline-focus',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/pill');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Air',
+                                                btnColor: 'outline-focus',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/base/air');
+                                                    }
+                                                }
+                                            }}/>
 
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Group">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Button Group',
+                                                btnColor: 'outline-success',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonGroup');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Dropdown">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Button Dropdown',
+                                                btnColor: 'outline-danger',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/ButtonDropdown');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                    <Section title="Button Icon">
+                                        <Demo>
+                                            <Button {...{
+                                                value: 'Lineawesome Icon',
+                                                btnColor: 'outline-warning',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/LineawesomeIcon');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Fontawesome Icon',
+                                                btnColor: 'outline-warning',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/FontawesomeIcon');
+                                                    }
+                                                }
+                                            }}/>
+                                            <Button {...{
+                                                value: 'Flaticon Icon',
+                                                btnColor: 'outline-warning',
+                                                _handle: {
+                                                    onClick: () => {
+                                                        history.push('/buttons/buttonIcon/FlaticonIcon');
+                                                    }
+                                                }
+                                            }}/>
+                                        </Demo>
+                                    </Section>
+                                </Portlet>
                             </div>
                         </div>
                     </Content>

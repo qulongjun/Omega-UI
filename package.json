@@ -1,7 +1,7 @@
 {
   "name": "omega-ui",
-  "version": "1.0.0",
-  "description": "A React project",
+  "version": "0.0.6",
+  "description": "基于React的响应式开发UI框架",
   "main": "src/main.js",
   "keywords": [
     "express",
@@ -9,7 +9,7 @@
     "node",
     "spa"
   ],
-  "author": "瞿龙俊",
+  "author": "Longjun.Qu",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server",
@@ -17,9 +17,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
+    "block-ui": "^2.70.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
+    "jquery-mousewheel": "^3.1.13",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "node-sass": "^4.9.0",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.1",
@@ -32,7 +37,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "sass-loader": "^7.0.3",
-    "socicon": "^3.0.5"
+    "socicon": "^3.0.5",
+    "sweetalert2": "^7.22.2"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",

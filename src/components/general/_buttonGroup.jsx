@@ -24,23 +24,21 @@ class ButtonGroup extends Component {
         onlyIcon: PropTypes.bool,
         groupStyle: PropTypes.string,
         size: PropTypes.string,
-        vertical: PropTypes.bool
+        vertical: PropTypes.bool,
+        styles: PropTypes.object,
+        classList: PropTypes.array,
+        attr: PropTypes.object
     };
 
     render() {
-        const size = this.props.size,
-            vertical = this.props.vertical,
-            btns = this.props.btns,
-            onlyIcon = this.props.onlyIcon;
-        const groupStyle = (this.props.groupStyle === 'pill' ? ' m-btn-group--pill' : (this.props.groupStyle === 'air' ? ' m-btn-group--pill m-btn-group--air' : ''));
-        const className =
-            'btn-group '
-            + (size === 'lg' || size === 'sm' ? ' btn-group-' + size : '')
-            + groupStyle
-            + (vertical ? ' btn-group-vertical' : '');
-
+        const _props = this.props;
+        const {size, vertical, btns, onlyIcon, groupStyle, styles, classList, attr} = _props;
+        let className = ['btn-group'];
+        ['sm', 'lg'].includes(size) && className.push('btn-group-' + size);
+        vertical && className.push('btn-group-vertical');
+        groupStyle === 'air' ? className = className.concat(['m-btn-group--pill', 'm-btn-group--air']) : className.push('m-btn-group--' + groupStyle);
         return (
-            <div className={className} role="group">
+            <div className={className.join(' ')} style={styles} {...attr} role="group">
                 {
                     btns.map((btnItem, btnIndex) => {
                         Object.assign(btnItem, {

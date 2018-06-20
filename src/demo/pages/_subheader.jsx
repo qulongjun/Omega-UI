@@ -9,18 +9,9 @@
 
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-
 import Button from "../../components/general/_button";
 
-
-// import './_subheader.scss'
-
 class SubHeader extends Component {
-    constructor(props, context) {
-        super(props);
-        this.state = {}
-    }
-
     render() {
         const _props = this.props;
         const {title} = _props;
