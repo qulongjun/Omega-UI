@@ -6,7 +6,7 @@
 
 <div align="center">
 
- 基于 [React](http://facebook.github.io/react/) 的响应式后台 UI 框架
+ Responsive Bootstrap Admin & Powerful UI Kit By [React](http://facebook.github.io/react/).
 
 </div>
 
