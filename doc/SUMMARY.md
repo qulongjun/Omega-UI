@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
-* [安装部署](Install.md)
+* [Omega for React](README.md)
+* [介绍](Introduce.md)
 * [快速上手](Install.md)
 * [基础属性](ch1/public.md)
     * [辅助类](ch1/helperClass.md)
