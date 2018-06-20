@@ -18,6 +18,6 @@
     * [元素组件](ch3/element/element.md)
         * [文本组件](ch3/element/text.md)
         * [段落组件](ch3/element/paragraph.md)
-* [更新日志](Install.md)
+* [更新日志](Changelog.md)
 * [致谢](Install.md)
 
