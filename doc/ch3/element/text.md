@@ -18,5 +18,4 @@ import Text from '@Text';
     This is a text.
 </span>
 ```
-##### 效果图
 
