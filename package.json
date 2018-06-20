@@ -1,7 +1,7 @@
 {
   "name": "omega-ui",
-  "version": "1.0.0",
-  "description": "A React project",
+  "version": "0.0.6",
+  "description": "基于React的响应式开发UI框架",
   "main": "src/main.js",
   "keywords": [
     "express",
@@ -9,7 +9,7 @@
     "node",
     "spa"
   ],
-  "author": "瞿龙俊",
+  "author": "Longjun.Qu",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server",
