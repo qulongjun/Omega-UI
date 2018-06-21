@@ -16,7 +16,7 @@ class Paragraph extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <p {..._sysBind(_props)}>{children}</p>
+                <p ref="paragraph" {..._sysBind(_props)}>{children}</p>
             </Fragment>
         );
     }

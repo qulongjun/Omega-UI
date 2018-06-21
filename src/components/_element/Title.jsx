@@ -17,10 +17,12 @@ class Title extends Component {
         this.state = {}
     }
 
-    static defaultProps = {};
+    static defaultProps = {
+        level: 1
+    };
     static propTypes = {
         level: PropTypes.oneOf([1, 2, 3, 4, 5, 6])
-    }
+    };
 
     render() {
         const _props = this.props;
@@ -28,7 +30,7 @@ class Title extends Component {
         const Tag = 'h' + level;
         return (
             <Fragment>
-                <Tag {..._sysBind(_props)}>{children}</Tag>
+                <Tag ref="title" {..._sysBind(_props)}>{children}</Tag>
             </Fragment>
         );
     }

@@ -6,10 +6,10 @@
 
 ### 语法
 ##### 调用方式
-``` html
-<!--_bgColor 支持传入一个状态字符串作为参数。-->
+``` jsx
+//_bgColor 支持传入一个状态字符串作为参数。
 <Div _bgColor='success'>This is a div. </Div>
-<!--_bgColor 同时支持直接传入一个色值作为参数。-->
+//_bgColor 同时支持直接传入一个色值作为参数。
 <Div _bgColor='rgb(255,255,255)'>This is a div.</Div>
 ```
 

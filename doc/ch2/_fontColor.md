@@ -6,10 +6,10 @@
 
 ### 语法
 ##### 调用方式
-``` html
-<!--_fontColor 支持传入一个状态字符串作为参数。-->
+``` jsx
+//_fontColor 支持传入一个状态字符串作为参数。
 <Text _fontColor='success'>This is a text. </Text>
-<!--_fontColor 同时支持直接传入一个色值作为参数。-->
+//_fontColor 同时支持直接传入一个色值作为参数。
 <Paragraph _fontColor='rgb(255,255,255)'>This is a paragraph.</Paragraph>
 ```
 

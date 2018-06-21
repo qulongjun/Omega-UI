@@ -10,7 +10,7 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Div from 'components/_element/Div';
-import Ul from 'components/_element/Ul';
+import List from 'components/_element/List';
 import {isNotExist, isArray, isObject, isString} from 'plugins/utils/_is';
 import Link from "../_element/Link";
 import 'plugins/config'
@@ -161,7 +161,7 @@ class Tab extends Component {
         }
         return (
             <Fragment>
-                <Ul {..._delivery(_props, ['nav', 'nav-tabs', (adjusted ? 'nav-fill' : null), (pill && pill.show ? 'nav-pills' : null), (pill && pill.show && pill.color ? 'nav-pills--' + pill.color : null)], null, {
+                <List {..._delivery(_props, ['nav', 'nav-tabs', (adjusted ? 'nav-fill' : null), (pill && pill.show ? 'nav-pills' : null), (pill && pill.show && pill.color ? 'nav-pills--' + pill.color : null)], null, {
                     role: 'tablist'
                 })} {...{
                     items: _items

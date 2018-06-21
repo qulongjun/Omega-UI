@@ -280,41 +280,41 @@ class Typography extends Component {
                                     <Section title="基础链接" describe="基础链接示例">
                                         <Demo>
                                             <Paragraph>
-                                                <Link href="javascript:;">示例文本</Link>
+                                                <Link href="javascript:;">示例超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link href="javascript:;" _includeClass={['m--font-bold']}>示例加粗文本</Link>
-                                            </Paragraph>
-                                            <Paragraph>
-                                                <Link href="javascript:;"
-                                                      _includeClass={['m--font-bolder']}>示例更粗文本</Link>
+                                                <Link href="javascript:;" _includeClass={['m--font-bold']}>示例加粗超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
                                                 <Link href="javascript:;"
-                                                      _includeClass={['m--font-boldest']}>示例最粗文本</Link>
+                                                      _includeClass={['m--font-bolder']}>示例更粗超级链接</Link>
+                                            </Paragraph>
+                                            <Paragraph>
+                                                <Link href="javascript:;"
+                                                      _includeClass={['m--font-boldest']}>示例最粗超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
                                                 <Link href="javascript:;" _includeClass={['m--font-transform-u']}>示例
-                                                    uppercase 文本</Link>
+                                                    uppercase 超级链接</Link>
                                             </Paragraph>
                                         </Demo>
                                     </Section>
                                     <Section describe="State colors">
                                         <Demo>
                                             <Paragraph>
-                                                <Link _fontColor='success'>Success 状态文字</Link>
+                                                <Link _fontColor='success'>Success 状态超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link _fontColor='warning'>Warning 状态文字</Link>
+                                                <Link _fontColor='warning'>Warning 状态超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link _fontColor='info'>Info 状态文字</Link>
+                                                <Link _fontColor='info'>Info 状态超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link _fontColor='danger'>Danger 状态文字</Link>
+                                                <Link _fontColor='danger'>Danger 状态超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link _fontColor='primary'>Primary 状态文字</Link>
+                                                <Link _fontColor='primary'>Primary 状态超级链接</Link>
                                             </Paragraph>
                                         </Demo>
                                     </Section>

@@ -15,8 +15,8 @@
 
 > 类似于 `Javascript` 语法， `_handle` 属性的键值采用驼峰命名方式，例如：点击事件 `onClick` ，鼠标进入事件 `onMouseEnter` 等。
 
-``` html
-<--_handle 支持同时绑定多个事件的回调函数。-->
+``` jsx
+//_handle 支持同时绑定多个事件的回调函数。
 <Button _hanlde={{
     onClick:()=>{
          alert( 'Click it' );
