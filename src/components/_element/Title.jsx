@@ -17,10 +17,12 @@ class Title extends Component {
         this.state = {}
     }
 
-    static defaultProps = {};
+    static defaultProps = {
+        level: 1
+    };
     static propTypes = {
         level: PropTypes.oneOf([1, 2, 3, 4, 5, 6])
-    }
+    };
 
     render() {
         const _props = this.props;
