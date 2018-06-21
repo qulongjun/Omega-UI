@@ -49,7 +49,7 @@ Omega 预留了部分 `class` 修饰符对样式进行了定制，满足更多�
 
 ##### 其他
 `Title` 组件支持与其他行间 DOM 元素或行间组件进行整合，实现更加丰富的效果，以下为与 `small` 元素整合，实现主副标题的简单示例。
-```js
+```jsx
 import Title from '@Title';
 <Title>
     这是主标题

@@ -6,8 +6,8 @@
  
 ### 语法
 ##### 调用方式
-``` html
-<!--_includeStyle 支持传入一个对象作为参数。-->
+``` jsx
+//_includeStyle 支持传入一个对象作为参数。
 <Text _includeStyle={{
     fontSize:'20px',
     color:'#000'

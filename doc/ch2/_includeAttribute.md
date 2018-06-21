@@ -6,8 +6,8 @@
  
 ### 语法
 ##### 调用方式
-``` html
-<!--_includeAttribute 支持传入一个对象作为参数。-->
+``` jsx
+//_includeAttribute 支持传入一个对象作为参数。
 <Text _includeAttribute={{
     'data-title':'This is a title',
     'role':'tooltip',

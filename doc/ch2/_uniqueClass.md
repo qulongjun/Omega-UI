@@ -6,7 +6,7 @@
  
 ### 语法
 ##### 调用方式
-``` html
+``` jsx
 <style type='text/css'>
 .m-font-bold:{
     font-weight:bold;
@@ -15,9 +15,9 @@
     color:'#FFF';
 }
 </style>
-<!--_uniqueClass 支持传入一个字符串作为参数。-->
+//_uniqueClass 支持传入一个字符串作为参数。
 <Text _includeClass='m-font-bold' _uniqueClass='m-font-white'>This is a text. </Text>
-<!--_uniqueClass 同时支持传入一个字符串数组作为参数。-->
+//_uniqueClass 同时支持传入一个字符串数组作为参数。
 <Paragraph _includeClass={['m-font-white','m-font-bold']} _uniqueClass={[]}>This is a paragraph.</Paragraph>
 ```
 

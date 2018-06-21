@@ -17,7 +17,7 @@
 ##### 调用方式
 ``` jsx
 import Link from '@Link';
-<Link {...{
+<Link  {...{
         href:'https://o-ui.cn',
         color:'primary'
     }}>

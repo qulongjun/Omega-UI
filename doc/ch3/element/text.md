@@ -6,7 +6,7 @@
  
 ### 语法
 ##### 调用方式
-``` js
+``` jsx
 import Text from '@Text';
 <Text>
     This is a text.
