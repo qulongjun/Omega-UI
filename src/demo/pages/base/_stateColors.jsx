@@ -193,14 +193,16 @@ class StateColor extends Component {
                                         </Demo>
                                         <Demo>
                                             <Alert {...{
-                                                title: 'Well done! ',
-                                                message: 'You successfully read this important alert message.',
-                                                bgColor: 'success',
+                                                title: 'Hello World!',
+                                                message: ' This is default alert message box style.',
+                                                closeBtn: false,
+                                                alertColor: 'danger'
                                             }}/>
                                             <Alert {...{
-                                                title: 'Well done! ',
-                                                message: 'You successfully read this important alert message.',
-                                                bgColor: 'primary',
+                                                title: 'Well done!',
+                                                message: ' You successfully read this important alert message.',
+                                                closeBtn: false,
+                                                alertColor: 'success'
                                             }}/>
                                             <Progress {...{
                                                 items: [{
