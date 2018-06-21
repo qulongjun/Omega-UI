@@ -14,6 +14,7 @@
 | btnStyle | array | [] | 设置按钮的显示样式，支持的参数有 `square` 、 `pill` 、`air` ，可多选。 |
 | size | string | 空 | 设置按钮尺寸。支持的参数有 `sm`、 `lg` 、`regular`  |
 | value | string | 空 | 设置按钮显示文本。  |
+| icon | object | 空 | 按钮图标设置，配置参数见下方。  |
 | fontBold | string | regular | 语法糖，设置按钮文字加粗类型，该属性参考 [状态颜色](../../ch1/stateColor.md)。  |
 | btnColor | string | 空 | 设置按钮显示颜色，该属性参考[状态颜色](../../ch1/stateColor.md)，同时支持 `outline` 属性 |
 | gradient | object | 空 | 设置按钮渐变颜色，配置参数见下方。该属性与 `btnColor` 属性互斥，且具有较高优先级。 |
@@ -23,6 +24,15 @@
 | isCustom | bool | false | 设置按钮是否以扁平化样式显示。  |
 | thicken | bool | false | 设置按钮边框是否加粗，该属性仅在 `btnColor` 属性为 `oulline-[color]` 时生效。  |
 | `href` | string | # | 设置按钮的跳转链接，该属性仅 `label` 属性值为 `a` 时生效。 |
+
+
+icon对象
+
+| 参数名 | 类型  | 描述
+| :-: | :-: | :-: | 
+| show | bool | 设置按钮是否显示图标。|
+| name | string | 设置图标名称。|
+>若设置了 `icon` 属性，且按钮的 `value` 属性值不存在，则以` icon-only` 状态显示。
 
 gradient对象
 
@@ -65,6 +75,19 @@ import Button from '@Button';
 
 ![](./_image/2018-06-21-18-15-48.jpg)
 
+##### 显示样式
+按钮组件支持设置一种或多种显示样式，通过 `btnStyle` 属性可以设置显示样式。
+- Normal：圆角矩形外观
+- Square：尖角矩形外观
+- Pill： 环形外观
+- Air：阴影外观
+
+Square：
+![](./_image/2018-06-21-19-16-59.jpg)
+Pill：
+![](./_image/2018-06-21-19-17-25.jpg)
+Air：
+![](./_image/2018-06-21-19-17-48.jpg)
 ##### 操作类型
 在不同的情景下，我们通常会希望按钮有不同的使用类型：
 - 在提交表单时，按钮是 Submit 类型。
@@ -85,3 +108,11 @@ import Button from '@Button';
 ##### 块状按钮
 在移动端应用程序上，通常默认的按钮样式无法满足业务需求，可以考虑使用块级按钮，通过 `isBlock` 属性，可以将按钮设置为块状显示。
 ![](./_image/2018-06-21-18-33-33.jpg)
+##### icon按钮
+在部分业务需求中，在按钮旁增加一个有意义的按钮，可以让用户更容易理解按钮的含义。通过设置 `icon.show` 的值为` true`，并设置 `icon.name` 的值即可显示 `icon` 。
+![](./_image/2018-06-21-18-50-48.jpg)
+##### icon-only
+`Icon-only` 是一种特殊情况，是指当设置了 `icon` 属性，并且按钮的 `value` 属性为空时，按钮会以一种特殊的样式显示。
+![](./_image/2018-06-21-18-52-40.jpg)
+
+

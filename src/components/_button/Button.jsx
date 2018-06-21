@@ -23,9 +23,27 @@ class Button extends Component {
     static defaultProps = {
         label: 'button',
         type: 'button',
-        href: '#'
+        href: '#',
+        value: ''
     };
-    static propTypes = {};
+    static propTypes = {
+        label: PropTypes.oneOf(['a', 'button', 'input']),
+        type: PropTypes.oneOf(['reset', 'button', 'submit']),
+        btnState: PropTypes.oneOf(['regular', 'active', 'disabled']),
+        btnStyle: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.array
+        ]),
+        thicken: PropTypes.bool,
+        gradient: PropTypes.object,
+        isWide: PropTypes.bool,
+        isBlock: PropTypes.bool,
+        isCustom: PropTypes.bool,
+        btnColor: PropTypes.string,
+        size: PropTypes.string,
+        fontBold: PropTypes.string,
+        href: PropTypes.string,
+    };
 
     render() {
         const _props = this.props;
