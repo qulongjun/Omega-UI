@@ -4,7 +4,7 @@
 import {_copy} from './_copy';
 import {isNotExist, isString, isObject, isArray} from 'plugins/utils/_is';
 
-const stateColor = ['brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger', 'secondary'];
+export const stateColor = ['brand', 'metal', 'light', 'accent', 'focus', 'primary', 'success', 'info', 'warning', 'danger', 'secondary'];
 
 export const _computedClass = (props = {}, _sysClass = []) => {
     const {_includeClass = [], _excludeClass = [], _uniqueClass} = props;

@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 import Div from './Div';
 
-import {_delivery} from 'plugins/utils/_props';
+import {_delivery, stateColor} from 'plugins/utils/_props';
 
 class Separator extends Component {
     static defaultProps = {
@@ -21,7 +21,7 @@ class Separator extends Component {
     };
     static propTypes = {
         size: PropTypes.oneOf(['lg', 'xl', 'sm', 'fit']),
-        color: PropTypes.string,
+        color: PropTypes.oneOf(stateColor),
         dashed: PropTypes.bool
     };
 

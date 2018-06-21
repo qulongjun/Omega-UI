@@ -30,7 +30,7 @@ class Title extends Component {
         const Tag = 'h' + level;
         return (
             <Fragment>
-                <Tag {..._sysBind(_props)}>{children}</Tag>
+                <Tag ref="title" {..._sysBind(_props)}>{children}</Tag>
             </Fragment>
         );
     }

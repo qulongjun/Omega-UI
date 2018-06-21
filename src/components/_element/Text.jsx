@@ -16,7 +16,7 @@ class Text extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <span ref="_text" {..._sysBind(_props)}>{children}</span>
+                <span ref="text" {..._sysBind(_props)}>{children}</span>
             </Fragment>
         );
     }

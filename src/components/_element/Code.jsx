@@ -16,7 +16,7 @@ class Code extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <code  {..._sysBind(_props)}>{children}</code>
+                <code ref="code"  {..._sysBind(_props)}>{children}</code>
             </Fragment>
         );
     }

@@ -9,7 +9,7 @@
 
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import Ul from 'components/_element/Ul';
+import List from 'components/_element/List';
 import {_delivery} from 'plugins/utils/_props';
 import {isNotExist, isArray, isString, isObject} from 'plugins/utils/_is';
 import Link from "../_element/Link";
@@ -117,11 +117,11 @@ class Nav extends Component {
         return (
             <Fragment>
                 {type === 'sub' ? (
-                    <Ul {..._delivery(_props, ['m-nav__sub'])} {...{
+                    <List {..._delivery(_props, ['m-nav__sub'])} {...{
                         items: _items
                     }}/>
                 ) : (
-                    <Ul {..._delivery(_props, ['m-nav'])} {...{
+                    <List {..._delivery(_props, ['m-nav'])} {...{
                         items: _items
                     }}/>
                 )}
