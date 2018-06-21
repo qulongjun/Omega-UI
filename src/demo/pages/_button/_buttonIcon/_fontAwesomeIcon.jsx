@@ -19,7 +19,7 @@ import Wrapper from 'components/_framework/Wrapper';
 import Content from 'components/_framework/Content';
 import Section from 'components/_framework/Section';
 import Demo from "components/_framework/Demo";
-import ButtonIcon from "components/_button/ButtonIcon";
+import Button from "components/_button/Button";
 import Portlet from 'components/_portlet/Portlet';
 
 
@@ -46,7 +46,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 icon: {
@@ -54,7 +54,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 icon: {
@@ -62,7 +62,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 icon: {
@@ -70,7 +70,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 icon: {
@@ -79,7 +79,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 icon: {
@@ -87,7 +87,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 icon: {
@@ -95,7 +95,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 icon: {
@@ -103,7 +103,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 icon: {
@@ -111,7 +111,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 icon: {
@@ -123,7 +123,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带有 <Code>isWide</Code> 样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 isWide: true,
@@ -132,7 +132,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 isWide: true,
@@ -141,7 +141,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 isWide: true,
@@ -150,7 +150,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 isWide: true,
@@ -160,7 +160,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 isWide: true,
@@ -169,7 +169,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 isWide: true,
@@ -178,7 +178,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 isWide: true,
@@ -187,7 +187,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 isWide: true,
@@ -196,7 +196,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 isWide: true,
@@ -209,7 +209,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 isWide: true,
                                                 icon: {
@@ -217,7 +217,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 isWide: true,
                                                 icon: {
@@ -225,7 +225,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 isWide: true,
                                                 icon: {
@@ -233,7 +233,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 isWide: true,
                                                 icon: {
@@ -242,7 +242,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 isWide: true,
                                                 icon: {
@@ -250,7 +250,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 isWide: true,
                                                 icon: {
@@ -258,7 +258,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 isWide: true,
                                                 icon: {
@@ -266,7 +266,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 isWide: true,
                                                 icon: {
@@ -274,7 +274,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 isWide: true,
                                                 icon: {
@@ -290,7 +290,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础线框图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 icon: {
@@ -298,7 +298,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 icon: {
@@ -306,7 +306,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 icon: {
@@ -315,7 +315,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 icon: {
@@ -323,7 +323,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 icon: {
@@ -331,7 +331,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 icon: {
@@ -339,7 +339,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 icon: {
@@ -347,7 +347,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 icon: {
@@ -359,7 +359,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带有 <Code>thicken</Code> 样式的线框图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 thicken: true,
@@ -368,7 +368,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 thicken: true,
@@ -377,7 +377,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 thicken: true,
@@ -387,7 +387,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 thicken: true,
@@ -396,7 +396,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 thicken: true,
@@ -405,7 +405,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 thicken: true,
@@ -414,7 +414,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 thicken: true,
@@ -423,7 +423,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 thicken: true,
@@ -436,21 +436,21 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 icon: {
                                                     show: true,
@@ -458,35 +458,35 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 icon: {
                                                     show: true,
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 icon: {
                                                     show: true,
@@ -501,7 +501,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 btnStyle: ['pill'],
@@ -510,7 +510,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 btnStyle: ['pill'],
@@ -519,7 +519,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 btnStyle: ['pill'],
@@ -528,7 +528,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 btnStyle: ['pill'],
@@ -538,7 +538,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 btnStyle: ['pill'],
@@ -547,7 +547,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 btnStyle: ['pill'],
@@ -556,7 +556,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 btnStyle: ['pill'],
@@ -565,7 +565,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 btnStyle: ['pill'],
@@ -574,7 +574,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 btnStyle: ['pill'],
@@ -587,7 +587,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>椭圆线框图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 btnStyle: ['pill'],
@@ -596,7 +596,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 btnStyle: ['pill'],
@@ -605,7 +605,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 btnStyle: ['pill'],
@@ -615,7 +615,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 btnStyle: ['pill'],
@@ -624,7 +624,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 btnStyle: ['pill'],
@@ -633,7 +633,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 btnStyle: ['pill'],
@@ -642,7 +642,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 btnStyle: ['pill'],
@@ -651,7 +651,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 btnStyle: ['pill'],
@@ -664,7 +664,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -672,7 +672,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -680,7 +680,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -689,7 +689,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -697,7 +697,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -705,7 +705,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -713,7 +713,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -721,7 +721,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -730,7 +730,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -738,7 +738,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -746,7 +746,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -755,7 +755,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -763,7 +763,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -771,7 +771,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -779,7 +779,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -787,7 +787,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: 'pill',
                                                 icon: {
@@ -803,7 +803,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 btnStyle: ['pill', 'air'],
@@ -812,7 +812,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 btnStyle: ['pill', 'air'],
@@ -821,7 +821,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 btnStyle: ['pill', 'air'],
@@ -830,7 +830,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 btnStyle: ['pill', 'air'],
@@ -840,7 +840,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 btnStyle: ['pill', 'air'],
@@ -849,7 +849,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 btnStyle: ['pill', 'air'],
@@ -858,7 +858,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 btnStyle: ['pill', 'air'],
@@ -867,7 +867,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 btnStyle: ['pill', 'air'],
@@ -876,7 +876,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 btnStyle: ['pill', 'air'],
@@ -889,7 +889,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带阴影的椭圆线框图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 btnStyle: ['pill', 'air'],
@@ -898,7 +898,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 btnStyle: ['pill', 'air'],
@@ -907,7 +907,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 btnStyle: ['pill', 'air'],
@@ -917,7 +917,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 btnStyle: ['pill', 'air'],
@@ -926,7 +926,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 btnStyle: ['pill', 'air'],
@@ -935,7 +935,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 btnStyle: ['pill', 'air'],
@@ -944,7 +944,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 btnStyle: ['pill', 'air'],
@@ -953,7 +953,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 btnStyle: ['pill', 'air'],
@@ -966,7 +966,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -974,7 +974,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -982,7 +982,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -991,7 +991,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -999,7 +999,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1007,7 +1007,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1015,7 +1015,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1023,7 +1023,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1032,7 +1032,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1040,7 +1040,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1048,7 +1048,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1057,7 +1057,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1065,7 +1065,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1073,7 +1073,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1081,7 +1081,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1089,7 +1089,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: ['pill', 'air'],
                                                 icon: {
@@ -1107,7 +1107,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 isCustom: true,
@@ -1116,7 +1116,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 isCustom: true,
@@ -1125,7 +1125,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 icon: {
@@ -1133,7 +1133,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 isCustom: true,
@@ -1143,7 +1143,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 isCustom: true,
@@ -1152,7 +1152,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 isCustom: true,
@@ -1161,7 +1161,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 isCustom: true,
@@ -1170,7 +1170,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 isCustom: true,
@@ -1179,7 +1179,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 isCustom: true,
@@ -1192,7 +1192,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 isCustom: true,
@@ -1202,7 +1202,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 isCustom: true,
@@ -1212,7 +1212,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 isCustom: true,
@@ -1223,7 +1223,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 isCustom: true,
@@ -1233,7 +1233,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 isCustom: true,
@@ -1243,7 +1243,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 isCustom: true,
@@ -1253,7 +1253,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 isCustom: true,
@@ -1263,7 +1263,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 isCustom: true,
@@ -1277,7 +1277,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带 <Code>thicken</Code> 椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 isCustom: true,
@@ -1288,7 +1288,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 isCustom: true,
@@ -1299,7 +1299,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 isCustom: true,
@@ -1311,7 +1311,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 isCustom: true,
@@ -1322,7 +1322,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 isCustom: true,
@@ -1333,7 +1333,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 isCustom: true,
@@ -1344,7 +1344,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 isCustom: true,
@@ -1355,7 +1355,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 isCustom: true,
@@ -1370,7 +1370,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1379,7 +1379,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1388,7 +1388,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1398,7 +1398,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1407,7 +1407,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1416,7 +1416,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1425,7 +1425,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1434,7 +1434,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1444,7 +1444,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1453,7 +1453,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1462,7 +1462,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1472,7 +1472,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1481,7 +1481,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1490,7 +1490,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1499,7 +1499,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1508,7 +1508,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: 'pill',
                                                 isCustom: true,
@@ -1518,7 +1518,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1527,7 +1527,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1536,7 +1536,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1546,7 +1546,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1555,7 +1555,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1564,7 +1564,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1573,7 +1573,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1582,7 +1582,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: ['pill', 'air'],
                                                 isCustom: true,
@@ -1599,7 +1599,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 size: 'sm',
@@ -1608,7 +1608,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 size: 'sm',
@@ -1617,7 +1617,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 icon: {
@@ -1625,7 +1625,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 size: 'sm',
@@ -1635,7 +1635,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 size: 'sm',
@@ -1644,7 +1644,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 size: 'sm',
@@ -1653,7 +1653,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 size: 'sm',
@@ -1662,7 +1662,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 size: 'sm',
@@ -1671,7 +1671,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 size: 'sm',
@@ -1684,7 +1684,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 size: 'sm',
@@ -1694,7 +1694,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 size: 'sm',
@@ -1704,7 +1704,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 size: 'sm',
@@ -1715,7 +1715,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 size: 'sm',
@@ -1725,7 +1725,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 size: 'sm',
@@ -1735,7 +1735,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 size: 'sm',
@@ -1745,7 +1745,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 size: 'sm',
@@ -1755,7 +1755,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 size: 'sm',
@@ -1769,7 +1769,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带 <Code>thicken</Code> 椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 size: 'sm',
@@ -1780,7 +1780,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 size: 'sm',
@@ -1791,7 +1791,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 size: 'sm',
@@ -1803,7 +1803,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 size: 'sm',
@@ -1814,7 +1814,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 size: 'sm',
@@ -1825,7 +1825,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 size: 'sm',
@@ -1836,7 +1836,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 size: 'sm',
@@ -1847,7 +1847,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 size: 'sm',
@@ -1862,7 +1862,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1871,7 +1871,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1880,7 +1880,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1890,7 +1890,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1899,7 +1899,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1908,7 +1908,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1917,7 +1917,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1926,7 +1926,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1936,7 +1936,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1945,7 +1945,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1954,7 +1954,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1964,7 +1964,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1973,7 +1973,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1982,7 +1982,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -1991,7 +1991,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -2000,7 +2000,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: 'pill',
                                                 size: 'sm',
@@ -2010,7 +2010,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2019,7 +2019,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2028,7 +2028,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2038,7 +2038,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2047,7 +2047,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2056,7 +2056,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2065,7 +2065,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2074,7 +2074,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'sm',
@@ -2091,7 +2091,7 @@ class LineawesomeIcon extends Component {
                                 }} >
                                     <Section describe="基础图标按钮">
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 value: 'Primary',
                                                 size: 'lg',
@@ -2100,7 +2100,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'secondary',
                                                 value: 'Secondary',
                                                 size: 'lg',
@@ -2109,7 +2109,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 value: 'Success',
                                                 icon: {
@@ -2117,7 +2117,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 value: 'Warning',
                                                 size: 'lg',
@@ -2127,7 +2127,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 value: 'Danger',
                                                 size: 'lg',
@@ -2136,7 +2136,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 value: 'Info',
                                                 size: 'lg',
@@ -2145,7 +2145,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 value: 'Brand',
                                                 size: 'lg',
@@ -2154,7 +2154,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 value: 'Accent',
                                                 size: 'lg',
@@ -2163,7 +2163,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 value: 'Metal',
                                                 size: 'lg',
@@ -2176,7 +2176,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 size: 'lg',
@@ -2186,7 +2186,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 size: 'lg',
@@ -2196,7 +2196,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 size: 'lg',
@@ -2207,7 +2207,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 size: 'lg',
@@ -2217,7 +2217,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 size: 'lg',
@@ -2227,7 +2227,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 size: 'lg',
@@ -2237,7 +2237,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 size: 'lg',
@@ -2247,7 +2247,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 size: 'lg',
@@ -2261,7 +2261,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>带 <Code>thicken</Code> 椭圆样式的图标按钮</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 value: 'Primary',
                                                 size: 'lg',
@@ -2272,7 +2272,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 value: 'Success',
                                                 size: 'lg',
@@ -2283,7 +2283,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 value: 'Warning',
                                                 size: 'lg',
@@ -2295,7 +2295,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 value: 'Danger',
                                                 size: 'lg',
@@ -2306,7 +2306,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 value: 'Info',
                                                 size: 'lg',
@@ -2317,7 +2317,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 value: 'Brand',
                                                 size: 'lg',
@@ -2328,7 +2328,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 value: 'Accent',
                                                 size: 'lg',
@@ -2339,7 +2339,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 value: 'Metal',
                                                 size: 'lg',
@@ -2354,7 +2354,7 @@ class LineawesomeIcon extends Component {
                                     </Section>
                                     <Section describe={<Text>若 <Code>value</Code> 属性为空，则显示仅图标按钮样式</Text>}>
                                         <Demo>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'primary',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2363,7 +2363,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'success',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2372,7 +2372,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'warning',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2382,7 +2382,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'danger',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2391,7 +2391,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'info',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2400,7 +2400,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'brand',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2409,7 +2409,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'accent',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2418,7 +2418,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'metal',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2428,7 +2428,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2437,7 +2437,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2446,7 +2446,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2456,7 +2456,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2465,7 +2465,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2474,7 +2474,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2483,7 +2483,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2492,7 +2492,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: 'pill',
                                                 size: 'lg',
@@ -2502,7 +2502,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
                                             <Separator dashed={true}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-primary',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2511,7 +2511,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-archive'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-success',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2520,7 +2520,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-calendar-check-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-warning',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2530,7 +2530,7 @@ class LineawesomeIcon extends Component {
                                                 },
                                             }}/>
 
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-danger',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2539,7 +2539,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-warning'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-info',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2548,7 +2548,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-diamond'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-brand',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2557,7 +2557,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-envelope-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-accent',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',
@@ -2566,7 +2566,7 @@ class LineawesomeIcon extends Component {
                                                     name: 'fa fa-file-excel-o'
                                                 },
                                             }}/>
-                                            <ButtonIcon {...{
+                                            <Button {...{
                                                 btnColor: 'outline-metal',
                                                 btnStyle: ['pill', 'air'],
                                                 size: 'lg',

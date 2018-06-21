@@ -10,10 +10,11 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Div from 'components/_element/Div';
-import {_delivery, _sysBind} from 'plugins/utils/_props';
 import Button from "components/_button/Button";
+import Title from "components/_element/Title";
+
+import {_delivery, _sysBind} from 'plugins/utils/_props';
 import {isNotExist, isArray, isObject} from 'plugins/utils/_is';
-import Title from "../_element/Title";
 
 class ButtonDropdown extends Component {
     constructor(props) {
@@ -22,25 +23,12 @@ class ButtonDropdown extends Component {
     }
 
     static defaultProps = {};
-    static propTypes = {};
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
+    static propTypes = {
+        button: PropTypes.object,
+        toggle: PropTypes.object,
+        direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+        itemAlign: PropTypes.oneOf(['left', 'right', 'center', 'justify'])
+    };
 
     render() {
         const _props = this.props;
@@ -50,45 +38,45 @@ class ButtonDropdown extends Component {
         let _render = (<Fragment>
             {
                 !isNotExist(toggle) && toggle.show ? (
-                    <Fragment>
-                        <Button {..._delivery(button)}/>
-                        <Button {..._delivery(toggle, ['dropdown-toggle', 'dropdown-toggle-split'], null, {
+                        <Fragment>
+                            <Button {..._delivery(button)}/>
+                            <Button {..._delivery(toggle, ['dropdown-toggle', 'dropdown-toggle-split'], null, {
+                                "data-toggle": "dropdown",
+                                "aria-expanded": false
+                            })}/>
+                        </Fragment>
+                    ) : (
+                        <Button {..._delivery(button, ['dropdown-toggle'], null, {
                             "data-toggle": "dropdown",
                             "aria-expanded": false
                         })}/>
-                    </Fragment>
-                ) : (
-                    <Button {..._delivery(button, ['dropdown-toggle'], null, {
-                        "data-toggle": "dropdown",
-                        "aria-expanded": false
-                    })}/>
-                )
+                    )
             }
 
 
             <Div _includeClass={["dropdown-menu", (itemAlign ? 'text-' + itemAlign : null)]}>
                 {
                     !isNotExist(items) && (isArray(items) ? items.map((item, index) => {
-                        if (!isNotExist(item.type)) {
-                            switch (item.type) {
-                                case 'divider':
-                                    return (<Div key={index} _includeClass="dropdown-divider"/>)
-                                    break;
-                                case 'header':
-                                    return (<Title key={index} level={6}
-                                                   {..._delivery(item, ['dropdown-header'])}>{item.value}</Title>)
-                                    break;
+                            if (!isNotExist(item.type)) {
+                                switch (item.type) {
+                                    case 'divider':
+                                        return (<Div key={index} _includeClass="dropdown-divider"/>)
+                                        break;
+                                    case 'header':
+                                        return (<Title key={index} level={6}
+                                                       {..._delivery(item, ['dropdown-header'])}>{item.value}</Title>)
+                                        break;
+                                }
+                            } else {
+                                return <Button key={index} {...item} {...{
+                                    _uniqueClass: ['dropdown-item', (item.align ? 'text-' + item.align : null), (item.btnState ? item.btnState : null)],
+                                    _specialIcon: !isNotExist(item.icon) && item.icon.show
+                                }}/>
                             }
-                        } else {
-                            return <Button key={index} {...item} {...{
-                                _uniqueClass: ['dropdown-item', (item.align ? 'text-' + item.align : null), (item.btnState ? item.btnState : null)],
-                                _specialIcon: !isNotExist(item.icon) && item.icon.show
-                            }}/>
-                        }
 
-                    }) : (
-                        <Button {...items}/>
-                    ))
+                        }) : (
+                            <Button {...items}/>
+                        ))
                 }
             </Div>
         </Fragment>);
@@ -96,14 +84,14 @@ class ButtonDropdown extends Component {
             <Fragment>
                 {
                     !isNotExist(_type) && _type === 'tab' ? (
-                        <Fragment>
-                            {_render}
-                        </Fragment>
-                    ) : (
-                        <Div {..._delivery(_props, _sysClass)}>
-                            {_render}
-                        </Div>
-                    )
+                            <Fragment>
+                                {_render}
+                            </Fragment>
+                        ) : (
+                            <Div {..._delivery(_props, _sysClass)}>
+                                {_render}
+                            </Div>
+                        )
                 }
 
             </Fragment>

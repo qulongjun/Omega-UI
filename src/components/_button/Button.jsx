@@ -23,8 +23,7 @@ class Button extends Component {
     static defaultProps = {
         label: 'button',
         type: 'button',
-        href: '#',
-        value: ''
+        href: '#'
     };
     static propTypes = {
         label: PropTypes.oneOf(['a', 'button', 'input']),
