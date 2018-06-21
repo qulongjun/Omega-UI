@@ -1,0 +1,71 @@
+/**
+ * 
+ * @User: Longjun.Qu
+ * @Date: 2018-06-11
+ * @Time: 17:49
+ * 
+ */
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+//== 1: Core Stylesheets
+@import "./core";
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+//== 2: Component Stylesheets
+// Demo Component
+@import "./framework/component/general/demo/demo";
+@import "./framework/component/general/demo/icon";
+// Section Component
+@import "./framework/component/general/typography/_section";
+// Badge Component
+@import "./framework/component/general/typography/_badge";
+// Link Component
+@import "./framework/component/general/typography/_link";
+// Code Component
+@import "./framework/component/general/typography/code";
+// Portlets Component
+@import "./framework/component/general/portlets/_config";
+@import "./framework/component/general/portlets/_portlets";
+// Separator Component
+@import "./framework/component/general/typography/_separator";
+// Button Component
+@import "./framework/component/general/forms/config";
+@import "./framework/component/general/buttons/config";
+@import "./framework/component/general/buttons/buttons";
+// Icon Component
+@import "./framework/vendors/flaticon/css/flaticon.css";
+@import "./framework/vendors/line-awesome/css/line-awesome.css";
+// Table Component
+@import "./framework/component/general/table/table";
+// Popover Component
+//Scroll Component
+@import "./framework/component/plugins/base/scrollable";
+//Block UI Component
+@import "./framework/component/plugins/base/blockui";
+@import "./framework/component/general/spinners/config";
+@import "./framework/component/general/spinners/loader";
+// Loader Components
+@import "./framework/component/general/spinners/loader";
+//Spinner Components
+@import "./framework/component/general/spinners/spinner";
+//Nav Components
+@import "./framework/component/general/nav/config";
+@import "./framework/component/general/nav/nav";
+//SweetAlert2 Components
+@import "./framework/component/plugins/base/sweetalert2";
+//== 3: Page Config
+@import './page/page-config';
+@import './page/base/config';
+@import './page/header/_config';
+@import "./page/aside/_config";
+@import "./page/menu-header/_config";
+@import "./page/menu-aside/_config";
+@import "./page/footer/_config";
+//== 4: Layout
+@import './page/base/page';
+@import './page/base/body';
+
+
+

@@ -4,6 +4,7 @@
 * [介绍](Introduce.md)
 * [快速上手](Install.md)
 * [基础属性](ch1/public.md)
+    * [状态颜色](ch1/stateColor.md)
     * [辅助类](ch1/helperClass.md)
 * [公共配置](ch2/public.md)
     * [_includeClass](ch2/_includeClass.md)
