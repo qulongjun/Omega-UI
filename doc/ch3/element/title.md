@@ -25,7 +25,7 @@ import Title from '@Title';
     This is a text.
 </h1>
 ```
-#####  默认样式
+#####  实现效果
 
 ![](./_image/2018-06-21-08-28-09.jpg)
 
@@ -38,10 +38,20 @@ import Title from '@Title';
 | :-: | :- |
 | `display-[size]` | 标识标题展示等级，可选的 `size` 参数由1到5，例如 `display-1`。 |
 
+**代码示例：**
+```js
+{
+    _includeClass:'display-1'
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-08-07-18.jpg)
 
 ##### 其他
 标题组件支持与其他行间 DOM 元素或行间组件进行整合，实现更加丰富的效果，以下为与 `small` 元素整合，实现主副标题的简单示例。
+
+**代码示例：**
 ```jsx
 import Title from '@Title';
 <Title>
@@ -50,4 +60,5 @@ import Title from '@Title';
 </Title>
 ```
 
+**实现效果：**
 ![](./_image/2018-06-21-08-16-32.jpg)

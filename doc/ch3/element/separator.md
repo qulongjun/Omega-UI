@@ -28,7 +28,7 @@ import Separator from '@Separator';
 <div class='m-separator m-separator--sm m-separator--success m-separator-dashed'>
 </div>
 ```
-##### 默认样式
+##### 实现效果
 显示一段高度为size，且长度占满整个容器的空白区域。
 ![](./_image/2018-06-21-14-42-00.jpg)
 ### 最佳实践

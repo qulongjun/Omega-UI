@@ -53,7 +53,7 @@ import Button from '@Button';
 ``` html
 <button class='btn m-btn btn-success'>Button</button>
 ```
-##### 默认样式
+##### 实现效果
 ![](./_image/2018-06-21-17-48-49.jpg)
 ### 最佳实践
 通过 [公共配置](../ch1/public.md)，组件可以实现丰富的样式和逻辑的控制。
@@ -61,6 +61,13 @@ import Button from '@Button';
 ##### 状态颜色
 通过 `btnColor` 属性，按钮组件可以设置渲染的颜色，除通用的[状态颜色](../../ch1/stateColor.md)外，按钮组件还支持 `outline-[color]` 颜色。
 
+**代码示例：**
+```js
+{
+    btnColor:'success'
+}
+```
+**实现效果：**
 - 通用状态颜色：
 
 ![](./_image/2018-06-21-18-08-15.jpg)
@@ -73,6 +80,16 @@ import Button from '@Button';
 通过设置 `gradient` 对象的 `from` 和 `to` 属性，可以很便捷的从任意[状态颜色](../../ch1/stateColor.md)渐变至其他[状态颜色](../../ch1/stateColor.md)。
 > 注意：该属性与 `btnColor` 冲突，若同时存在 `gradient` 和 `btnColor`，优先显示 `gradient` 。
 
+**代码示例：**
+```js
+{
+    gradient:{
+        from:'danger',
+        to:'warning'
+    }
+}
+```
+**实现效果：**
 ![](./_image/2018-06-21-18-15-48.jpg)
 
 ##### 显示样式
@@ -81,6 +98,14 @@ import Button from '@Button';
 - Square：尖角矩形外观
 - Pill： 环形外观
 - Air：阴影外观
+
+**代码示例：**
+```js
+{
+    btnStyle:['pill','air']
+}
+```
+**实现效果：**
 
 Square：
 ![](./_image/2018-06-21-19-16-59.jpg)
@@ -96,23 +121,73 @@ Air：
 
 按钮组件通过 `type` 属性，可以自由的控制按钮的操作类型。
 
+**代码示例：**
+```js
+{
+    type:'submit'
+}
+```
 
+**实现效果：**
 ![](./_image/2018-06-21-18-25-02.jpg)
 ##### 按钮状态
 按钮存在多种状态，通过 btnState 属性可以设置当前按钮的显示状态。
 - Active:当前按钮被激活，具有较深的背景颜色显示或反色显示。
 - Disabled：当前按钮被禁用，按钮整体变灰，且无法被点击。
 
+**代码示例：**
+```js
+{
+    btnState:'active'
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-18-29-22.jpg)
 
 ##### 块状按钮
 在移动端应用程序上，通常默认的按钮样式无法满足业务需求，可以考虑使用块级按钮，通过 `isBlock` 属性，可以将按钮设置为块状显示。
+
+**代码示例：**
+```js
+{
+    isBlock:true
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-18-33-33.jpg)
 ##### icon按钮
 在部分业务需求中，在按钮旁增加一个有意义的按钮，可以让用户更容易理解按钮的含义。通过设置 `icon.show` 的值为` true`，并设置 `icon.name` 的值即可显示 `icon` 。
+
+**代码示例：**
+```js
+{
+    icon:{
+        show:true,
+        name:'la la-warning'   
+     },
+     value:'Danger'
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-18-50-48.jpg)
 ##### icon-only
-`Icon-only` 是一种特殊情况，是指当设置了 `icon` 属性，并且按钮的 `value` 属性为空时，按钮会以一种特殊的样式显示。
+`Icon-only` 是针对图标的特殊样式，是指当设置了 `icon` 属性，并且按钮的 `value` 属性为空时，按钮会以一种特殊的样式显示。
+
+**代码示例：**
+```js
+{
+    icon:{
+        show:true,
+        name:'la la-warning'   
+     },
+     value:null //可以直接不设置value，或将value值设置为null。  
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-18-52-40.jpg)
 
 

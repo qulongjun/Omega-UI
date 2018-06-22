@@ -37,7 +37,7 @@ import Blockquote from '@Blockquote';
 
 > 渲染结果中 `blockquote`、`text-left` 和 `blockquote-footer` 为自动生成的系统级 `class` 修饰符。
  
-#####  默认样式
+#####  实现效果
 
 ![](./_image/2018-06-21-13-17-22.jpg)
 
@@ -46,6 +46,14 @@ import Blockquote from '@Blockquote';
 
 ##### 对齐方式
 引用组件支持多种对齐方式。用户可以根据业务需求自行调整。
+
+**代码示例：**
+```js
+{
+    align:'right'
+}
+```
+**实现效果：**
 
 右对齐示例：
 ![](./_image/2018-06-21-13-21-23.jpg)

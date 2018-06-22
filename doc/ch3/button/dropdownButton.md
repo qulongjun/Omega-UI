@@ -61,7 +61,7 @@ import ButtonDropdown from '@ButtonDropdown';
     </div>
 </div>
 ```
-##### 默认样式
+##### 实现效果
 
 ![](./_image/2018-06-21-19-47-55.jpg)
 
@@ -70,6 +70,8 @@ import ButtonDropdown from '@ButtonDropdown';
 
 ##### 定义按钮样式
 下拉按钮组件是一种复合组件，除了在参数中设置 [公共配置](../ch1/public.md) 以外，还可以在 `button` 、 `toggle`或任意 `item` 中传入[公共配置](../ch1/public.md) 。
+
+**代码示例：**
 ```js
 {
    button:{
@@ -91,6 +93,8 @@ import ButtonDropdown from '@ButtonDropdown';
 
 ##### 分组和分组标题
 如果存在数量较多的下拉项，对下拉项进行分组是一个不错的解决方案，将相似操作归类为同一组并设置标题可以直观的展示给用户。
+
+**代码示例：**
 ```js
 {
     type:'header' //设置标题
@@ -101,12 +105,21 @@ import ButtonDropdown from '@ButtonDropdown';
 }
 ```
 
-示例：
+**实现效果：**
 ![](./_image/2018-06-21-20-01-56.jpg)
 
 ##### 对齐方式
-下拉按钮共有两种设置选项对齐方式，一种是 `itemAlign`，该属性可以一键设置所有选项的对齐方式。另一种是 `item` 的属性 `align` ，该属性可以设置当前 `item` 的对齐方式。
+可以通过设置  `itemAlign` 实现所有选项的对齐方式。或者单独为 `item` 设置属性 `align` ，指定当前 `item` 的对齐方式。
 
-示例:
+**代码示例：**
+```jsx
+{
+    button:{...},
+    items:[...],
+    itemAlign:'right'
+}
+```
+
+**实现效果：**
 ![](./_image/2018-06-21-20-04-54.jpg)
 
