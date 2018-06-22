@@ -31,7 +31,6 @@
         * [基础按钮组件](ch3/button/baseButton.md)
         * [下拉按钮组件](ch3/button/dropdownButton.md)
         * [按钮组组件](ch3/button/groupButton.md)
-        * [图标按钮组件](ch3/button/iconButton.md)
     * [基础组件](ch3/base/base.md)
         * [消息框组件](ch3/base/alert.md)
         * [徽章组件](ch3/base/badge.md)

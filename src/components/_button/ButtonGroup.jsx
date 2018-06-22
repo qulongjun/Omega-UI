@@ -26,11 +26,10 @@ class ButtonGroup extends Component {
 
     render() {
         const _props = this.props;
-        const {size, btns, align, groupStyle, vertical} = _props;
+        const {size, btns, groupStyle, vertical} = _props;
         let _sysClass = [];
         !isNotExist(vertical) && vertical ? _sysClass.push('btn-group-vertical') : _sysClass.push('btn-group')
         !isNotExist(size) && ['sm', 'lg'].includes(size) && _sysClass.push('btn-group-' + size);
-        !isNotExist(align) && align === 'vertical' && _sysClass.push('btn-group-vertical');
         !isNotExist(groupStyle) && isArray(groupStyle) && groupStyle.map((item) => {
             isString(item) && _sysClass.push('m-btn-group--' + item);
         });
