@@ -23,8 +23,13 @@ class BlockUI extends Component {
         this.state = {}
     }
 
-    static defaultProps = {};
-    static propTypes = {};
+    static defaultProps = {
+        block: true
+    };
+    static propTypes = {
+        block: PropTypes.bool,
+        overlayColor: PropTypes.string
+    };
 
     componentDidMount() {
         const _props = this.props;
