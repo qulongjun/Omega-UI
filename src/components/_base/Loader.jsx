@@ -20,8 +20,12 @@ class Loader extends Component {
         this.state = {}
     }
 
-    static defaultProps = {};
-    static propTypes = {};
+    static defaultProps = {
+        width: '30px'
+    };
+    static propTypes = {
+        width: PropTypes.string
+    };
 
     componentWillMount() {
     }
@@ -43,14 +47,16 @@ class Loader extends Component {
 
     render() {
         const _props = this.props;
-        const {color, size, align, children} = _props;
+        const {color, size, align, width, children} = _props;
         let _sysClass = ['m-loader'];
         !isNotExist(color) && _sysClass.push('m-loader--' + color);
         !isNotExist(size) && ['sm', 'lg'].includes(size) && _sysClass.push('m-loader--' + size);
         !isNotExist(align) && ['center', 'left', 'right'].includes(align) && _sysClass.push('m-loader--' + align);
         return (
             <Fragment>
-                <Div {..._delivery(_props, _sysClass)}>{children}</Div>
+                <Div {..._delivery(_props, _sysClass, {
+                    width
+                })}>{children}</Div>
             </Fragment>
         );
     }

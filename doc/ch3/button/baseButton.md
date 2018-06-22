@@ -22,6 +22,7 @@
 | isBlock | bool | false | 设置按钮是否以块级元素渲染。  |
 | btnState | string | 空 | 设置按钮当前状态。支持的参数有 `active`、 `disabled` 、`regular`  |
 | isCustom | bool | false | 设置按钮是否以扁平化样式显示。  |
+| loader | object | 空 | 设置按钮是否显示loader，配置见 [加载组件](../base/loader.md) 。  |
 | thicken | bool | false | 设置按钮边框是否加粗，该属性仅在 `btnColor` 属性为 `oulline-[color]` 时生效。  |
 | `href` | string | # | 设置按钮的跳转链接，该属性仅 `label` 属性值为 `a` 时生效。 |
 

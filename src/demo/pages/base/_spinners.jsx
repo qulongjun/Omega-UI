@@ -21,7 +21,7 @@ import Loader from "components/_base/Loader";
 import Spinner from "components/_base/Spinner";
 import Button from "components/_button/Button";
 import Portlet from 'components/_portlet/Portlet';
-
+import Demo from 'components/_framework/Demo';
 import 'sass/_demo.scss';
 
 
@@ -59,42 +59,36 @@ class Spinners extends Component {
                                                     <Loader {...{
                                                         color: 'brand',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
                                                     <Loader {...{
                                                         color: 'primary',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
                                                     <Loader {...{
                                                         color: 'success',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
                                                     <Loader {...{
                                                         color: 'info',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
                                                     <Loader {...{
                                                         color: 'warning',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
                                                     <Loader {...{
                                                         color: 'danger',
                                                         _includeStyle: {
-                                                            width: '30px',
                                                             display: 'inline-block'
                                                         }
                                                     }}/>
@@ -107,14 +101,12 @@ class Spinners extends Component {
                                                             color: 'brand',
                                                             size: 'sm',
                                                             _includeStyle: {
-                                                                width: '30px',
                                                                 display: 'inline-block'
                                                             }
                                                         }}/>
                                                         <Loader {...{
                                                             color: 'brand',
                                                             _includeStyle: {
-                                                                width: '30px',
                                                                 display: 'inline-block'
                                                             }
                                                         }}/>
@@ -122,7 +114,6 @@ class Spinners extends Component {
                                                             color: 'brand',
                                                             size: 'lg',
                                                             _includeStyle: {
-                                                                width: '30px',
                                                                 display: 'inline-block'
                                                             }
                                                         }}/>
