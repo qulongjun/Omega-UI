@@ -28,6 +28,16 @@
         margin-bottom: 15px;
       }
     }
+    .m-grid {
+      .m-grid__item {
+        height: 80px;
+        padding: 10px;
+        border: 1px solid #eee;
+        background: #fbfbfb;
+        font-weight: 500;
+      }
+
+    }
   }
 
   .m-demo__tools {

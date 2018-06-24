@@ -15,7 +15,7 @@ import Text from 'components/_element/Text';
 
 import {_delivery} from 'plugins/utils/_props';
 
-class Content extends Component {
+class Section extends Component {
     render() {
         const _props = this.props;
         const {title, describe, children} = _props;
@@ -36,4 +36,5 @@ class Content extends Component {
         );
     }
 }
-export default Content;
+
+export default Section;

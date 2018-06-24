@@ -1,19 +1,10 @@
 /**
- * @author:瞿龙俊
- * @timer:2018-06-14
- * @version:1.0
- * @title:JS变量类型判断
- * @note:
- */
-
-
-/**
  * Check if args is undefined
  * @param {Object} val
  */
 export const isUndefined = function (val) {
     return val === void 0;
-}
+};
 
 
 /**
@@ -26,7 +17,7 @@ export const isDocument = function (elem) {
     return !isUndefined(elem) &&
         elem instanceof Document &&
         elem.nodeType === 9
-}
+};
 
 /**
  * Check if args is a HTML Node
@@ -37,7 +28,7 @@ export const isNode = function (elem) {
     return !isUndefined(elem) &&
         elem instanceof HTMLElement &&
         elem.nodeType === 1
-}
+};
 
 /**
  *  Check if args is a list of HTML Node
@@ -50,7 +41,7 @@ export const isNodeList = function (eList = {}) {
         (type === '[object HTMLCollection]' || type === '[object HTMLCollection]') &&
         length in eList &&
         (eList.length === 0 || exports.isNode(eList[0]))
-}
+};
 
 /**
  *  Check if args is a string
@@ -59,7 +50,7 @@ export const isNodeList = function (eList = {}) {
 export const isString = function (val = '') {
     return typeof val === 'string' ||
         val instanceof String
-}
+};
 
 /**
  * Check if args is a function
@@ -69,7 +60,7 @@ export const isFn = function (val) {
     return !isUndefined(val) &&
         typeof val === 'function' &&
         Object.prototype.toString.call(val) === '[object Function]'
-}
+};
 
 
 /**
@@ -80,7 +71,7 @@ export const isArray = function (val) {
     return !isUndefined(val) &&
         Array.isArray(val) &&
         Object.prototype.toString.call(val) === '[object Array]'
-}
+};
 
 /**
  * Check if args is null
@@ -88,7 +79,7 @@ export const isArray = function (val) {
  */
 export const isNull = function (val) {
     return val === null;
-}
+};
 
 /**
  * Check if args is null
@@ -98,7 +89,7 @@ export const isNaN = function (val) {
     return !isUndefined(val)
         && Number.isNaN(val)
         && val !== val;
-}
+};
 
 
 /**
@@ -107,7 +98,7 @@ export const isNaN = function (val) {
  */
 export const isNumber = function (val) {
     return !isUndefined(val) && ((typeof val === 'number') || (typeof val === 'string' && parseInt(val) == val));
-}
+};
 
 
 /**
@@ -115,8 +106,16 @@ export const isNumber = function (val) {
  * @param {Object} val
  */
 export const isNotExist = function (val) {
-    return isUndefined(val) || isNull(val);
-}
+    return isUndefined(val) || isNull(val) || isNaN(val);
+};
+
+/**
+ * Check if args is  exist
+ * @param {Object} val
+ */
+export const isExist = function (val) {
+    return !(isNotExist(val));
+};
 
 /**
  * Check if args is Object
@@ -126,6 +125,12 @@ export const isObject = function (val) {
     return !isUndefined(val) &&
         typeof val === 'object' &&
         Object.prototype.toString.call(val) === '[object Object]'
-}
+};
 
-
+/**
+ * Check if args in Array
+ * @param {Object} val
+ */
+export const isInclude = function (val, array) {
+    return isExist(val) && isArray(array) && array.includes(val);
+};

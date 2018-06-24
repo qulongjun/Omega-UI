@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 
 
@@ -16,6 +16,7 @@ import BlockUI from '../demo/pages/base/_blockUI';
 import Spinner from '../demo/pages/base/_spinners';
 import Navs from '../demo/pages/base/_navs';
 import SweetAlert from '../demo/pages/base/_sweetAlert2';
+import Grid from '../demo/pages/base/_grid';
 
 import DefaultStyle from '../demo/pages/_button/_buttonBase/_defaultStyle';
 import Square from '../demo/pages/_button/_buttonBase/_square';
@@ -29,9 +30,10 @@ import FlaticonIcon from '../demo/pages/_button/_buttonIcon/_flaticonIcon';
 import ButtonDropdown from '../demo/pages/_button/_buttonDropdown';
 import BootstrapTabs from '../demo/pages/base/_tabs/_bootstrapTabs';
 import LineTabs from '../demo/pages/base/_tabs/_lineTabs';
+
 export default (
     <BrowserRouter>
-        <div className="m-grid m-grid--hor m-grid--root m-page">
+        <Fragment>
             <Route exact path="/" component={Dashboard}/>
             <Route path="/StateColor" component={StateColor}/>
             <Route path="/Typography" component={Typography}/>
@@ -46,6 +48,7 @@ export default (
             <Route path='/Spinner' component={Spinner}/>
             <Route path='/Navs' component={Navs}/>
             <Route path='/SweetAlert2' component={SweetAlert}/>
+            <Route path='/Grid' component={Grid}/>
 
             <Route path='/base/tabs/BootstrapTabs' component={BootstrapTabs}/>
             <Route path='/base/tabs/LineTabs' component={LineTabs}/>
@@ -59,6 +62,6 @@ export default (
             <Route path='/buttons/buttonIcon/FontawesomeIcon' component={FontawesomeIcon}/>
             <Route path='/buttons/buttonIcon/FlaticonIcon' component={FlaticonIcon}/>
             <Route path='/buttons/buttonDropdown' component={ButtonDropdown}/>
-        </div>
+        </Fragment>
     </BrowserRouter>
 );
