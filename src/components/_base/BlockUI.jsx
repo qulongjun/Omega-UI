@@ -52,9 +52,10 @@ class BlockUI extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <Div ref="block">{children}</Div>
+                <Div ref="block" {..._delivery(_props)}>{children}</Div>
             </Fragment>
         );
     }
 }
+
 export default BlockUI;

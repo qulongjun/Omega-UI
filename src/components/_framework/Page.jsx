@@ -1,6 +1,6 @@
 /**
  *
- * @Component: Wrapper
+ * @Component: Page
  * @User: Longjun.Qu
  * @Date: 2018-06-15
  * @Time: 10:50
@@ -8,10 +8,11 @@
  */
 
 import React, {Component, Fragment} from 'react';
-import {_delivery} from 'plugins/utils/_props';
-import GridItem from "../_base/GridItem";
 
-class Wrapper extends Component {
+import {_delivery} from 'plugins/utils/_props';
+import Grid from "../_base/Grid";
+
+class Page extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -25,12 +26,15 @@ class Wrapper extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <GridItem _includeClass='m-wrapper' fluid={true}>
+                <Grid {..._delivery(_props, 'm-page')} {...{
+                    direction: 'hor',
+                    root: true
+                }}>
                     {children}
-                </GridItem>
+                </Grid>
             </Fragment>
         );
     }
 }
 
-export default Wrapper;
+export default Page;

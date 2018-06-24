@@ -46,7 +46,7 @@ class BlockUIPage extends Component {
                                 }} >
                                     <Section describe={<Text>使用 <Code>BlockUI</Code> 组件可以快速构建一个遮罩层。</Text>}>
                                         <BlockUI {...{
-                                            block: true
+                                            block: false
                                         }}>
                                             <Paragraph _includeStyle={{
                                                 padding: "20px",

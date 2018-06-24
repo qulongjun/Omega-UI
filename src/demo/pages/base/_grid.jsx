@@ -53,7 +53,8 @@ class Grids extends Component {
                                         <Demo>
                                             <Grid {...{
                                                 direction: 'ver',
-                                                justify: 'flex-end'
+                                                justify: 'flex-end',
+                                                mode:'desktop'
                                             }}>
                                                 <GridItem {...{
                                                     fluid: true
