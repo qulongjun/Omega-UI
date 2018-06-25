@@ -21,7 +21,6 @@ export default class Icon extends Component {
     render() {
         const _props = this.props;
         const {iconName, children} = _props;
-        console.log(iconName);
         return (
             <Fragment>
                 <i ref='icon' {..._sysBind(_props, iconName)}>{children}</i>
