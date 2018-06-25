@@ -45,6 +45,17 @@ body,
   scroll-behavior: smooth;
 }
 
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #f4f5f8;
+}
+
+.btn {
+  line-height: 1.25;
+  padding: .65rem 1rem;
+}
+
+
 router-outlet {
   display: none;
 }
