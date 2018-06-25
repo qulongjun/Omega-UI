@@ -1,0 +1,24 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+
+const DivProps = {
+    children: {}
+};
+
+export default class Div extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(DivProps);
+    static propTypes = PropTypes(DivProps);
+
+    render() {
+        const _props = this.props;
+        return (
+            <Fragment>
+                <div ref='div' {..._sysBind(_props)}>{_props.children}</div>
+            </Fragment>
+        );
+    }
+}

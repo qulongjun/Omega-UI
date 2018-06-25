@@ -1,0 +1,50 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isString, isArray} from "../../_scripts/_is";
+import {_publicColor} from '../../_scripts/_public';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const BadgeProps = {
+    bgColor: {
+        type: PropType.oneOf(_publicColor)
+    },
+    inverse: {
+        default: false,
+        type: PropType.bool
+    },
+    type: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
+    },
+    children: {}
+};
+
+export default class Badge extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(BadgeProps);
+    static propTypes = PropTypes(BadgeProps);
+
+    render() {
+        const _props = this.props;
+        const {bgColor, inverse, type, children} = _props;
+        let _sysClass = ['m-badge'];
+        bgColor && !inverse && _sysClass.push('m-badge--' + bgColor);
+        bgColor && inverse && (_sysClass = _sysClass.concat(['m-badge--light', 'm-badge--bordered', 'm-badge-bordered--' + bgColor]));
+        isExist(type) && isArray(type) && type.map((item) => {
+            isString(item) && _sysClass.push('m-badge--' + item);
+        });
+        isExist(type) && isString(type) && _sysClass.push('m-badge--' + type);
+        return (
+            <Fragment>
+                <Text ref='badge' {..._delivery(_props, _sysClass)}>{children}</Text>
+            </Fragment>
+        );
+    }
+}

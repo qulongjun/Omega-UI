@@ -1,0 +1,43 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+import PropType from 'prop-types';
+import {_publicColor} from '../../_scripts/_public';
+import './index.scss';
+
+const LinkProps = {
+    color: {
+        type: PropType.oneOf(_publicColor)
+    },
+    href: {
+        type: PropType.string
+    },
+    download: {
+        type: PropType.string
+    },
+    target: {
+        default: '_blank',
+        type: PropType.oneOf(['_blank', '_parent', '_self', '_top'])
+    },
+    children: {}
+};
+
+export default class Link extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(LinkProps);
+    static propTypes = PropTypes(LinkProps);
+
+    render() {
+        const _props = this.props;
+        const {color, href, download, target, children} = _props;
+        let _sysClass = ['m-link'];
+        color && _sysClass.push('m-link--' + color);
+        return (
+            <Fragment>
+                <a ref='link' {..._sysBind(_props, _sysClass, null, {href, download, target})}>{children}</a>
+            </Fragment>
+        );
+    }
+}

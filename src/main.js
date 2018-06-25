@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './App'
 
-import RouteConfig from './routes/index';
-
-
-ReactDOM.render(RouteConfig, document.getElementById('root'));
+ReactDOM.render(
+    <App />, document.getElementById('root')
+);

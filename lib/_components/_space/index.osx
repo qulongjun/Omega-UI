@@ -1,0 +1,43 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isNumber} from '../../_scripts/_is';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+
+const SpaceProps = {
+    size: {
+        default: 10,
+        type: PropType.oneOfType([
+            PropType.number,
+            PropType.string
+        ])
+    },
+    children: {}
+};
+export default class Space extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(SpaceProps);
+    static propTypes = PropTypes(SpaceProps);
+
+    render() {
+        const _props = this.props;
+        const {size} = _props;
+        return (
+            <Fragment>
+                <Div ref='space'
+                     {..._delivery(
+                         _props,
+                         (isNumber(size) && [5, 10, 15, 20, 25, 30, 35, 40].includes(parseInt(size)) ? 'm--space-' + size : null),
+                         (!([5, 10, 15, 20, 25, 30, 35, 40].includes(size)) ? {
+                             display: 'block',
+                             height: 0,
+                             marginBottom: isNumber(size) ? size + 'px' : size
+                         } : null))}
+                />
+            </Fragment>
+        );
+    }
+}

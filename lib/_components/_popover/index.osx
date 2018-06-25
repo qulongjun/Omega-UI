@@ -1,0 +1,81 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray} from "../../_scripts/_is";
+import Button from '../_button/index.osx'
+import PropType from 'prop-types';
+import './index.scss';
+
+const PopoverProps = {
+    title: {
+        type: PropType.string
+    },
+    content: {
+        type: PropType.string
+    },
+    skin: {
+        default: 'light',
+        type: PropType.oneOf(['light', 'dark'])
+    },
+    offset: {
+        offset: [0, 0],
+        type: PropType.oneOfType([
+            PropType.array,
+            PropType.string
+        ])
+    },
+    trigger: {
+        default: 'hover',
+        type:PropType.string
+    },
+    html: {
+        type: PropType.bool
+    },
+    direction: {
+        type: PropType.oneOf(['top', 'bottom', 'right', 'left'])
+    },
+    children: {}
+};
+
+export default class Popover extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(PopoverProps);
+    static propTypes = PropTypes(PopoverProps);
+
+    componentDidMount() {
+        const el = $(this.refs.popover.refs.button);
+        const skin = el.data('skin') ? 'm-popover--skin-' + el.data('skin') : '';
+        const triggerValue = el.data('trigger') ? el.data('trigger') : 'hover';
+        el.popover({
+            trigger: triggerValue,
+            template: '\
+            <div class="m-popover ' + skin + ' popover" role="tooltip">\
+                <div class="arrow"></div>\
+                <h3 class="popover-header"></h3>\
+                <div class="popover-body"></div>\
+            </div>'
+        });
+    }
+
+    render() {
+        const _props = this.props;
+        const {title, trigger, content, skin, offset, html, direction, children} = _props;
+        const _sysAttribute = {
+            "data-toggle": "m-popover",
+            title,
+            "data-content": content || children,
+            "data-placement": direction,
+            "data-trigger": trigger,
+            "data-html": html,
+            "data-skin": skin,
+            "data-offset": isExist(offset) ? (isArray(offset) ? offset.join(' ') : offset) : null
+        };
+        return (
+            <Fragment>
+                <Button ref="popover"  {..._delivery(_props, null, null, _sysAttribute)}/>
+            </Fragment>
+        );
+    }
+}

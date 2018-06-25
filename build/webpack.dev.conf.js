@@ -4,7 +4,6 @@ const config = require('../config');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 // add hot-reload related code to entry chunks
@@ -23,9 +22,6 @@ module.exports = merge(baseWebpackConfig, {
     // cheap-module-eval-source-map is faster for development
     devtool: '#cheap-module-eval-source-map',
     plugins: [
-        // new MiniCssExtractPlugin({
-        //     filename: utils.assetsPath('css/[name].[contenthash].css')
-        // }),
         new webpack.DefinePlugin({
             'process.env': config.dev.env
         }),

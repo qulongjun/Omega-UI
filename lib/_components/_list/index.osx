@@ -1,0 +1,62 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import PropType from 'prop-types';
+
+const CodeProps = {
+    items: {
+        default: [],
+        type: PropType.oneOfType([
+            PropType.object,
+            PropType.array
+        ]),
+    },
+    label: {
+        default: 'ul',
+        type: PropType.oneOf(['ul', 'ol'])
+    },
+    children: {}
+};
+
+export default class List extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(CodeProps);
+    static propTypes = PropTypes(CodeProps);
+
+    render() {
+        const _props = this.props;
+        const {label, items} = _props;
+        return (
+            <Fragment>
+                {label === 'ul' ? (
+                    <ul ref='list' {..._sysBind(_props)}>
+                        {
+                            isExist(items) && (isArray(items) ? (items.map((item, index) => {
+                                if (isObject(item)) {
+                                    return (<li key={index} {..._sysBind(item)}>{item.value}</li>)
+                                } else {
+                                    return (<li key={index}>{item}</li>);
+                                }
+                            })) : isObject(items) ? (<li {..._sysBind(items)}>{items.value}</li>) : (<li>{items}</li>))
+                        }
+                    </ul>
+                ) : (
+                    <ol ref='list' {..._sysBind(_props)}>
+                        {
+                            isExist(items) && (isArray(items) ? (items.map((item, index) => {
+                                if (isObject(item)) {
+                                    return (<li key={index} {..._sysBind(item)}>{item.value}</li>)
+                                } else {
+                                    return (<li key={index}>{item}</li>);
+                                }
+                            })) : isObject(items) ? (<li {..._sysBind(items)}>{items.value}</li>) : (<li>{items}</li>))
+                        }
+                    </ol>
+                )}
+            </Fragment>
+        );
+    }
+}

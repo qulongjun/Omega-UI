@@ -1,0 +1,77 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isObject, isString} from "../../_scripts/_is";
+import Scroll from '../_scroll/index.osx';
+import Div from '../_div/index.osx';
+import Title from '../_title/index.osx';
+import PropType from 'prop-types';
+
+import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+import 'jquery-mousewheel';
+
+import './index.scss';
+
+const PortletProps = {
+    header: {
+        default: '',
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.object
+        ])
+    },
+    scroll: {
+        type: PropType.object
+    },
+    children: {}
+};
+
+export default class Portlet extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(PortletProps);
+    static propTypes = PropTypes(PortletProps);
+
+    render() {
+        const _props = this.props;
+        const {header, scroll, children} = _props;
+
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, ['m-portlet', 'm-portlet--mobile'])}>
+                    {header && isObject(header) && <PortletHeader {...header}/>}
+                    {header && isString(header) && <PortletHeader {...{title: header}}/>}
+                    <Div _includeClass="m-portlet__body">
+                        {isExist(scroll) && scroll.show ? <Scroll {...scroll}>
+                            {children}
+                        </Scroll> : children}
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}
+
+
+class PortletHeader extends Component {
+    render() {
+        const _props = this.props;
+        const {title, describe} = _props;
+        return (
+            <Fragment>
+                <Div ref='portlet' _includeClass="m-portlet__head">
+                    <Div _includeClass="m-portlet__head-caption">
+                        <Div _includeClass="m-portlet__head-title">
+                            <Title level={3} _includeClass="m-portlet__head-text">
+                                {title}
+                                {describe && (<small>{describe}</small>)}
+                            </Title>
+                        </Div>
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}
