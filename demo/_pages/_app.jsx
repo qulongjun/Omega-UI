@@ -13,6 +13,10 @@ import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, L
 import {Route, Switch} from 'react-router-dom'
 import Menu from './_menu';
 import StateColor from './_base/_stateColor';
+import Typography from './_base/_typography';
+import Tables from './_base/_tables';
+import Progress from './_base/_progress';
+import Modal from './_base/_modal';
 
 class App extends Component {
     constructor(props) {
@@ -27,7 +31,14 @@ class App extends Component {
             <Fragment>
                 <Page>
                     <Container>
-
+                        <Wrapper>
+                            <Route path='/' exact component={Menu}/>
+                            <Route path='/stateColor' component={StateColor}/>
+                            <Route path='/typography' component={Typography}/>
+                            <Route path='/tables' component={Tables}/>
+                            <Route path='/progress' component={Progress}/>
+                            <Route path='/modal' component={Modal}/>
+                        </Wrapper>
                     </Container>
                 </Page>
             </Fragment>

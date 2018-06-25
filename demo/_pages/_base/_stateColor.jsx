@@ -45,113 +45,9 @@ export default class StateColor extends Component {
                             }} >
                                 <Section
                                     describe={
-                                        <Text>Omega 设计了种类丰富的状态（State），这些状态可以直接应用于绝大部分元素和组件。我们重新设计了 Bootstrap
-                                            自带的六种状态：</Text>
+                                        <Text>我们重新设计了种类丰富的状态颜色，这些状态颜色可以通过 <Code>class</Code> 修饰符直接应用于绝大部分元素和组件。我们继承了
+                                            <Code>Bootstrap</Code> 状态：</Text>
                                     }>
-                                    <ButtonDropdown {...{
-                                        button: {
-                                            value: 'Button Right',
-                                            btnColor: 'primary',
-                                        },
-                                        direction: 'right',
-                                        items: [{
-                                            value: 'Action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-share'
-                                            }
-                                        }, {
-                                            value: 'Another action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-settings'
-                                            }
-                                        }, {
-                                            value: 'Something else here',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-graphic-2'
-                                            }
-                                        }]
-                                    }}/>
-                                    <ButtonDropdown {...{
-                                        button: {
-                                            value: 'Button Up',
-                                            btnColor: 'primary',
-                                        },
-                                        direction: 'up',
-                                        items: [{
-                                            value: 'Action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-share'
-                                            }
-                                        }, {
-                                            value: 'Another action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-settings'
-                                            }
-                                        }, {
-                                            value: 'Something else here',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-graphic-2'
-                                            }
-                                        }]
-                                    }}/>
-                                    <ButtonDropdown {...{
-                                        button: {
-                                            value: 'Button Left',
-                                            btnColor: 'success',
-                                        },
-                                        direction: 'left',
-                                        items: [{
-                                            value: 'Action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-share'
-                                            }
-                                        }, {
-                                            value: 'Another action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-settings'
-                                            }
-                                        }, {
-                                            value: 'Something else here',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-graphic-2'
-                                            }
-                                        }]
-                                    }}/>
-                                    <ButtonDropdown {...{
-                                        button: {
-                                            value: 'Button Down',
-                                            btnColor: 'warning',
-                                        },
-                                        direction: 'down',
-                                        items: [{
-                                            value: 'Action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-share'
-                                            }
-                                        }, {
-                                            value: 'Another action',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-settings'
-                                            }
-                                        }, {
-                                            value: 'Something else here',
-                                            icon: {
-                                                show: true,
-                                                name: 'flaticon-graphic-2'
-                                            }
-                                        }]
-                                    }}/>
                                     <Table {...{
                                         head: ['状态', '预览', 'Class 前缀', '使用示例'],
                                         data: [[
@@ -221,7 +117,7 @@ export default class StateColor extends Component {
                                 header: '使用示例'
                             }} >
                                 <Section
-                                    {...{describe: <Text>使用 <Code>_fontColor</Code> 参数可以为任何排版元素增加状态：</Text>}}>
+                                    {...{describe: <Text>可以使用 <Code>_fontColor</Code> 属性为任何排版元素增加状态：</Text>}}>
                                     <Demo>
                                         <Paragraph _fontColor="success">Success State Text</Paragraph>
                                         <Paragraph _fontColor="warning">Warning State Text</Paragraph>
@@ -233,7 +129,7 @@ export default class StateColor extends Component {
                                 </Section>
                                 <Section
                                     {...{
-                                        describe: <Text>使用 <Code>color</Code> 或 <Code>classList</Code>
+                                        describe: <Text>可以使用 <Code>_includeClass</Code>
                                             属性可以为绝大部分组件增加状态：</Text>
                                     }}>
                                     <Demo>
@@ -285,14 +181,14 @@ export default class StateColor extends Component {
                                     </Demo>
                                     <Demo>
                                         <Alert {...{
-                                            title: 'Well done! ',
-                                            message: 'You successfully read this important alert message.',
-                                            bgColor: 'success',
+                                            title: '干得漂亮! ',
+                                            message: '您成功阅读了本条重要消息。',
+                                            alertColor: 'success',
                                         }}/>
                                         <Alert {...{
-                                            title: 'Well done! ',
-                                            message: 'You successfully read this important alert message.',
-                                            bgColor: 'primary',
+                                            title: '干得漂亮! ',
+                                            message: '您成功阅读了本条重要消息。',
+                                            alertColor: 'primary',
                                         }}/>
                                         <Progress {...{
                                             items: [{
@@ -304,15 +200,15 @@ export default class StateColor extends Component {
                                         <Progress {...{
                                             items: [{
                                                 now: 80,
-                                                color: 'warning'
-                                            }]
+                                                _bgColor: 'warning'
+                                            }],
                                         }} />
                                         <Space/>
                                         <Progress {...{
                                             items: [{
                                                 now: 50,
-                                                color: 'success'
-                                            }]
+                                                _bgColor: 'success'
+                                            }],
                                         }} />
                                     </Demo>
                                 </Section>
