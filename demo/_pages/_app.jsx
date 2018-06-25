@@ -25,6 +25,7 @@ import Scrollable from "./_base/_scrollable";
 import Spinners from "./_base/_spinner";
 import Navs from "./_base/_navs";
 import SweetAlert from './_base/_sweetAlerts';
+import DefaultButton from "./_button/_default";
 
 class App extends Component {
     constructor(props) {
@@ -54,6 +55,7 @@ class App extends Component {
                             <Route path='/spinner' component={Spinners}/>
                             <Route path='/navs' component={Navs}/>
                             <Route path='/sweetAlert2' component={SweetAlert}/>
+                            <Route path='/button/default' component={DefaultButton}/>
                         </Wrapper>
                     </Container>
                 </Page>
