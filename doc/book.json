@@ -1,0 +1,33 @@
+{
+  "title": "Omega-UI 中文指南",
+  "description": "Responsive Bootstrap Admin & Powerful UI Kit By React.",
+  "language": "zh",
+  "plugins": [
+    "editlink",
+    "splitter",
+    "github",
+    "anchors",
+    "tbfed-pagefooter",
+    "prism",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "editlink": {
+      "base": "https://github.com/qulongjun/Omega-UI/tree/master/doc",
+      "label": "编辑本页"
+    },
+    "github": {
+      "url": "https://github.com/qulongjun/Omega-UI"
+    },
+    "tbfed-pagefooter": {
+      "copyright": "&copy Longjun Qu",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-solarizedlight.css"
+      ]
+    }
+  }
+}
