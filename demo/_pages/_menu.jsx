@@ -251,7 +251,7 @@ class Menu extends Component {
                                             btnColor: 'outline-warning',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/button/LineawesomeIcon');
+                                                    history.push('/button/lineawesome');
                                                 }
                                             }
                                         }}/>
@@ -260,7 +260,7 @@ class Menu extends Component {
                                             btnColor: 'outline-warning',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/button/FontawesomeIcon');
+                                                    history.push('/button/fontawesome');
                                                 }
                                             }
                                         }}/>
@@ -269,7 +269,7 @@ class Menu extends Component {
                                             btnColor: 'outline-warning',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/button/FlaticonIcon');
+                                                    history.push('/button/flaticon');
                                                 }
                                             }
                                         }}/>

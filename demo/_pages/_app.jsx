@@ -31,6 +31,9 @@ import SquareButton from './_button/_square';
 import AirButton from './_button/_air';
 import ButtonGroup from './_button/_group';
 import ButtonDropdown from './_button/_dropdown';
+import LineAwesomeButton from './_button/_lineAwesome';
+import FontAwesomeButton from './_button/_fontAwesome';
+import FlaticonButton from './_button/_flaticon';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -65,6 +68,9 @@ class App extends Component {
                             <Route path='/button/air' component={AirButton}/>
                             <Route path='/button/group' component={ButtonGroup}/>
                             <Route path='/button/dropdown' component={ButtonDropdown}/>
+                            <Route path='/button/lineawesome' component={LineAwesomeButton}/>
+                            <Route path='/button/fontawesome' component={FontAwesomeButton}/>
+                            <Route path='/button/flaticon' component={FlaticonButton}/>
                         </Wrapper>
                     </Container>
                 </Page>
