@@ -31,10 +31,10 @@ export default class GridItem extends Component {
         const {order, flex, align, fluid, children} = _props;
         let _sysClass = ['m-grid__item'];
         let _sysStyle = {};
-        isExist(fluid) && _sysClass.push('m-grid__item--fluid');
+        isExist(fluid) && fluid && _sysClass.push('m-grid__item--fluid');
         isExist(order) && _sysClass.push('m-grid__item--order-' + order);
         isExist(align) && _sysClass.push('m-grid__item--' + align);
-        isNotExist(fluid) && isExist(flex) && (_sysStyle = Object.assign(_sysClass, {flex}));
+        isExist(flex) && (_sysStyle = Object.assign(_sysStyle, {flex}));
         return (
             <Fragment>
                 <Div ref='gridItem' {..._delivery(_props, _sysClass, _sysStyle)}>
