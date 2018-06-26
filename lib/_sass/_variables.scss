@@ -14,7 +14,6 @@ $theme-colors: (
         danger: array-get($m--state-colors, danger, base),
         brand: array-get($m--state-colors, brand, base),
         metal: array-get($m--state-colors, metal, base),
-        light: array-get($m--state-colors, light, base),
         accent: array-get($m--state-colors, accent, base),
         focus: array-get($m--state-colors, focus, base),
         light: #f8f9fa,
