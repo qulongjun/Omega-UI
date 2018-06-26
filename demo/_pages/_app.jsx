@@ -12,6 +12,7 @@ import React, {Component, Fragment} from 'react';
 import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space} from 'omega';
 import {Route, Switch} from 'react-router-dom'
 import Menu from './_menu';
+import Grids from './_grid/_grid';
 import StateColor from './_base/_stateColor';
 import Typography from './_base/_typography';
 import Tables from './_base/_tables';
@@ -24,7 +25,7 @@ import BlockUIs from "./_base/_blockui";
 import Scrollable from "./_base/_scrollable";
 import Spinners from "./_base/_spinner";
 import Navs from "./_base/_navs";
-// import BootstrapTabs from './_base/_tabs/_bootstrap';
+import BootstrapTabs from './_base/_tabs/_bootstrap';
 import SweetAlert from './_base/_sweetAlerts';
 import DefaultButton from "./_button/_default";
 import PillButton from './_button/_pill';
@@ -50,6 +51,7 @@ class App extends Component {
                     <Container>
                         <Wrapper>
                             <Route path='/' exact component={Menu}/>
+                            <Route path='/grid' component={Grids}/>
                             <Route path='/stateColor' component={StateColor}/>
                             <Route path='/typography' component={Typography}/>
                             <Route path='/tables' component={Tables}/>
@@ -62,7 +64,7 @@ class App extends Component {
                             <Route path='/scrollable' component={Scrollable}/>
                             <Route path='/spinner' component={Spinners}/>
                             <Route path='/navs' component={Navs}/>
-                            {/*<Route path='/tabs/bootstrap' component={BootstrapTabs}/>*/}
+                            <Route path='/tabs/bootstrap' component={BootstrapTabs}/>
                             <Route path='/sweetAlert2' component={SweetAlert}/>
                             <Route path='/button/default' component={DefaultButton}/>
                             <Route path='/button/pill' component={PillButton}/>

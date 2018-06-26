@@ -26,6 +26,22 @@ class Menu extends Component {
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">
                             <Portlet {...{
+                                header: 'Grid'
+                            }} >
+                                <Demo>
+                                    <Button {...{
+                                        value: 'Grid',
+                                        btnColor: 'outline-primary',
+                                        _handle: {
+                                            onClick: () => {
+                                                history.push('/grid');
+                                            }
+                                        }
+
+                                    }}/>
+                                </Demo>
+                            </Portlet>
+                            <Portlet {...{
                                 header: 'Base'
                             }} >
                                 <Section title="Base">
