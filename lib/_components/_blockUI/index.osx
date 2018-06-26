@@ -1,0 +1,55 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {_publicColor} from '../../_scripts/_public';
+import {mApp} from "../../_scripts/_base/_app";
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import 'block-ui';
+import './index.scss';
+
+const BlockUIProps = {
+    block: {
+        default: true,
+        type: PropType.bool
+    },
+    overlayColor: {
+        type: PropType.oneOf(_publicColor)
+    },
+    type: {},
+    message: {},
+    children: {}
+};
+
+export default class BlockUI extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(BlockUIProps);
+    static propTypes = PropTypes(BlockUIProps);
+
+    componentDidMount() {
+        const _props = this.props;
+        const {block, overlayColor, type, message, el = this.refs.blockui.refs.div} = _props;
+        if (block) {
+            const _config = {};
+            overlayColor && Object.assign(_config, {
+                state: overlayColor
+            });
+            type && Object.assign(_config, {type});
+            message && Object.assign(_config, {message});
+            mApp.block(el, _config);
+        }
+
+    }
+
+    render() {
+        const _props = this.props;
+        const {children} = _props;
+        return (
+            <Fragment>
+                <Div ref="blockui" {..._delivery(_props)}>{children}</Div>
+            </Fragment>
+        );
+    }
+}

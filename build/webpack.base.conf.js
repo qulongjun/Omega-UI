@@ -2,7 +2,6 @@ const path = require('path');
 const WebpackBar = require('webpackbar');
 const utils = require('./utils');
 const config = require('../config');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = dir => path.join(__dirname, '..', dir);
 
@@ -27,22 +26,23 @@ module.exports = {
             'src': resolve('src'),
             'assets': resolve('src/assets'),
             'components': resolve('src/components'),
-            'routes': resolve('src/routes'),
-            'views': resolve('src/views'),
-            '$redux': resolve('src/redux'),
-            'sass': resolve('src/sass'),
-            'demo': resolve('src/demo'),
-            'node_modules': resolve('node_modules'),
-            'plugins': resolve('src/plugins')
+            'omega': resolve('lib')
         }
     },
     module: {
         rules: [
-
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: [resolve('src'), resolve('test')],
+                include: [resolve('src'), resolve('test'), resolve('demo')],
+                options: {
+                    cacheDirectory: true
+                }
+            },
+            {
+                test: /\.osx?$/,
+                loader: 'babel-loader',
+                include: [resolve('lib')],
                 options: {
                     cacheDirectory: true
                 }

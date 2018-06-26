@@ -1,0 +1,42 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {_publicColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+const SeparatorProps = {
+    size: {
+        default: 'sm',
+        type: PropType.oneOf(['lg', 'xl', 'sm', 'fit'])
+    },
+    color: {
+        type: PropType.oneOf(_publicColor)
+    },
+    dashed: {
+        default: false,
+        type: PropType.bool
+    },
+    children: {}
+};
+export default class Separator extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(SeparatorProps);
+    static propTypes = PropTypes(SeparatorProps);
+
+    render() {
+        const _props = this.props;
+        const {size, dashed, color} = _props;
+        let _sysClass = ['m-separator'];
+        size && _sysClass.push('m-separator--' + size);
+        color && _sysClass.push('m-separator--' + color);
+        dashed && _sysClass.push('m-separator--dashed');
+        return (
+            <Fragment>
+                <Div ref='separator' {..._delivery(_props, _sysClass)}/>
+            </Fragment>
+        );
+    }
+}

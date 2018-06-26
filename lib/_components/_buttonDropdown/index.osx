@@ -1,0 +1,100 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray} from "../../_scripts/_is";
+import Button from '../_button/index.osx';
+import Div from '../_div/index.osx';
+import Title from '../_title/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+const ButtonDropdownProps = {
+    button: {
+        type: PropType.object
+    },
+    toggle: {
+        type: PropType.object
+    },
+    direction: {
+        type: PropType.oneOf(['up', 'down', 'left', 'right'])
+    },
+    itemAlign: {
+        type: PropType.oneOf(['left', 'right', 'center', 'justify'])
+    },
+    children: {}
+};
+
+export default class ButtonDropdown extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(ButtonDropdownProps);
+    static propTypes = PropTypes(ButtonDropdownProps);
+
+    render() {
+        const _props = this.props;
+        const {button, items, toggle, direction, itemAlign, _type} = _props;
+        let _sysClass = ['btn-group'];
+        isExist(direction) && ['up', 'down', 'left', 'right'].includes(direction) && _sysClass.push('drop' + direction);
+        let _render = (<Fragment>
+            {
+                isExist(toggle) && toggle.show ? (
+                    <Fragment>
+                        <Button {..._delivery(button)}/>
+                        <Button {..._delivery(toggle, ['dropdown-toggle', 'dropdown-toggle-split'], null, {
+                            "data-toggle": "dropdown",
+                            "aria-expanded": false
+                        })}/>
+                    </Fragment>
+                ) : (
+                    <Button {..._delivery(button, ['dropdown-toggle'], null, {
+                        "data-toggle": "dropdown",
+                        "aria-expanded": false
+                    })}/>
+                )
+            }
+
+
+            <Div _includeClass={["dropdown-menu", (itemAlign ? 'text-' + itemAlign : null)]}>
+                {
+                    isExist(items) && (isArray(items) ? items.map((item, index) => {
+                        if (isExist(item.type)) {
+                            switch (item.type) {
+                                case 'divider':
+                                    return (<Div key={index} _includeClass="dropdown-divider"/>)
+                                    break;
+                                case 'header':
+                                    return (<Title key={index} level={6}
+                                                   {..._delivery(item, ['dropdown-header'])}>{item.value}</Title>)
+                                    break;
+                            }
+                        } else {
+                            return <Button key={index} {...item} {...{
+                                _uniqueClass: ['dropdown-item', (item.align ? 'text-' + item.align : null), (item.btnState ? item.btnState : null)],
+                                _specialIcon: isExist(item.icon) && item.icon.show
+                            }}/>
+                        }
+
+                    }) : (
+                        <Button {...items}/>
+                    ))
+                }
+            </Div>
+        </Fragment>);
+        return (
+            <Fragment>
+                {
+                    isExist(_type) && _type === 'tab' ? (
+                        <Fragment>
+                            {_render}
+                        </Fragment>
+                    ) : (
+                        <Div {..._delivery(_props, _sysClass)}>
+                            {_render}
+                        </Div>
+                    )
+                }
+
+            </Fragment>
+        );
+    }
+}

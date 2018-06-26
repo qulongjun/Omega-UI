@@ -1,0 +1,16 @@
+@mixin m-build-component--typography-code-base() {
+    code {
+    	padding: 0.2rem 0.4rem;
+    }
+}
+
+
+@mixin m-build-component--typography-code-skin($skin) {
+    code {
+        background: get-color($skin, panel);    
+    }
+}
+
+@include m-build-component--typography-code-base();
+
+@include m-build-component--typography-code-skin(light);

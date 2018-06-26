@@ -1,0 +1,62 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const GridProps = {
+    mode: {
+        type: PropType.oneOf(['desktop', 'desktop-and-tablet', 'tablet', 'tablet-and-mobile', 'mobile'])
+    },
+    root: {
+        default: false,
+        type: PropType.bool
+    },
+    direction: {
+        default: 'ver',
+        type: PropType.oneOf(['ver', 'hor'])
+    },
+    justify: {
+        type: PropType.oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around'])
+    },
+    warp: {
+        type: PropType.oneOf(['nowrap', 'wrap', 'wrap-reverse'])
+    },
+    alignItems: {
+        type: PropType.oneOf(['flex-start', 'flex-end', 'center', 'baseline', 'stretch'])
+    },
+    alignContent: {
+        type: PropType.oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch'])
+    },
+    children: {}
+};
+
+export default class Grid extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(GridProps);
+    static propTypes = PropTypes(GridProps);
+
+    render() {
+        const _props = this.props;
+        const {mode, direction, root, justify, warp, alignItems, alignContent, children} = _props;
+        let _sysClass = ['m-grid'];
+        isExist(mode) && _sysClass.push('m-grid--' + mode);
+        isExist(direction) && _sysClass.push('m-grid--' + direction + (isExist(mode) ? ('-' + mode) : ''));
+        isExist(root) && _sysClass.push('m-grid--root');
+        isExist(justify) && _sysClass.push('m-grid--' + justify);
+        isExist(warp) && _sysClass.push('m-grid--' + warp);
+        isExist(alignItems) && _sysClass.push('m-grid--align-item-' + alignItems);
+        isExist(alignContent) && _sysClass.push('m-grid--align-content-' + alignContent);
+        return (
+            <Fragment>
+                <Div ref='grid' {..._delivery(_props, _sysClass)}>
+                    {children}
+                </Div>
+            </Fragment>
+        );
+    }
+}

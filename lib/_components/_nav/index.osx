@@ -1,0 +1,110 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray} from "../../_scripts/_is";
+import Link from '../_link/index.osx';
+import Text from '../_text/index.osx';
+import Icon from '../_icon/index.osx';
+import List from '../_list/index.osx';
+import PropType from 'prop-types';
+import './index.scss'
+const NavProps = {
+    items: {
+        type: PropType.array
+    },
+    children: {}
+};
+
+export default class Nav extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(NavProps);
+    static propTypes = PropTypes(NavProps);
+
+    render() {
+        const _props = this.props;
+        const {items, type} = _props;
+        let _items = [];
+        isExist(items) && isArray(items) && (items.map((item) => {
+            const {icon, badge, text, type, state, bullet} = item;
+            let value = null;
+            switch (type) {
+                case "section": {
+                    value = (
+                        <Fragment>
+                            <Text {..._delivery(text, ['m-nav__section-text'])}>{text.value}</Text>
+                        </Fragment>
+                    );
+                    _items.push({
+                        value,
+                        _includeClass: ['m-nav__section']
+                    });
+                    break;
+                }
+                case "separator": {
+                    _items.push({
+                        value: '',
+                        _includeClass: ['m-nav__separator', 'm-nav__separator--fit']
+                    });
+                    break;
+                }
+                case "other": {
+                    _items.push({
+                        value: text.value,
+                        _includeClass: ['m-nav__item']
+                    });
+                    break;
+                }
+                default: {
+                    value = (
+                        <Fragment>
+                            <Link _uniqueClass="m-nav__link" href={(text && text.href) || ''}>
+                                {isExist(icon) && icon.show &&
+                                <Icon iconName={icon.name} {..._delivery(icon, ['m-nav__link-icon'])}/>}
+                                {isExist(bullet) && bullet.show &&
+                                <Text {..._delivery(bullet, ['m-nav__link-bullet', 'm-nav__link-bullet--' + bullet.type])}>
+                                    <Text>&nbsp;</Text>
+                                </Text>}
+                                {
+                                    isExist(badge) ? (<Text _includeClass="m-nav__link-title">
+                                        <Text _includeClass="m-nav__link-wrap">
+                                            <Text {..._delivery(text, ['m-nav__link-text'])}>
+                                                {text && text.value}
+                                            </Text>
+                                            <Text _includeClass="m-nav__link-badge">
+                                                {badge}
+                                            </Text>
+                                        </Text>
+                                    </Text>) : (
+                                        <Text {..._delivery(text, ['m-nav__link-text'])}>
+                                            {text && text.value}
+                                        </Text>
+                                    )
+                                }
+                            </Link>
+                            {type === 'child' ? text.child : ''}
+                        </Fragment>
+                    );
+                    _items.push({
+                        value,
+                        _includeClass: ['m-nav__item', (isExist(state) && ['active', 'disabled'].includes(state) ? 'm-nav__item--' + state : null)]
+                    })
+                }
+            }
+        }));
+        return (
+            <Fragment>
+                {type === 'sub' ? (
+                    <List {..._delivery(_props, ['m-nav__sub'])} {...{
+                        items: _items
+                    }}/>
+                ) : (
+                    <List {..._delivery(_props, ['m-nav'])} {...{
+                        items: _items
+                    }}/>
+                )}
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,50 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+const DemoProps = {
+    btnStyle: {
+        default: true,
+        type: PropType.bool
+    },
+    badgeStyle: {
+        default: true,
+        type: PropType.bool
+    },
+    children: {}
+};
+
+export default class Demo extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(DemoProps);
+    static propTypes = PropTypes(DemoProps);
+
+    render() {
+        const _props = this.props;
+        const {
+            btnStyle,
+            badgeStyle,
+            children
+        } = _props;
+        let className = ['m-demo__preview'];
+        btnStyle && className.push('m-demo__preview--btn');
+        badgeStyle && className.push('m-demo__preview--badge');
+        return (
+            <Fragment>
+                <Div ref='demo' {..._delivery(_props, 'm-demo', null, {
+                    "data-code-preview": "true",
+                    "data-code-html": "true",
+                    "data-code-js": "false"
+                })}>
+                    <Div _includeClass={className}>
+                        {children}
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}

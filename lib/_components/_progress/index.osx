@@ -1,0 +1,85 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject, isString} from "../../_scripts/_is";
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const PorgressProps = {
+    start: {
+        default: 0,
+        type: PropType.number
+    },
+    end: {
+        default: 100,
+        type: PropType.number
+    },
+    size: {
+        default: 'normal',
+        type: PropType.oneOf(['lg', 'sm', 'normal'])
+    },
+    height: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.number
+        ])
+    },
+    items: {},
+    children: {}
+};
+
+export default class Porgress extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(PorgressProps);
+    static propTypes = PropTypes(PorgressProps);
+
+    render() {
+        const _props = this.props;
+        const {start, end, size, height, items} = _props;
+        let _sysClass = ['progress'];
+        ['lg', 'sm'].includes(size) && _sysClass.push('m-progress--' + size);
+        let _style = null;
+        height && (_style = {height});
+        return (
+            <Fragment>
+                <Div ref='progress' {..._delivery(_props, _sysClass, _style)}>
+                    {isExist(items) && isArray(items) && items.map((item, index) => (
+                        <BarItem key={index} {..._delivery(item)} {...{start, end}}/>
+                    ))}
+                    {isExist(items) && isObject(items) && (
+                        <BarItem {..._delivery(items)} {...{start, end}}/>
+                    )}
+                </Div>
+            </Fragment>
+        );
+    }
+}
+
+class BarItem extends Component {
+    render() {
+        const _props = this.props;
+        const {start, end, now, pattern, showValue} = _props;
+        let _sysClass = ['progress-bar'];
+        isExist(pattern) && isArray(pattern) && pattern.map((item) => {
+            ['striped', 'animated'].includes(item) && _sysClass.push('progress-bar-' + item);
+        });
+        isExist(pattern) && isString(pattern) && ['striped', 'animated'].includes(pattern) && _sysClass.push('progress-bar-' + pattern);
+        return (
+            <Fragment>
+                <Div ref='item' {..._delivery(_props, _sysClass, {
+                    width: now + '%'
+                }, {
+                    "role": 'progressbar',
+                    "aria-valuenow": now,
+                    "aria-valuemin": start,
+                    "aria-valuemax": end
+                })}>
+                    {showValue && now + '%'}
+                </Div>
+            </Fragment>
+        );
+    }
+}

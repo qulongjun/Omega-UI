@@ -1,0 +1,40 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_publicColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx'
+import PropType from 'prop-types';
+import './index.scss';
+
+const SpinnerProps = {
+    size: {
+        default: 'normal',
+        type: PropType.oneOf(['normal', 'sm', 'lg'])
+    },
+    color: {
+        type: PropType.oneOf(_publicColor)
+    },
+    children: {}
+};
+
+export default class Spinner extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(SpinnerProps);
+    static propTypes = PropTypes(SpinnerProps);
+
+    render() {
+        const _props = this.props;
+        const {color, size, children} = _props;
+        let _sysClass = ['m-spinner'];
+        isExist(color) && _sysClass.push('m-spinner--' + color);
+        isExist(size) && ['sm', 'lg'].includes(size) && _sysClass.push('m-spinner--' + size);
+        return (
+            <Fragment>
+                <Div ref='spinner' {..._delivery(_props, _sysClass)}>{children}</Div>
+            </Fragment>
+        );
+    }
+}

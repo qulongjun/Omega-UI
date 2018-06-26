@@ -1,0 +1,80 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray} from "../../_scripts/_is";
+import Button from '../_button/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const TooltipProps = {
+    title: {
+        type: PropType.string
+    },
+    content: {
+        type: PropType.string
+    },
+    skin: {
+        default: 'light',
+        type: PropType.oneOf(['light', 'dark'])
+    },
+    offset: {
+        default: [0, 0],
+        type: PropType.oneOfType([
+            PropType.array,
+            PropType.string
+        ])
+    },
+    html: {
+        type: PropType.bool
+    },
+    direction: {
+        type: PropType.oneOf(['top', 'bottom', 'right', 'left'])
+    },
+    trigger: {
+        default: 'hover',
+        type: PropType.string
+    },
+    children: {}
+};
+
+export default class Tooltip extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(TooltipProps);
+    static propTypes = PropTypes(TooltipProps);
+
+    componentDidMount() {
+        const el = $(this.refs.tooltip.refs.button);
+        const skin = el.data('skin') ? 'm-tooltip--skin-' + el.data('skin') : '';
+        const triggerValue = el.data('trigger') ? el.data('trigger') : 'hover';
+        const width = el.data('width') === 'auto' ? 'm-tooltop--auto-width' : '';
+        el.tooltip({
+            trigger: triggerValue,
+            template: '\
+            <div class="m-tooltip ' + skin + ' ' + width + ' tooltip" role="tooltip">\
+                <div class="arrow"></div>\
+                <div class="tooltip-inner"></div>\
+            </div>'
+        });
+    }
+
+    render() {
+        const _props = this.props;
+        const {title, trigger, skin, offset, html, direction, children} = _props;
+        const _sysAttribute = {
+            "data-toggle": "m-tooltip",
+            title: title || children,
+            "data-placement": direction,
+            "data-trigger": trigger,
+            "data-html": html,
+            "data-skin": skin,
+            "data-offset": isExist(offset) ? (isArray(offset) ? offset.join(' ') : offset) : null
+        };
+        return (
+            <Fragment>
+                <Button ref="tooltip"  {..._delivery(_props, null, null, _sysAttribute)}/>
+            </Fragment>
+        );
+    }
+}

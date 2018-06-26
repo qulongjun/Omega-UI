@@ -1,0 +1,41 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import Div from '../_div/index.osx';
+import Title from '../_title/index.osx';
+import Text from '../_text/index.osx';
+import './index.scss'
+
+const SectionProps = {
+    title: {},
+    describe: {},
+    children: {}
+};
+
+export default class Section extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(SectionProps);
+    static propTypes = PropTypes(SectionProps);
+
+    render() {
+        const _props = this.props;
+        const {title, describe, children} = _props;
+        return (
+            <Fragment>
+                <Div ref='section' {..._delivery(_props, 'm-section')}>
+                    <Title level={3} _includeClass='m-section__heading'>
+                        {title}
+                    </Title>
+                    <Text _includeClass='m-section__sub'>
+                        {describe}
+                    </Text>
+                    <Div _includeClass='m-section__content'>
+                        {children}
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}
