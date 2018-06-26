@@ -156,16 +156,7 @@ class Menu extends Component {
                                             btnColor: 'outline-info',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/base/tabs/BootstrapTabs');
-                                                }
-                                            }
-                                        }}/>
-                                        <Button {...{
-                                            value: 'Line Tabs',
-                                            btnColor: 'outline-info',
-                                            _handle: {
-                                                onClick: () => {
-                                                    history.push('/base/tabs/LineTabs');
+                                                    history.push('/tabs/bootstrap');
                                                 }
                                             }
                                         }}/>
