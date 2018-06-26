@@ -1,9 +1,9 @@
 /**
  *
- * @Demo: DefaultButton
+ * @Demo: PillButton
  * @User: Longjun.Qu
- * @Date: 2018-06-25
- * @Time: 22:17
+ * @Date: 2018-06-26
+ * @Time: 09:48
  *
  */
 
@@ -22,8 +22,7 @@ import {
     Space,
     Paragraph
 } from 'omega';
-
-export default class DefaultButton extends Component {
+export default class PillButton extends Component {
     constructor(props) {
         super(props);
     }
@@ -43,31 +42,38 @@ export default class DefaultButton extends Component {
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'primary',
-                                            value: 'Primary'
+                                            value: 'Primary',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
-                                            value: 'Secondary'
+                                            value: 'Secondary',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
-                                            value: 'Success'
+                                            value: 'Success',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
-                                            value: 'Info'
+                                            value: 'Info',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
-                                            value: 'Warning'
+                                            value: 'Warning',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'danger',
-                                            value: 'Danger'
+                                            value: 'Danger',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'link',
-                                            value: 'Link'
+                                            value: 'Link',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -79,35 +85,40 @@ export default class DefaultButton extends Component {
                                                 from: 'primary',
                                                 to: 'info'
                                             },
-                                            value: 'Primary'
+                                            value: 'Primary',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             gradient: {
                                                 from: 'success',
                                                 to: 'accent'
                                             },
-                                            value: 'Success'
+                                            value: 'Success',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             gradient: {
                                                 from: 'danger',
                                                 to: 'warning'
                                             },
-                                            value: 'Danger'
+                                            value: 'Danger',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             gradient: {
                                                 from: 'warning',
                                                 to: 'danger'
                                             },
-                                            value: 'Warning'
+                                            value: 'Warning',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             gradient: {
                                                 from: 'info',
                                                 to: 'accent'
                                             },
-                                            value: 'Info'
+                                            value: 'Info',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -116,19 +127,23 @@ export default class DefaultButton extends Component {
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'brand',
-                                            value: 'Brand'
+                                            value: 'Brand',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'metal',
-                                            value: 'Metal'
+                                            value: 'Metal',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'accent',
-                                            value: 'Accent'
+                                            value: 'Accent',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'focus',
-                                            value: 'Focus'
+                                            value: 'Focus',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -140,38 +155,45 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             label: 'a',
                                             btnColor: 'primary',
-                                            value: 'Link'
+                                            value: 'Link',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Button',
-                                            type: 'submit'
+                                            type: 'submit',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             label: 'input',
                                             btnColor: 'warning',
-                                            value: 'Input'
+                                            value: 'Input',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             label: 'input',
                                             btnColor: 'info',
                                             value: 'Submit',
-                                            type: 'submit'
+                                            type: 'submit',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             label: 'input',
                                             btnColor: 'danger',
                                             value: 'Reset',
-                                            type: 'reset'
+                                            type: 'reset',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             label: 'a',
                                             btnColor: 'metal',
-                                            value: 'Metal'
+                                            value: 'Metal',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'brand',
-                                            value: 'Brand'
+                                            value: 'Brand',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -181,27 +203,32 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Primary',
-                                            isWide: true
+                                            isWide: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
                                             value: 'Secondary',
-                                            isWide: true
+                                            isWide: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Success',
-                                            isWide: true
+                                            isWide: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
                                             value: 'Info',
-                                            isWide: true
+                                            isWide: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Warning',
-                                            isWide: true
+                                            isWide: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -214,35 +241,43 @@ export default class DefaultButton extends Component {
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'outline-primary',
-                                            value: 'Primary'
+                                            value: 'Primary',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
-                                            value: 'Success'
+                                            value: 'Success',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
-                                            value: 'Info'
+                                            value: 'Info',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
-                                            value: 'Warning'
+                                            value: 'Warning',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
-                                            value: 'Danger'
+                                            value: 'Danger',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
-                                            value: 'Brand'
+                                            value: 'Brand',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-metal',
-                                            value: 'Metal'
+                                            value: 'Metal',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
-                                            value: 'Accent'
+                                            value: 'Accent',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -252,42 +287,50 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             btnColor: 'outline-primary',
                                             value: 'Primary',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Success',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Info',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
                                             value: 'Warning',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
                                             value: 'Danger',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
                                             value: 'Brand',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-metal',
                                             value: 'Metal',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
                                             value: 'Accent',
-                                            thicken: true
+                                            thicken: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -301,85 +344,50 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Primary',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'brand',
                                             value: 'Brand',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Success',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
                                             value: 'Info',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Warning',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'danger',
                                             value: 'Danger',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'accent',
                                             value: 'Accent',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
                                             value: 'Secondary',
-                                            isCustom: true
-                                        }}/>
-                                        <Separator {...{
-                                            dashed: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-primary',
-                                            value: 'Primary',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-brand',
-                                            value: 'Brand',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-success',
-                                            value: 'Success',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-info',
-                                            value: 'Info',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-warning',
-                                            value: 'Warning',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-danger',
-                                            value: 'Danger',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-metal',
-                                            value: 'Metal',
-                                            isCustom: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'outline-accent',
-                                            value: 'Accent',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Separator {...{
                                             dashed: true
@@ -388,175 +396,108 @@ export default class DefaultButton extends Component {
                                             btnColor: 'outline-primary',
                                             value: 'Primary',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
                                             value: 'Brand',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Success',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Info',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
                                             value: 'Warning',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
                                             value: 'Danger',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-metal',
                                             value: 'Metal',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
                                             value: 'Accent',
                                             isCustom: true,
-                                            thicken: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Separator {...{
                                             dashed: true
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-primary',
                                             value: 'Primary',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'primary'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-brand',
                                             value: 'Brand',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'brand'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-success',
                                             value: 'Success',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'success'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-info',
                                             value: 'Info',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'info'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-warning',
                                             value: 'Warning',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'warning'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-danger',
                                             value: 'Danger',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'danger'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-metal',
                                             value: 'Metal',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'metal'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
-                                            btnColor: 'secondary',
+                                            btnColor: 'outline-accent',
                                             value: 'Accent',
                                             isCustom: true,
                                             thicken: true,
-                                            _fontColor: 'accent'
-                                        }}/>
-                                        <Separator {...{
-                                            dashed: true
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Primary',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'primary',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Brand',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'brand',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Success',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'success',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Info',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'info',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Warning',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'warning',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Danger',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'danger',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Metal',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'metal',
-                                            fontBold: 'bold'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'secondary',
-                                            value: 'Accent',
-                                            isCustom: true,
-                                            thicken: true,
-                                            _fontColor: 'accent',
-                                            fontBold: 'bold'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Separator {...{
                                             dashed: true
@@ -567,7 +508,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'primary',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -575,7 +516,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'brand',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -583,7 +524,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'success',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -591,7 +532,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'info',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -599,7 +540,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'warning',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -607,7 +548,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'danger',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -615,7 +556,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'metal',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -623,7 +564,7 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'accent',
-                                            fontBold: 'bolder'
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Separator {...{
                                             dashed: true
@@ -634,7 +575,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'primary',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -642,7 +584,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'brand',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -650,7 +593,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'success',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -658,7 +602,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'info',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -666,7 +611,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'warning',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -674,7 +620,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'danger',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -682,7 +629,8 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'metal',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
@@ -690,7 +638,158 @@ export default class DefaultButton extends Component {
                                             isCustom: true,
                                             thicken: true,
                                             _fontColor: 'accent',
-                                            fontBold: 'boldest'
+                                            fontBold: 'bold',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Separator {...{
+                                            dashed: true
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Primary',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'primary',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Brand',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'brand',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Success',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'success',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Info',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'info',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Warning',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'warning',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Danger',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'danger',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Metal',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'metal',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Accent',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'accent',
+                                            fontBold: 'bolder',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Separator {...{
+                                            dashed: true
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Primary',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'primary',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Brand',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'brand',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Success',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'success',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Info',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'info',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Warning',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'warning',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Danger',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'danger',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Metal',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'metal',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'secondary',
+                                            value: 'Accent',
+                                            isCustom: true,
+                                            thicken: true,
+                                            _fontColor: 'accent',
+                                            fontBold: 'boldest',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -706,62 +805,74 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Large Button',
-                                            size: 'lg'
+                                            size: 'lg',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
                                             value: 'Large Button',
-                                            size: 'lg'
+                                            size: 'lg',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Large Button',
-                                            size: 'lg'
+                                            size: 'lg',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Large Button',
-                                            size: 'lg'
+                                            size: 'lg',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'primary',
-                                            value: 'Default Button'
+                                            value: 'Default Button',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
-                                            value: 'Default Button'
+                                            value: 'Default Button',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
-                                            value: 'Default Button'
+                                            value: 'Default Button',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
-                                            value: 'Default Button'
+                                            value: 'Default Button',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Small Button',
-                                            size: 'sm'
+                                            size: 'sm',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
                                             value: 'Small Button',
-                                            size: 'sm'
+                                            size: 'sm',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Small Button',
-                                            size: 'sm'
+                                            size: 'sm',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Small Button',
-                                            size: 'sm'
+                                            size: 'sm',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -772,36 +883,42 @@ export default class DefaultButton extends Component {
                                             btnColor: 'primary',
                                             value: 'Large Button',
                                             size: 'lg',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
                                             value: 'Large Button',
                                             size: 'lg',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Large Button',
                                             size: 'lg',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Large Button',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
                                             value: 'Large Button',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Large Button',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                     <Demo>
@@ -809,19 +926,22 @@ export default class DefaultButton extends Component {
                                             btnColor: 'primary',
                                             value: 'Large Button',
                                             size: 'sm',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-accent',
                                             value: 'Large Button',
                                             size: 'sm',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Large Button',
                                             size: 'sm',
-                                            isCustom: true
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -830,290 +950,342 @@ export default class DefaultButton extends Component {
                                 header: '按钮状态'
                             }} >
                                 <Section
-                                    describe={
-                                        <Text>可以通过设置 <Code>btnState</Code> 属性值为 <Code>active</Code> 或
-                                            <Code>disabled</Code>
-                                            使按钮显示不同状态。</Text>}>
+                                    describe={<Text>可以通过设置 <Code>btnState</Code> 属性值为 <Code>active</Code> 或 <Code>disabled</Code>
+                                        使按钮显示不同状态。</Text>}>
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'outline-primary',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
-                                            value: 'Default'
+                                            value: 'Default',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Space size={10}/>
                                         <Button {...{
                                             btnColor: 'outline-primary',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
                                             value: 'Active',
-                                            btnState: 'active'
+                                            btnState: 'active',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Space size={10}/>
                                         <Button {...{
                                             btnColor: 'outline-primary',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-brand',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-success',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-info',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-warning',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'outline-danger',
                                             value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                    </Demo>
-                                    <Demo>
-                                        <Button {...{
-                                            btnColor: 'primary',
-                                            value: 'Default'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'brand',
-                                            value: 'Default'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'success',
-                                            value: 'Default'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'info',
-                                            value: 'Default'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'warning',
-                                            value: 'Default'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'danger',
-                                            value: 'Default'
-                                        }}/>
-                                        <Space size={10}/>
-                                        <Button {...{
-                                            btnColor: 'primary',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'brand',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'success',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'info',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'warning',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'danger',
-                                            value: 'Active',
-                                            btnState: 'active'
-                                        }}/>
-                                        <Space size={10}/>
-                                        <Button {...{
-                                            btnColor: 'primary',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'brand',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'success',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'info',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'warning',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
-                                        }}/>
-                                        <Button {...{
-                                            btnColor: 'danger',
-                                            value: 'Disabled',
-                                            btnState: 'disabled'
+                                            btnState: 'disabled',
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                     <Demo>
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'brand',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'danger',
                                             value: 'Default',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Space size={10}/>
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'brand',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'danger',
                                             value: 'Active',
                                             btnState: 'active',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Space size={10}/>
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'brand',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'info',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'danger',
                                             value: 'Disabled',
                                             btnState: 'disabled',
-                                            isCustom: true
+                                            btnStyle: 'pill'
+                                        }}/>
+                                    </Demo>
+                                    <Demo>
+                                        <Button {...{
+                                            btnColor: 'primary',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'brand',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'success',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'info',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'warning',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'danger',
+                                            value: 'Default',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Space size={10}/>
+                                        <Button {...{
+                                            btnColor: 'primary',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'brand',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'success',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'info',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'warning',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'danger',
+                                            value: 'Active',
+                                            btnState: 'active',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Space size={10}/>
+                                        <Button {...{
+                                            btnColor: 'primary',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'brand',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'success',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'info',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'warning',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
+                                        }}/>
+                                        <Button {...{
+                                            btnColor: 'danger',
+                                            value: 'Disabled',
+                                            btnState: 'disabled',
+                                            isCustom: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
@@ -1128,22 +1300,26 @@ export default class DefaultButton extends Component {
                                         <Button {...{
                                             btnColor: 'primary',
                                             value: 'Block level button',
-                                            isBlock: true
+                                            isBlock: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'secondary',
                                             value: 'Block level button',
-                                            isBlock: true
+                                            isBlock: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'success',
                                             value: 'Block level button',
-                                            isBlock: true
+                                            isBlock: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                         <Button {...{
                                             btnColor: 'warning',
                                             value: 'Block level button',
-                                            isBlock: true
+                                            isBlock: true,
+                                            btnStyle: 'pill'
                                         }}/>
                                     </Demo>
                                 </Section>
