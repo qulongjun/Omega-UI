@@ -20,7 +20,7 @@
       display: block;
       padding: 0.7rem 1.2rem;
 
-      @include icons-size(array-get($m--bootstrap-extend-config, dropdown, icon, sizes));
+      @include icons-size( array-get($m--bootstrap-extend-config, dropdown, icon, sizes) );
 
       > i {
         display: inline-block;
@@ -69,7 +69,7 @@
     .nav-link.dropdown-toggle,
     .btn.dropdown-toggle {
       &:before {
-        //display: none;
+        display: none;
       }
 
       &:after {
@@ -93,7 +93,7 @@
     .nav-link.dropdown-toggle,
     .btn.dropdown-toggle {
       &:before {
-        //display: none;
+        display: none;
       }
 
       &:after {
