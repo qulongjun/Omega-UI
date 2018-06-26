@@ -1,7 +1,10 @@
+//
+//** Link Component
+//
+
 $m-pill-radius: 60px;
 
-
-
+//== Component Base
 @mixin m-build-component--buttons-base() {
   // base button
   .btn {
@@ -76,13 +79,6 @@ $m-pill-radius: 60px;
       &.btn-lg {
         padding: array-get($m--buttons, layout, custom, lg, self, padding, y) array-get($m--buttons, layout, custom, lg, self, padding, x);
         font-size: array-get($m--buttons, layout, custom, lg, self, font-size);
-      }
-    }
-
-
-    @each $name, $color in $m--state-colors {
-      &.btn-#{$name} {
-        background: array-get($color, base);
       }
     }
 
@@ -456,15 +452,12 @@ $m-pill-radius: 60px;
 
       &.btn-outline-#{$name} {
         color: array-get($color, base);
-        border-color:array-get($color, base);
+
         &.active,
         &.focus,
         &:focus,
         &:hover:not(:disabled) {
           color: array-get($color, inverse) !important;
-        }
-        &.active:not(:disabled){
-          background-color: array-get($color, base);
         }
       }
     }
