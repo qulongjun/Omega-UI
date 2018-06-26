@@ -1,0 +1,83 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import Button from '../_button/index.osx';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+import mDropdown from '../../_scripts/_base/dropdown/dropdown';
+import './index.scss'
+
+const DropdownProps = {
+    toggle: {
+        default: 'click',
+        type: PropType.oneOf(['click', 'hover'])
+    },
+    persistent: {
+        default: false,
+        type: PropType.bool
+    },
+    hoverTimeout: {
+        default: 300,
+        type: PropType.number
+    },
+    children: {}
+};
+
+export default class Dropdown extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(DropdownProps);
+    static propTypes = PropTypes(DropdownProps);
+
+    componentDidMount() {
+
+    }
+
+    render() {
+        const _props = this.props;
+        const {toggle, persistent, hoverTimeout, direction, showArrow, button, size, vertical, children} = _props;
+        let _sysClass = ['m-dropdown', 'm-dropdown--inline'];
+        isExist(button) && isExist(button.icon) && button.icon.show && _sysClass.push('m-dropdown--align-push');
+        isExist(direction) && ['left', 'right', 'center'].includes(direction) && _sysClass.push('m-dropdown--align-' + direction);
+        isExist(size) && ['small', 'medium', 'large', 'huge'].includes(size) && _sysClass.push('m-dropdown--' + size);
+        isExist(showArrow) && showArrow && _sysClass.push('m-dropdown--arrow');
+        isExist(vertical) && ['top'].includes(vertical) && _sysClass.push('m-dropdown--up');
+
+        return (
+            <Fragment>
+                <Div ref="dropdown"
+                     {..._delivery(_props, _sysClass, null,
+                         {
+                             "m-dropdown-toggle": toggle,
+                             "m-dropdown-persistent": persistent ? 1 : 0,
+                             "m-dropdown-timeout": hoverTimeout,
+                         })
+                     }>
+                    <Button {..._delivery(button, ['m-dropdown__toggle', (isExist(button) && isExist(button.icon) && button.icon.show ? '' : 'dropdown-toggle')])}
+                            label="a"/>
+                    <Div _includeClass="m-dropdown__wrapper">
+                        {
+                            isExist(vertical) && vertical === 'bottom' && (<Text
+                                _includeClass={['m-dropdown__arrow', (isExist(direction) && ['left', 'right', 'center'].includes(direction) ? 'm-dropdown__arrow--' + direction : ''), (isExist(direction) && direction === 'right' ? 'm-dropdown__arrow--adjust' : '')]}/>)
+                        }
+                        <Div _includeClass={['m-dropdown__inner']}>
+                            <Div _includeClass={["m-dropdown__body"]}>
+                                <Div _includeClass={["m-dropdown__content"]}>
+                                    {children}
+                                </Div>
+                            </Div>
+                        </Div>
+                        {
+                            isExist(vertical) && vertical === 'top' && (<Text
+                                _includeClass={['m-dropdown__arrow', (isExist(direction) && ['left', 'right', 'center'].includes(direction) ? 'm-dropdown__arrow--' + direction : ''), (isExist(direction) && direction === 'right' ? 'm-dropdown__arrow--adjust' : '')]}/>)
+                        }
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}
