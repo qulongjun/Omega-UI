@@ -12,13 +12,15 @@
 
 ## 安装方式
 
-您可以使用 `NPM` 命令进行安装，命令如下：
+您可以使用 `OmegaUI` 快速构建工具自动化安装，命令如下：
 
 ```shell
 // with npm
-npm i omega-ui
-
+$ npm install omegaui-cli
+$ omegaui-cli init my-project
 ```
+
+> 构建工具具体用法清参考[使用说明](https://github.com/qulongjun/Omega-cli)。
 
 ## 用法
 
@@ -27,7 +29,7 @@ npm i omega-ui
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 //导入按钮组件
-import Button from '@Button';
+import {Button} from 'omega';
 
 class App extends Component {
     render(){
