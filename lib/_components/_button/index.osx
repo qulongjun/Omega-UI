@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
-import {isExist, isNotExist, isArray,isString} from "../../_scripts/_is";
+import {isExist, isNotExist, isArray, isString} from "../../_scripts/_is";
 import {_publicColor, _totalColor} from '../../_scripts/_public';
 import Text from '../_text/index.osx';
 import Icon from '../_icon/index.osx';
@@ -58,7 +58,10 @@ const ButtonProps = {
     },
     btnStyle: {
         default: false,
-        type: PropType.oneOf(['square', 'pill', 'air'])
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
     },
     isCustom: {
         default: false,
