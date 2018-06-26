@@ -1,0 +1,131 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import {uuid} from '../../_scripts/_utils';
+import Div from '../_div/index.osx';
+import ButtonDropdown from '../_buttonDropdown/index.osx';
+import Link from '../_link/index.osx';
+import List from '../_list/index.osx';
+import Icon from '../_icon/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+const TabProps = {
+    items: {
+        type: PropType.oneOfType([
+            PropType.array,
+            PropType.object
+        ]),
+        adjusted: {
+            default: false,
+            type: PropType.bool
+        },
+        pill: {
+            type: PropType.object
+        },
+    },
+    children: {}
+};
+
+export default class Tab extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(TabProps);
+    static propTypes = PropTypes(TabProps);
+
+    render() {
+        const _props = this.props;
+        const {items, adjusted, pill} = _props;
+        let _items = [];
+        let _contents = [];
+        if (isExist(items)) {
+            if (isArray(items)) {
+                items.map((item, index) => {
+                    if (isObject(item)) {
+                        if (isExist(item.groupTabs)) {
+                            // 这是Dropdown
+                            if (isArray(item.groupTabs)) {
+                                let btnItems = [];
+                                item.groupTabs.map((item, groupIndex) => {
+                                    let {tab, state} = item;
+                                    let _random = uuid(4, 16);
+                                    btnItems.push({
+                                        value: tab,
+                                        label: 'a',
+                                        href: '#m_tab_' + index + "_" + groupIndex + "_" + _random,
+                                        _includeAttribute: {
+                                            "data-toggle": "tab"
+                                        }
+                                    });
+                                    _contents.push(<Div key={index + '-' + groupIndex + '-' + _random}
+                                                        _includeAttribute={{
+                                                            role: "tabpanel",
+                                                            id: 'm_tab_' + index + "_" + groupIndex + "_" + _random
+                                                        }}
+                                                        _includeClass={['tab-pane', (isExist(state) && ['active', 'disabled'].includes(state) ? state : null)]}>{item.content}</Div>)
+                                });
+                                let button = {
+                                    label: 'a',
+                                    _uniqueClass: ['nav-link', 'dropdown-toggle']
+                                };
+                                Object.assign(button, item.button);
+                                let _temp = (
+                                    <ButtonDropdown {...{
+                                        button: button,
+                                        _type: 'tab',
+                                        items: btnItems
+                                    }}/>
+                                );
+                                _items.push(Object.assign(_delivery(item, ['nav-item', 'dropdown'], null,), {value: _temp}));
+                            }
+                        } else {
+                            let {tab, state, icon} = item;
+                            let _random = uuid(4, 16);
+                            let _temp = (
+                                <Link {...{
+                                    _uniqueClass: ['nav-link', (isExist(state) && ['active', 'disabled'].includes(state) ? state : null)],
+                                    _includeAttribute: {
+                                        'data-toggle': 'tab'
+                                    },
+                                    href: '#m_tab_' + index + "_" + _random
+                                }}>
+                                    {icon && icon.show && (<Icon iconName={icon.name} {..._delivery(icon)}/>)}
+                                    {tab}
+                                </Link>
+                            );
+                            _items.push(Object.assign(_delivery(item, ['nav-item'], null,), {value: _temp}));
+
+                            _contents.push(<Div key={index + "-" + _random} _includeAttribute={{
+                                role: "tabpanel",
+                                id: 'm_tab_' + index + "_" + _random
+                            }}
+                                                _includeClass={['tab-pane', (isExist(state) && ['active', 'disabled'].includes(state) ? state : null)]}>{item.content}</Div>)
+                        }
+                    }
+                });
+            } else {
+                if (isObject(items)) {
+                    //只有一个tab和一个content或是一个Group
+                    _items.push(items);
+                }
+            }
+        }
+        return (
+            <Fragment>
+                <List {..._delivery(_props, ['nav', 'nav-tabs', (adjusted ? 'nav-fill' : null), (pill && pill.show ? 'nav-pills' : null), (pill && pill.show && pill.color ? 'nav-pills--' + pill.color : null)], null, {
+                    role: 'tablist'
+                })} {...{
+                    items: _items
+                }}/>
+                <Div _includeClass="tab-content">
+                    {
+                        _contents.map(item => {
+                            return item;
+                        })
+                    }
+                </Div>
+            </Fragment>
+        );
+    }
+}

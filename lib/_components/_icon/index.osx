@@ -1,0 +1,30 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+import PropType from 'prop-types';
+import './index.scss';
+
+const IconProps = {
+    iconName: {
+        type: PropType.string
+    },
+    children: {}
+};
+
+export default class Icon extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(IconProps);
+    static propTypes = PropTypes(IconProps);
+
+    render() {
+        const _props = this.props;
+        const {iconName, children} = _props;
+        return (
+            <Fragment>
+                <i ref='icon' {..._sysBind(_props, iconName)}>{children}</i>
+            </Fragment>
+        );
+    }
+}

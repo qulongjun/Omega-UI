@@ -283,7 +283,8 @@ class Typography extends Component {
                                                 <Link href="javascript:;">示例超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
-                                                <Link href="javascript:;" _includeClass={['m--font-bold']}>示例加粗超级链接</Link>
+                                                <Link href="javascript:;"
+                                                      _includeClass={['m--font-bold']}>示例加粗超级链接</Link>
                                             </Paragraph>
                                             <Paragraph>
                                                 <Link href="javascript:;"

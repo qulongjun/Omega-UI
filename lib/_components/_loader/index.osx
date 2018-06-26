@@ -1,0 +1,49 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_publicColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const LoaderProps = {
+    color: {
+        type: PropType.oneOf(_publicColor)
+    },
+    size: {
+        default: 'normal',
+        type: PropType.oneOf(['sm', 'lg', 'normal'])
+    },
+    align: {
+        type: PropType.oneOf(['left', 'right', 'center'])
+    },
+    width: {
+        default: '30px'
+    },
+    children: {}
+};
+
+export default class Loader extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(LoaderProps);
+    static propTypes = PropTypes(LoaderProps);
+
+    render() {
+        const _props = this.props;
+        const {color, size, align, width, children} = _props;
+        let _sysClass = ['m-loader'];
+        isExist(color) && _sysClass.push('m-loader--' + color);
+        isExist(size) && ['sm', 'lg'].includes(size) && _sysClass.push('m-loader--' + size);
+        isExist(align) && ['center', 'left', 'right'].includes(align) && _sysClass.push('m-loader--' + align);
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, _sysClass, {
+                    width
+                })}>{children}</Div>
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,155 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isObject, isArray, isString} from "../../_scripts/_is";
+import {_publicColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+
+import PropType from 'prop-types';
+import './index.scss';
+
+const TableProps = {
+    responsive: {
+        type: PropType.bool
+    },
+    inverse: {
+        type: PropType.bool
+    },
+    size: {
+        default: 'normal',
+        type: PropType.oneOf(['normal', 'sm'])
+    },
+    stripe: {
+        type: PropType.bool
+    },
+    bordered: {
+        type: PropType.bool
+    },
+    hover: {
+        type: PropType.bool
+    },
+    separateColor: {
+        type: PropType.oneOf(_publicColor)
+    },
+    borderColor: {
+        type: PropType.oneOf(_publicColor)
+    },
+    head: {},
+    data: {},
+    showIndex: {},
+    children: {}
+};
+
+export default class Table extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(TableProps);
+    static propTypes = PropTypes(TableProps);
+
+    render() {
+        const _props = this.props;
+        const {responsive, inverse, size, stripe, bordered, hover, separateColor, borderColor, head, data, showIndex} = _props;
+        let _sysClass = ['table', 'm-table'];
+        inverse && _sysClass.push('table-inverse');
+        size === 'sm' && _sysClass.push('table-sm');
+        stripe && _sysClass.push('table-striped');
+        bordered && _sysClass.push('table-bordered');
+        hover && _sysClass.push('table-hover');
+        separateColor && _sysClass.push('m-table--head-separator-' + separateColor);
+        borderColor && _sysClass.push('table-bordered') && _sysClass.push('m-table--border-' + borderColor);
+        isObject(head) && head.hideBorder && _sysClass.push('m-table--head-no-border');
+        isObject(head) && head.bgColor && _sysClass.push('m-table--head-bg-' + head.bgColor);
+        return (
+            <Fragment>
+                <Div _includeClass={responsive ? "table-responsive" : []}>
+                    <table {..._sysBind(_props, _sysClass)}>
+                        {isExist(head) && <Thead head={head} showIndex={showIndex}/>}
+                        {isExist(data) && <Tbody data={data} showIndex={showIndex}/>}
+                    </table>
+                </Div>
+            </Fragment>
+        );
+    }
+}
+
+class Thead extends Component {
+    render() {
+        const _props = this.props;
+        const {head, showIndex} = _props;
+        const {inverse} = head;
+        const values = isArray(head) ? head : (isObject(head) ? head.names : null);
+        let _sysClass = [];
+        inverse && _sysClass.push('thead-inverse');
+
+        return (
+            <Fragment>
+                <thead {..._sysBind(_props, _sysClass)}>
+                <tr {..._sysBind(head)}>
+                    {showIndex && <th>#</th>}
+                    {isExist(values) && values.map((item, index) => {
+                        if (isExist(item) && isString(item)) {
+                            return (<th key={index}>{item}</th>);
+                        }
+                        if (isExist(item) && isObject(item)) {
+                            let name = item.name;
+                            return (<th key={index} {..._sysBind(item)}>{name}</th>);
+                        }
+                    })}
+                </tr>
+                </thead>
+            </Fragment>
+        );
+    }
+}
+
+class Tbody extends Component {
+    render() {
+        const _props = this.props;
+        const {data, showIndex} = _props;
+        const values = isArray(data) ? data : (isObject(data) ? data.values : null);
+        let _domData = isObject(data) && _sysBind(data);
+        return (
+            <Fragment>
+                <tbody {..._domData}>
+                {
+                    isExist(values) && values.map((item, index) => {
+                        if (isArray(item)) {
+                            return (<TRows key={index} index={index} data={item} showIndex={showIndex}/>);
+                        } else if (isObject(item)) {
+                            let tdValues = item.values;
+                            if (isArray(tdValues)) {
+                                return (
+                                    <TRows key={index} index={index} data={tdValues} {...item} showIndex={showIndex}/>)
+                            }
+                        }
+                    })
+                }
+                </tbody>
+            </Fragment>
+        );
+    }
+}
+
+class TRows extends Component {
+    render() {
+        const _props = this.props;
+        const {data, bgColor, showIndex, index} = _props;
+        return (
+            <Fragment>
+                <tr {..._sysBind(_props, bgColor ? ['m-table__row--' + bgColor] : [])}>
+                    {showIndex && (<td>{index + 1}</td>)}
+                    {
+                        isExist(data) && data.map((item, index) => {
+                            if (isObject(item)) {
+                                return <td key={index} {..._sysBind(item)}>{item.value}</td>
+                            } else {
+                                return <td key={index}>{item}</td>
+                            }
+                        })
+                    }
+                </tr>
+            </Fragment>
+        );
+    }
+}

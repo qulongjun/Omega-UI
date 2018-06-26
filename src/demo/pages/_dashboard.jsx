@@ -40,6 +40,22 @@ class Dashboard extends Component {
                         <div className="row">
                             <div className="col-xl-6">
                                 <Portlet {...{
+                                    header: 'Grid'
+                                }} >
+                                    <Demo>
+                                        <Button {...{
+                                            value: 'Grid',
+                                            btnColor: 'outline-primary',
+                                            _handle: {
+                                                onClick: () => {
+                                                    history.push('/Grid');
+                                                }
+                                            }
+
+                                        }}/>
+                                    </Demo>
+                                </Portlet>
+                                <Portlet {...{
                                     header: 'Base'
                                 }} >
                                     <Section title="Base">

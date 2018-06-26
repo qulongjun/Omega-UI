@@ -23,8 +23,13 @@ class BlockUI extends Component {
         this.state = {}
     }
 
-    static defaultProps = {};
-    static propTypes = {};
+    static defaultProps = {
+        block: true
+    };
+    static propTypes = {
+        block: PropTypes.bool,
+        overlayColor: PropTypes.string
+    };
 
     componentDidMount() {
         const _props = this.props;
@@ -47,9 +52,10 @@ class BlockUI extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <Div ref="block">{children}</Div>
+                <Div ref="block" {..._delivery(_props)}>{children}</Div>
             </Fragment>
         );
     }
 }
+
 export default BlockUI;

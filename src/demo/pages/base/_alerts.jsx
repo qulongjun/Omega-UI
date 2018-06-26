@@ -16,7 +16,7 @@ import SubHeader from 'components/_framework/SubHeader';
 import Wrapper from 'components/_framework/Wrapper';
 import Content from 'components/_framework/Content';
 import Section from 'components/_framework/Section';
-
+import Demo from 'components/_framework/Demo';
 import Alert from 'components/_base/Alert'
 import Portle from 'components/_portlet/Portlet';
 
@@ -48,47 +48,49 @@ class Alerts extends Component {
                                     }
                                 }} >
                                     <Section>
-                                        <Alert {...{
-                                            title: 'Hello World!',
-                                            message: ' This is default alert message box style.',
-                                            closeBtn: false
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Well done!',
-                                            message: ' You successfully read this important alert message.',
-                                            closeBtn: false,
-                                            alertColor: 'success'
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Heads up!',
-                                            message: ' This alert needs your attention, but it\'s not super important.',
-                                            closeBtn: false,
-                                            alertColor: 'info'
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Warning!',
-                                            message: ' Better check yourself, you\'re not looking too good.',
-                                            closeBtn: false,
-                                            alertColor: 'warning'
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Oh snap!',
-                                            message: ' Change a few things up and try submitting again.',
-                                            closeBtn: false,
-                                            alertColor: 'danger'
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Brand!',
-                                            message: ' You successfully read this important alert message.',
-                                            closeBtn: false,
-                                            alertColor: 'brand'
-                                        }}/>
-                                        <Alert {...{
-                                            title: 'Heads up!',
-                                            message: ' This alert needs your attention, but it\'s not super important.',
-                                            closeBtn: false,
-                                            alertColor: 'primary'
-                                        }}/>
+                                        <Demo>
+                                            <Alert {...{
+                                                title: 'Hello World!',
+                                                message: ' This is default alert message box style.',
+                                                closeBtn: false
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Well done!',
+                                                message: ' You successfully read this important alert message.',
+                                                closeBtn: false,
+                                                alertColor: 'success'
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Heads up!',
+                                                message: ' This alert needs your attention, but it\'s not super important.',
+                                                closeBtn: false,
+                                                alertColor: 'info'
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Warning!',
+                                                message: ' Better check yourself, you\'re not looking too good.',
+                                                closeBtn: false,
+                                                alertColor: 'warning'
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Oh snap!',
+                                                message: ' Change a few things up and try submitting again.',
+                                                closeBtn: false,
+                                                alertColor: 'danger'
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Brand!',
+                                                message: ' You successfully read this important alert message.',
+                                                closeBtn: false,
+                                                alertColor: 'brand'
+                                            }}/>
+                                            <Alert {...{
+                                                title: 'Heads up!',
+                                                message: ' This alert needs your attention, but it\'s not super important.',
+                                                closeBtn: false,
+                                                alertColor: 'primary'
+                                            }}/>
+                                        </Demo>
                                     </Section>
                                 </Portle>
                                 <Portle {...{

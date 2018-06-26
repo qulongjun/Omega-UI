@@ -1,0 +1,191 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isNotExist, isArray, isString} from "../../_scripts/_is";
+import {_publicColor, _totalColor} from '../../_scripts/_public';
+import Text from '../_text/index.osx';
+import Icon from '../_icon/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const ButtonProps = {
+    label: {
+        default: 'button',
+        type: PropType.oneOf(['a', 'button', 'input'])
+    },
+    href: {
+        default: '#',
+        type: PropType.string
+    },
+    type: {
+        default: 'button',
+        type: PropType.oneOf(['reset', 'button', 'submit'])
+    },
+    thicken: {
+        default: false,
+        type: PropType.bool
+    },
+    fontBold: {
+        default: 'normal',
+        type: PropType.oneOf(['thin', 'normal', 'bold', 'bolder', 'boldest', 'boldest2'])
+    },
+    value: {
+        type: PropType.string
+    },
+    size: {
+        default: 'normal',
+        type: PropType.oneOf(['sm', 'lg', 'normal'])
+    },
+    gradient: {
+        type: PropType.shape({
+            from: PropType.oneOf(_publicColor),
+            to: PropType.oneOf(_publicColor)
+        })
+    },
+    btnColor: {
+        type: PropType.oneOf(_totalColor)
+    },
+    isWide: {
+        default: false,
+        type: PropType.bool
+    },
+    isBlock: {
+        default: false,
+        type: PropType.bool
+    },
+    btnState: {
+        default: 'normal',
+        type: PropType.oneOf(['active', 'disabled', 'normal'])
+    },
+    btnStyle: {
+        default: false,
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
+    },
+    isCustom: {
+        default: false,
+        type: PropType.bool
+    },
+    loader: {
+        type: PropType.object
+    },
+    icon: {
+        type: PropType.object
+    },
+    _specialIcon: PropType.bool,
+    children: {}
+};
+
+export default class Button extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(ButtonProps);
+    static propTypes = PropTypes(ButtonProps);
+
+    render() {
+        const _props = this.props;
+        const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader, icon, _specialIcon} = _props;
+        let _sysClass = ['btn', 'm-btn'];
+        //背景颜色
+        btnColor && _sysClass.push('btn-' + btnColor);
+        //渐变色 Class
+        if (gradient && gradient.from && gradient.to) {
+            _sysClass = _sysClass.concat(['m-btn--gradient-from-' + gradient.from, 'm-btn--gradient-to-' + gradient.to]);
+        }
+        //Btn是否加宽
+        isWide && _sysClass.push('m-btn--wide');
+        //Btn是否显示为块元素
+        isBlock && _sysClass.push('btn-block');
+        //Btn尺寸：lg和sm
+        ['lg', 'sm'].includes(size) && _sysClass.push('btn-' + size);
+        //Btn状态：active,disabled
+        ['active', 'disabled'].includes(btnState) && _sysClass.push(btnState);
+        //Btn类型
+        isArray(btnStyle) && btnStyle.map((item) => {
+            ['square', 'pill', 'air'].includes(item) && _sysClass.push('m-btn--' + item);
+        });
+        isExist(btnStyle) && isString(btnStyle) && _sysClass.push('m-btn--' + btnStyle);
+        //是否使用Omega定制组件
+        isCustom && _sysClass.push('m-btn--custom');
+        //边框变厚（仅Outline'）
+        thicken && _sysClass.push('m-btn--outline-2x');
+        ['thin', 'normal', 'bold', 'bolder', 'boldest', 'boldest2'].includes(fontBold) && _sysClass.push('m-btn--' + fontBold);
+        if (isExist(loader) && loader.show) {
+            _sysClass.push('m-loader');
+            isExist(loader.color) && _sysClass.push('m-loader--' + loader.color);
+            isExist(loader.size) && ['sm', 'lg'].includes(loader.size) && _sysClass.push('m-loader--' + loader.size);
+            isExist(loader.align) && ['center', 'left', 'right'].includes(loader.align) && _sysClass.push('m-loader--' + loader.align);
+        }
+        if (isExist(icon) && icon.show) {
+            //显示Icon
+            _sysClass.push('m-btn--icon');
+            if (isNotExist(value)) {
+                _sysClass.push('m-btn--icon-only');
+            }
+
+        }
+        let componentDom = null;
+        switch (label) {
+            case 'button':
+                componentDom = (<Fragment>
+                    <button ref="button" {..._sysBind(_props, _sysClass, null, {
+                        type
+                    })}>
+                        {
+                            !_specialIcon && (
+                                isExist(icon) && icon.show ? (isNotExist(value) ? (
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
+                                ) : (<Text>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
+                                    <Text>{value}</Text>
+                                </Text>)) : value
+                            )
+                        }
+                        {
+                            _specialIcon && (
+                                <Fragment>
+                                    <Icon iconName={icon.name}/>
+                                    {value}
+                                </Fragment>
+                            )
+                        }
+                    </button>
+                </Fragment>);
+                break;
+            case 'input':
+                componentDom = (<Fragment><input ref="button" {..._sysBind(_props, _sysClass, null, {
+                    value, type
+                })} /></Fragment>);
+                break;
+            case 'a':
+                componentDom = (<Fragment><a ref="button" {..._sysBind(_props, _sysClass, null, {
+                        href,
+                        role: type
+                    })}>
+                        {
+                            !_specialIcon && (
+                                isExist(icon) && icon.show ? (isNotExist(value) ? (
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
+                                ) : (<Text>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
+                                    <Text>{value}</Text>
+                                </Text>)) : value
+                            )
+                        }
+                        {
+                            _specialIcon && (
+                                <Fragment>
+                                    <Icon iconName={icon.name} {..._delivery(icon)}/>
+                                    {value}
+                                </Fragment>
+                            )
+                        }
+                    </a></Fragment>
+                )
+        }
+        return (componentDom);
+    }
+}

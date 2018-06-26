@@ -18,8 +18,8 @@ import Div from '@Div';
     This is a container.
 </div>
 ```
-##### 默认样式
-无默认样式。
+##### 实现效果
+无实现效果。
 
 ### 最佳实践
 通过 [公共配置](../ch1/public.md)，组件可以实现丰富的样式和逻辑的控制。

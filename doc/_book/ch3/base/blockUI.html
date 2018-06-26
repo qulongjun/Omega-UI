@@ -69,7 +69,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="icon.html" />
+    <link rel="next" href="loader.html" />
     
     
     <link rel="prev" href="badge.html" />
@@ -154,7 +154,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../../ch1/helperClass.html">
+        <li class="chapter " data-level="1.4.1" data-path="../../ch1/stateColor.html">
+            
+                <a href="../../ch1/stateColor.html">
+            
+                    
+                    状态颜色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../ch1/helperClass.html">
             
                 <a href="../../ch1/helperClass.html">
             
@@ -511,19 +524,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2.4" data-path="../button/iconButton.html">
-            
-                <a href="../button/iconButton.html">
-            
-                    
-                    图标按钮组件
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -543,7 +543,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.3.1" data-path="alert.html">
+        <li class="chapter " data-level="1.6.3.1" data-path="icon.html">
+            
+                <a href="icon.html">
+            
+                    
+                    图标组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="alert.html">
             
                 <a href="alert.html">
             
@@ -556,7 +569,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3.2" data-path="badge.html">
+        <li class="chapter " data-level="1.6.3.3" data-path="badge.html">
             
                 <a href="badge.html">
             
@@ -569,25 +582,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.3.3" data-path="blockUI.html">
+        <li class="chapter active" data-level="1.6.3.4" data-path="blockUI.html">
             
                 <a href="blockUI.html">
             
                     
                     遮罩组件
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3.4" data-path="icon.html">
-            
-                <a href="icon.html">
-            
-                    
-                    图标组件
             
                 </a>
             
@@ -807,8 +807,104 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x906E;&#x7F69;&#x7EC4;&#x4EF6;"><a name="&#x906E;&#x7F69;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x906E;&#x7F69;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x906E;&#x7F69;&#x7EC4;&#x4EF6;</h1>
+<blockquote>
+<p>&#x5757;&#x7EA7;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E3A;&#x5916;&#x90E8;&#x5BB9;&#x5668;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5E26;&#x6EDA;&#x52A8;&#x5708;&#x7684;&#x906E;&#x7F69;&#x5C42;&#xFF0C;&#x4F1A;&#x963B;&#x6B62;&#x5916;&#x90E8;&#x5BB9;&#x5668;&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x76F4;&#x5230;&#x906E;&#x7F69;&#x88AB;&#x53D6;&#x6D88;&#x3002;</p>
+</blockquote>
+<h3 id="&#x8BED;&#x6CD5;"><a name="&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;</h3>
+<h5 id="&#x79C1;&#x6709;&#x53C2;&#x6570;"><a name="&#x79C1;&#x6709;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x79C1;&#x6709;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x79C1;&#x6709;&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;&#x540D;</th>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">block</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">true</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x663E;&#x793A;&#x906E;&#x7F69;&#x7EC4;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">overlayColor</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">&#x7A7A;</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x906E;&#x7F69;&#x5C42;&#x6EDA;&#x52A8;&#x5708;&#x989C;&#x8272;&#xFF0C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">message</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">&#x7A7A;</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x906E;&#x7F69;&#x5C42;&#x663E;&#x793A;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">el</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">&#x7A7A;</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x9700;&#x8981;&#x906E;&#x7F69;&#x5C42;&#x7684;&#x5BB9;&#x5668; &#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x8C03;&#x7528;&#x65B9;&#x5F0F;"><a name="&#x8C03;&#x7528;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x8C03;&#x7528;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C03;&#x7528;&#x65B9;&#x5F0F;</h5>
+<pre class="language-"><code class="lang-jsx"><span class="token keyword">import</span> BlockUI <span class="token keyword">from</span> <span class="token string">&apos;@BlockUI&apos;</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Section</span><span class="token punctuation">&gt;</span></span>
+    <span class="token operator">&lt;</span>BlockUI  <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>
+        block<span class="token punctuation">:</span><span class="token boolean">true</span>
+     <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Paragraph</span><span class="token punctuation">&gt;</span></span> <span class="token operator">...</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Paragraph</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>BlockUI</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Section</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h5 id="&#x6E32;&#x67D3;&#x7ED3;&#x679C;"><a name="&#x6E32;&#x67D3;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x6E32;&#x67D3;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E32;&#x67D3;&#x7ED3;&#x679C;</h5>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>m-section__content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span> <span class="token property">zoom</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blockUI<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>none</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blockUI blockOverlay<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blockUI blockMsg blockElement<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>m-loader  m-loader--brand m-loader--lg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h5 id="&#x5B9E;&#x73B0;&#x6548;&#x679C;"><a name="&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="plugin-anchor" href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</h5>
+<p><img src="_image/2018-06-22-18-22-34.jpg" alt=""></p>
+<h3 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><a name="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;" class="plugin-anchor" href="#&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h3>
+<p>&#x901A;&#x8FC7; <a href="../ch1/public.md">&#x516C;&#x5171;&#x914D;&#x7F6E;</a>&#xFF0C;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E30;&#x5BCC;&#x7684;&#x6837;&#x5F0F;&#x548C;&#x903B;&#x8F91;&#x7684;&#x63A7;&#x5236;&#x3002;</p>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x906E;&#x7F69;&#x5C42;&#x4F5C;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x5916;&#x90E8;&#x5757;&#x72B6;&#x5BB9;&#x5668;&#xFF0C;&#x53EA;&#x9700;&#x5728;&#x8BE5;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x5305;&#x542B;&#x906E;&#x7F69;&#x7EC4;&#x4EF6;&#xFF0C;&#x6216;&#x4F7F;&#x7528; <code>el</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x3002;</p>
+</blockquote>
+<h5 id="&#x5E94;&#x7528;&#x4E8E;-portlet"><a name="&#x5E94;&#x7528;&#x4E8E;-portlet" class="plugin-anchor" href="#&#x5E94;&#x7528;&#x4E8E;-portlet"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E94;&#x7528;&#x4E8E; Portlet</h5>
+<p><strong>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Portlet</span><span class="token punctuation">&gt;</span></span>
+    <span class="token operator">&lt;</span>BlockUI <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>
+        <span class="token operator">...</span>
+     <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">...</span><span class="token punctuation">.</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>BlockUI</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Portlet</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><strong>&#x5B9E;&#x73B0;&#x6548;&#x679C;&#xFF1A;</strong>
+<img src="_image/2018-06-22-18-34-13.jpg" alt=""></p>
+<h5 id="&#x81EA;&#x5B9A;&#x4E49;&#x5BB9;&#x5668;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x5BB9;&#x5668;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x5BB9;&#x5668;</h5>
+<p><strong>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// el &#x6307;&#x5B9A; id &#x5C5E;&#x6027;&#x4E3A; block_1 &#x7684;&#x5BB9;&#x5668;&#x3002;</span>
+<span class="token punctuation">{</span>
+    el<span class="token punctuation">:</span> <span class="token string">&apos;#block_1&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5 id="&#x9875;&#x9762;&#x906E;&#x7F69;"><a name="&#x9875;&#x9762;&#x906E;&#x7F69;" class="plugin-anchor" href="#&#x9875;&#x9762;&#x906E;&#x7F69;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9875;&#x9762;&#x906E;&#x7F69;</h5>
+<p><strong>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// el &#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;body&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x9875;&#x9762;&#x906E;&#x7F69;&#x3002;</span>
+<span class="token punctuation">{</span>
+    el<span class="token punctuation">:</span> <span class="token string">&apos;body&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <footer class="page-footer"><span class="copyright">&#xA9; Longjun Qu all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-06-21 15:31:55
+2018-06-26 14:25:58
 </span></footer>
                                 
                                 </section>
@@ -841,7 +937,7 @@
                 </a>
                 
                 
-                <a href="icon.html" class="navigation navigation-next " aria-label="Next page: 图标组件">
+                <a href="loader.html" class="navigation navigation-next " aria-label="Next page: 加载组件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -852,7 +948,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"遮罩组件","level":"1.6.3.3","depth":3,"next":{"title":"图标组件","level":"1.6.3.4","depth":3,"path":"ch3/base/icon.md","ref":"ch3/base/icon.md","articles":[]},"previous":{"title":"徽章组件","level":"1.6.3.2","depth":3,"path":"ch3/base/badge.md","ref":"ch3/base/badge.md","articles":[]},"dir":"ltr"},"config":{"plugins":["editlink","splitter","github","anchors","tbfed-pagefooter","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Longjun Qu","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"github":{"url":"https://github.com/qulongjun/Omega-UI"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/qulongjun/Omega-UI/tree/master/doc"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Omega-UI 中文指南","language":"zh","gitbook":"*","description":"Responsive Bootstrap Admin & Powerful UI Kit By React."},"file":{"path":"ch3/base/blockUI.md","mtime":"2018-06-21T07:31:55.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T07:32:08.193Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"遮罩组件","level":"1.6.3.4","depth":3,"next":{"title":"加载组件","level":"1.6.3.5","depth":3,"path":"ch3/base/loader.md","ref":"ch3/base/loader.md","articles":[]},"previous":{"title":"徽章组件","level":"1.6.3.3","depth":3,"path":"ch3/base/badge.md","ref":"ch3/base/badge.md","articles":[]},"dir":"ltr"},"config":{"plugins":["editlink","splitter","github","anchors","tbfed-pagefooter","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Longjun Qu","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"github":{"url":"https://github.com/qulongjun/Omega-UI"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/qulongjun/Omega-UI/tree/master/doc"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Omega-UI 中文指南","language":"zh","gitbook":"*","description":"Responsive Bootstrap Admin & Powerful UI Kit By React."},"file":{"path":"ch3/base/blockUI.md","mtime":"2018-06-26T06:25:58.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-26T06:39:23.298Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

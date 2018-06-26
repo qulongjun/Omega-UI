@@ -1,0 +1,26 @@
+@mixin m-build-component--progress-base() {
+    .progress {
+        .progress-bar {
+            @include transition(all 0.5s ease);
+        }    
+
+        &.m-progress--sm {
+            height: 6px;  
+
+        	.progress-bar {
+        		              
+        		@include border-radius(3px);
+        	}        	
+        }
+
+        &.m-progress--lg {
+            height: 20px;
+
+        	.progress-bar {        		
+        		@include border-radius(4px);
+        	}        	
+        }
+    }
+}
+
+@include m-build-component--progress-base();

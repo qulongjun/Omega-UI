@@ -8,10 +8,8 @@
  */
 
 import React, {Component, Fragment} from 'react';
-
-import Div from 'components/_element/Div';
-
 import {_delivery} from 'plugins/utils/_props';
+import GridItem from "../_base/GridItem";
 
 class Wrapper extends Component {
     constructor(props) {
@@ -27,9 +25,12 @@ class Wrapper extends Component {
         const {children} = _props;
         return (
             <Fragment>
-                <Div {..._delivery(_props, ['m-grid__item', 'm-grid__item--fluid', 'm-wrapper'])}>{children}</Div>
+                <GridItem _includeClass='m-wrapper' fluid={true}>
+                    {children}
+                </GridItem>
             </Fragment>
         );
     }
 }
+
 export default Wrapper;

@@ -24,7 +24,7 @@ import Space from '@Space';
 <!--设置的size不在预设中，则使用style样式控制。-->
 <div style='display:block;height:0;margin-bottom:40%'></div>
 ```
-##### 默认样式
+##### 实现效果
 显示一段高度为size，且长度占满整个容器的空白区域。
 
 ### 最佳实践

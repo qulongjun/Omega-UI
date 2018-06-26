@@ -1,0 +1,24 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+
+const TextProps = {
+    children: {}
+};
+
+export default class Text extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(TextProps);
+    static propTypes = PropTypes(TextProps);
+
+    render() {
+        const _props = this.props;
+        return (
+            <Fragment>
+                <span ref='text' {..._sysBind(_props)}>{_props.children}</span>
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,23 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+const ParagraphProps = {
+    children: {}
+};
+
+export default class Paragraph extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(ParagraphProps);
+    static propTypes = PropTypes(ParagraphProps);
+
+    render() {
+        const _props = this.props;
+        return (
+            <Fragment>
+                <p ref='paragraph' {..._sysBind(_props)}>{_props.children}</p>
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,41 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind} from '../../_scripts/_proptypes';
+import PropType from 'prop-types';
+
+const BlockquoteProps = {
+    align: {
+        default: 'left',
+        type: PropType.oneOf(['left', 'center', 'right', 'justify'])
+    },
+    quote: {},
+    source: {
+        type: PropType.string
+    },
+    children: {}
+};
+export default class Blockquote extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(BlockquoteProps);
+    static propTypes = PropTypes(BlockquoteProps);
+
+    render() {
+        const _props = this.props;
+        const {align, quote, source, children} = _props;
+        let _sysClass = ['blockquote'];
+        align && _sysClass.push('text-' + align);
+        return (
+            <Fragment>
+                <blockquote ref='blockquote' {..._sysBind(_props, _sysClass)}>
+                    {children}
+                    <footer className="blockquote-footer">
+                        {quote}
+                        <cite title={source}>{source}</cite>
+                    </footer>
+                </blockquote>
+            </Fragment>
+        );
+    }
+}
