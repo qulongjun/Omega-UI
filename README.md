@@ -15,8 +15,10 @@
 您可以使用 `OmegaUI` 快速构建工具自动化安装，命令如下：
 
 ```shell
-// with npm
+// 安装快速构建工具
 $ npm install omegaui-cli
+
+//初始化项目
 $ omegaui-cli init my-project
 ```
 
