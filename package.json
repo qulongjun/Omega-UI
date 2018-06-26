@@ -1,19 +1,20 @@
 {
-  "name": "o-template",
-  "version": "0.0.1",
-  "description": "Omega Template By Cli",
+  "name": "omega-ui",
+  "version": "0.0.8",
+  "description": "基于React的响应式开发UI框架",
   "main": "src/main.js",
   "keywords": [
-    "express",
-    "webpack",
-    "node",
-    "spa"
+    "React",
+    "Omega UI",
+    "Webpack",
+    "Boostrap"
   ],
-  "author": "",
+  "author": "Longjun.Qu",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "test": "jest"
   },
   "dependencies": {
     "block-ui": "^2.70.1",
