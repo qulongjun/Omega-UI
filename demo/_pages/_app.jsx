@@ -29,6 +29,8 @@ import DefaultButton from "./_button/_default";
 import PillButton from './_button/_pill';
 import SquareButton from './_button/_square';
 import AirButton from './_button/_air';
+import ButtonGroup from './_button/_group';
+import ButtonDropdown from './_button/_dropdown';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -61,6 +63,8 @@ class App extends Component {
                             <Route path='/button/pill' component={PillButton}/>
                             <Route path='/button/square' component={SquareButton}/>
                             <Route path='/button/air' component={AirButton}/>
+                            <Route path='/button/group' component={ButtonGroup}/>
+                            <Route path='/button/dropdown' component={ButtonDropdown}/>
                         </Wrapper>
                     </Container>
                 </Page>

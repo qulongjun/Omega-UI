@@ -225,7 +225,7 @@ class Menu extends Component {
                                             btnColor: 'outline-success',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/button/buttonGroup');
+                                                    history.push('/button/group');
                                                 }
                                             }
                                         }}/>
@@ -238,7 +238,7 @@ class Menu extends Component {
                                             btnColor: 'outline-danger',
                                             _handle: {
                                                 onClick: () => {
-                                                    history.push('/button/ButtonDropdown');
+                                                    history.push('/button/dropdown');
                                                 }
                                             }
                                         }}/>
