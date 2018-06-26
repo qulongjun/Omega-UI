@@ -150,18 +150,18 @@
 
     // vertical item alignment
     > .m-grid__item {
-      &.m-grid__item--top {
+      &.m-grid__item--flex-start {
         align-self: flex-start;
         -ms-flex-align: start;
       }
 
-      &.m-grid__item--middle {
+      &.m-grid__item--center {
         align-self: center;
         -ms-flex-align: center;
         //margin: auto;
       }
 
-      &.m-grid__item--bottom {
+      &.m-grid__item--flex-end {
         align-self: flex-end;
         -ms-flex-align: end;
       }
