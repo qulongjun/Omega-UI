@@ -17,7 +17,10 @@ import {
     SubHeader,
     Menu,
     Button,
-    Badge
+    Badge,
+    Stack,
+    Footer,
+    Text
 } from 'omega';
 
 const App = () => (
@@ -511,6 +514,13 @@ const App = () => (
                     </Content>
                 </Wrapper>
             </Container>
+            <Footer {...{
+                copyright: (
+                    <Fragment>
+                        2018 © Omega UI by <Link href="https://doc.react-china.org/"> React </Link> 。
+                    </Fragment>
+                )
+            }}/>
         </Page>
     </Fragment>
 );

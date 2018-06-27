@@ -1,10 +1,13 @@
 import React, {Component, Fragment} from 'react';
-import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
 import {isExist} from "../../_scripts/_is";
 import {_totalColor} from '../../_scripts/_public';
 import Div from '../_div/index.osx';
+import Text from '../_text/index.osx';
+import Nav from '../_nav/index.osx';
 import PropType from 'prop-types';
 import './index.scss'
+import Stack from "../_stack/index.osx";
 const FooterProps = {
     children: {}
 };
@@ -18,6 +21,59 @@ export default class Footer extends Component {
     static propTypes = PropTypes(FooterProps);
 
     render() {
-
+        const _props = this.props;
+        const {copyright} = _props;
+        let _sysClass = ['m-footer', 'm-grid__item'];
+        return (
+            <Fragment>
+                <footer {..._sysBind(_props, _sysClass)}>
+                    <Div
+                        _includeClass={['m-container', 'm-container--fluid', 'm-container--full-height', 'm-page__container']}>
+                    </Div>
+                    <Stack {...{
+                        mode: 'desktop',
+                        direction: 'ver',
+                        items: [
+                            {
+                                justify: 'left',
+                                align: 'middle',
+                                value: (
+                                    <Text _includeClass="m-footer__copyright">{copyright}</Text>
+                                )
+                            }, {
+                                justify: 'right',
+                                align: 'center',
+                                value: (
+                                    <Fragment>
+                                        <Nav {...{
+                                            type: 'inline',
+                                            items: [{
+                                                text: {
+                                                    value: 'React 中文网站',
+                                                    href: 'http://www.baidu.com'
+                                                }
+                                            }, {
+                                                text: {
+                                                    value: '官方网站'
+                                                }
+                                            }, {
+                                                text: {
+                                                    value: 'CLI'
+                                                }
+                                            }, {
+                                                text: {
+                                                    value: 'Doc'
+                                                }
+                                            }],
+                                            _includeClass: ['m-footer__nav', 'm--pull-right']
+                                        }}/>
+                                    </Fragment>
+                                )
+                            }
+                        ]
+                    }}/>
+                </footer>
+            </Fragment>
+        );
     }
 }
