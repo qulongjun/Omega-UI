@@ -22,6 +22,24 @@ const DropdownProps = {
         default: 300,
         type: PropType.number
     },
+    direction: {
+        default: 'left',
+        type: PropType.oneOf(['left', 'center', 'right'])
+    },
+    showArrow: {
+        default: true,
+        type: PropType.bool
+    },
+    button: {
+        type: PropType.object
+    },
+    size: {
+        type: PropType.oneOf(['small', 'medium', 'large', 'huge'])
+    },
+    vertical: {
+        default: 'bottom',
+        type: PropType.oneOf(['top', 'bottom'])
+    },
     children: {}
 };
 
@@ -32,10 +50,6 @@ export default class Dropdown extends Component {
 
     static defaultProps = DefaultProps(DropdownProps);
     static propTypes = PropTypes(DropdownProps);
-
-    componentDidMount() {
-
-    }
 
     render() {
         const _props = this.props;
