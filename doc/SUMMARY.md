@@ -46,6 +46,7 @@
         * [选项卡组件](ch3/base/tab.md)
         * [表格组件](ch3/base/table.md)
         * [窗口组件](ch3/base/portlet.md)
+        * [下拉组件](ch3/base/dropdown.md)
 * [更新日志](Changelog.md)
 * [致谢](Install.md)
 

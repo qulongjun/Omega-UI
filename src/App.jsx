@@ -2,7 +2,20 @@ import React, {Fragment} from 'react'
 import {hot} from 'react-hot-loader'
 import './App.css'
 import logo from './assets/logo_blue.png';
-import {Page, Container, Wrapper, Content, Div, Portlet, Paragraph, Separator, Section, Link, Space} from 'omega';
+import {
+    Page,
+    Container,
+    Wrapper,
+    Content,
+    Div,
+    Portlet,
+    Paragraph,
+    Separator,
+    Section,
+    Link,
+    Space
+} from 'omega';
+
 const App = () => (
     <Fragment>
         <Page>
@@ -21,11 +34,11 @@ const App = () => (
                                         <Link {...{
                                             href: 'https://doc.react-china.org/'
                                         }}>React 中文文档</Link>
-                                        <Space />
+                                        <Space/>
                                         <Link {...{
                                             href: 'http://omega-doc.qulongjun.com/'
                                         }}>Omega 中文文档</Link>
-                                        <Space />
+                                        <Space/>
                                         <Link {...{
                                             href: 'http://omega.qulongjun.com/'
                                         }}>Omega 官方示例</Link>
