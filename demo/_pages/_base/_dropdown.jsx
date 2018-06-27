@@ -33,7 +33,7 @@ export default class Dropdowns extends Component {
 
         return (
             <Fragment>
-                <Content _includeStyle={{minHeight: '80vh'}}>
+                <Content>
                     <div className="row">
                         <div className="col-xl-6">
                             <Portlet {...{
