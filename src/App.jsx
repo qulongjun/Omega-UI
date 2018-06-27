@@ -2,25 +2,19 @@ import React, {Fragment} from 'react'
 import {hot} from 'react-hot-loader'
 import './App.css'
 import logo from './assets/logo_blue.png';
-import {
-    Page,
-    Container,
-    Wrapper,
-    Content,
-    Div,
-    Portlet,
-    Paragraph,
-    Separator,
-    Section,
-    Link,
-    Space
-} from 'omega';
+import {Page, Container, Wrapper, Content, Div, Portlet, Paragraph, Separator, Section, Link, Space, SubHeader} from 'omega';
 
 const App = () => (
     <Fragment>
         <Page>
             <Container>
                 <Wrapper>
+                    <SubHeader {...{
+                        header: {
+                            show: true,
+                            name: 'Dashboard'
+                        }
+                    }}/>
                     <Content>
                         <Div _includeClass='row'>
                             <Div _includeClass="col-xl-12">
