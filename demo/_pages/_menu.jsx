@@ -163,6 +163,15 @@ class Menu extends Component {
                                                 }
                                             }
                                         }}/>
+                                        <Button {...{
+                                            value: 'Dropdown',
+                                            btnColor: 'outline-brand',
+                                            _handle: {
+                                                onClick: () => {
+                                                    history.push('/dropdown');
+                                                }
+                                            }
+                                        }}/>
                                     </Demo>
                                 </Section>
                                 <Section title="Tabs">
@@ -178,6 +187,7 @@ class Menu extends Component {
                                         }}/>
                                     </Demo>
                                 </Section>
+
                             </Portlet>
                         </Div>
                         <Div _includeClass="col-xl-6">

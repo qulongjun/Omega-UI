@@ -22,6 +22,18 @@ const DropdownProps = {
         default: 300,
         type: PropType.number
     },
+    vertical: {
+        default: 'bottom',
+        type: PropType.oneOf(['top', 'bottom'])
+    },
+    showArrow: {
+        default: true,
+        type: PropType.bool
+    },
+    direction:{
+        default:'left',
+        type:PropType.oneOf(['left','right','center'])
+    },
     children: {}
 };
 
