@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import DemoConfig from '../demo/_routes/index'; //Demo路由
+import App from './App';
 
 ReactDOM.render(
-    <App />, document.getElementById('root')
+    DemoConfig, document.getElementById('root')
 );

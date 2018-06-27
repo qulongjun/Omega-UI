@@ -26,7 +26,7 @@ module.exports = {
             'src': resolve('src'),
             'assets': resolve('src/assets'),
             'components': resolve('src/components'),
-            'omega':resolve('lib')
+            'omega': resolve('lib')
         }
     },
     module: {
@@ -34,7 +34,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: [resolve('src'), resolve('test')],
+                include: [resolve('src'), resolve('test'), resolve('demo')],
                 options: {
                     cacheDirectory: true
                 }
