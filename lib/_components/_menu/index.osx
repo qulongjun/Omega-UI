@@ -1,0 +1,189 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray, isNotExist} from "../../_scripts/_is";
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import List from '../_list/index.osx';
+import PropType from 'prop-types';
+import './index.scss'
+import Title from "../_title/index.osx";
+import Link from "../_link/index.osx";
+import Icon from "../_icon/index.osx";
+import Text from '../_text/index.osx';
+import Badge from "../_badge/index.osx";
+
+import {mUtil} from '../../_scripts/_base/_util';
+import {mApp} from '../../_scripts/_base/_app';
+import mMenu from '../../_scripts/_base/menu/menu';
+
+const MenuProps = {
+    children: {}
+};
+
+export default class Menu extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(MenuProps);
+    static propTypes = PropTypes(MenuProps);
+
+    componentDidMount() {
+        const _props = this.props;
+        let {autoScroll, expandAll, slideSpeed, speed, autoScrollSpeed, timeout, isChild} = _props;
+        if (!isChild) {
+            console.log(_props);
+            let menu = $('#testMenu');
+            let menuDesktopMode = (menu.data('m-menu-dropdown') === '1' ? 'dropdown' : 'accordion');
+
+            let asideMenu = new mMenu('testMenu', {
+                // submenu setup
+                submenu: {
+                    desktop: {
+                        // by default the menu mode set to accordion in desktop mode
+                        default: menuDesktopMode,
+                        // whenever body has this class switch the menu mode to dropdown
+                        state: {
+                            body: 'm-aside-left--minimize',
+                            mode: 'dropdown'
+                        }
+                    },
+                    tablet: 'accordion', // menu set to accordion in tablet mode
+                    mobile: 'accordion'  // menu set to accordion in mobile mode
+                },
+
+                //accordion setup
+                accordion: {
+                    slideSpeed: slideSpeed || 200,
+                    speed: speed || 1200,
+                    autoScrollSpeed: autoScrollSpeed || 1200,
+                    autoScroll,
+                    expandAll,
+                    timeout: timeout || 500
+                }
+            });
+
+
+            //== Handle fixed aside menu
+            if (menu.attr('m-menu-scrollable') === '1') {
+                function initScrollableMenu(obj) {
+                    if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
+                        //== Destroy if the instance was previously created
+                        mApp.destroyScroller(obj);
+                        return;
+                    }
+
+                    let height = mUtil.getViewPort().height - parseInt(mUtil.css('m_header', 'height'));
+
+                    //== Create/re-create a new instance
+                    mApp.initScroller(obj, {height: height});
+                }
+
+                initScrollableMenu(menu);
+
+                mUtil.addResizeHandler(function () {
+                    initScrollableMenu(menu);
+                });
+            }
+        }
+    }
+
+    render() {
+        const _props = this.props;
+        const {skin, items, isChild} = _props;
+        let _sysClass = [(isExist(isChild) && isChild ? 'm-menu__submenu' : 'm-aside-menu' )];
+        isExist(skin) && ['dark', 'light'].includes(skin) && _sysClass.push('m-aside-menu--skin-' + skin) && _sysClass.push('m-aside-menu--submenu-skin-' + skin);
+        let _items = [];
+        isExist(items) && isArray(items) && items.map((item) => {
+            let {type, text, icon, badge, bullet, child, isExpand, isActive} = item;
+            switch (type) {
+                case 'section':
+                    _items.push({
+                        _includeClass: 'm-menu__section ',
+                        value: (
+                            <Fragment>
+                                <Title {...{
+                                    _includeClass: 'm-menu__section-text',
+                                    level: 4
+                                }}>
+                                    {text}
+                                </Title>
+                                {isExist(icon) && icon.show && (
+                                    <Icon _includeClass="m-menu__section-icon" iconName={icon.name}/>)}
+                            </Fragment>
+                        )
+                    });
+                    break;
+                case 'separator':
+                    _items.push({
+                        _includeClass: 'm-menu__separator'
+                    });
+                    break;
+                default:
+                    _items.push({
+                        _includeClass: ['m-menu__item', (isExpand ? 'm-menu__item--open' : ''), (isExist(child) ? 'm-menu__item--submenu' : ''), (isActive ? 'm-menu__item--active' : '')],
+                        _includeAttribute: {
+                            'aria-haspopup': true,
+                            'm-menu-submenu-toggle': 'hover'
+                        },
+                        value: (
+                            <Fragment>
+                                <Link _includeClass={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')]}
+                                      _excludeClass="m-link">
+                                    {
+                                        isExist(bullet) && bullet.show && (
+                                            <Icon
+                                                _includeClass={["m-menu__link-bullet", "m-menu__link-bullet--" + (['dot', 'line'].includes(bullet.type) || 'dot')]}>
+                                                <Text />
+                                            </Icon>
+                                        )
+                                    }
+                                    {isExist(icon) && icon.show && (
+                                        <Icon iconName={icon.name} _includeClass="m-menu__link-icon"/>)}
+                                    {
+                                        isExist(badge) && badge.show ? (
+                                            <Text _includeClass="m-menu__link-title">
+                                                <Text _includeClass="m-menu__link-wrap">
+                                                    <Text _includeClass="m-menu__link-text">
+                                                        {text}
+                                                    </Text>
+                                                    <Text _includeClass="m-menu__link-badge">
+                                                        <Badge {..._delivery(badge)}>{badge.value}</Badge>
+                                                    </Text>
+                                                </Text>
+                                            </Text>
+                                        ) : (
+                                            <Text _includeClass="m-menu__link-text">{text}</Text>
+                                        )
+                                    }
+                                    {
+                                        isExist(child) && isArray(child) && (
+                                            <Icon _includeClass="m-menu__ver-arrow" iconName="la la-angle-right"/>)
+                                    }
+                                </Link>
+                                {isExist(child) && <Menu {...{
+                                    items: child,
+                                    isChild: true
+                                }}/>}
+                            </Fragment>
+                        )
+                    });
+            }
+        });
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, _sysClass, null, {
+                    'm-menu-vertical': 1,
+                    'm-menu-scrollable': 0,
+                    'm-menu-dropdown-timeout': 500,
+                    id: 'testMenu'
+                })}>
+                    <List {...{
+                        items: _items,
+                        _includeClass: (isExist(isChild) && isChild ? ['m-menu__subnav'] : ['m-menu__nav', 'm-menu__nav--dropdown-submenu-arrow'])
+                    }}/>
+                </Div>
+            </Fragment>
+        )
+    }
+}

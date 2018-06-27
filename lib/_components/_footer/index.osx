@@ -1,0 +1,23 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss'
+const FooterProps = {
+    children: {}
+};
+
+export default class Footer extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FooterProps);
+    static propTypes = PropTypes(FooterProps);
+
+    render() {
+
+    }
+}

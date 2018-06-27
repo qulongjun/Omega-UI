@@ -2,12 +2,479 @@ import React, {Fragment} from 'react'
 import {hot} from 'react-hot-loader'
 import './App.css'
 import logo from './assets/logo_blue.png';
-import {Page, Container, Wrapper, Content, Div, Portlet, Paragraph, Separator, Section, Link, Space, SubHeader} from 'omega';
+import {
+    Page,
+    Container,
+    Wrapper,
+    Content,
+    Div,
+    Portlet,
+    Paragraph,
+    Separator,
+    Section,
+    Link,
+    Space,
+    SubHeader,
+    Menu,
+    Button,
+    Badge
+} from 'omega';
 
 const App = () => (
     <Fragment>
         <Page>
             <Container>
+                <Button {...{
+                    _includeClass: 'm-aside-left-close  m-aside-left-close--skin-dark '
+                }} />
+                <Div _includeClass="m-grid__item m-aside-left m-aside-left--skin-dark">
+                    <Menu {...{
+                        skin: 'dark',
+                        autoScroll: true,
+                        items: [
+                            {
+                                text: 'Dashboard',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-line-graph'
+                                },
+                                badge: {
+                                    show: true,
+                                    bgColor: 'danger',
+                                    value: 2
+                                }
+                            },
+                            {
+                                type: 'section',
+                                text: 'Components'
+                            },
+                            {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                text: 'Base',
+                                icon: {
+                                    show: true,
+                                    name: 'flaticon-layers'
+                                },
+                                child: [
+                                    {
+                                        text: 'State Color',
+                                        isActive: true,
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Typography',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Stack',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        }
+                                    },
+                                    {
+                                        text: 'Tables',
+                                        bullet: {
+                                            show: true,
+                                            type: 'dot'
+                                        },
+                                        child: [
+                                            {
+                                                isActive: true,
+                                                text: 'Tables',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                        ]
+                    }} />
+                </Div>
                 <Wrapper>
                     <SubHeader {...{
                         header: {
