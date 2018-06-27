@@ -2,6 +2,7 @@
 node_modules/
 _book/
 /dist/
+doc/_book/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
