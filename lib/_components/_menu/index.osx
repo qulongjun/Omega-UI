@@ -171,16 +171,16 @@ export default class Menu extends Component {
         });
         return (
             <Fragment>
-                    <Div ref="menu" {..._delivery(_props, _sysClass, null, {
-                        'm-menu-vertical': 1,
-                        'm-menu-scrollable': 0,
-                        'm-menu-dropdown-timeout': 500
-                    })}>
-                        <List {...{
-                            items: _items,
-                            _includeClass: (isExist(isChild) && isChild ? ['m-menu__subnav'] : ['m-menu__nav', 'm-menu__nav--dropdown-submenu-arrow'])
-                        }}/>
-                    </Div>
+                <Div ref="menu" {..._delivery(_props, _sysClass, null, {
+                    'm-menu-vertical': 1,
+                    'm-menu-scrollable': 0,
+                    'm-menu-dropdown-timeout': 500
+                })}>
+                    <List {...{
+                        items: _items,
+                        _includeClass: (isExist(isChild) && isChild ? ['m-menu__subnav'] : ['m-menu__nav', 'm-menu__nav--dropdown-submenu-arrow'])
+                    }}/>
+                </Div>
             </Fragment>
         )
     }

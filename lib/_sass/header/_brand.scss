@@ -1,8 +1,4 @@
-//
-//** Brand
-//
-
-@mixin m-build-brand-base($layout) {	
+@mixin m-build-brand-base($layout) {
 	//== General Mode
 	.m-brand {
 		@include transition(array-get($m-config-aside, aside-left, self, minimize, transition));

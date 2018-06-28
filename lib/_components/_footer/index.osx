@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
-import {isExist} from "../../_scripts/_is";
+import {isExist, isArray} from "../../_scripts/_is";
 import {_totalColor} from '../../_scripts/_public';
 import Div from '../_div/index.osx';
 import Text from '../_text/index.osx';
@@ -22,7 +22,7 @@ export default class Footer extends Component {
 
     render() {
         const _props = this.props;
-        const {copyright} = _props;
+        const {copyright, nav} = _props;
         let _sysClass = ['m-footer', 'm-grid__item'];
         return (
             <Fragment>
@@ -45,26 +45,12 @@ export default class Footer extends Component {
                                 align: 'center',
                                 value: (
                                     <Fragment>
+                                        {
+
+                                        }
                                         <Nav {...{
                                             type: 'inline',
-                                            items: [{
-                                                text: {
-                                                    value: 'React 中文网站',
-                                                    href: 'http://www.baidu.com'
-                                                }
-                                            }, {
-                                                text: {
-                                                    value: '官方网站'
-                                                }
-                                            }, {
-                                                text: {
-                                                    value: 'CLI'
-                                                }
-                                            }, {
-                                                text: {
-                                                    value: 'Doc'
-                                                }
-                                            }],
+                                            items: nav,
                                             _includeClass: ['m-footer__nav', 'm--pull-right']
                                         }}/>
                                     </Fragment>

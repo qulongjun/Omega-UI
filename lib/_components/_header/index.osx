@@ -7,6 +7,7 @@ import Stack from "../_stack/index.osx";
 import Text from '../_text/index.osx';
 import PropType from 'prop-types';
 import Link from "../_link/index.osx";
+import Nav from '../_nav/index.osx';
 import mToggle from '../../_scripts/_base/toggle/toggle';
 import mOffcanvas from '../../_scripts/_base/offcanvas/offcanvas';
 import {mUtil} from '../../_scripts/_base/_util';
@@ -34,28 +35,16 @@ export default class Footer extends Component {
             targetState: 'm-brand--minimize m-aside-left--minimize',
             togglerState: 'm-brand__toggler--active'
         });
-
-        asideLeftToggle.on('toggle', function (toggle) {
-            //horMenu.pauseDropdownHover(800);
-            //asideMenu.pauseDropdownHover(800);
-
-            //== Remember state in cookie
-            //Cookies.set('sidebar_toggle_state', toggle.getState());
-            // to set default minimized left aside use this cookie value in your
-            // server side code and add "m-brand--minimize m-aside-left--minimize" classes to
-            // the body tag in order to initialize the minimized left aside mode during page loading.
-        });
     }
 
     _offCanvas() {
         let _dom = this.refs.asideLeft.refs.link;
-        let asideLeft = mUtil.get('m_aside_left');
+        let asideLeft = document.querySelector('.m-aside-left');
         let asideOffcanvasClass = mUtil.hasClass(asideLeft, 'm-aside-left--offcanvas-default') ? 'm-aside-left--offcanvas-default' : 'm-aside-left';
-
-        let asideMenuOffcanvas = new mOffcanvas('m_aside_left', {
+        let asideMenuOffcanvas = new mOffcanvas(asideLeft, {
             baseClass: asideOffcanvasClass,
             overlay: true,
-            closeBy: 'm_aside_left_close_btn',
+            closeBy: '.m-aside-left-close',
             toggleBy: {
                 target: 'm_aside_left_offcanvas_toggle',
                 state: 'm-brand__toggler--active'
@@ -131,10 +120,34 @@ export default class Footer extends Component {
                                         </Fragment>
                                     ),
                                     _includeClass: ['m-brand', (isExist(brand) && brand.show && ['dark', 'light'].includes(brand.skin) ? 'm-brand--skin-' + brand.skin : '')]
-                                }, {
-                                    fluid: true,
-                                    _includeClass: 'm-header-head'
-                                }
+                                }, {}
+                                // {
+                                //     value: (
+                                //         <Fragment>
+                                //             <Stack {...{
+                                //                 direction: 'ver',
+                                //                 fluid: true,
+                                //                 items: [{
+                                //                     value: (
+                                //                         <Fragment>
+                                //                             <Nav {...{
+                                //                                 type: 'inline',
+                                //                                 _includeClass: 'm-topbar__nav',
+                                //                                 items:[
+                                //
+                                //                                 ]
+                                //                             }}/>
+                                //                         </Fragment>
+                                //                     ),
+                                //                     _includeClass: 'm-topbar__nav-wrapper'
+                                //                 }],
+                                //                 _includeClass: 'm-topbar'
+                                //             }}/>
+                                //         </Fragment>
+                                //     ),
+                                //     fluid: true,
+                                //     _includeClass: 'm-header-head'
+                                // }
                             ]
                         }}/>
                     </Div>
