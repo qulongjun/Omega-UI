@@ -1,0 +1,73 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import Stack from "../_stack/index.osx";
+import PropType from 'prop-types';
+import Link from "../_link/index.osx";
+// import './index.scss'
+
+const FooterProps = {
+    children: {}
+};
+
+export default class Footer extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FooterProps);
+    static propTypes = PropTypes(FooterProps);
+
+    render() {
+        const _props = this.props;
+        const {brand} = _props;
+        const {skin, show, logo, custom} = brand;
+        let _sysClass = ['m-header', 'm-grid__item'];
+        return (
+            <Fragment>
+                <header>
+                    <Div _includeClass={['m-container', 'm-container--fluid', 'm-container--full-height']}>
+                        <Stack {...{
+                            direction: 'ver',
+                            mode: 'desktop',
+                            items: [
+                                {
+                                    value: (
+                                        <Fragment>
+                                            <Stack {...{
+                                                direction: 'ver',
+                                                items: [
+                                                    {
+                                                        value: (
+                                                            <Fragment>
+                                                                {
+                                                                    isExist(custom) ? custom : (
+                                                                        <Link {..._delivery(brand)}
+                                                                              _uniqueClass={['m-brand__logo-wrapper']}>
+                                                                            <img {..._sysBind(logo, null, null, {
+                                                                                src: logo.src
+                                                                            })}/>
+                                                                        </Link>
+                                                                    )
+                                                                }
+                                                            </Fragment>
+                                                        ),
+                                                        align: 'middle',
+                                                        _includeClass: 'm-brand__logo'
+                                                    }
+                                                ]
+                                            }}/>
+                                        </Fragment>
+                                    ),
+                                    _includeClass: ['m-brand', (isExist(brand) && brand.show && ['dark', 'light'].includes(brand.skin) ? 'm-brand--skin-' + brand.skin : '')]
+                                }
+                            ]
+                        }}/>
+                    </Div>
+                </header>
+            </Fragment>
+        );
+    }
+}

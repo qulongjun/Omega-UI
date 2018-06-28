@@ -20,12 +20,26 @@ import {
     Badge,
     Stack,
     Footer,
-    Text
+    Text,
+    Header
 } from 'omega';
 
 const App = () => (
     <Fragment>
         <Page>
+            <Header {...{
+                brand: {
+                    show: true,
+                    skin: 'dark',
+                    logo: {
+                        src: logo,
+                        _includeStyle: {
+                            width: '120px'
+                        }
+                    },
+                    href: 'http://www.baidu.com'
+                }
+            }}/>
             <Container>
                 <Button {...{
                     _includeClass: 'm-aside-left-close  m-aside-left-close--skin-dark '
