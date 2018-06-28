@@ -25,7 +25,8 @@ import {
     Button,
     Alert,
     Space,
-    ButtonDropdown
+    ButtonDropdown,
+    SubHeader
 } from 'omega';
 
 export default class StateColor extends Component {
@@ -37,6 +38,39 @@ export default class StateColor extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '状态与颜色',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '状态与颜色',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

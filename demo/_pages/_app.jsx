@@ -9,8 +9,9 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space, Header, Aside} from 'omega';
+import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space, Header, Aside,Footer} from 'omega';
 import {Route, Switch} from 'react-router-dom'
+import MenuJSON from './_menu.json';
 import Menu from './_menu';
 import Grids from './_grid/_grid';
 import StateColor from './_base/_stateColor';
@@ -67,90 +68,7 @@ class App extends Component {
                     <Container>
                         <Aside {...{
                             skin: 'light',
-                            menu: {
-                                show: true,
-                                autoScroll: true,
-                                items: [
-                                    {
-                                        text: '访问文档',
-                                        icon: {
-                                            show: true,
-                                            name: 'flaticon-line-graph'
-                                        },
-                                        badge: {
-                                            show: true,
-                                            bgColor: 'danger',
-                                            value: 2
-                                        },
-                                        type: 'link',
-                                        href: 'https://omega-doc.qulongjun.com'
-                                    },
-                                    {
-                                        type: 'section',
-                                        text: 'Components'
-                                    },
-                                    {
-                                        text: 'Base',
-                                        icon: {
-                                            show: true,
-                                            name: 'flaticon-layers'
-                                        },
-                                        child: [
-                                            {
-                                                text: '状态与颜色',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/stateColor'
-                                            }, {
-                                                text: '排版',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/typography'
-                                            }, {
-                                                text: '表格',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/tables'
-                                            }, {
-                                                text: '进度条',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/progress'
-                                            }, {
-                                                text: '模态框',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/modal'
-                                            }, {
-                                                text: '消息提醒',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/alerts'
-                                            }, {
-                                                text: '弹出层',
-                                                bullet: {
-                                                    show: true,
-                                                    type: 'dot'
-                                                },
-                                                href: '/popover'
-                                            }
-                                        ],
-                                        isExpand: true
-                                    }
-                                ]
-                            }
+                            menu: MenuJSON
                         }}/>
                         <Wrapper>
                             <Route path='/' exact component={Menu}/>
@@ -181,6 +99,41 @@ class App extends Component {
                             <Route path='/button/flaticon' component={FlaticonButton}/>
                         </Wrapper>
                     </Container>
+                    <Footer {...{
+                        copyright: (
+                            <Fragment>
+                                2018 © Omega UI by <Link href="https://doc.react-china.org/"> React </Link> 。
+                            </Fragment>
+                        ),
+                        nav: [
+                            {
+                                text: {
+                                    value: 'React 中文官网',
+                                    href: 'https://doc.react-china.org/'
+                                }
+                            }, {
+                                text: {
+                                    value: '技术文档',
+                                    href: 'http://omega-doc.qulongjun.com/'
+                                }
+                            }, {
+                                text: {
+                                    value: '官方示例',
+                                    href: 'http://omega.qulongjun.com/'
+                                }
+                            }, {
+                                text: {
+                                    value: '快速构建',
+                                    href: 'https://github.com/qulongjun/Omega-cli'
+                                }
+                            }, {
+                                text: {
+                                    value: 'Github',
+                                    href: 'https://github.com/qulongjun/Omega-UI'
+                                }
+                            }
+                        ]
+                    }}/>
                 </Page>
             </Fragment>
         );

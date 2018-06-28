@@ -9,7 +9,7 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Table, Text, Code} from 'omega';
+import {Content, Div, Portlet, Section, Table, Text, Code, SubHeader} from 'omega';
 export default class Tables extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +19,39 @@ export default class Tables extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '表格',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '表格',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

@@ -21,7 +21,8 @@ import {
     Button,
     Separator,
     Scroll,
-    Paragraph
+    Paragraph,
+    SubHeader
 } from 'omega';
 
 export default class Dropdowns extends Component {
@@ -33,6 +34,39 @@ export default class Dropdowns extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '下拉组件',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '下拉组件',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <div className="row">
                         <div className="col-xl-6">
@@ -406,97 +440,97 @@ export default class Dropdowns extends Component {
                                             </Dropdown>
                                         </Div>
                                         <Div _includeClass="col">
-                                        <Dropdown {...{
-                                            button: {
-                                                icon: {
-                                                    show: true,
-                                                    name: 'la la-ellipsis-h'
-                                                },
-                                                btnStyle: 'pill',
-                                                btnColor: 'secondary',
-                                                _excludeClass: 'm-btn--icon-only'
-                                            }
-                                        }}>
-                                            <Nav {...{
-                                                items: [{
-                                                    type: 'section',
-                                                    text: {
-                                                        value: 'SECTION 1',
-                                                    }
-                                                }, {
+                                            <Dropdown {...{
+                                                button: {
                                                     icon: {
                                                         show: true,
-                                                        name: 'flaticon-share'
+                                                        name: 'la la-ellipsis-h'
                                                     },
-                                                    text: {
-                                                        value: 'Activity',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    icon: {
-                                                        show: true,
-                                                        name: 'flaticon-chat-1'
-                                                    },
-                                                    text: {
-                                                        value: 'Message',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    icon: {
-                                                        show: true,
-                                                        name: 'flaticon-info'
-                                                    },
-                                                    text: {
-                                                        value: 'FAQ',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    type: 'section',
-                                                    text: {
-                                                        value: 'SECTION 2',
-                                                    }
-                                                }, {
-                                                    icon: {
-                                                        show: true,
-                                                        name: 'flaticon-cogwheel-2'
-                                                    },
-                                                    text: {
-                                                        value: 'Settings',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    icon: {
-                                                        show: true,
-                                                        name: 'flaticon-lifebuoy'
-                                                    },
-                                                    text: {
-                                                        value: 'Support',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    icon: {
-                                                        show: true,
-                                                        name: 'flaticon-interface-1'
-                                                    },
-                                                    text: {
-                                                        value: 'Logs',
-                                                        href: '#'
-                                                    }
-                                                }, {
-                                                    type: 'separator'
-                                                }, {
-                                                    type: 'other',
-                                                    text: {
-                                                        value: (<Button {...{
-                                                            btnColor: 'outline-danger',
-                                                            value: 'Logout',
-                                                            btnStyle: 'pill',
-                                                            size: 'sm'
-                                                        }}/>)
-                                                    }
-                                                }]
-                                            }}/>
-                                        </Dropdown>
+                                                    btnStyle: 'pill',
+                                                    btnColor: 'secondary',
+                                                    _excludeClass: 'm-btn--icon-only'
+                                                }
+                                            }}>
+                                                <Nav {...{
+                                                    items: [{
+                                                        type: 'section',
+                                                        text: {
+                                                            value: 'SECTION 1',
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-share'
+                                                        },
+                                                        text: {
+                                                            value: 'Activity',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-chat-1'
+                                                        },
+                                                        text: {
+                                                            value: 'Message',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-info'
+                                                        },
+                                                        text: {
+                                                            value: 'FAQ',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        type: 'section',
+                                                        text: {
+                                                            value: 'SECTION 2',
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-cogwheel-2'
+                                                        },
+                                                        text: {
+                                                            value: 'Settings',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-lifebuoy'
+                                                        },
+                                                        text: {
+                                                            value: 'Support',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        icon: {
+                                                            show: true,
+                                                            name: 'flaticon-interface-1'
+                                                        },
+                                                        text: {
+                                                            value: 'Logs',
+                                                            href: '#'
+                                                        }
+                                                    }, {
+                                                        type: 'separator'
+                                                    }, {
+                                                        type: 'other',
+                                                        text: {
+                                                            value: (<Button {...{
+                                                                btnColor: 'outline-danger',
+                                                                value: 'Logout',
+                                                                btnStyle: 'pill',
+                                                                size: 'sm'
+                                                            }}/>)
+                                                        }
+                                                    }]
+                                                }}/>
+                                            </Dropdown>
                                         </Div>
                                     </Div>
                                 </Section>
