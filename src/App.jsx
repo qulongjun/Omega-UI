@@ -60,11 +60,13 @@ const App = () => (
                                     show: true,
                                     bgColor: 'danger',
                                     value: 2
-                                }
+                                },
+                                type: 'link',
+                                href: 'javascript:;'
                             },
                             {
                                 type: 'section',
-                                text: 'Components'
+                                text: '相关示例'
                             },
                             {
                                 text: '这是一级菜单',
@@ -85,10 +87,14 @@ const App = () => (
                                                 bullet: {
                                                     show: true,
                                                     type: 'dot'
-                                                }
+                                                },
+                                                type: 'link',
+                                                href: 'javascript:;'
                                             }
                                         ],
-                                        isExpand: true
+                                        isExpand: true,
+                                        type: 'link',
+                                        href: 'javascript:;'
                                     }
                                 ],
                                 isExpand: true

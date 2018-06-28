@@ -7,7 +7,7 @@ import List from '../_list/index.osx';
 import PropType from 'prop-types';
 import './index.scss'
 import Title from "../_title/index.osx";
-// import Link from "../_link/index.osx";
+import Link from "../_link/index.osx";
 import {NavLink} from 'react-router-dom'
 
 import Icon from "../_icon/index.osx";
@@ -154,7 +154,7 @@ export default class Menu extends Component {
                         _includeClass: 'm-menu__separator'
                     });
                     break;
-                case 'type':
+                case 'route':
                     _items.push({
                         _includeClass: ['m-menu__item', (isExpand ? 'm-menu__item--open' : ''), (isExist(child) ? 'm-menu__item--submenu' : ''), (isActive ? 'm-menu__item--active' : '')],
                         _includeAttribute: {
@@ -163,10 +163,11 @@ export default class Menu extends Component {
                         },
                         value: (
                             <Fragment>
-                                <Link _includeClass={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')]}
-                                      _excludeClass="m-link">
+                                <NavLink tag="li" activeClassName="m-menu__item--active"
+                                         className={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')].join(' ')}
+                                         to={href || ''}>
                                     {_render}
-                                </Link>
+                                </NavLink>
                                 {isExist(child) && <Menu {...{
                                     items: child,
                                     isChild: true
@@ -183,11 +184,10 @@ export default class Menu extends Component {
                         },
                         value: (
                             <Fragment>
-                                <NavLink tag="li" activeClassName="m-menu__item--active"
-                                         className={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')].join(' ')}
-                                         to={href || ''}>
+                                <Link {..._delivery(item, ["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')])}
+                                      _excludeClass="m-link">
                                     {_render}
-                                </NavLink>
+                                </Link>
                                 {isExist(child) && <Menu {...{
                                     items: child,
                                     isChild: true
