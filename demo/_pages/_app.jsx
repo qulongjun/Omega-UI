@@ -66,13 +66,13 @@ class App extends Component {
                     }}/>
                     <Container>
                         <Aside {...{
-                            skin: 'dark',
+                            skin: 'light',
                             menu: {
                                 show: true,
                                 autoScroll: true,
                                 items: [
                                     {
-                                        text: '欢迎使用',
+                                        text: '访问文档',
                                         icon: {
                                             show: true,
                                             name: 'flaticon-line-graph'
@@ -81,7 +81,9 @@ class App extends Component {
                                             show: true,
                                             bgColor: 'danger',
                                             value: 2
-                                        }
+                                        },
+                                        type: 'link',
+                                        href: 'https://omega-doc.qulongjun.com'
                                     },
                                     {
                                         type: 'section',
