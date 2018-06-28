@@ -6,7 +6,7 @@ import Div from '../_div/index.osx';
 import Stack from "../_stack/index.osx";
 import PropType from 'prop-types';
 import Link from "../_link/index.osx";
-// import './index.scss'
+import './index.scss'
 
 const FooterProps = {
     children: {}
@@ -27,7 +27,7 @@ export default class Footer extends Component {
         let _sysClass = ['m-header', 'm-grid__item'];
         return (
             <Fragment>
-                <header>
+                <header {..._sysBind(_props, _sysClass)}>
                     <Div _includeClass={['m-container', 'm-container--fluid', 'm-container--full-height']}>
                         <Stack {...{
                             direction: 'ver',

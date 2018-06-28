@@ -1,7 +1,9 @@
 import React, {Fragment} from 'react'
 import {hot} from 'react-hot-loader'
 import './App.css'
-import logo from './assets/logo_blue.png';
+import logo from './assets/logo_white.png';
+import logo_blue from './assets/logo_blue.png';
+
 import {
     Page,
     Container,
@@ -506,7 +508,7 @@ const App = () => (
                                     header: {title: 'Get Started'},
                                     _includeClass: 'text-center'
                                 }}>
-                                    <img src={logo} width='20%'/>
+                                    <img src={logo_blue} width='20%'/>
                                     <Separator/>
                                     <Section title="恭喜您，Omega 搭建成功！" describe="在开始项目之前，以下内容可能会对您有帮助：">
                                         <Link {...{
