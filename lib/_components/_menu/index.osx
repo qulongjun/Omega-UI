@@ -32,11 +32,10 @@ export default class Menu extends Component {
         const _props = this.props;
         let {autoScroll, expandAll, slideSpeed, speed, autoScrollSpeed, timeout, isChild} = _props;
         if (!isChild) {
-            console.log(_props);
-            let menu = $('#testMenu');
+            let _dom = this.refs.menu.refs.div;
+            let menu = $(_dom);
             let menuDesktopMode = (menu.data('m-menu-dropdown') === '1' ? 'dropdown' : 'accordion');
-
-            let asideMenu = new mMenu('testMenu', {
+            let asideMenu = new mMenu(_dom, {
                 // submenu setup
                 submenu: {
                     desktop: {
@@ -172,17 +171,16 @@ export default class Menu extends Component {
         });
         return (
             <Fragment>
-                <Div {..._delivery(_props, _sysClass, null, {
-                    'm-menu-vertical': 1,
-                    'm-menu-scrollable': 0,
-                    'm-menu-dropdown-timeout': 500,
-                    id: 'testMenu'
-                })}>
-                    <List {...{
-                        items: _items,
-                        _includeClass: (isExist(isChild) && isChild ? ['m-menu__subnav'] : ['m-menu__nav', 'm-menu__nav--dropdown-submenu-arrow'])
-                    }}/>
-                </Div>
+                    <Div ref="menu" {..._delivery(_props, _sysClass, null, {
+                        'm-menu-vertical': 1,
+                        'm-menu-scrollable': 0,
+                        'm-menu-dropdown-timeout': 500
+                    })}>
+                        <List {...{
+                            items: _items,
+                            _includeClass: (isExist(isChild) && isChild ? ['m-menu__subnav'] : ['m-menu__nav', 'm-menu__nav--dropdown-submenu-arrow'])
+                        }}/>
+                    </Div>
             </Fragment>
         )
     }

@@ -23,7 +23,8 @@ import {
     Stack,
     Footer,
     Text,
-    Header
+    Header,
+    Icon
 } from 'omega';
 
 const App = () => (
@@ -32,9 +33,9 @@ const App = () => (
             <Header {...{
                 brand: {
                     show: true,
-                    skin: 'dark',
+                    skin: 'light',
                     logo: {
-                        src: logo,
+                        src: logo_blue,
                         _includeStyle: {
                             width: '120px'
                         }
@@ -44,11 +45,18 @@ const App = () => (
             }}/>
             <Container>
                 <Button {...{
-                    _includeClass: 'm-aside-left-close  m-aside-left-close--skin-dark '
+                    value: (
+                        <Icon iconName="la la-close"/>
+                    ),
+                    _uniqueClass: 'm-aside-left-close  m-aside-left-close--skin-light',
+                    _includeAttribute: {
+                        id: 'm_aside_left_close_btn'
+                    }
                 }} />
-                <Div _includeClass="m-grid__item m-aside-left m-aside-left--skin-dark">
+                <Div _includeClass="m-grid__item m-aside-left m-aside-left--skin-light"
+                     _includeAttribute={{id: 'm_aside_left'}}>
                     <Menu {...{
-                        skin: 'dark',
+                        skin: 'light',
                         autoScroll: true,
                         items: [
                             {
