@@ -163,7 +163,7 @@ export default class Menu extends Component {
                         },
                         value: (
                             <Fragment>
-                                <NavLink tag="li" activeClassName="m-menu__item--active"
+                                <NavLink exact activeClassName="m-menu__item--active"
                                          className={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')].join(' ')}
                                          to={href || ''}>
                                     {_render}
