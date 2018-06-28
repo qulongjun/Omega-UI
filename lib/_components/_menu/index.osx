@@ -7,7 +7,9 @@ import List from '../_list/index.osx';
 import PropType from 'prop-types';
 import './index.scss'
 import Title from "../_title/index.osx";
-import Link from "../_link/index.osx";
+// import Link from "../_link/index.osx";
+import {NavLink} from 'react-router-dom'
+
 import Icon from "../_icon/index.osx";
 import Text from '../_text/index.osx';
 import Badge from "../_badge/index.osx";
@@ -94,7 +96,7 @@ export default class Menu extends Component {
         isExist(skin) && ['dark', 'light'].includes(skin) && _sysClass.push('m-aside-menu--skin-' + skin) && _sysClass.push('m-aside-menu--submenu-skin-' + skin);
         let _items = [];
         isExist(items) && isArray(items) && items.map((item) => {
-            let {type, text, icon, badge, bullet, child, isExpand, isActive} = item;
+            let {type, text, icon, badge, bullet, child, isExpand, isActive, href} = item;
             switch (type) {
                 case 'section':
                     _items.push({
@@ -127,12 +129,13 @@ export default class Menu extends Component {
                         },
                         value: (
                             <Fragment>
-                                <Link _includeClass={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')]}
-                                      _excludeClass="m-link">
+                                <NavLink tag="li" activeClassName="m-menu__item--active"
+                                         className={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')].join(' ')}
+                                         to={href || ''}>
                                     {
                                         isExist(bullet) && bullet.show && (
                                             <Icon
-                                                _includeClass={["m-menu__link-bullet", "m-menu__link-bullet--" + (['dot', 'line'].includes(bullet.type) || 'dot')]}>
+                                                _includeClass={["m-menu__link-bullet", "m-menu__link-bullet--" + (['dot', 'line'].includes(bullet.type) ? bullet.type : 'dot')]}>
                                                 <Text />
                                             </Icon>
                                         )
@@ -159,7 +162,7 @@ export default class Menu extends Component {
                                         isExist(child) && isArray(child) && (
                                             <Icon _includeClass="m-menu__ver-arrow" iconName="la la-angle-right"/>)
                                     }
-                                </Link>
+                                </NavLink>
                                 {isExist(child) && <Menu {...{
                                     items: child,
                                     isChild: true

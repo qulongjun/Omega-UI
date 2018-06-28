@@ -220,12 +220,12 @@
 	}	
 
 	// item link active state
-	&.m-menu__item--active {
+	> .m-menu__item--active {
 		@include transition( background-color 0.3s );
 		@include attr(background-color, array-get($item, self, bg-color, active));
 
-		> .m-menu__heading,
-		> .m-menu__link {								
+		&.m-menu__heading,
+		&.m-menu__link {
 			@include attr(background-color, array-get($item, link, self, bg-color, active));
 
 			// menu item link's text part
