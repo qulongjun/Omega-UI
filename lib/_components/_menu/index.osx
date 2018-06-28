@@ -97,6 +97,40 @@ export default class Menu extends Component {
         let _items = [];
         isExist(items) && isArray(items) && items.map((item) => {
             let {type, text, icon, badge, bullet, child, isExpand, isActive, href} = item;
+            let _render = (
+                <Fragment>
+                    {
+                        isExist(bullet) && bullet.show && (
+                            <Icon
+                                _includeClass={["m-menu__link-bullet", "m-menu__link-bullet--" + (['dot', 'line'].includes(bullet.type) ? bullet.type : 'dot')]}>
+                                <Text />
+                            </Icon>
+                        )
+                    }
+                    {isExist(icon) && icon.show && (
+                        <Icon iconName={icon.name} _includeClass="m-menu__link-icon"/>)}
+                    {
+                        isExist(badge) && badge.show ? (
+                            <Text _includeClass="m-menu__link-title">
+                                <Text _includeClass="m-menu__link-wrap">
+                                    <Text _includeClass="m-menu__link-text">
+                                        {text}
+                                    </Text>
+                                    <Text _includeClass="m-menu__link-badge">
+                                        <Badge {..._delivery(badge)}>{badge.value}</Badge>
+                                    </Text>
+                                </Text>
+                            </Text>
+                        ) : (
+                            <Text _includeClass="m-menu__link-text">{text}</Text>
+                        )
+                    }
+                    {
+                        isExist(child) && isArray(child) && (
+                            <Icon _includeClass="m-menu__ver-arrow" iconName="la la-angle-right"/>)
+                    }
+                </Fragment>
+            );
             switch (type) {
                 case 'section':
                     _items.push({
@@ -120,6 +154,26 @@ export default class Menu extends Component {
                         _includeClass: 'm-menu__separator'
                     });
                     break;
+                case 'type':
+                    _items.push({
+                        _includeClass: ['m-menu__item', (isExpand ? 'm-menu__item--open' : ''), (isExist(child) ? 'm-menu__item--submenu' : ''), (isActive ? 'm-menu__item--active' : '')],
+                        _includeAttribute: {
+                            'aria-haspopup': true,
+                            'm-menu-submenu-toggle': 'hover'
+                        },
+                        value: (
+                            <Fragment>
+                                <Link _includeClass={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')]}
+                                      _excludeClass="m-link">
+                                    {_render}
+                                </Link>
+                                {isExist(child) && <Menu {...{
+                                    items: child,
+                                    isChild: true
+                                }}/>}
+                            </Fragment>
+                        )
+                    });
                 default:
                     _items.push({
                         _includeClass: ['m-menu__item', (isExpand ? 'm-menu__item--open' : ''), (isExist(child) ? 'm-menu__item--submenu' : ''), (isActive ? 'm-menu__item--active' : '')],
@@ -132,36 +186,7 @@ export default class Menu extends Component {
                                 <NavLink tag="li" activeClassName="m-menu__item--active"
                                          className={["m-menu__link", (isExist(child) ? 'm-menu__toggle' : '')].join(' ')}
                                          to={href || ''}>
-                                    {
-                                        isExist(bullet) && bullet.show && (
-                                            <Icon
-                                                _includeClass={["m-menu__link-bullet", "m-menu__link-bullet--" + (['dot', 'line'].includes(bullet.type) ? bullet.type : 'dot')]}>
-                                                <Text />
-                                            </Icon>
-                                        )
-                                    }
-                                    {isExist(icon) && icon.show && (
-                                        <Icon iconName={icon.name} _includeClass="m-menu__link-icon"/>)}
-                                    {
-                                        isExist(badge) && badge.show ? (
-                                            <Text _includeClass="m-menu__link-title">
-                                                <Text _includeClass="m-menu__link-wrap">
-                                                    <Text _includeClass="m-menu__link-text">
-                                                        {text}
-                                                    </Text>
-                                                    <Text _includeClass="m-menu__link-badge">
-                                                        <Badge {..._delivery(badge)}>{badge.value}</Badge>
-                                                    </Text>
-                                                </Text>
-                                            </Text>
-                                        ) : (
-                                            <Text _includeClass="m-menu__link-text">{text}</Text>
-                                        )
-                                    }
-                                    {
-                                        isExist(child) && isArray(child) && (
-                                            <Icon _includeClass="m-menu__ver-arrow" iconName="la la-angle-right"/>)
-                                    }
+                                    {_render}
                                 </NavLink>
                                 {isExist(child) && <Menu {...{
                                     items: child,
