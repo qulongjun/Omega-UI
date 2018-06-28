@@ -9,7 +9,7 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space} from 'omega';
+import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space, Header, Aside} from 'omega';
 import {Route, Switch} from 'react-router-dom'
 import Menu from './_menu';
 import Grids from './_grid/_grid';
@@ -37,6 +37,8 @@ import ButtonDropdown from './_button/_dropdown';
 import LineAwesomeButton from './_button/_lineAwesome';
 import FontAwesomeButton from './_button/_fontAwesome';
 import FlaticonButton from './_button/_flaticon';
+
+import logo_blue from 'src/assets/logo_blue.png';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +51,105 @@ class App extends Component {
         return (
             <Fragment>
                 <Page>
+                    <Header {...{
+                        brand: {
+                            show: true,
+                            skin: 'light',
+                            logo: {
+                                src: logo_blue,
+                                _includeStyle: {
+                                    width: '120px'
+                                }
+                            },
+                            href: 'https://github.com/qulongjun/Omega-UI'
+                        }
+                    }}/>
                     <Container>
+                        <Aside {...{
+                            skin: 'dark',
+                            menu: {
+                                show: true,
+                                autoScroll: true,
+                                items: [
+                                    {
+                                        text: '欢迎使用',
+                                        icon: {
+                                            show: true,
+                                            name: 'flaticon-line-graph'
+                                        },
+                                        badge: {
+                                            show: true,
+                                            bgColor: 'danger',
+                                            value: 2
+                                        }
+                                    },
+                                    {
+                                        type: 'section',
+                                        text: 'Components'
+                                    },
+                                    {
+                                        text: 'Base',
+                                        icon: {
+                                            show: true,
+                                            name: 'flaticon-layers'
+                                        },
+                                        child: [
+                                            {
+                                                text: '状态与颜色',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/stateColor'
+                                            }, {
+                                                text: '排版',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/typography'
+                                            }, {
+                                                text: '表格',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/tables'
+                                            }, {
+                                                text: '进度条',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/progress'
+                                            }, {
+                                                text: '模态框',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/modal'
+                                            }, {
+                                                text: '消息提醒',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/alerts'
+                                            }, {
+                                                text: '弹出层',
+                                                bullet: {
+                                                    show: true,
+                                                    type: 'dot'
+                                                },
+                                                href: '/popover'
+                                            }
+                                        ],
+                                        isExpand: true
+                                    }
+                                ]
+                            }
+                        }}/>
                         <Wrapper>
                             <Route path='/' exact component={Menu}/>
                             <Route path='/grid' component={Grids}/>

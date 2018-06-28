@@ -2,6 +2,7 @@
 //** Global Mixins
 //
 
+//== Flexbox mixins
 @mixin flexbox() {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -309,15 +310,22 @@
 }
 
 //== Attribute
-@mixin attr($attr, $value) {
+@mixin attr($attr, $value, $important: '') {
   @if  $value != null  {
-    #{$attr}: #{$value};
+    #{$attr}: #{$value} #{$important};
   }
 }
 
 //== Rounded mode
 @mixin rounded {
   @if $m--rounded == true {
+    @content;
+  }
+}
+
+//== Rounded mode
+@mixin not-rounded {
+  @if $m--rounded == false {
     @content;
   }
 }
@@ -402,7 +410,7 @@ xl: 1200px
 
 //== Media Query - Min Desktop Mode
 @mixin minimal-desktop {
-  @media (min-width: #{map-get($m--layout-breakpoints, lg)} + 1px) and (max-width: #{map-get($m--layout-breakpoints, xl)}) {
+  @media (min-width: #{map-get($m--layout-breakpoints, lg) + 1px}) and (max-width: #{map-get($m--layout-breakpoints, xl)}) {
     @content;
   }
 }
@@ -416,21 +424,21 @@ xl: 1200px
 
 //== Media Query - Desktop Mode
 @mixin desktop {
-  @media (min-width: #{map-get($m--layout-breakpoints, lg)} + 1px) {
+  @media (min-width: #{map-get($m--layout-breakpoints, lg) + 1px}) {
     @content;
   }
 }
 
 //== Media Query - Desktop & Tablet Modes
 @mixin desktop-and-tablet {
-  @media (min-width: #{map-get($m--layout-breakpoints, md)} + 1px) {
+  @media (min-width: #{map-get($m--layout-breakpoints, md) + 1px}) {
     @content;
   }
 }
 
 //== Media Query - Tablet Mode
 @mixin tablet {
-  @media (min-width: #{map-get($m--layout-breakpoints, md)} + 1px) and (max-width: #{map-get($m--layout-breakpoints, lg)}) {
+  @media (min-width: #{map-get($m--layout-breakpoints, md) + 1px}) and (max-width: #{map-get($m--layout-breakpoints, lg)}) {
     @content;
   }
 }
@@ -449,21 +457,21 @@ xl: 1200px
   }
 }
 
-//== IE8-11 hack
+//== IE8-11 versions hack
 @mixin hack-ie8-11 {
   @media screen\0 {
     @content;
   }
 }
 
-//== Edge hack
+//== Edge All versions hack
 @mixin hack-edge-all {
   @supports (-ms-ime-align:auto) {
     @content;
   }
 }
 
-//== 组件颜色class
+//== Component skin class
 @mixin component-skin($class, $skin) {
   @if $m--default-skin == $skin {
     .#{$class} {
@@ -477,7 +485,7 @@ xl: 1200px
   //.m--skin-#{$skin} .#{$class}:not(.#{$class}--skin-light):not(.#{$class}--skin-dark):not(.#{$class}--state),
 }
 
-//== Icon 尺寸
+//== Icon Sizing
 // sass list:  (lineawesome: 1.1rem, fontawesome: 1.2rem, metronic: 1.1rem)
 @mixin icons-size($config) {
   // lineawesome
@@ -492,14 +500,14 @@ xl: 1200px
     font-size: array-get($config, fontawesome);
   }
 
-  // flaticon icons
+  // metronic icons
   [class^="flaticon-"],
   [class*=" flaticon-"] {
     font-size: array-get($config, metronic);
   }
 }
 
-//== Icon 属性
+//== Icon attr
 // sass list:  (lineawesome: 1.1rem, fontawesome: 1.2rem, metronic: 1.1rem)
 @mixin icons-attr($attr, $config) {
   // lineawesome
@@ -535,7 +543,7 @@ xl: 1200px
   }
 }
 
-//== 图标
+//== Metronic icon
 @mixin icon($default-state) {
   &:before {
     display: inline-block;
@@ -554,7 +562,7 @@ xl: 1200px
   }
 }
 
-//== 图标化
+//== Iconify an element
 @mixin icon-self($default-state) {
   display: inline-block;
   font-family: "Metronic";
@@ -571,7 +579,7 @@ xl: 1200px
   content: "#{$default-state}";
 }
 
-//== Lineawesome 图标
+//== Lineawesome icon
 @mixin la-icon($icon) {
   font-family: "LineAwesome";
   text-decoration: inherit;
@@ -586,7 +594,7 @@ xl: 1200px
   }
 }
 
-//== Lineawesome 图标
+//== Lineawesome icon
 @mixin la-icon-self($icon) {
   font-family: "LineAwesome";
   text-decoration: inherit;
@@ -598,7 +606,7 @@ xl: 1200px
   content: "#{$icon}";
 }
 
-//== 关闭图标
+//== Close icon
 @mixin m-generate-close-icon($self:null) {
   @if $self == true {
     @include la-icon-self( array-get($m--icon-codes, close) );
@@ -607,7 +615,7 @@ xl: 1200px
   }
 }
 
-//== 向下箭头
+//== Arrow down icon
 @mixin m-generate-arrow-icon($dir, $self:null) {
   @if $dir == down {
     @if $self == true {
