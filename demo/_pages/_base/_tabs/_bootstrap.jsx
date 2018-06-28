@@ -9,16 +9,53 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Tab, Text, Separator} from 'omega';
+import {Content, Div, Portlet, Section, Tab, Text, Separator, SubHeader} from 'omega';
 export default class BootstrapTabs extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: 'Bootstrap 选项卡',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '选项卡',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: 'Bootstrap 选项卡',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

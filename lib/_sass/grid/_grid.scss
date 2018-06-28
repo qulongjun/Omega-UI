@@ -18,6 +18,7 @@
     &.m-grid--root {
       flex: 1;
       -ms-flex: 1 0 0px;
+      height: 100%;
     }
 
     > .m-grid__item {

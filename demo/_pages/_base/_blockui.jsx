@@ -18,7 +18,8 @@ import {
     Text,
     Code,
     Paragraph,
-    BlockUI
+    BlockUI,
+    SubHeader
 } from 'omega';
 
 export default class BlockUIs extends Component {
@@ -30,6 +31,39 @@ export default class BlockUIs extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '遮罩',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '遮罩',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

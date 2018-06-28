@@ -28,9 +28,7 @@ const ButtonProps = {
         default: 'normal',
         type: PropType.oneOf(['thin', 'normal', 'bold', 'bolder', 'boldest', 'boldest2'])
     },
-    value: {
-        type: PropType.string
-    },
+    value: {},
     size: {
         default: 'normal',
         type: PropType.oneOf(['sm', 'lg', 'normal'])

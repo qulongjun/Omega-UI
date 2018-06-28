@@ -1,0 +1,51 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {uuid} from '../../_scripts/_utils';
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import Button from '../_button/index.osx';
+import Icon from '../_icon/index.osx';
+import Menu from '../_menu/index.osx';
+import PropType from 'prop-types';
+const AsideProps = {
+    closeBtn: {
+        default: {
+            show: true,
+            iconName: 'la la-close'
+        }
+    },
+    children: {}
+};
+
+export default class Aside extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(AsideProps);
+    static propTypes = PropTypes(AsideProps);
+
+    render() {
+        const _props = this.props;
+        const {closeBtn, menu, skin} = _props;
+        const showBtn = isExist(closeBtn) && closeBtn.show;
+        const showMenu = isExist(menu) && menu.show;
+        if (!menu.skin) menu.skin = skin;
+        return (
+            <Fragment>
+                <Button {...{
+                    value: (
+                        <Icon {..._delivery(closeBtn)} iconName={closeBtn.iconName}/>
+                    ),
+                    _uniqueClass: ['m-aside-left-close', (showBtn && ['dark', 'light'].includes(closeBtn.skin) ? 'm-aside-left-close--skin-' + closeBtn.skin : 'm-aside-left-close--skin-' + skin)]
+                }} {..._delivery(closeBtn)}/>
+                <Div {...{
+                    _includeClass: ["m-grid__item", "m-aside-left", "m-aside-left--skin-" + skin]
+                }}>
+                    {showMenu && <Menu {..._delivery(menu)}/>}
+                </Div>
+            </Fragment>
+        );
+    }
+}

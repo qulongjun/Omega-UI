@@ -1,0 +1,56 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import PropType from 'prop-types';
+import Nav from "../_nav/index.osx";
+const BreadcrumbProps = {
+    items: {
+        type: PropType.array
+    },
+    separator: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.object
+        ])
+    },
+    children: {}
+};
+
+export default class Breadcrumb extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(BreadcrumbProps);
+    static propTypes = PropTypes(BreadcrumbProps);
+
+    render() {
+        const _props = this.props;
+        const {items, separator} = _props;
+        let _items = [];
+        isExist(items) && isArray(items) && items.map((item, index) => {
+            isObject(item) ? _items.push(item) : _items.push({
+                text: {
+                    value: item
+                }
+            });
+            if (index !== items.length - 1) {
+                isExist(separator) && isObject(separator) ? _items.push(Object.assign(separator, {type: 'separator'})) : _items.push({
+                    type: 'separator',
+                    text: {
+                        value: separator
+                    }
+                })
+
+            }
+        });
+        return (
+            <Fragment>
+                <Nav {..._delivery(_props)} {...{
+                    type: 'inline',
+                    items: _items
+                }}/>
+            </Fragment>
+        );
+    }
+}

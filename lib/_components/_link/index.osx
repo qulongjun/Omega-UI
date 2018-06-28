@@ -15,7 +15,6 @@ const LinkProps = {
         type: PropType.string
     },
     target: {
-        default: '_blank',
         type: PropType.oneOf(['_blank', '_parent', '_self', '_top'])
     },
     children: {}

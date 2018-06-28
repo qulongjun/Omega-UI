@@ -44,7 +44,7 @@ export default class Nav extends Component {
                 }
                 case "separator": {
                     _items.push({
-                        value: '',
+                        value: (isExist(text) && text.value) || '',
                         _includeClass: ['m-nav__separator', 'm-nav__separator--fit']
                     });
                     break;
@@ -77,9 +77,9 @@ export default class Nav extends Component {
                                             </Text>
                                         </Text>
                                     </Text>) : (
-                                        <Text {..._delivery(text, ['m-nav__link-text'])}>
+                                        text && (<Text {..._delivery(text, ['m-nav__link-text'])}>
                                             {text && text.value}
-                                        </Text>
+                                        </Text>)
                                     )
                                 }
                             </Link>
@@ -93,17 +93,32 @@ export default class Nav extends Component {
                 }
             }
         }));
-        return (
-            <Fragment>
-                {type === 'sub' ? (
+        let _render = null;
+        switch (type) {
+            case 'sub':
+                _render = (
                     <List {..._delivery(_props, ['m-nav__sub'])} {...{
                         items: _items
                     }}/>
-                ) : (
+                );
+                break;
+            case 'inline':
+                _render = (
+                    <List {..._delivery(_props, ['m-nav', 'm-nav--inline'])} {...{
+                        items: _items
+                    }}/>
+                );
+                break;
+            default:
+                _render = (
                     <List {..._delivery(_props, ['m-nav'])} {...{
                         items: _items
                     }}/>
-                )}
+                );
+        }
+        return (
+            <Fragment>
+                {_render}
             </Fragment>
         );
     }

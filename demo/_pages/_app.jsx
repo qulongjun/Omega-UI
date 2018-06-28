@@ -9,8 +9,9 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space} from 'omega';
+import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space, Header, Aside,Footer} from 'omega';
 import {Route, Switch} from 'react-router-dom'
+import MenuJSON from './_menu.json';
 import Menu from './_menu';
 import Grids from './_grid/_grid';
 import StateColor from './_base/_stateColor';
@@ -37,6 +38,8 @@ import ButtonDropdown from './_button/_dropdown';
 import LineAwesomeButton from './_button/_lineAwesome';
 import FontAwesomeButton from './_button/_fontAwesome';
 import FlaticonButton from './_button/_flaticon';
+
+import logo_blue from 'src/assets/logo_blue.png';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +52,24 @@ class App extends Component {
         return (
             <Fragment>
                 <Page>
+                    <Header {...{
+                        brand: {
+                            show: true,
+                            skin: 'light',
+                            logo: {
+                                src: logo_blue,
+                                _includeStyle: {
+                                    width: '120px'
+                                }
+                            },
+                            href: 'https://github.com/qulongjun/Omega-UI'
+                        }
+                    }}/>
                     <Container>
+                        <Aside {...{
+                            skin: 'light',
+                            menu: MenuJSON
+                        }}/>
                         <Wrapper>
                             <Route path='/' exact component={Menu}/>
                             <Route path='/grid' component={Grids}/>
@@ -79,6 +99,41 @@ class App extends Component {
                             <Route path='/button/flaticon' component={FlaticonButton}/>
                         </Wrapper>
                     </Container>
+                    <Footer {...{
+                        copyright: (
+                            <Fragment>
+                                2018 © Omega UI by <Link href="https://doc.react-china.org/"> React </Link> 。
+                            </Fragment>
+                        ),
+                        nav: [
+                            {
+                                text: {
+                                    value: 'React 中文官网',
+                                    href: 'https://doc.react-china.org/'
+                                }
+                            }, {
+                                text: {
+                                    value: '技术文档',
+                                    href: 'http://omega-doc.qulongjun.com/'
+                                }
+                            }, {
+                                text: {
+                                    value: '官方示例',
+                                    href: 'http://omega.qulongjun.com/'
+                                }
+                            }, {
+                                text: {
+                                    value: '快速构建',
+                                    href: 'https://github.com/qulongjun/Omega-cli'
+                                }
+                            }, {
+                                text: {
+                                    value: 'Github',
+                                    href: 'https://github.com/qulongjun/Omega-UI'
+                                }
+                            }
+                        ]
+                    }}/>
                 </Page>
             </Fragment>
         );
