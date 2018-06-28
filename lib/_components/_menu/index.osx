@@ -175,6 +175,7 @@ export default class Menu extends Component {
                             </Fragment>
                         )
                     });
+                    break;
                 default:
                     _items.push({
                         _includeClass: ['m-menu__item', (isExpand ? 'm-menu__item--open' : ''), (isExist(child) ? 'm-menu__item--submenu' : ''), (isActive ? 'm-menu__item--active' : '')],
