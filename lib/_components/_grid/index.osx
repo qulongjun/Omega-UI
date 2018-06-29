@@ -20,7 +20,7 @@ const GridProps = {
     justify: {
         type: PropType.oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around'])
     },
-    warp: {
+    wrap: {
         type: PropType.oneOf(['nowrap', 'wrap', 'wrap-reverse'])
     },
     alignItems: {
@@ -42,13 +42,13 @@ export default class Grid extends Component {
 
     render() {
         const _props = this.props;
-        const {mode, direction, root, justify, warp, alignItems, alignContent, children} = _props;
+        const {mode, direction, root, justify, wrap, alignItems, alignContent, children} = _props;
         let _sysClass = ['m-grid'];
         isExist(mode) && _sysClass.push('m-grid--' + mode);
         isExist(direction) && _sysClass.push('m-grid--' + direction + (isExist(mode) ? ('-' + mode) : ''));
         isExist(root) && _sysClass.push('m-grid--root');
         isExist(justify) && _sysClass.push('m-grid--' + justify);
-        isExist(warp) && _sysClass.push('m-grid--' + warp);
+        isExist(wrap) && _sysClass.push('m-grid--' + wrap);
         isExist(alignItems) && _sysClass.push('m-grid--align-item-' + alignItems);
         isExist(alignContent) && _sysClass.push('m-grid--align-content-' + alignContent);
         return (
