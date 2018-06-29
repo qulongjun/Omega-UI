@@ -279,9 +279,70 @@ export default class Grids extends Component {
                                     title: '响应式'
                                 }
                             }} >
-                                <Section describe={<Text>通过指定 <Code>mode</Code> 属性可以使内容布局响应式，支持的组件有 <Code>general</Code>。</Text>}>
+                                <Section describe={<Text>通过指定 <Code>mode</Code> 属性可以使内容布局响应式，支持的响应式类型有
+                                    <Code>general</Code>、<Code>desktop</Code>、<Code>tablet</Code>、<Code>desktop-and-tablet</Code>、<Code>mobile</Code>、<Code>tablet-and-mobile</Code>。</Text>}>
                                     <Demo>
-
+                                        <Code>general</Code>
+                                        <Stack {...{
+                                            items: [
+                                                {
+                                                    value: 'Item 1'
+                                                }, {
+                                                    value: 'Item 2'
+                                                }, {
+                                                    value: 'Item 3'
+                                                }
+                                            ],
+                                            _includeClass: 'm-stack--demo'
+                                        }}/>
+                                    </Demo>
+                                    <Demo>
+                                        <Code>desktop</Code>
+                                        <Stack {...{
+                                            mode: 'desktop',
+                                            items: [
+                                                {
+                                                    value: 'Item 1'
+                                                }, {
+                                                    value: 'Item 2'
+                                                }, {
+                                                    value: 'Item 3'
+                                                }
+                                            ],
+                                            _includeClass: 'm-stack--demo'
+                                        }}/>
+                                    </Demo>
+                                    <Demo>
+                                        <Code>tablet</Code>
+                                        <Stack {...{
+                                            mode: 'tablet',
+                                            items: [
+                                                {
+                                                    value: 'Item 1'
+                                                }, {
+                                                    value: 'Item 2'
+                                                }, {
+                                                    value: 'Item 3'
+                                                }
+                                            ],
+                                            _includeClass: 'm-stack--demo'
+                                        }}/>
+                                    </Demo>
+                                    <Demo>
+                                        <Code>mobile</Code>
+                                        <Stack {...{
+                                            mode: 'mobile',
+                                            items: [
+                                                {
+                                                    value: 'Item 1'
+                                                }, {
+                                                    value: 'Item 2'
+                                                }, {
+                                                    value: 'Item 3'
+                                                }
+                                            ],
+                                            _includeClass: 'm-stack--demo'
+                                        }}/>
                                     </Demo>
                                 </Section>
 
