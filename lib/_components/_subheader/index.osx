@@ -1,11 +1,18 @@
 import React, {Component, Fragment} from 'react';
 import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
 import {isExist} from "../../_scripts/_is";
-import {_totalColor} from '../../_scripts/_public';
 import Div from '../_div/index.osx';
+import Breadcrumb from "../_breadcrumbs/index.osx";
+import Title from '../_title/index.osx';
 import PropType from 'prop-types';
 import './index.scss'
 const SubHeaderProps = {
+    header: {
+        type: PropType.object
+    },
+    breadcrumbs: {
+        type: PropType.object
+    },
     children: {}
 };
 
@@ -18,6 +25,27 @@ export default class SubHeader extends Component {
     static propTypes = PropTypes(SubHeaderProps);
 
     render() {
-
+        const _props = this.props;
+        const {header, breadcrumbs} = _props;
+        return (
+            <Div {..._delivery(_props, 'm-subheader')}>
+                <Div _includeClass={['d-flex', 'align-items-center']}>
+                    <Div _includeClass="mr-auto">
+                        {
+                            isExist(header) && header.show && (
+                                <Title level={3}
+                                       _includeClass={['m-subheader__title', (header.separator ? 'm-subheader__title--separator' : '')]}>
+                                    {header.name}
+                                </Title>
+                            )
+                        }
+                        {
+                            isExist(breadcrumbs) &&
+                            <Breadcrumb {..._delivery(breadcrumbs, ['m-subheader__breadcrumbs'])}/>
+                        }
+                    </Div>
+                </Div>
+            </Div>
+        );
     }
 }

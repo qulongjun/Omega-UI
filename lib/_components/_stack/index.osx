@@ -1,0 +1,70 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss'
+const StackProps = {
+    items: {
+        type: PropType.array
+    },
+    direction: {
+        default: 'ver',
+        type: PropType.oneOf(['ver', 'hor'])
+    },
+    display: {
+        default: 'block',
+        type: PropType.oneOf(['block', 'inline'])
+    },
+    mode: {
+        default: 'general',
+        type: PropType.oneOf(['general', 'desktop', 'tablet', 'mobile', 'desktop-and-tablet', 'tablet-and-mobile'])
+    },
+    children: {}
+};
+
+export default class Stack extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(StackProps);
+    static propTypes = PropTypes(StackProps);
+
+    render() {
+        const _props = this.props;
+        const {items, direction, display, mode} = _props;
+        let _sysClass = ['m-stack'];
+        isExist(direction) && ['ver', 'hor'].includes(direction) && _sysClass.push('m-stack--' + direction);
+        isExist(display) && display === 'inline' && _sysClass.push('m-stack--inline');
+        isExist(mode) && ['general', 'desktop', 'tablet', 'mobile'].includes(mode) && _sysClass.push('m-stack--' + mode);
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, _sysClass)}>
+                    {
+                        isExist(items) && isArray(items) && items.map((item, index) => {
+                            if (isObject(item)) {
+                                let {justify, align, value, fluid} = item;
+                                let _itemClass = ['m-stack__item'];
+                                isExist(justify) && ['left', 'right', 'center'].includes(justify) && _itemClass.push('m-stack__item--' + justify);
+                                isExist(align) && ['top', 'middle', 'bottom'].includes(align) && _itemClass.push('m-stack__item--' + align);
+                                isExist(fluid) && _itemClass.push('m-stack__item--fluid');
+                                return (
+                                    <Div key={index} {..._delivery(item, _itemClass)}>
+                                        {value}
+                                    </Div>
+                                )
+                            } else {
+                                return (
+                                    <Div key={index} _includeClass="m-stack__item">
+                                        {item}
+                                    </Div>
+                                );
+                            }
+                        })
+                    }
+                </Div>
+            </Fragment>
+        );
+    }
+}
