@@ -18,7 +18,7 @@ const StackProps = {
     },
     mode: {
         default: 'general',
-        type: PropType.oneOf(['general', 'desktop', 'tablet', 'mobile'])
+        type: PropType.oneOf(['general', 'desktop', 'tablet', 'mobile', 'desktop-and-tablet', 'tablet-and-mobile'])
     },
     children: {}
 };
