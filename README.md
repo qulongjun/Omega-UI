@@ -11,7 +11,7 @@
 
 <div align="center">
 
- Responsive Bootstrap Admin & Powerful UI Kit By [React](http://facebook.github.io/react/).
+ Responsive Bootstrap Admin & Powerful UI Kit By [React](http://facebook.github.io/react/?_blank).
 
 </div>
 
@@ -19,7 +19,7 @@
 
 推荐使用快速构建工具  `Omegaui-CLI`  搭建项目，只需依次执行：
  ![](./doc/_assets/build-tools.png)
-> 构建工具具体用法清参考[构建工具说明](https://github.com/qulongjun/Omega-cli)。
+> 构建工具具体用法清参考[构建工具说明](https://github.com/qulongjun/Omega-cli?_blank)。
 
 ## 使用示例
 
@@ -31,19 +31,19 @@
 快速构建工具已经集成了一键式调试与部署指令，只需执行如下命令即可实现开发环境下的调试和生产环境的部署：
 ![](./doc/_assets/dev.png)
 
->  开发环境下启动调试后，在浏览器中打开 [http://127.0.0.1:8080](http://127.0.0.1:8080) 即可查看效果。
+>  开发环境下启动调试后，在浏览器中打开 [http://127.0.0.1:8080](http://127.0.0.1:8080?_blank) 即可查看效果。
 
 ## 遇到问题
 
-你可以使用 Github 的 [Issue](https://github.com/qulongjun/Omega-UI/issues) 功能 进行提问，我们会随时进行解答。
+你可以使用 Github 的 [Issue](https://github.com/qulongjun/Omega-UI/issues?_blank) 功能 进行提问，我们会随时进行解答。
 
 ## 官网示例
 
-是否正在寻找一些示例来开始您的项目? 点击 [此处](https://omega.qulongjun.com) 查看使用示例。
+是否正在寻找一些示例来开始您的项目? 点击 [此处](https://omega.qulongjun.com?_blank) 查看使用示例。
 
 ## 技术文档
 
-使用过程中存在任何问题，建议浏览文档获得技术支持。点击 [此处](https://omega-doc.qulongjun.com) 查看技术文档。
+使用过程中存在任何问题，建议浏览文档获得技术支持。点击 [此处](https://omega-doc.qulongjun.com?_blank) 查看技术文档。
 
 ## 参与项目
 
