@@ -14,7 +14,8 @@ import {
     Div,
     Portlet,
     Section,
-    Alert
+    Alert,
+    SubHeader
 } from 'omega';
 
 export default class Alerts extends Component {
@@ -26,6 +27,39 @@ export default class Alerts extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '消息提醒',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '消息提醒',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <div className="row">
                         <div className="col-xl-6">

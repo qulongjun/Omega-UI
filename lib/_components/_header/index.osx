@@ -1,0 +1,158 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
+import {isExist} from "../../_scripts/_is";
+import {_totalColor} from '../../_scripts/_public';
+import Div from '../_div/index.osx';
+import Stack from "../_stack/index.osx";
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+import Link from "../_link/index.osx";
+import Nav from '../_nav/index.osx';
+import mToggle from '../../_scripts/_base/toggle/toggle';
+import mOffcanvas from '../../_scripts/_base/offcanvas/offcanvas';
+import {mUtil} from '../../_scripts/_base/_util';
+import './index.scss'
+
+const FooterProps = {
+    children: {}
+};
+
+export default class Footer extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FooterProps);
+    static propTypes = PropTypes(FooterProps);
+
+    _toggle() {
+        let _dom = this.refs.toggle.refs.link;
+        if ($(_dom).length === 0) {
+            return;
+        }
+        let asideLeftToggle = new mToggle(_dom, {
+            target: 'body',
+            targetState: 'm-brand--minimize m-aside-left--minimize',
+            togglerState: 'm-brand__toggler--active'
+        });
+    }
+
+    _offCanvas() {
+        let _dom = this.refs.asideLeft.refs.link;
+        let asideLeft = document.querySelector('.m-aside-left');
+        let asideOffcanvasClass = mUtil.hasClass(asideLeft, 'm-aside-left--offcanvas-default') ? 'm-aside-left--offcanvas-default' : 'm-aside-left';
+        let asideMenuOffcanvas = new mOffcanvas(asideLeft, {
+            baseClass: asideOffcanvasClass,
+            overlay: true,
+            closeBy: '.m-aside-left-close',
+            toggleBy: {
+                target: 'm_aside_left_offcanvas_toggle',
+                state: 'm-brand__toggler--active'
+            }
+        });
+    }
+
+    componentDidMount() {
+        this._offCanvas();
+        this._toggle();
+
+    }
+
+    render() {
+        const _props = this.props;
+        const {brand} = _props;
+        const {skin, show, logo, custom} = brand;
+        let _sysClass = ['m-header', 'm-grid__item'];
+        return (
+            <Fragment>
+                <header ref="header" {..._sysBind(_props, _sysClass)}>
+                    <Div _includeClass={['m-container', 'm-container--fluid', 'm-container--full-height']}>
+                        <Stack {...{
+                            direction: 'ver',
+                            mode: 'desktop',
+                            items: [
+                                {
+                                    value: (
+                                        <Fragment>
+                                            <Stack {...{
+                                                direction: 'ver',
+                                                items: [
+                                                    {
+                                                        value: (
+                                                            <Fragment>
+                                                                {
+                                                                    isExist(custom) ? custom : (
+                                                                        <Link {..._delivery(brand)}
+                                                                              _uniqueClass={['m-brand__logo-wrapper']}>
+                                                                            <img {..._sysBind(logo, null, null, {
+                                                                                src: logo.src
+                                                                            })}/>
+                                                                        </Link>
+                                                                    )
+                                                                }
+                                                            </Fragment>
+                                                        ),
+                                                        align: 'middle',
+                                                        _includeClass: 'm-brand__logo'
+                                                    }, {
+                                                        value: (
+                                                            <Fragment>
+                                                                <Link ref="toggle"
+                                                                      _uniqueClass={['m-brand__icon', 'm-brand__toggler', 'm-brand__toggler--left', 'm--visible-desktop-inline-block']}>
+                                                                    <Text />
+                                                                </Link>
+                                                                <Link ref="asideLeft"
+                                                                      {...{
+                                                                          _uniqueClass: ['m-brand__icon', 'm-brand__toggler', 'm-brand__toggler--left', 'm--visible-tablet-and-mobile-inline-block'],
+                                                                          _includeAttribute: {
+                                                                              id: 'm_aside_left_offcanvas_toggle'
+                                                                          }
+                                                                      }}>
+                                                                    <Text />
+                                                                </Link>
+                                                            </Fragment>
+                                                        ),
+                                                        align: 'middle',
+                                                        _includeClass: 'm-brand__tools'
+                                                    }
+                                                ]
+                                            }}/>
+                                        </Fragment>
+                                    ),
+                                    _includeClass: ['m-brand', (isExist(brand) && brand.show && ['dark', 'light'].includes(brand.skin) ? 'm-brand--skin-' + brand.skin : '')]
+                                }, {}
+                                // {
+                                //     value: (
+                                //         <Fragment>
+                                //             <Stack {...{
+                                //                 direction: 'ver',
+                                //                 fluid: true,
+                                //                 items: [{
+                                //                     value: (
+                                //                         <Fragment>
+                                //                             <Nav {...{
+                                //                                 type: 'inline',
+                                //                                 _includeClass: 'm-topbar__nav',
+                                //                                 items:[
+                                //
+                                //                                 ]
+                                //                             }}/>
+                                //                         </Fragment>
+                                //                     ),
+                                //                     _includeClass: 'm-topbar__nav-wrapper'
+                                //                 }],
+                                //                 _includeClass: 'm-topbar'
+                                //             }}/>
+                                //         </Fragment>
+                                //     ),
+                                //     fluid: true,
+                                //     _includeClass: 'm-header-head'
+                                // }
+                            ]
+                        }}/>
+                    </Div>
+                </header>
+            </Fragment>
+        );
+    }
+}

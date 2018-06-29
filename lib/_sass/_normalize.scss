@@ -71,6 +71,9 @@ body {
   &.m--skin-dark {
     color: array-get($m--root-font, color, dark);
   }
+  > div:first-of-type {
+    height: 100%;
+  }
 }
 
 a,

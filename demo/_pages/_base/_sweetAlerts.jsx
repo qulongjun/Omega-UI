@@ -17,7 +17,8 @@ import {
     Table,
     Text,
     Code,
-    Button
+    Button,
+    SubHeader
 } from 'omega';
 import Swal from 'sweetalert2';
 import 'animate.css/animate.css';
@@ -42,6 +43,39 @@ export default class SweetAlerts extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: 'SweetAlert 2',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: 'SweetAlert 2',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-12">
@@ -81,7 +115,8 @@ export default class SweetAlerts extends Component {
                                                 )
                                             }],
                                         [{
-                                            value: (<Text>带状态的消息框（ <Code>warning</Code>，<Code>error</Code>，<Code>success</Code>，<Code>info</Code>
+                                            value: (<Text>带状态的消息框（
+                                                <Code>warning</Code>，<Code>error</Code>，<Code>success</Code>，<Code>info</Code>
                                                 和 <Code>question</Code> ）</Text>)
                                         },
                                             {

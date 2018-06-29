@@ -9,7 +9,7 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Text, Code, Progress, Space, Separator} from 'omega';
+import {Content, Div, Portlet, Section, Text, Code, Progress, Space, Separator,SubHeader} from 'omega';
 export default class Progresses extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +18,39 @@ export default class Progresses extends Component {
     render() {
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '进度条',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '进度条',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">
