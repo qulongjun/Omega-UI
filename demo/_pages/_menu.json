@@ -37,7 +37,7 @@
           "type": "route"
         },
         {
-          "text": "Stack",
+          "text": "内容布局",
           "bullet": {
             "show": true,
             "type": "dot"

@@ -54,8 +54,8 @@ export default class Grids extends Component {
                     }
                 }}/>
                 <Content>
-                    <div className="row">
-                        <div className="col-xl-6">
+                    <Div _includeClass="row">
+                        <Div _includeClass="col-xl-6">
                             <Portlet {...{
                                 header: {
                                     show: true,
@@ -143,8 +143,8 @@ export default class Grids extends Component {
                                     </Demo>
                                 </Section>
                             </Portlet>
-                        </div>
-                        <div className="col-xl-6">
+                        </Div>
+                        <Div _includeClass="col-xl-6">
                             <Portlet {...{
                                 header: {
                                     show: true,
@@ -259,8 +259,8 @@ export default class Grids extends Component {
                                     </Demo>
                                 </Section>
                             </Portlet>
-                        </div>
-                    </div>
+                        </Div>
+                    </Div>
                 </Content>
             </Fragment>
         );

@@ -9,11 +9,26 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Page, Container, Wrapper, Div, Portlet, Paragraph, Separator, Section, Link, Space, Header, Aside,Footer} from 'omega';
+import {
+    Page,
+    Container,
+    Wrapper,
+    Div,
+    Portlet,
+    Paragraph,
+    Separator,
+    Section,
+    Link,
+    Space,
+    Header,
+    Aside,
+    Footer
+} from 'omega';
 import {Route, Switch} from 'react-router-dom'
 import MenuJSON from './_menu.json';
 import Menu from './_menu';
 import Grids from './_grid/_grid';
+import Stack from './_grid/_stack';
 import StateColor from './_base/_stateColor';
 import Typography from './_base/_typography';
 import Tables from './_base/_tables';
@@ -40,6 +55,7 @@ import FontAwesomeButton from './_button/_fontAwesome';
 import FlaticonButton from './_button/_flaticon';
 
 import logo_blue from 'src/assets/logo_blue.png';
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -73,6 +89,7 @@ class App extends Component {
                         <Wrapper>
                             <Route path='/' exact component={Menu}/>
                             <Route path='/grid' component={Grids}/>
+                            <Route path='/stack' component={Stack}/>
                             <Route path='/stateColor' component={StateColor}/>
                             <Route path='/typography' component={Typography}/>
                             <Route path='/tables' component={Tables}/>
