@@ -10,7 +10,7 @@
 </div>
 <div align="center">
 
-一套基于 [React](http://facebook.github.io/react/) 实现的企业级响应式UI设计实现
+一套基于 [React](http://facebook.github.io/react/) 实现的企业级响应式UI设计方案
 
 </div>
 
