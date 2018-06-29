@@ -21,10 +21,38 @@
       "text": "组件示例"
     },
     {
-      "text": "基础组件",
+      "text": "页面布局",
       "icon": {
         "show": true,
         "name": "flaticon-layers"
+      },
+      "child": [
+        {
+          "text": "栅格系统",
+          "bullet": {
+            "show": true,
+            "type": "dot"
+          },
+          "href": "/grid",
+          "type": "route"
+        },
+        {
+          "text": "内容布局",
+          "bullet": {
+            "show": true,
+            "type": "dot"
+          },
+          "href": "/stack",
+          "type": "route"
+        }
+      ],
+      "isExpand": true
+    },
+    {
+      "text": "基础组件",
+      "icon": {
+        "show": true,
+        "name": "flaticon-tool-1"
       },
       "child": [
         {

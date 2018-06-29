@@ -9,7 +9,8 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Grid, GridItem, Text, Code, Demo} from 'omega';
+import {Content, Div, Portlet, Section, Grid, GridItem, Text, Code, Demo, SubHeader} from 'omega';
+
 export default class Grids extends Component {
     constructor(props) {
         super(props);
@@ -19,9 +20,42 @@ export default class Grids extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '栅格系统',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '页面布局',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '栅格系统',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
-                    <div className="row">
-                        <div className="col-xl-6">
+                    <Div _includeClass="row">
+                        <Div _includeClass="col-xl-6">
                             <Portlet {...{
                                 header: {
                                     show: true,
@@ -109,8 +143,8 @@ export default class Grids extends Component {
                                     </Demo>
                                 </Section>
                             </Portlet>
-                        </div>
-                        <div className="col-xl-6">
+                        </Div>
+                        <Div _includeClass="col-xl-6">
                             <Portlet {...{
                                 header: {
                                     show: true,
@@ -225,8 +259,8 @@ export default class Grids extends Component {
                                     </Demo>
                                 </Section>
                             </Portlet>
-                        </div>
-                    </div>
+                        </Div>
+                    </Div>
                 </Content>
             </Fragment>
         );
