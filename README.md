@@ -3,7 +3,7 @@
 </p>
 
 ------
-<div align="center">
+<div style="text-align:'center'">
 
 ![](https://img.shields.io/badge/node-%3E%3D9.0.0-brightgreen.svg) ![](https://img.shields.io/badge/npm-%3E%3D6.1.0-brightgreen.svg) ![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)  ![](https://img.shields.io/badge/stable-v0.0.9-blue.svg) ![](https://img.shields.io/badge/beta-v0.1.0-blue.svg) ![](https://img.shields.io/npm/l/express.svg)
 
@@ -15,37 +15,25 @@
 
 </div>
 
-## 安装方式
+## 快速构建
 
-您可以使用 `OmegaUI` 快速构建工具自动化安装，命令如下：
+推荐使用快速构建工具  `Omegaui-CLI`  搭建项目，只需依次执行：
 
-```bash
+``` #Bash
 // 安装快速构建工具
-$ npm install omegaui-cli
+$ npm install omegaui-cli -g
 
 //初始化项目
 $ omegaui-cli init my-project
 ```
 
-> 构建工具具体用法清参考[使用说明](https://github.com/qulongjun/Omega-cli)。
+> 构建工具具体用法清参考[构建工具说明](https://github.com/qulongjun/Omega-cli)。
 
 ## 用法
 
 以下是一个组件的简单使用示例, **你只需做如下事情**:
-```jsx
-import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
-//导入按钮组件
-import {Button} from 'omega';
+![](./doc/_assets/demo_code.png)
 
-class App extends Component {
-    render(){
-        return (<Button value="Hello World" />);
-    }
-}
-
-ReactDOM.render(<App />, document.querySelector('#app'));
-```
 
 ## 遇到问题
 
