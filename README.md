@@ -30,7 +30,7 @@
 以下是一个组件的简单使用示例, **你只需做如下事情**:
 ![](./doc/_assets/demo_code.png)
 
->  我们提供了丰富的组件供开发者使用，可以访问[官方示例](https://omega-qulongjun.com)查看具体实现。
+>  我们提供了丰富的组件供开发者使用，可以访问[官方示例](https://omega.qulongjun.com)查看具体实现。
 
 ## 调试与部署
 
@@ -70,4 +70,4 @@
 如果您需要联系我们，可以通过发送邮件至 [omega_ui@163.com](mailto:omega_ui@163.com) 。
 
 ## License
-本项目基于 [MIT license](./LICENSE.md) 开源。
+本项目基于 [MIT license](./LICENSE) 开源。
