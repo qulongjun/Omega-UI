@@ -13,7 +13,8 @@ import {
     Content,
     Div,
     Portlet,
-    Paragraph
+    Paragraph,
+    SubHeader
 } from 'omega';
 
 export default class Scrollable extends Component {
@@ -25,6 +26,39 @@ export default class Scrollable extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '滚动',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '基础组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '滚动',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <div className="row">
                         <div className="col-xl-6">
