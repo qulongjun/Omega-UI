@@ -18,22 +18,20 @@
 ## 快速构建
 
 推荐使用快速构建工具  `Omegaui-CLI`  搭建项目，只需依次执行：
-
-``` #Bash
-// 安装快速构建工具
-$ npm install omegaui-cli -g
-
-//初始化项目
-$ omegaui-cli init my-project
-```
-
+ ![](./doc/_assets/build-tools.png)
 > 构建工具具体用法清参考[构建工具说明](https://github.com/qulongjun/Omega-cli)。
 
-## 用法
+## 使用示例
 
 以下是一个组件的简单使用示例, **你只需做如下事情**:
 ![](./doc/_assets/demo_code.png)
 
+## 调试与部署
+
+快速构建工具已经集成了一键式调试与部署指令，只需执行如下命令即可实现开发环境下的调试和生产环境的部署：
+![](./doc/_assets/dev.png)
+
+>  开发环境下启动调试后，在浏览器中打开 [http://127.0.0.1:8080](http://127.0.0.1:8080) 即可查看效果。
 
 ## 遇到问题
 
