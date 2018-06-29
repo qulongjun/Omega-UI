@@ -36,7 +36,7 @@
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.0.3",
     "socicon": "^3.0.5",
-    "sweetalert2": "^7.24.1"
+    "sweetalert2": "^7.24.1",
     "zenscroll": "^4.0.2"
   },
   "devDependencies": {
