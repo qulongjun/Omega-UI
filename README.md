@@ -66,6 +66,8 @@
 * 基于我们的发布周期，我们每周都会从 `master` 分支切一个 `feature` 分支出来，命名规则一般为 `feature-版本号` ，例如 `feature-1.3.0` 即将要发布的 `1.3.0` 版本。如果您进行了一个Bug修复，请直接 Pull Request 到 `master` 分支，如果进行的是新功能开发，请 Pull Request 到当前的 `feature` 分支。
 * 如果您有较好的创意，我们也欢迎您通过[Issue](https://github.com/qulongjun/Omega-UI/issues) 直接告诉我们。
 
-## License
+## 联系我们
+如果您需要联系我们，可以通过发送邮件至 [omega_ui@163.com](mailto:omega_ui@163.com) 。
 
+## License
 本项目基于 [MIT license](./LICENSE.md) 开源。
