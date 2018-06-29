@@ -40,6 +40,8 @@ import {Grid,GridItem} from 'omega';
 </Grid>
 
 ```
+
+##### 渲染结果
 ``` html
 <div class="m-grid m-grid--ver">
     <div class="m-grid__item m-grid__item--fluid">Item 1</div>
