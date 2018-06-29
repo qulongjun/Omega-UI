@@ -4,9 +4,15 @@
 
 ------
 <div align="center">
+
 ![](https://img.shields.io/badge/node-%3E%3D9.0.0-brightgreen.svg) ![](https://img.shields.io/badge/npm-%3E%3D6.1.0-brightgreen.svg) ![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)  ![](https://img.shields.io/badge/stable-v0.0.9-blue.svg) ![](https://img.shields.io/badge/beta-v0.1.0-blue.svg) ![](https://img.shields.io/npm/l/express.svg)
+
 </div>
-<div align="center">一套基于 [React](http://facebook.github.io/react/) 实现的企业级响应式UI设计实现</div>
+<div align="center">
+
+一套基于 [React](http://facebook.github.io/react/) 实现的企业级响应式UI设计实现
+
+</div>
 
 ## 功能特性
 * 现代化的企业视觉UI设计，符合现代审美标准。
