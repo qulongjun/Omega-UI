@@ -41,10 +41,11 @@
 * 利用强大的 [Issue](https://github.com/qulongjun/Omega-UI/issues) 功能，您可以直接进行提问，我们会随时关注并解答，同时我们也鼓励资深用户通过 Issue 给新人提供帮助。
 
 ## 参与项目
-
-我们很期待您能参与进来一起开发。 :)
-
+我们很期待您能参与进来一起开发 :)，但我们希望您能遵守相关约定：
+* 我们有一份[行为准则](./CODE_OF_CONDUCT.md)，希望所有的贡献者都能遵守，请花时间阅读一遍全文以确保您能明白哪些是可以做的，哪些是不可以做的。
+* 基于我们的发布周期，我们每周都会从 `master` 分支切一个 `feature` 分支出来，命名规则一般为 `feature-版本号` ，例如 `feature-1.3.0` 即即将发布的 `1.3.0` 版本。如果您进行了一个Bug修复，请直接 Pull Request 到 `master` 分支，如果进行的是新功能开发，请 Pull Request 到当前的 `feature` 分支。
+* 如果您有较好的创意，我们也欢迎您通过[Issue](https://github.com/qulongjun/Omega-UI/issues) 直接告诉我们。
 
 ## License
 
-本项目基于 MIT license 开源。
+本项目基于 [MIT license](./LICENSE.md) 开源。
