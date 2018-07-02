@@ -288,7 +288,7 @@ class CommonInput extends Component {
     render() {
         const _props = this.props;
         const {input = {}, _style = [], _solid = false, _size = 'normal', id} = _props;
-        const {autoComplete = true, type = 'text', placeholder = '', style, solid, size, disabled = false, readOnly = false} = input;
+        const {autoComplete = true, type = 'text', placeholder = '', style, solid, size, disabled = false, readOnly = false, value} = input;
         let _sysClass = ['form-control', 'm-input'];
         _sysClass = _sysClass.concat(computStyle(style, _style));
         isExist(computSolid(solid, _solid)) && _sysClass.push(computSolid(solid, _solid));
@@ -301,7 +301,8 @@ class CommonInput extends Component {
                     placeholder,
                     id,
                     disabled,
-                    readOnly
+                    readOnly,
+                    defaultValue: value
                 })}/>
             </Fragment>
         );
