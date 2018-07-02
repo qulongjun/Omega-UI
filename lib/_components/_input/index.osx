@@ -10,7 +10,6 @@ import {
 } from '../../_scripts/_proptypes';
 import {isExist, isObject} from "../../_scripts/_is";
 import Text from '../_text/index.osx';
-import './index.scss';
 
 const InputProps = {
 
