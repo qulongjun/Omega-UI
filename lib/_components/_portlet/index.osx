@@ -36,7 +36,7 @@ export default class Portlet extends Component {
 
     render() {
         const _props = this.props;
-        const {header, scroll, children} = _props;
+        const {header, scroll, footer, children} = _props;
 
         return (
             <Fragment>
@@ -48,6 +48,9 @@ export default class Portlet extends Component {
                             {children}
                         </Scroll> : children}
                     </Div>
+                    {footer && <Div _includeClass={['m-portlet__foot', 'm-portlet__foot--fit']}>
+                        {footer}
+                    </Div>}
                 </Div>
             </Fragment>
         );

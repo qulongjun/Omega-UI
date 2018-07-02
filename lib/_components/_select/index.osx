@@ -1,0 +1,104 @@
+import React, {Component, Fragment} from 'react';
+import {
+    DefaultProps,
+    PropTypes,
+    _sysBind,
+    _delivery,
+    computedStyle,
+    computedSolid,
+    computedSize
+} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import {uuid} from '../../_scripts/_utils';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+const SelectProps = {
+    select: {
+        type: PropType.object
+    },
+    _style: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
+    },
+    _solid: {
+        default: false,
+        type: PropType.bool
+    },
+    _size: {
+        default: 'normal',
+        type: PropType.oneOf(['lg', 'sm', 'normal'])
+    },
+    helper: {},
+    id: {
+        type: PropType.string
+    },
+    children: {}
+};
+
+export default class Select extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(SelectProps);
+    static propTypes = PropTypes(SelectProps);
+
+    render() {
+        const _props = this.props;
+        const {select = {}, _style = [], _solid = false, _size = 'normal', helper, id = 'form_element_' + uuid(6)} = _props;
+        const {style, solid, size, multiple, items = [], disabled = false} = select;
+        let _sysClass = ['form-control', 'm-input'];
+        _sysClass = _sysClass.concat(computedStyle(style, _style));
+        isExist(computedSolid(solid, _solid)) && _sysClass.push(computedSolid(solid, _solid));
+        isExist(computedSize(size, _size)) && _sysClass.push(computedSize(size, _size));
+        return (
+            <Fragment>
+                <select {..._sysBind(select, _sysClass, null, {multiple, id})} disabled={disabled}>
+                    {
+                        isArray(items) ? items.map((item, index) => (
+                            <SelectOption key={index} {...{item}}/>)) : <SelectOption key={index} {...{items}}/>
+                    }
+                </select>
+                {
+                    isExist(helper) ? (isObject(helper) ? (
+                        <Text {..._delivery(helper, ['m-form__help'])}>{helper.value}</Text>) : (
+                        <Text _includeClass='m-form__help'>{helper}</Text>)) : null
+                }
+            </Fragment>
+        );
+    }
+}
+
+
+class SelectOption extends Component {
+    render() {
+        const _props = this.props;
+        const {item} = _props;
+        let {type, value, name} = item;
+        let _option = null;
+        if (isObject(item)) {
+            switch (type) {
+                case 'group':
+                    _option = (
+                        <Fragment>
+                            <optgroup {..._sysBind(item)} label={name || value || ''}/>
+                        </Fragment>
+                    );
+                    break;
+                default:
+                    _option = (
+                        <Fragment>
+                            <option {..._sysBind(item)}
+                                    value={value || name || ''}>{name || value || ''}</option>
+                        </Fragment>
+                    );
+            }
+        } else {
+            _option = (<option value={item}>{item}</option>)
+        }
+        return _option;
+    }
+
+}

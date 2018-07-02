@@ -1,0 +1,79 @@
+import React, {Component, Fragment} from 'react';
+import {
+    DefaultProps,
+    PropTypes,
+    _delivery,
+    _sysBind,
+    computedStyle,
+    computedSolid,
+    computedSize
+} from '../../_scripts/_proptypes';
+import {isExist, isObject} from "../../_scripts/_is";
+import {uuid} from '../../_scripts/_utils';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+const TextareaProps = {
+    textarea: {
+        default: ''
+    },
+    _style: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
+    },
+    _solid: {
+        default: false,
+        type: PropType.bool
+    },
+    _size: {
+        default: 'normal',
+        type: PropType.oneOf(['lg', 'sm', 'normal'])
+    },
+    helper: {},
+    id: {
+        type: PropType.string
+    },
+    children: {}
+};
+
+export default class Textarea extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(TextareaProps);
+    static propTypes = PropTypes(TextareaProps);
+
+    render() {
+        const _props = this.props;
+        const {textarea = '', _style = [], _solid = false, _size = 'normal', id = 'form_element_' + uuid(6), helper, children} = _props;//全局配置
+        const {style, solid, size, value, disabled, readOnly} = textarea; //覆盖配置
+        let _sysClass = ['form-control', 'm-input'];
+        _sysClass = _sysClass.concat(computedStyle(style, _style));
+        isExist(computedSolid(solid, _solid)) && _sysClass.push(computedSolid(solid, _solid));
+        isExist(computedSize(size, _size)) && _sysClass.push(computedSize(size, _size));
+        return (
+            <Fragment>
+                {
+                    isObject(textarea) ? (
+                        <textarea {..._sysBind(textarea, _sysClass, null, {
+                            id,
+                            disabled,
+                            readOnly,
+                            defaultValue: (value || children)
+                        })} />
+                    ) : (
+                        <textarea className={['form-control', 'm-input'].join(' ')}
+                                  defaultValue={textarea || children}/>
+                    )
+                }
+                {
+                    isExist(helper) ? (isObject(helper) ? (
+                        <Text {..._delivery(helper, ['m-form__help'])}>{helper.value}</Text>) : (
+                        <Text _includeClass='m-form__help'>{helper}</Text>)) : null
+                }
+            </Fragment>
+        );
+    }
+}

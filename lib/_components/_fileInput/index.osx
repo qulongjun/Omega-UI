@@ -1,0 +1,53 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isObject} from '../../_scripts/_is';
+import {uuid} from '../../_scripts/_utils';
+import Div from '../_div/index.osx';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+const FileInputProps = {
+    file: {
+        type: PropType.object
+    },
+    id: {
+        default: 'form_element_' + uuid(6),
+        type: PropType.string
+    },
+    helper:{},
+    children: {}
+};
+
+export default class FileInput extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FileInputProps);
+    static propTypes = PropTypes(FileInputProps);
+
+    render() {
+        const _props = this.props;
+        const {file, helper, id} = _props;
+        const {placeholder = ''} = file;
+        return (
+            <Fragment>
+                <Div _includeClass="custom-file">
+                    <input type='file' {..._sysBind(file, 'custom-file-input', null, {id})}/>
+                    <Text {...{
+                        _includeClass: 'custom-file-label',
+                        _includeAttribute: {
+                            htmlFor: id
+                        }
+                    }}>
+                        {placeholder}
+                    </Text>
+                </Div>
+                {
+                    isExist(helper) ? (isObject(helper) ? (
+                        <Text {..._delivery(helper, ['m-form__help'])}>{helper.value}</Text>) : (
+                        <Text _includeClass='m-form__help'>{helper}</Text>)) : null
+                }
+            </Fragment>
+        );
+    }
+}
