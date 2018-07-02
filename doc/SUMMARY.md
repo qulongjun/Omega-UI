@@ -3,6 +3,7 @@
 * [Omega for React](README.md)
 * [介绍](Introduce.md)
 * [快速上手](Install.md)
+* [更新日志](Changelog.md)
 * [基础属性](ch1/public.md)
     * [状态颜色](ch1/stateColor.md)
     * [辅助类](ch1/helperClass.md)
@@ -50,6 +51,4 @@
         * [表格组件](ch3/base/table.md)
         * [窗口组件](ch3/base/portlet.md)
         * [下拉组件](ch3/base/dropdown.md)
-* [更新日志](Changelog.md)
-* [致谢](Install.md)
-
+* [致谢](Thanks.md)
