@@ -313,6 +313,35 @@
         }
       ],
       "isExpand": true
+    },
+    {
+      "text": "表单组件",
+      "icon": {
+        "show": true,
+        "name": "flaticon-menu-button"
+      },
+      "child": [
+        {
+          "text": "表单控制",
+          "bullet": {
+            "show": true,
+            "type": "dot"
+          },
+          "href": "javascript:;",
+          "child": [
+            {
+              "text": "基础表单",
+              "bullet": {
+                "show": true,
+                "type": "dot"
+              },
+              "href": "/form/control/input",
+              "type": "route"
+            }
+          ]
+        }
+      ],
+      "isExpand": true
     }
   ]
 }

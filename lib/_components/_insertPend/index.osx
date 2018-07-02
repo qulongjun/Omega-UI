@@ -1,0 +1,105 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
+import {isArray, isObject} from "../../_scripts/_is";
+import Div from '../_div/index.osx';
+import Text from '../_text/index.osx';
+import Icon from '../_icon/index.osx';
+import CheckboxRadio from "../_checkboxRadio/index.osx";
+import Button from "../_button/index.osx";
+import ButtonDropdown from "../_buttonDropdown/index.osx";
+import PropType from 'prop-types';
+
+const InsertPendProps = {
+    element: {
+        default: 'prepend',
+        type: PropType.oneOf(['prepend', 'append'])
+    },
+    items: {
+        default: []
+    },
+    children: {}
+};
+
+export default class InsertPend extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(InsertPendProps);
+    static propTypes = PropTypes(InsertPendProps);
+
+    render() {
+        const _props = this.props;
+        const {element = 'prepend', items = []} = _props;
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, ['input-group-' + element])}>
+                    {
+                        (isArray(items) ? items.map((item, index) => {
+                            let {type = 'text', text, checkbox = {}, radio = {}, button = {}, dropdown = {}} = item;
+                            return isObject(item) ? (
+                                <Fragment key={index}>
+                                    {
+                                        type === 'text' &&
+                                        <Text _includeClass='input-group-text'>{text}</Text>
+                                    }
+                                    {
+                                        type === 'icon' &&
+                                        <Text _includeClass='input-group-text'><Icon iconName={text}/></Text>
+                                    }
+                                    {
+                                        type === 'checkbox' &&
+                                        <Text _includeClass='input-group-text'>
+                                            <CheckboxRadio {...{
+                                                element: 'checkbox',
+                                                config: checkbox,
+                                                _single: true
+                                            }}/>
+                                        </Text>
+                                    }
+                                    {
+                                        type === 'radio' &&
+                                        <Text _includeClass='input-group-text'>
+                                            <CheckboxRadio {...{
+                                                element: 'radio',
+                                                config: radio,
+                                                _single: true
+                                            }}/>
+                                        </Text>
+                                    }
+                                    {
+                                        type === 'button' &&
+                                        <Button {...button}/>
+                                    }
+                                    {
+                                        type === 'dropdown' &&
+                                        <ButtonDropdown {...dropdown}/>
+                                    }
+
+                                </Fragment>
+                            ) : (
+                                <Text key={index} _includeClass='input-group-text'>{item}</Text>
+                            )
+                        }) : (<Fragment>
+                            <Text _includeClass='input-group-text'>{items}</Text>
+                        </Fragment>))
+                    }
+                </Div>
+            </Fragment>
+        );
+    }
+}
+
+
+// let _incudePand = (
+//     <Fragment>
+//         {isExist(prepend || append) ? (
+//             <Div
+//                 _includeClass={['input-group', 'm-input-group', _style.join(' '), ((isExist(prepend) || isExist(append)) && isExist(solid) && solid ? 'm-input-group--solid' : ''), _size]}>
+//                 {
+//                     _insertPend
+//                 }
+//             </Div>
+//         ) : _insertPend}
+//     </Fragment>
+// );

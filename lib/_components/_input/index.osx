@@ -1,0 +1,55 @@
+import React, {Component, Fragment} from 'react';
+import {
+    DefaultProps,
+    PropTypes,
+    _sysBind,
+    _delivery,
+    computedStyle,
+    computedSolid,
+    computedSize
+} from '../../_scripts/_proptypes';
+import {isExist, isObject} from "../../_scripts/_is";
+import Text from '../_text/index.osx';
+
+const InputProps = {
+
+        children: {}
+    }
+;
+
+export default class Input extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(InputProps);
+    static propTypes = PropTypes(InputProps);
+
+    render() {
+        const _props = this.props;
+        const {input = {}, _style = [], _solid = false, _size = 'normal', id, helper} = _props;
+        const {autoComplete = true, type = 'text', placeholder = '', style, solid, size, disabled = false, readOnly = false, value} = input;
+        let _sysClass = ['form-control', 'm-input'];
+        _sysClass = _sysClass.concat(computedStyle(style, _style));
+        isExist(computedSolid(solid, _solid)) && _sysClass.push(computedSolid(solid, _solid));
+        isExist(computedSize(size, _size)) && _sysClass.push(computedSize(size, _size));
+        return (
+            <Fragment>
+                <input
+                    autoComplete={(autoComplete).toString()} {..._sysBind(input, _sysClass, null, {
+                    type,
+                    placeholder,
+                    id,
+                    disabled,
+                    readOnly,
+                    defaultValue: value
+                })}/>
+                {
+                    isExist(helper) ? (isObject(helper) ? (
+                        <Text {..._delivery(helper, ['m-form__help'])}>{helper.value}</Text>) : (
+                        <Text _includeClass='m-form__help'>{helper}</Text>)) : null
+                }
+            </Fragment>
+        );
+    }
+}
