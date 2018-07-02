@@ -1,0 +1,79 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _sysBind, _delivery} from '../../_scripts/_proptypes';
+import {isExist, isArray} from '../../_scripts/_is';
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+import './index.scss';
+
+const FormProps = {
+    children: {}
+};
+
+export default class Form extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FormProps);
+    static propTypes = PropTypes(FormProps);
+
+    render() {
+        const _props = this.props;
+        const {items, foot, children} = _props;
+        let _sysClass = ['m-form', 'm-form--fit', 'm-form--label-align-right'];
+        // let _renderFooter = null;
+        // if (isExist(foot) && foot.type) {
+        //     const {value, type} = foot;
+        //     switch (type) {
+        //         case 'actions':
+        //             _renderFooter = (
+        //                 <Fragment>
+        //                     <Div _includeClass='m-form__actions'>
+        //                         {
+        //                             isArray(value) ? value.map((item) => {
+        //                                 return item;
+        //                             }) : value
+        //                         }
+        //                     </Div>
+        //                 </Fragment>
+        //             );
+        //             break;
+        //     }
+        // }
+        return (
+            <Fragment>
+                <form {..._sysBind(_props, _sysClass)}>
+                    {children}
+
+
+                    {/*{*/}
+                        {/*isExist(items) && isArray(items) && (*/}
+                            {/*<Fragment>*/}
+                                {/*<Div _includeClass='m-portlet__body'>*/}
+                                    {/*{*/}
+                                        {/*items.map((item, index) => (*/}
+                                            {/*<Fragment key={index}>*/}
+                                                {/*{item}*/}
+                                            {/*</Fragment>*/}
+                                        {/*))*/}
+                                    {/*}*/}
+                                {/*</Div>*/}
+                            {/*</Fragment>*/}
+                        {/*)*/}
+                    {/*}*/}
+                    {/*{*/}
+                        {/*isExist(_renderFooter) && (*/}
+                            {/*<Fragment>*/}
+                                {/*<Div _includeClass={['m-portlet__foot', 'm-portlet__foot--fit']}>*/}
+                                    {/*{*/}
+                                        {/*_renderFooter*/}
+                                    {/*}*/}
+                                {/*</Div>*/}
+                            {/*</Fragment>*/}
+                        {/*)*/}
+                    {/*}*/}
+                </form>
+            </Fragment>
+        );
+    }
+}

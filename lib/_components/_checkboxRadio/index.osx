@@ -1,0 +1,142 @@
+import React, {Component, Fragment} from 'react';
+import {
+    DefaultProps,
+    PropTypes,
+    _delivery,
+    computedStyle,
+    computedSolid
+} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import {uuid} from '../../_scripts/_utils';
+import Div from '../_div/index.osx';
+import Text from '../_text/index.osx';
+import PropType from 'prop-types';
+const CheckboxRadioProps = {
+    _single: {
+        default: false,
+        type: PropType.bool
+    },
+    config: {
+        default: {},
+        type: PropType.object
+    },
+    element: {
+        default: 'checkbox',
+        type: PropType.oneOf(['checkbox', 'radio'])
+    },
+    style: {
+        type: PropType.oneOfType([
+            PropType.string,
+            PropType.array
+        ])
+    },
+    solid: {
+        default: false,
+        type: PropType.bool
+    },
+    name: {
+        default: 'checkbox_radio_' + uuid(4),
+        type: PropType.string
+    },
+    helper: {},
+    children: {}
+};
+
+export default class CheckboxRadio extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(CheckboxRadioProps);
+    static propTypes = PropTypes(CheckboxRadioProps);
+
+    render() {
+        const _props = this.props;
+        const {_single, config, element, style, solid, name, helper} = _props;
+        const {items, type = 'list'} = config;
+
+        const _solid = computedSolid(solid, null, element);
+        const _style = computedStyle(style, null, element);
+        let _render = null;
+        if (_single) {
+            _render = (
+                <CheckRaioOption {...{
+                    _element: element,
+                    item: items,
+                    _style,
+                    _solid,
+                    _name: name,
+                    _single: true
+                }}/>
+            );
+        } else {
+            let _sysClass = [];
+            type === 'list' ? _sysClass.push('m-' + element + '-list') : _sysClass.push('m-' + element + '-inline');
+            _render = (
+                <Fragment>
+                    <Div
+                        _includeClass={_sysClass.join(' ')}>
+                        {
+                            isArray(items) ? items.map((item, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <CheckRaioOption {...{
+                                            _element: element,
+                                            _style,
+                                            _solid,
+                                            item,
+                                            _name: name
+                                        }}/>
+                                    </Fragment>
+                                )
+                            }) : (
+                                <Fragment>
+                                    <CheckRaioOption {...{
+                                        _element: element,
+                                        item: items,
+                                        _style,
+                                        _solid,
+                                        _name: name
+                                    }}/>
+                                </Fragment>
+                            )
+                        }
+                    </Div>
+                    {
+                        isExist(helper) ? (isObject(helper) ? (
+                            <Text {..._delivery(helper, ['m-form__help'])}>{helper.value}</Text>) : (
+                            <Text _includeClass='m-form__help'>{helper}</Text>)) : null
+                    }
+                </Fragment>
+            );
+        }
+        return _render;
+    }
+}
+
+class CheckRaioOption extends Component {
+    render() {
+        const _props = this.props;
+        const {_element, item, _solid, _style, _name, _single = false} = _props;
+        const {value = '', name = '', stateColor, checkedColor, checked = false, disabled = false, solid, style, bold, checkedBold} = item;
+        let _sysClass = ['m-' + _element];
+        _sysClass = _sysClass.concat(computedStyle(style, _style, _element));
+        isExist(stateColor) && _sysClass.push('m-' + _element + '--state-' + stateColor);
+        isExist(checkedColor) && _sysClass.push('m-' + _element + '--' + checkedColor);
+        isExist(disabled) && disabled && _sysClass.push('m-' + _element + '--disabled');
+        isExist(bold) && bold && _sysClass.push('m-' + _element + '--bold');
+        isExist(checkedBold) && checkedBold && _sysClass.push('m-' + _element + '--check-bold');
+        isExist(_single) && _single && _sysClass.push('m-' + _element + '--single');
+        isExist(computedSolid(solid, _solid, _element)) && _sysClass.push(computedSolid(solid, _solid, _element));
+        return (
+            <label className={_sysClass.join(' ')}>
+                <input name={_name || name} type={_element}
+                       value={value || name || _name}
+                       disabled={disabled}
+                       defaultChecked={checked}/>
+                {name || value || null}
+                <span/>
+            </label>
+        )
+    }
+}

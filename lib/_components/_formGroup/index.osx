@@ -1,0 +1,62 @@
+import React, {Component, Fragment} from 'react';
+import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
+import {isExist, isArray, isObject} from "../../_scripts/_is";
+import Div from '../_div/index.osx';
+import PropType from 'prop-types';
+const FormGroupProps = {
+    display: {
+        type: PropType.arrayOf(PropType.number)
+    },
+    children: {}
+};
+
+export default class FormGroup extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = DefaultProps(FormGroupProps);
+    static propTypes = PropTypes(FormGroupProps);
+
+    render() {
+        const _props = this.props;
+        const {display, label, id, children} = _props;
+        let _sysClass = ['form-group', 'm-form__group'];
+        isExist(display) && _sysClass.push('row');
+
+        return (
+            <Fragment>
+                <Div {..._delivery(_props, _sysClass)}>
+                    {
+                        isExist(label) ? (isObject(label) ? (
+                            <label {..._sysBind(label, [(isArray(display) && isExist(display[0]) ? 'col-form-label col-' + display[0] : '')])}
+                                   htmlFor={id}>{label.value}</label>
+                        ) : (
+                            <label htmlFor={id}
+                                   className={(isArray(display) && isExist(display[0]) ? 'col-form-label col-' + display[0] : '')}>{label}</label>
+                        )) : null
+                    }
+                    {
+                        isArray(display) ? (isExist(display[1]) ? (
+                            <Fragment>
+                                <Div _includeClass={['col-' + display[1]]}>
+                                    {children}
+                                </Div>
+                            </Fragment>
+                        ) : (
+                            <Fragment>
+                                <Div _includeClass={['col-' + (12 - display[0])]}>
+                                    {children}
+                                </Div>
+                            </Fragment>
+                        )) : (
+                            <Fragment>
+                                {children}
+                            </Fragment>
+                        )
+                    }
+                </Div>
+            </Fragment>
+        );
+    }
+}
