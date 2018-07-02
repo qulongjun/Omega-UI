@@ -288,7 +288,7 @@ class CommonInput extends Component {
     render() {
         const _props = this.props;
         const {input = {}, _style = [], _solid = false, _size = 'normal', id} = _props;
-        const {autoComplete = true, type = 'text', placeholder = '', style, solid, size} = input;
+        const {autoComplete = true, type = 'text', placeholder = '', style, solid, size, disabled = false, readOnly = false} = input;
         let _sysClass = ['form-control', 'm-input'];
         _sysClass = _sysClass.concat(computStyle(style, _style));
         isExist(computSolid(solid, _solid)) && _sysClass.push(computSolid(solid, _solid));
@@ -299,7 +299,9 @@ class CommonInput extends Component {
                     autoComplete={(!!autoComplete).toString()} {..._sysBind(input, _sysClass, null, {
                     type,
                     placeholder,
-                    id
+                    id,
+                    disabled,
+                    readOnly
                 })}/>
             </Fragment>
         );
@@ -311,14 +313,14 @@ class Select extends Component {
     render() {
         const _props = this.props;
         const {select = {}, _style = [], _solid = false, _size = 'normal', id} = _props;
-        const {style, solid, size, multiple, items = []} = select;
+        const {style, solid, size, multiple, items = [], disabled = false, readOnly = false} = select;
         let _sysClass = ['form-control', 'm-input'];
         _sysClass = _sysClass.concat(computStyle(style, _style));
         isExist(computSolid(solid, _solid)) && _sysClass.push(computSolid(solid, _solid));
         isExist(computSize(size, _size)) && _sysClass.push(computSize(size, _size));
         return (
             <Fragment>
-                <select {..._sysBind(select, _sysClass, null, {multiple, id})}>
+                <select {..._sysBind(select, _sysClass, null, {multiple, id})} disabled={disabled} readOnly={readOnly}>
                     {
                         isArray(items) ? items.map((item, index) => (
                             <SelectOption key={index} {...{item}}/>)) : <SelectOption key={index} {...{items}}/>
@@ -387,11 +389,12 @@ class File extends Component {
     render() {
         const _props = this.props;
         const {file, id} = _props;
-        const {placeholder = ''} = file;
+        const {placeholder = '', disabled, readOnly} = file;
         return (
             <Fragment>
                 <Div _includeClass="custom-file">
-                    <input type='file' {..._sysBind(file, 'custom-file-input')} id={id}/>
+                    <input type='file' {..._sysBind(file, 'custom-file-input')} id={id} disabled={disabled}
+                           readOnly={readOnly}/>
                     <Text {...{
                         _includeClass: 'custom-file-label',
                         _includeAttribute: {
@@ -494,7 +497,7 @@ class Textarea extends Component {
     render() {
         const _props = this.props;
         const {textarea = '', _style = [], _solid = false, _size = 'normal', id} = _props;//全局配置
-        const {style, solid, size, value,} = textarea; //覆盖配置
+        const {style, solid, size, value, disabled, readOnly} = textarea; //覆盖配置
         let _sysClass = ['form-control', 'm-input'];
         _sysClass = _sysClass.concat(computStyle(style, _style));
         isExist(computSolid(solid, _solid)) && _sysClass.push(computSolid(solid, _solid));
@@ -503,7 +506,8 @@ class Textarea extends Component {
             <Fragment>
                 {
                     isObject(textarea) ? (
-                        <textarea {..._sysBind(textarea, _sysClass, null, {id})}>
+                        <textarea {..._sysBind(textarea, _sysClass, null, {id})} disabled={disabled}
+                                  readOnly={readOnly}>
                                     {value}
                                 </textarea>
                     ) : (
