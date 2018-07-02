@@ -54,6 +54,7 @@ import LineAwesomeButton from './_button/_lineAwesome';
 import FontAwesomeButton from './_button/_fontAwesome';
 import FlaticonButton from './_button/_flaticon';
 import Inputs from './_form/control/_inputs';
+import Options from './_form/control/_option';
 import logo_blue from 'src/assets/logo_blue.png';
 
 class App extends Component {
@@ -115,6 +116,7 @@ class App extends Component {
                             <Route path='/button/fontawesome' component={FontAwesomeButton}/>
                             <Route path='/button/flaticon' component={FlaticonButton}/>
                             <Route path='/form/control/input' component={Inputs}/>
+                            <Route path='/form/control/option' component={Options}/>
                         </Wrapper>
                     </Container>
                     <Footer {...{
