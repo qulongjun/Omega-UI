@@ -11,6 +11,7 @@ import {uuid} from '../../_scripts/_utils';
 import Div from '../_div/index.osx';
 import Text from '../_text/index.osx';
 import PropType from 'prop-types';
+
 const CheckboxRadioProps = {
     _single: {
         default: false,
@@ -35,7 +36,6 @@ const CheckboxRadioProps = {
         type: PropType.bool
     },
     name: {
-        default: 'checkbox_radio_' + uuid(4),
         type: PropType.string
     },
     helper: {},
@@ -52,7 +52,7 @@ export default class CheckboxRadio extends Component {
 
     render() {
         const _props = this.props;
-        const {_single, config, element, style, solid, name, helper} = _props;
+        const {_single, config, element, style, solid, name = 'checkbox_radio_' + uuid(4), helper} = _props;
         const {items, type = 'list'} = config;
 
         const _solid = computedSolid(solid, null, element);
