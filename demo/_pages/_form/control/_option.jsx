@@ -23,7 +23,8 @@ import {
     Paragraph,
     Form,
     FormGroup,
-    CheckboxRadio
+    CheckboxRadio,
+    SubHeader
 } from 'omega';
 
 export default class Options extends Component {
@@ -35,6 +36,44 @@ export default class Options extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '选择表单',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '表单组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '表单控制',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '选择表单',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

@@ -1,23 +1,58 @@
 /**
- * 
+ *
  * @Demo: Flaticon
  * @User: Longjun.Qu
  * @Date: 2018-06-26
  * @Time: 11:30
- * 
+ *
  */
- 
+
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Button, Text, Code, Demo, Separator} from 'omega';
+import {Content, Div, Portlet, Section, Button, Text, Code, Demo, Separator, SubHeader} from 'omega';
+
 export default class Flaticon extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
-        
+
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: 'Flaticon',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '按钮组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: 'Flaticon',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">
