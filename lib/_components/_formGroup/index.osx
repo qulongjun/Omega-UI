@@ -3,6 +3,7 @@ import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_prop
 import {isExist, isArray, isObject} from "../../_scripts/_is";
 import Div from '../_div/index.osx';
 import PropType from 'prop-types';
+
 const FormGroupProps = {
     display: {
         type: PropType.arrayOf(PropType.number)
@@ -13,10 +14,15 @@ const FormGroupProps = {
 export default class FormGroup extends Component {
     constructor(props) {
         super(props);
+        this._onData = this._onData.bind(this);
     }
 
     static defaultProps = DefaultProps(FormGroupProps);
     static propTypes = PropTypes(FormGroupProps);
+
+    _onData() {
+        console.log('onData');
+    }
 
     render() {
         const _props = this.props;

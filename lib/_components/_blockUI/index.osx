@@ -29,7 +29,15 @@ export default class BlockUI extends Component {
     static propTypes = PropTypes(BlockUIProps);
 
     componentDidMount() {
-        const _props = this.props;
+        this._initBlock(this.props);
+
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this._initBlock(nextProps);
+    }
+
+    _initBlock(_props) {
         const {block, overlayColor, type, message, el = this.refs.blockui.refs.div} = _props;
         if (block) {
             const _config = {};
@@ -40,7 +48,6 @@ export default class BlockUI extends Component {
             message && Object.assign(_config, {message});
             mApp.block(el, _config);
         }
-
     }
 
     render() {
