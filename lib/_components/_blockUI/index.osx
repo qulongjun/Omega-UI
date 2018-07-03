@@ -43,6 +43,13 @@ export default class BlockUI extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {block, el = this.refs.blockui.refs.div} = nextProps;
+        if (!block) {
+            mApp.unblock(el);
+        }
+    }
+
     render() {
         const _props = this.props;
         const {children} = _props;
