@@ -35,7 +35,7 @@ export default class Input extends Component {
         isExist(computedSize(size, _size)) && _sysClass.push(computedSize(size, _size));
         return (
             <Fragment>
-                <input
+                <input ref='input'
                     autoComplete={(autoComplete).toString()} {..._sysBind(input, _sysClass, null, {
                     type,
                     placeholder,
