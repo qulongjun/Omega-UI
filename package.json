@@ -1,7 +1,7 @@
 {
   "name": "omega-ui",
-  "version": "0.1.2",
-  "description": "基于React的响应式开发UI框架",
+  "version": "0.1.3",
+  "description": "一套基于React实现的企业级响应式UI设计方案",
   "main": "src/main.js",
   "keywords": [
     "React",
