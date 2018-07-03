@@ -55,7 +55,7 @@ export default class Select extends Component {
         isExist(computedSize(size, _size)) && _sysClass.push(computedSize(size, _size));
         return (
             <Fragment>
-                <select {..._sysBind(select, _sysClass, null, {multiple, id})} disabled={disabled}>
+                <select ref='select' {..._sysBind(select, _sysClass, null, {multiple, id})} disabled={disabled}>
                     {
                         isArray(items) ? items.map((item, index) => (
                             <SelectOption key={index} {...{item}}/>)) : <SelectOption key={index} {...{items}}/>
