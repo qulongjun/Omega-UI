@@ -1,9 +1,9 @@
 /**
  *
- * @Demo: Options
+ * @Demo: Group
  * @User: Longjun.Qu
- * @Date: 2018-07-02
- * @Time: 21:37
+ * @Date: 2018-07-04
+ * @Time: 09:37
  *
  */
 
@@ -24,10 +24,12 @@ import {
     Form,
     FormGroup,
     CheckboxRadio,
-    SubHeader
+    SubHeader,
+    Input,
+    InsertPend
 } from 'omega';
 
-export default class Options extends Component {
+export default class Group extends Component {
     constructor(props) {
         super(props);
     }
@@ -39,7 +41,7 @@ export default class Options extends Component {
                 <SubHeader {...{
                     header: {
                         show: true,
-                        name: '选择表单',
+                        name: '组合表单',
                         separator: true
                     },
                     breadcrumbs: {
@@ -61,7 +63,7 @@ export default class Options extends Component {
                                 }
                             }, {
                                 text: {
-                                    value: '选择表单',
+                                    value: '组合表单',
                                     href: 'javascript:;'
                                 }
                             }
@@ -77,215 +79,56 @@ export default class Options extends Component {
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">
-                            <Portlet header="自定义复选框">
-                                <Section describe="在表单中使用自定义复选框">
+                            <Portlet header="基础示例">
+                                <Section describe="可以在表单控制组件前后追加图标或文字。">
                                     <Demo>
                                         <Form>
-                                            <FormGroup label="默认复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Default"
-                                                            },
-                                                            {
-                                                                name: "Disabled",
-                                                                disabled: true
-                                                            }, {
-                                                                name: "Checked",
-                                                                checked: true
-                                                            }
-                                                        ]
+                                            <FormGroup label="左侧追加">
+                                                <InsertPend {...{
+                                                    element: 'prepend',
+                                                    items: ['@']
+                                                }}/>
+                                                <Input {...{
+                                                    input: {
+                                                        placeholder: 'Email'
                                                     }
                                                 }}/>
                                             </FormGroup>
-                                            <FormGroup label="带状态复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Success Checkbox",
-                                                                stateColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand Checkbox",
-                                                                stateColor: 'brand'
-                                                            }, {
-                                                                name: "Primary Checkbox",
-                                                                stateColor: 'primary'
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
+                                            <FormGroup label="右侧追加">
+                                                <Input {...{
+                                                    input: {
+                                                        placeholder: 'Email'
+                                                    }
+                                                }}/>
+                                                <InsertPend {...{
+                                                    element: 'append',
+                                                    items: ['@example.com']
                                                 }}/>
                                             </FormGroup>
-                                            <FormGroup label="选中带状态复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Success Checkbox",
-                                                                checkedColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand Checkbox",
-                                                                checkedColor: 'brand'
-                                                            }, {
-                                                                name: "Primary Checkbox",
-                                                                checkedColor: 'primary'
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
+                                            <FormGroup label="多个追加">
+                                                <InsertPend {...{
+                                                    element: 'prepend',
+                                                    items: ['$', '0.00']
+                                                }}/>
+                                                <Input {...{
+                                                    input: {
+                                                        placeholder: 'Payment'
+                                                    }
                                                 }}/>
                                             </FormGroup>
-                                            <FormGroup label="横向复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        type: 'inline',
-                                                        items: [
-                                                            {
-                                                                name: "Success Checkbox",
-                                                                checkedColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand Checkbox",
-                                                                checkedColor: 'brand'
-                                                            }, {
-                                                                name: "Primary Checkbox",
-                                                                checkedColor: 'primary'
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
+                                            <FormGroup label="同时追加">
+                                                <InsertPend {...{
+                                                    element: 'prepend',
+                                                    items: ['@']
                                                 }}/>
-                                            </FormGroup>
-                                            <FormGroup label="直角矩形复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    style: 'square',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Success Checkbox",
-                                                                checkedColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand Checkbox",
-                                                                checkedColor: 'brand'
-                                                            }, {
-                                                                name: "Primary Checkbox",
-                                                                checkedColor: 'primary'
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
+                                                <Input {...{
+                                                    input: {
+                                                        placeholder: 'Payment'
+                                                    }
                                                 }}/>
-                                            </FormGroup>
-                                            <FormGroup label="反色的复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    solid: true,
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Default"
-                                                            },
-                                                            {
-                                                                name: "Checked",
-                                                                checked: true
-                                                            },
-                                                            {
-                                                                name: "Disabled",
-                                                                disabled: true
-                                                            },
-                                                            {
-                                                                name: "Success State",
-                                                                stateColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand",
-                                                                stateColor: 'brand'
-                                                            },
-                                                            {
-                                                                name: "Success State",
-                                                                checkedColor: 'success'
-                                                            },
-                                                            {
-                                                                name: "Brand",
-                                                                checkedColor: 'brand'
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
-                                                }}/>
-                                            </FormGroup>
-                                            <FormGroup label="加粗的复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Default",
-                                                                bold: true
-                                                            },
-                                                            {
-                                                                name: "Checked",
-                                                                bold: true
-                                                            },
-                                                            {
-                                                                name: "Disabled",
-                                                                bold: true
-                                                            },
-                                                            {
-                                                                name: "Success State",
-                                                                checkedColor: 'success',
-                                                                bold: true
-                                                            },
-                                                            {
-                                                                name: "Brand",
-                                                                checkedColor: 'brand',
-                                                                bold: true
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
-                                                }}/>
-                                            </FormGroup>
-                                            <FormGroup label="选中加粗的复选框">
-                                                <CheckboxRadio {...{
-                                                    element: 'checkbox',
-                                                    config: {
-                                                        items: [
-                                                            {
-                                                                name: "Default",
-                                                                checkedBold: true
-                                                            },
-                                                            {
-                                                                name: "Checked",
-                                                                checkedBold: true
-                                                            },
-                                                            {
-                                                                name: "Disabled",
-                                                                checkedBold: true
-                                                            },
-                                                            {
-                                                                name: "Success State",
-                                                                checkedColor: 'success',
-                                                                checkedBold: true
-                                                            },
-                                                            {
-                                                                name: "Brand",
-                                                                checkedColor: 'brand',
-                                                                checkedBold: true
-                                                            }
-                                                        ]
-                                                    },
-                                                    helper: 'Some help text goes here'
+                                                <InsertPend {...{
+                                                    element: 'append',
+                                                    items: ['@example.com']
                                                 }}/>
                                             </FormGroup>
                                         </Form>

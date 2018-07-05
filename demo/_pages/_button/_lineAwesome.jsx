@@ -9,7 +9,7 @@
 
 
 import React, {Component, Fragment} from 'react';
-import {Content, Div, Portlet, Section, Button, Text, Code, Demo, Separator} from 'omega';
+import {Content, Div, Portlet, Section, Button, Text, Code, Demo, Separator,SubHeader} from 'omega';
 export default class LineAwesomeButton extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +19,39 @@ export default class LineAwesomeButton extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: 'Line Awasome',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '按钮组件',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: 'Line Awasome',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

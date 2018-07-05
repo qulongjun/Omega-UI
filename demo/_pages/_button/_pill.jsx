@@ -20,7 +20,8 @@ import {
     Code,
     Separator,
     Space,
-    Paragraph
+    Paragraph,
+    SubHeader
 } from 'omega';
 export default class PillButton extends Component {
     constructor(props) {
@@ -31,6 +32,44 @@ export default class PillButton extends Component {
 
         return (
             <Fragment>
+                <SubHeader {...{
+                    header: {
+                        show: true,
+                        name: '椭圆矩形',
+                        separator: true
+                    },
+                    breadcrumbs: {
+                        items: [
+                            {
+                                icon: {
+                                    show: true,
+                                    name: 'la la-home'
+                                }
+                            }, {
+                                text: {
+                                    value: '按钮组件',
+                                    href: 'javascript:;'
+                                }
+                            },{
+                                text: {
+                                    value: '基础样式',
+                                    href: 'javascript:;'
+                                }
+                            }, {
+                                text: {
+                                    value: '椭圆矩形',
+                                    href: 'javascript:;'
+                                }
+                            }
+                        ],
+                        separator: {
+                            show: true,
+                            text: {
+                                value: '-'
+                            }
+                        }
+                    }
+                }}/>
                 <Content>
                     <Div _includeClass="row">
                         <Div _includeClass="col-xl-6">

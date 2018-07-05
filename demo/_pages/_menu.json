@@ -346,6 +346,14 @@
               },
               "href": "/form/control/option",
               "type": "route"
+            },{
+              "text": "组合表单",
+              "bullet": {
+                "show": true,
+                "type": "dot"
+              },
+              "href": "/form/control/group",
+              "type": "route"
             }
           ]
         }
