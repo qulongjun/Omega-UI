@@ -1,7 +1,8 @@
-import React, {Component, Fragment} from 'react';
+import React, {Children, Component, Fragment} from 'react';
 import {DefaultProps, PropTypes, _delivery, _sysBind} from '../../_scripts/_proptypes';
 import {isExist, isArray, isObject} from "../../_scripts/_is";
 import Div from '../_div/index.osx';
+import InsertPend from '../_insertPend/index.osx';
 import PropType from 'prop-types';
 
 const FormGroupProps = {
@@ -30,6 +31,14 @@ export default class FormGroup extends Component {
         let _sysClass = ['form-group', 'm-form__group'];
         isExist(display) && _sysClass.push('row');
 
+        let flag = false;
+        Children.forEach(children, (child) => {
+            if (!flag) {
+                flag = child && child.type && child.type === (<InsertPend/>).type;
+            }
+        });
+
+
         return (
             <Fragment>
                 <Div {..._delivery(_props, _sysClass)}>
@@ -46,18 +55,33 @@ export default class FormGroup extends Component {
                         isArray(display) ? (isExist(display[1]) ? (
                             <Fragment>
                                 <Div _includeClass={['col-' + display[1]]}>
-                                    {children}
+                                    {flag && <Div {...{
+                                        _includeClass: ['input-group', 'm-input-group']
+                                    }}>
+                                        {children}
+                                    </Div>}
+                                    {!flag && children}
                                 </Div>
                             </Fragment>
                         ) : (
                             <Fragment>
                                 <Div _includeClass={['col-' + (12 - display[0])]}>
-                                    {children}
+                                    {flag && <Div {...{
+                                        _includeClass: ['input-group', 'm-input-group']
+                                    }}>
+                                        {children}
+                                    </Div>}
+                                    {!flag && children}
                                 </Div>
                             </Fragment>
                         )) : (
                             <Fragment>
-                                {children}
+                                {flag && <Div {...{
+                                    _includeClass: ['input-group', 'm-input-group']
+                                }}>
+                                    {children}
+                                </Div>}
+                                {!flag && children}
                             </Fragment>
                         )
                     }
