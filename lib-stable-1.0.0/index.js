@@ -8,5 +8,5 @@
  */
 
 
-import './_plugins/index';
+import './plugins/index';
 import './index.scss';
