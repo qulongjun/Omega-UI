@@ -1,0 +1,137 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist} from '../../scripts/utils/_is';
+import {mUtil} from '../../scripts/utils/_util';
+import mToggle from '../../scripts/toggle/toggle';
+import mOffcanvas from '../../scripts/offcanvas/offcanvas';
+
+//依赖组件
+import Div from '../Div/index.osx';
+import Stack from '../Stack/index.osx';
+import Link from '../Link/index.osx';
+import Text from '../Text/index.osx';
+
+//组件样式
+import '../../stylesheets/header/_index.scss';
+
+const StaticProps = {
+    children: {}
+};
+
+export default class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    _toggle() {
+        let _dom = this.refs.toggle.refs.Link;
+        if ($(_dom).length === 0) {
+            return;
+        }
+        let asideLeftToggle = new mToggle(_dom, {
+            target: 'body',
+            targetState: 'm-brand--minimize m-aside-left--minimize',
+            togglerState: 'm-brand__toggler--active'
+        });
+    }
+
+    _offCanvas() {
+        let _dom = this.refs.asideLeft.refs.Link;
+        let asideLeft = document.querySelector('.m-aside-left');
+        let asideOffcanvasClass = mUtil.hasClass(asideLeft, 'm-aside-left--offcanvas-default') ? 'm-aside-left--offcanvas-default' : 'm-aside-left';
+        let asideMenuOffcanvas = new mOffcanvas(asideLeft, {
+            baseClass: asideOffcanvasClass,
+            overlay: true,
+            closeBy: '.m-aside-left-close',
+            toggleBy: {
+                target: 'm_aside_left_offcanvas_toggle',
+                state: 'm-brand__toggler--active'
+            }
+        });
+    }
+
+    componentDidMount() {
+        this._offCanvas();
+        this._toggle();
+
+    }
+
+    render() {
+        const props = this.props;
+        const {brand} = props;
+        const {logo, custom} = brand;
+        let _sysClass = ['m-header', 'm-grid__item'];
+        return (
+            <Fragment>
+                <header ref="Header" {..._props(props, {_sysClass}, null, true)}>
+                    <Div _includeClass={['m-container', 'm-container--fluid', 'm-container--full-height']}>
+                        <Stack {...{
+                            direction: 'ver',
+                            mode: 'desktop',
+                            items: [
+                                {
+                                    value: (
+                                        <Fragment>
+                                            <Stack {...{
+                                                direction: 'ver',
+                                                items: [
+                                                    {
+                                                        value: (
+                                                            <Fragment>
+                                                                {
+                                                                    isExist(custom) ? custom : (
+                                                                        <Link {..._props(brand)}
+                                                                              _uniqueClass={['m-brand__logo-wrapper']}>
+                                                                            <img {..._props(logo, {
+                                                                                _sysAttribute: {
+                                                                                    src: logo.src
+                                                                                }
+                                                                            }, null, true)}/>
+                                                                        </Link>
+                                                                    )
+                                                                }
+                                                            </Fragment>
+                                                        ),
+                                                        align: 'middle',
+                                                        _includeClass: 'm-brand__logo'
+                                                    }, {
+                                                        value: (
+                                                            <Fragment>
+                                                                <Link ref="toggle"
+                                                                      _uniqueClass={['m-brand__icon', 'm-brand__toggler', 'm-brand__toggler--left', 'm--visible-desktop-inline-block']}>
+                                                                    <Text />
+                                                                </Link>
+                                                                <Link ref="asideLeft"
+                                                                      {...{
+                                                                          _uniqueClass: ['m-brand__icon', 'm-brand__toggler', 'm-brand__toggler--left', 'm--visible-tablet-and-mobile-inline-block'],
+                                                                          _includeAttribute: {
+                                                                              id: 'm_aside_left_offcanvas_toggle'
+                                                                          }
+                                                                      }}>
+                                                                    <Text />
+                                                                </Link>
+                                                            </Fragment>
+                                                        ),
+                                                        align: 'middle',
+                                                        _includeClass: 'm-brand__tools'
+                                                    }
+                                                ]
+                                            }}/>
+                                        </Fragment>
+                                    ),
+                                    _includeClass: ['m-brand', (isExist(brand) && brand.show && ['dark', 'light'].includes(brand.skin) ? 'm-brand--skin-' + brand.skin : '')]
+                                }, {}
+                            ]
+                        }}/>
+                    </Div>
+                </header>
+            </Fragment>
+        );
+    }
+}

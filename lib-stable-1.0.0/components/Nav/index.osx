@@ -1,0 +1,127 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist, isArray} from '../../scripts/utils/_is';
+//依赖组件
+import Text from '../Text/index.osx';
+import Link from '../Link/index.osx';
+import Icon from '../Icon/index.osx';
+import List from '../List/index.osx';
+//组件样式
+import '../../stylesheets/nav/_index.scss';
+
+const StaticProps = {
+    children: {}
+};
+
+export default class Nav extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {items, type} = props;
+        let _items = [];
+        isExist(items) && isArray(items) && (items.map((item) => {
+            const {icon, badge, text, type, state, bullet} = item;
+            let value = null;
+            switch (type) {
+                case "section": {
+                    value = (
+                        <Fragment>
+                            <Text {..._props(text, {_sysClass: ['m-nav__section-text']})}>{text.value}</Text>
+                        </Fragment>
+                    );
+                    _items.push({
+                        value,
+                        _includeClass: ['m-nav__section']
+                    });
+                    break;
+                }
+                case "separator": {
+                    _items.push({
+                        value: (isExist(text) && text.value) || '',
+                        _includeClass: ['m-nav__separator', 'm-nav__separator--fit']
+                    });
+                    break;
+                }
+                case "other": {
+                    _items.push({
+                        value: text.value,
+                        _includeClass: ['m-nav__item']
+                    });
+                    break;
+                }
+                default: {
+                    value = (
+                        <Fragment>
+                            <Link _uniqueClass="m-nav__link" href={(text && text.href) || ''}>
+                                {isExist(icon) && icon.show &&
+                                <Icon iconName={icon.name} {..._props(icon, {_sysClass: ['m-nav__link-icon']})}/>}
+                                {isExist(bullet) && bullet.show &&
+                                <Text {..._props(bullet, {_sysClass: ['m-nav__link-bullet', 'm-nav__link-bullet--' + bullet.type]})}>
+                                    <Text>&nbsp;</Text>
+                                </Text>}
+                                {
+                                    isExist(badge) ? (<Text _includeClass="m-nav__link-title">
+                                        <Text _includeClass="m-nav__link-wrap">
+                                            <Text {..._props(text, {_sysClass: ['m-nav__link-text']})}>
+                                                {text && text.value}
+                                            </Text>
+                                            <Text _includeClass="m-nav__link-badge">
+                                                {badge}
+                                            </Text>
+                                        </Text>
+                                    </Text>) : (
+                                        text && (<Text {..._props(text, {_sysClass: ['m-nav__link-text']})}>
+                                            {text && text.value}
+                                        </Text>)
+                                    )
+                                }
+                            </Link>
+                            {type === 'child' ? text.child : ''}
+                        </Fragment>
+                    );
+                    _items.push({
+                        value,
+                        _includeClass: ['m-nav__item', (isExist(state) && ['active', 'disabled'].includes(state) ? 'm-nav__item--' + state : null)]
+                    })
+                }
+            }
+        }));
+        let _render = null;
+        switch (type) {
+            case 'sub':
+                _render = (
+                    <List ref="Nav" {..._props(props, {_sysClass: ['m-nav__sub']})} {...{
+                        items: _items
+                    }}/>
+                );
+                break;
+            case 'inline':
+                _render = (
+                    <List ref="Nav" {..._props(props, {_sysClass: ['m-nav', 'm-nav--inline']})} {...{
+                        items: _items
+                    }}/>
+                );
+                break;
+            default:
+                _render = (
+                    <List ref="Nav" {..._props(props, {_sysClass: ['m-nav']})} {...{
+                        items: _items
+                    }}/>
+                );
+        }
+        return (
+            <Fragment>
+                {_render}
+            </Fragment>
+        );
+    }
+}

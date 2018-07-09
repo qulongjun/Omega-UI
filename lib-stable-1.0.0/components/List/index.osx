@@ -1,0 +1,70 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist, isArray, isObject} from '../../scripts/utils/_is';
+//依赖组件
+
+//组件样式
+
+
+const StaticProps = {
+    items: {
+        defaultValue: [],
+        type: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.array
+        ]),
+    },
+    label: {
+        defaultValue: 'ul',
+        type: PropTypes.oneOf(['ul', 'ol'])
+    },
+    children: {}
+};
+
+export default class List extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {label, items} = props;
+        return (
+            <Fragment>
+                {label === 'ul' ? (
+                    <ul ref='List' {..._props(props, null, null, true)}>
+                        {
+                            isExist(items) && (isArray(items) ? (items.map((item, index) => {
+                                if (isObject(item)) {
+                                    return (<li key={index} {..._props(item, null, null, true)}>{item.value}</li>)
+                                } else {
+                                    return (<li key={index}>{item}</li>);
+                                }
+                            })) : isObject(items) ? (<li {..._props(items, null, null, true)}>{items.value}</li>) : (
+                                <li>{items}</li>))
+                        }
+                    </ul>
+                ) : (
+                    <ol ref='List' {..._props(props, null, null, true)}>
+                        {
+                            isExist(items) && (isArray(items) ? (items.map((item, index) => {
+                                if (isObject(item)) {
+                                    return (<li key={index} {..._props(item, null, null, true)}>{item.value}</li>)
+                                } else {
+                                    return (<li key={index}>{item}</li>);
+                                }
+                            })) : isObject(items) ? (<li {..._props(items, null, null, true)}>{items.value}</li>) : (
+                                <li>{items}</li>))
+                        }
+                    </ol>
+                )}
+            </Fragment>
+        );
+    }
+}

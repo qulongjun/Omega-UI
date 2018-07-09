@@ -67,7 +67,7 @@ const _computedAPI = {
 export const _props = (props = {}, _sysProps = {}, _excludeProps = [], isDOMElement = false) => {
     const {_sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}} = _sysProps || {};
     let _finalProps = {};
-    _excludeProps = [].concat(_excludeProps, 'children', 'ref');
+    _excludeProps = [].concat(_excludeProps, 'children', 'ref','key');
     Object.getOwnPropertyNames(props).forEach((attr) => {
         if (!_excludeProps.includes(attr)) {
             isDOMElement && (_sysClass.concat(isExist(includeCommon(attr, props[attr])) ? [includeCommon(attr, props[attr])] : []));

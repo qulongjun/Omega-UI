@@ -55,7 +55,6 @@ export default class Grid extends Component {
         isExist(wrap) && _sysClass.push('m-grid--' + wrap);
         isExist(alignItems) && _sysClass.push('m-grid--align-item-' + alignItems);
         isExist(alignContent) && _sysClass.push('m-grid--align-content-' + alignContent);
-        console.log(_props(props, {_sysClass}, ['root', 'direction']))
         return (
             <Fragment>
                 <Div ref='Grid' {..._props(props, {_sysClass}, ['root', 'direction'])}>{children}</Div>

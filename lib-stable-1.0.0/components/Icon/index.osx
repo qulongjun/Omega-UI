@@ -1,0 +1,35 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+
+//组件样式
+import '../../plugins/icon';
+
+const StaticProps = {
+    iconName: {
+        type: PropTypes.string
+    },
+    children: {}
+};
+
+export default class Icon extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {iconName, children} = props;
+        return (
+            <Fragment>
+                <i ref='Icon' {..._props(props, {_sysClass: iconName},null,true)}>{children}</i>
+            </Fragment>
+        );
+    }
+}

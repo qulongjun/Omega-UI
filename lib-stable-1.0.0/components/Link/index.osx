@@ -10,7 +10,6 @@ const StaticProps = {
         type: PropTypes.oneOf(_publicColor)
     },
     href: {
-        defaultValue: '#',
         type: PropTypes.string
     },
     download: {

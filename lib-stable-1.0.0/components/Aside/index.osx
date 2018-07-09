@@ -1,0 +1,62 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist} from '../../scripts/utils/_is';
+//依赖组件
+import Div from '../Div/index.osx';
+import Menu from '../Menu/index.osx';
+import Icon from '../Icon/index.osx';
+import Button from '../Button/index.osx';
+//组件样式
+
+
+const StaticProps = {
+    closeBtn: {
+        defaultValue: {
+            show: true,
+            iconName: 'la la-close'
+        }
+    },
+    menu: {
+        type: PropTypes.object
+    },
+    skin: {
+        defaultValue: 'light',
+        type: PropTypes.oneOf(['light', 'dark'])
+    },
+    children: {}
+};
+
+export default class Aside extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {closeBtn, menu, skin} = props;
+        const showBtn = isExist(closeBtn) && closeBtn.show;
+        const showMenu = isExist(menu) && menu.show;
+        if (!menu.skin) menu.skin = skin;
+        return (
+            <Fragment>
+                <Button {...{
+                    value: (
+                        <Icon {..._props(closeBtn)} iconName={closeBtn.iconName}/>
+                    ),
+                    _uniqueClass: ['m-aside-left-close', (showBtn && ['dark', 'light'].includes(closeBtn.skin) ? 'm-aside-left-close--skin-' + closeBtn.skin : 'm-aside-left-close--skin-' + skin)]
+                }} {..._props(closeBtn)}/>
+                <Div ref="Aside" {...{
+                    _includeClass: ["m-grid__item", "m-aside-left", "m-aside-left--skin-" + skin]
+                }}>
+                    {showMenu && <Menu {..._props(menu)}/>}
+                </Div>
+            </Fragment>
+        );
+    }
+}
