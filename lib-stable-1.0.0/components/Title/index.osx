@@ -1,0 +1,33 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+
+const StaticProps = {
+    level: {
+        defaultValue: 1,
+        type: PropTypes.oneOf([1, 2, 3, 4, 5, 6])
+    },
+    children: {}
+};
+
+export default class Title extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {level, children} = props;
+        const Tag = 'h' + level;
+        return (
+            <Fragment>
+                <Tag ref='Title' {..._props(props, null, null, true)}>{children}</Tag>
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,47 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from "prop-types";
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {_publicColor} from "../../scripts/utils/_color";
+
+const StaticProps = {
+    lineColor: {
+        type: PropTypes.oneOf(_publicColor)
+    },
+    href: {
+        defaultValue: '#',
+        type: PropTypes.string
+    },
+    download: {
+        type: PropTypes.string
+    },
+    target: {
+        type: PropTypes.oneOf(['_blank', '_parent', '_self', '_top'])
+    },
+    children: {}
+};
+
+export default class Link extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {lineColor, href, download, target, children} = props;
+        let _sysClass = ['m-link'];
+        lineColor && _sysClass.push('m-link--' + lineColor);
+        return (
+            <Fragment>
+                <a ref='Link' {..._props(props, {
+                    _sysClass,
+                    _sysAttribute: {href, download, target}
+                }, null, true)}>{children}</a>
+            </Fragment>
+        );
+    }
+}

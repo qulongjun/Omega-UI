@@ -1,0 +1,51 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist} from "../../../lib/_scripts/_is";
+//依赖组件
+import Div from '../Div/index.osx';
+//组件样式
+
+const StaticProps = {
+    order: {
+        type: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    },
+    align: {
+        type: PropTypes.oneOf(['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch'])
+    },
+    fluid: {
+        default: true,
+        type: PropTypes.bool
+    },
+    children: {}
+};
+
+export default class GridItem extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {order, flex, align, fluid, children} = props;
+        let _sysClass = ['m-grid__item'];
+        let _sysStyle = {};
+        isExist(fluid) && fluid && _sysClass.push('m-grid__item--fluid');
+        isExist(order) && _sysClass.push('m-grid__item--order-' + order);
+        isExist(align) && _sysClass.push('m-grid__item--' + align);
+        isExist(flex) && (_sysStyle = Object.assign(_sysStyle, {flex}));
+        return (
+            <Fragment>
+                <Div ref='GridItem' {..._props(props, {
+                    _sysClass,
+                    _sysStyle
+                })}>{children}</Div>
+            </Fragment>
+        );
+    }
+}

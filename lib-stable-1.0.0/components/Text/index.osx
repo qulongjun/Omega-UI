@@ -1,0 +1,27 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+
+const StaticProps = {
+    children: {}
+};
+
+export default class Text extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {children} = props;
+        return (
+            <Fragment>
+                <span ref="Text" {..._props(props, null, null, true)}>{children}</span>
+            </Fragment>
+        );
+    }
+}

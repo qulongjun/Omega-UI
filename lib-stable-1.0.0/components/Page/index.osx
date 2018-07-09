@@ -1,0 +1,43 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+import Grid from '../Grid/index.osx';
+//组件样式
+import '../../stylesheets/page/_index.scss';
+
+const StaticProps = {
+    direction: {
+        defaultValue: 'hor',
+        type: PropTypes.oneOf(['hor'])
+    },
+    root: {
+        defaultValue: true,
+        type: PropTypes.bool
+    },
+    children: {}
+};
+
+export default class Page extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {direction, root, children} = props;
+        return (
+            <Fragment>
+                <Grid ref='Page' {..._props(props, {
+                    _sysClass: 'm-page',
+                    _sysAttribute: {direction, root}
+                })}>{children}</Grid>
+            </Fragment>
+        );
+    }
+}

@@ -1,0 +1,41 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+import Grid from '../Grid/index.osx';
+//组件样式
+import '../../stylesheets/container/_index.scss';
+import '../../stylesheets/body/_index.scss';
+
+const StaticProps = {
+    mode: {
+        defaultValue: 'desktop',
+        type: PropTypes.oneOf(['desktop', 'desktop-and-tablet', 'tablet', 'tablet-and-mobile', 'mobile'])
+    },
+    children: {}
+};
+
+export default class Container extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {mode, children} = props;
+        return (
+            <Fragment>
+                <Grid ref="Container" {..._props(props, {
+                    _sysClass: ['m-body', 'm-grid__item', 'm-grid__item--fluid']
+                })} mode={mode}>
+                    {children}
+                </Grid>
+            </Fragment>
+        );
+    }
+}
