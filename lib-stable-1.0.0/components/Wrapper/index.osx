@@ -1,0 +1,34 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+import GridItem from '../GridItem/index.osx';
+//组件样式
+
+
+const StaticProps = {
+    children: {}
+};
+
+export default class Wrapper extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {children} = props;
+        return (
+            <Fragment>
+                <GridItem ref="Wrapper" {..._props(props,{_sysClass:'m-wrapper'})} fluid={true}>
+                    {children}
+                </GridItem>
+            </Fragment>
+        );
+    }
+}

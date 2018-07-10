@@ -1,0 +1,77 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+import Div from '../Div/index.osx';
+import Stack from '../Stack/index.osx';
+import Text from '../Text/index.osx';
+import Nav from '../Nav/index.osx';
+import Link from '../Link/index.osx';
+//组件样式
+import '../../stylesheets/footer/_index.scss';
+
+const StaticProps = {
+    copyright: {
+        defaultValue: (
+            <Fragment>
+                2018 © Omega UI by <Link href="https://doc.react-china.org/"> React </Link> 。
+            </Fragment>
+        )
+    },
+    nav: {
+        defaultValue: [],
+        type: PropTypes.array
+    },
+    children: {}
+};
+
+export default class Footer extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {copyright, nav} = props;
+        let _sysClass = ['m-footer', 'm-grid__item'];
+        return (
+            <Fragment>
+                <footer ref="Footer" {..._props(props, {_sysClass}, null, true)}>
+                    <Stack {...{
+                        mode: 'desktop',
+                        direction: 'ver',
+                        items: [
+                            {
+                                justify: 'left',
+                                align: 'middle',
+                                value: (
+                                    <Text _includeClass="m-footer__copyright">{copyright}</Text>
+                                )
+                            }, {
+                                justify: 'right',
+                                align: 'center',
+                                value: (
+                                    <Fragment>
+                                        {
+
+                                        }
+                                        <Nav {...{
+                                            type: 'inline',
+                                            items: nav,
+                                            _includeClass: ['m-footer__nav', 'm--pull-right']
+                                        }}/>
+                                    </Fragment>
+                                )
+                            }
+                        ]
+                    }}/>
+                </footer>
+            </Fragment>
+        );
+    }
+}

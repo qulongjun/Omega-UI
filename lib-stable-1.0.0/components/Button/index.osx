@@ -89,7 +89,6 @@ export default class Button extends Component {
     render() {
         const props = this.props;
         const {label, href, type, thicken, fontBold, value, size, gradient, btnColor, isWide, isBlock, btnState, btnStyle, isCustom, loader, icon, _specialIcon} = props;
-        console.log(props);
         let _sysClass = ['btn', 'm-btn'];
         //背景颜色
         btnColor && _sysClass.push('btn-' + btnColor);

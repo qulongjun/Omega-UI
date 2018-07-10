@@ -20,6 +20,41 @@ import List from '../List/index.osx';
 import '../../stylesheets/menu/_index.scss';
 
 const StaticProps = {
+    skin: {
+        defaultValue: 'light',
+        type: PropTypes.oneOf(['dark', 'light'])
+    },
+    items: {
+        type: PropTypes.array
+    },
+    isChild: {
+        defaultValue: false,
+        type: PropTypes.bool
+    },
+    autoScroll: {
+        defaultValue: true,
+        type: PropTypes.bool
+    },
+    expandAll: {
+        defaultValue: false,
+        type: PropTypes.bool
+    },
+    slideSpeed: {
+        defaultValue: 200,
+        type: PropTypes.number
+    },
+    speed: {
+        defaultType: 1200,
+        type: PropTypes.number
+    },
+    autoScrollSpeed: {
+        defaultType: 1200,
+        type: PropTypes.number
+    },
+    timeout: {
+        defaultValue: 500,
+        type: PropTypes.number
+    },
     children: {}
 };
 
@@ -56,12 +91,12 @@ export default class Menu extends Component {
 
                 //accordion setup
                 accordion: {
-                    slideSpeed: slideSpeed || 200,
-                    speed: speed || 1200,
-                    autoScrollSpeed: autoScrollSpeed || 1200,
+                    slideSpeed,
+                    speed,
+                    autoScrollSpeed,
                     autoScroll,
                     expandAll,
-                    timeout: timeout || 500
+                    timeout
                 }
             });
 
