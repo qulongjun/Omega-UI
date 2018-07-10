@@ -13,6 +13,13 @@ import List from '../List/index.osx';
 import '../../stylesheets/nav/_index.scss';
 
 const StaticProps = {
+    items: {
+        type: PropTypes.array,
+    },
+    type: {
+        defaultValue: 'default',
+        type: PropTypes.oneOf(['sub', 'inline', 'default'])
+    },
     children: {}
 };
 
@@ -125,3 +132,4 @@ export default class Nav extends Component {
         );
     }
 }
+
