@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 //Script 工具
 import {_default, _type, _props} from '../../scripts/utils/_props';
 import {_publicColor} from "../../scripts/utils/_color";
-
+//组件样式
+import '../../stylesheets/link/_index.scss';
 const StaticProps = {
     lineColor: {
         type: PropTypes.oneOf(_publicColor)
