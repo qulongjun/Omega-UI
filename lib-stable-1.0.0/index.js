@@ -40,6 +40,7 @@ export {default as GridItem} from './components/GridItem/index.osx';
 export {default as Stack} from './components/Stack/index.osx';
 
 export {default as Div} from './components/Div/index.osx';
+export {default as Blockquote} from'./components/Blockquote/index.osx';
 export {default as Icon} from './components/Icon/index.osx';
 export {default as Link} from './components/Link/index.osx';
 export {default as List} from './components/List/index.osx';

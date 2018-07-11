@@ -65,12 +65,12 @@ const _computedAPI = {
  * @private
  */
 export const _props = (props = {}, _sysProps = {}, _excludeProps = [], isDOMElement = false) => {
-    const {_sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}} = _sysProps || {};
+    let {_sysClass = [], _sysStyle = {}, _sysAttribute = {}, _sysHandle = {}} = _sysProps || {};
     let _finalProps = {};
-    _excludeProps = [].concat(_excludeProps, 'children', 'ref','key');
+    _excludeProps = [].concat(_excludeProps, 'children', 'ref', 'key');
     Object.getOwnPropertyNames(props).forEach((attr) => {
         if (!_excludeProps.includes(attr)) {
-            isDOMElement && (_sysClass.concat(isExist(includeCommon(attr, props[attr])) ? [includeCommon(attr, props[attr])] : []));
+            isDOMElement && (_sysClass = _sysClass.concat(isExist(includeCommon(attr, props[attr])) ? [includeCommon(attr, props[attr])] : []));
             Object.assign(_finalProps, {[attr]: props[attr]});
         }
     });

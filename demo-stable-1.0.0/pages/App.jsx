@@ -8,6 +8,8 @@ import {Page, Container, Header, Aside, Wrapper, Footer} from 'omega-t';
 import Index from './_index';
 import Grids from './grid/_grid';
 import Stack from './grid/_stack';
+// import StateColor from './base/_stateColor';
+import Typography from './base/_typography';
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -40,6 +42,8 @@ export default class App extends Component {
                         <Route path='/' exact component={Index}/>
                         <Route path='/grid' component={Grids}/>
                         <Route path='/stack' component={Stack}/>
+                        {/*<Route path='/stateColor' component={StateColor}/>*/}
+                        <Route path='/typography' component={Typography}/>
                     </Wrapper>
                 </Container>
                 <Footer {...{
