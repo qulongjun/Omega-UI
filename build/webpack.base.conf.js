@@ -26,7 +26,8 @@ module.exports = {
             'src': resolve('src'),
             'assets': resolve('src/assets'),
             'components': resolve('src/components'),
-            'omega': resolve('lib')
+            'omega': resolve('lib'),
+            'omega-t': resolve('lib-stable-1.0.0')
         }
     },
     module: {

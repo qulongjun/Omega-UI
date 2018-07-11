@@ -1,15 +1,17 @@
 import React, {Component, Fragment} from 'react';
 
 import logo_blue from '../../src/assets/logo_blue.png';
-import '../../lib-stable-1.0.0/index';
 import MenuJSON from '../routes/_menu.json';
 
-import Page from '../../lib-stable-1.0.0/components/Page/index.osx';
-import Container from '../../lib-stable-1.0.0/components/Container/index.osx'
-import Header from '../../lib-stable-1.0.0/components/Header/index.osx'
-import Aside from '../../lib-stable-1.0.0/components/Aside/index.osx';
-import Wrapper from '../../lib-stable-1.0.0/components/Wrapper/index.osx';
-import Footer from '../../lib-stable-1.0.0/components/Footer/index.osx';
+// import 'omega-t/base';
+// import Page from 'omega-t/components/Page/index.osx';
+// import Container from 'omega-t/components/Container/index.osx'
+// import Header from 'omega-t/components/Header/index.osx'
+// import Aside from 'omega-t/components/Aside/index.osx';
+// import Wrapper from 'omega-t/components/Wrapper/index.osx';
+// import Footer from 'omega-t/components/Footer/index.osx';
+
+import {Page,Container,Header,Aside,Wrapper,Footer} from 'omega-t';
 
 export default class App extends Component {
     constructor(props) {
