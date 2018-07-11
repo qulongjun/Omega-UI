@@ -1,16 +1,22 @@
+//React 核心
 import React, {Component, Fragment} from 'react';
-import {DefaultProps, PropTypes, _delivery} from '../../_scripts/_proptypes';
-import {isExist, isArray, isObject} from "../../_scripts/_is";
-import PropType from 'prop-types';
-import Nav from "../_nav/index.osx";
-const BreadcrumbProps = {
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isObject, isExist, isArray} from '../../scripts/utils/_is';
+//依赖组件
+import Nav from '../Nav/index.osx';
+//组件样式
+
+
+const StaticProps = {
     items: {
-        type: PropType.array
+        type: PropTypes.array
     },
     separator: {
-        type: PropType.oneOfType([
-            PropType.string,
-            PropType.object
+        type: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.object
         ])
     },
     children: {}
@@ -21,12 +27,12 @@ export default class Breadcrumb extends Component {
         super(props);
     }
 
-    static defaultProps = DefaultProps(BreadcrumbProps);
-    static propTypes = PropTypes(BreadcrumbProps);
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
 
     render() {
-        const _props = this.props;
-        const {items, separator} = _props;
+        const props = this.props;
+        const {items, separator} = props;
         let _items = [];
         isExist(items) && isArray(items) && items.map((item, index) => {
             isObject(item) ? _items.push(item) : _items.push({
@@ -46,7 +52,7 @@ export default class Breadcrumb extends Component {
         });
         return (
             <Fragment>
-                <Nav ref="Breadcrumb" {..._delivery(_props)} {...{
+                <Nav ref="Breadcrumb" {..._props(props)} {...{
                     type: 'inline',
                     items: _items
                 }}/>

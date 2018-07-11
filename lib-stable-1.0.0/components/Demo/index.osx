@@ -1,0 +1,58 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+//依赖组件
+import Div from '../Div/index.osx';
+//组件样式
+import '../../stylesheets/demo/_index.scss';
+
+const StaticProps = {
+    btnStyle: {
+        defaultValue: true,
+        type: PropTypes.bool
+    },
+    badgeStyle: {
+        defaultValue: true,
+        type: PropTypes.bool
+    },
+    children: {}
+};
+
+export default class Demo extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {
+            btnStyle,
+            badgeStyle,
+            children
+        } = props;
+        let className = ['m-demo__preview'];
+        btnStyle && className.push('m-demo__preview--btn');
+        badgeStyle && className.push('m-demo__preview--badge');
+        return (
+            <Fragment>
+                <Div ref='Demo' {..._props(props, {
+                    _sysClass: 'm-demo',
+                    _sysAttribute: {
+                        "data-code-preview": "true",
+                        "data-code-html": "true",
+                        "data-code-js": "false"
+                    }
+                })}>
+                    <Div _includeClass={className}>
+                        {children}
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}

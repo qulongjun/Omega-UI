@@ -1,0 +1,104 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist} from '../../scripts/utils/_is';
+import {mApp} from "../../scripts/utils/_app";
+import {mUtil} from "../../scripts/utils/_util";
+//依赖组件
+import Div from '../Div/index.osx';
+//组件样式
+import '../../stylesheets/scroll/_index.scss';
+
+
+const StaticProps = {
+    config: {
+        type: PropTypes.object
+    },
+    fixHeight: {
+        type: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ])
+    },
+    fixWidth: {
+        type: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ])
+    },
+    axis: {
+        type: PropTypes.oneOf(['x', 'y', 'yx'])
+    },
+    children: {}
+};
+
+export default class Scroll extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    componentDidMount() {
+        if (this.refs.scroll) {
+            const el = $(this.refs.scroll.refs.div);
+            let maxHeight;
+            let height;
+
+            if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
+                if (el.data('mobile-max-height')) {
+                    maxHeight = el.data('mobile-max-height');
+                } else {
+                    maxHeight = el.data('max-height');
+                }
+
+                if (el.data('mobile-height')) {
+                    height = el.data('mobile-height');
+                } else {
+                    height = el.data('height');
+                }
+            } else {
+                maxHeight = el.data('max-height');
+                height = el.data('max-height');
+            }
+
+            if (maxHeight) {
+                el.css('max-height', maxHeight);
+            }
+            if (height) {
+                el.css('height', height);
+            }
+
+            mApp.initScroller(el, {});
+        }
+    }
+
+    render() {
+        const props = this.props;
+        const {fixHeight, fixWidth, scrollBar, axis, children} = props;
+        let _sysAttribute = {
+            "data-scrollable": true,
+        };
+        isExist(fixHeight) && Object.assign(_sysAttribute, {
+            "data-max-height": fixHeight
+        });
+        isExist(scrollBar) && scrollBar && Object.assign(_sysAttribute, {
+            "data-scrollbar-shown": true
+        });
+        isExist(axis) && ['x', 'y', 'yx'].includes(axis) && Object.assign(_sysAttribute, {
+            "data-axis": axis
+        });
+        return (
+            <Fragment>
+                <Div ref="Scroll" {..._props(props, {_sysClass: ['m-scrollable'], _sysAttribute})}>
+                    {isExist(axis) && ['x', 'yx'].includes(axis) ? (<Div _includeStyle={{width: fixWidth}}>
+                        {children}
+                    </Div>) : children}
+                </Div>
+            </Fragment>
+        );
+    }
+}

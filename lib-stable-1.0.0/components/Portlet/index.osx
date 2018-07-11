@@ -1,0 +1,83 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist, isObject, isString} from '../../scripts/utils/_is';
+import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+import 'jquery-mousewheel';
+//依赖组件
+import Div from '../Div/index.osx';
+import Title from '../Title/index.osx';
+import Scroll from '../Scroll/index.osx';
+//组件样式
+import '../../stylesheets/portlets/_index.scss';
+
+
+const StaticProps = {
+    header: {
+        defaultValue: '',
+        type: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.object
+        ])
+    },
+    scroll: {
+        type: PropTypes.object
+    },
+    children: {}
+};
+
+export default class Portlet extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {header, scroll, footer, children} = props;
+
+        return (
+            <Fragment>
+                <Div {..._props(props, {_sysClass: ['m-portlet', 'm-portlet--mobile']})}>
+                    {header && isObject(header) && <PortletHeader {...header}/>}
+                    {header && isString(header) && <PortletHeader {...{title: header}}/>}
+                    <Div _includeClass="m-portlet__body">
+                        {isExist(scroll) && scroll.show ? <Scroll {...scroll}>
+                            {children}
+                        </Scroll> : children}
+                    </Div>
+                    {footer && <Div _includeClass={['m-portlet__foot', 'm-portlet__foot--fit']}>
+                        {footer}
+                    </Div>}
+                </Div>
+            </Fragment>
+        );
+    }
+}
+
+
+class PortletHeader extends Component {
+    render() {
+        const _props = this.props;
+        const {title, describe} = _props;
+        return (
+            <Fragment>
+                <Div ref='PortletHeader' _includeClass="m-portlet__head">
+                    <Div _includeClass="m-portlet__head-caption">
+                        <Div _includeClass="m-portlet__head-title">
+                            <Title level={3} _includeClass="m-portlet__head-text">
+                                {title}
+                                {describe && (<small>{describe}</small>)}
+                            </Title>
+                        </Div>
+                    </Div>
+                </Div>
+            </Fragment>
+        );
+    }
+}

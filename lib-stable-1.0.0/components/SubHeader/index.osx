@@ -1,0 +1,50 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isExist} from '../../scripts/utils/_is';
+//依赖组件
+import Div from '../Div/index.osx';
+import Title from '../Title/index.osx';
+import Breadcrumb from '../Breadcrumb/index.osx';
+//组件样式
+import '../../stylesheets/subheader/_index.scss';
+
+const StaticProps = {
+    children: {}
+};
+
+export default class SubHeader extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {header, breadcrumbs} = props;
+        return (
+            <Div ref="SubHeader" {..._props(props, {_sysClass: 'm-subheader'})}>
+                <Div _includeClass={['d-flex', 'align-items-center']}>
+                    <Div _includeClass="mr-auto">
+                        {
+                            isExist(header) && header.show && (
+                                <Title level={3}
+                                       _includeClass={['m-subheader__title', (header.separator ? 'm-subheader__title--separator' : '')]}>
+                                    {header.name}
+                                </Title>
+                            )
+                        }
+                        {
+                            isExist(breadcrumbs) &&
+                            <Breadcrumb {..._props(breadcrumbs, {_sysClass: ['m-subheader__breadcrumbs']})}/>
+                        }
+                    </Div>
+                </Div>
+            </Div>
+        );
+    }
+}

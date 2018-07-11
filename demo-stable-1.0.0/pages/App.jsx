@@ -1,18 +1,13 @@
 import React, {Component, Fragment} from 'react';
+import {Route} from 'react-router-dom'
 
 import logo_blue from '../../src/assets/logo_blue.png';
 import MenuJSON from '../routes/_menu.json';
 
-// import 'omega-t/base';
-// import Page from 'omega-t/components/Page/index.osx';
-// import Container from 'omega-t/components/Container/index.osx'
-// import Header from 'omega-t/components/Header/index.osx'
-// import Aside from 'omega-t/components/Aside/index.osx';
-// import Wrapper from 'omega-t/components/Wrapper/index.osx';
-// import Footer from 'omega-t/components/Footer/index.osx';
-
-import {Page,Container,Header,Aside,Wrapper,Footer} from 'omega-t';
-
+import {Page, Container, Header, Aside, Wrapper, Footer} from 'omega-t';
+import Index from './_index';
+import Grids from './grid/_grid';
+import Stack from './grid/_stack';
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -42,7 +37,9 @@ export default class App extends Component {
                         menu: MenuJSON
                     }}/>
                     <Wrapper>
-
+                        <Route path='/' exact component={Index}/>
+                        <Route path='/grid' component={Grids}/>
+                        <Route path='/stack' component={Stack}/>
                     </Wrapper>
                 </Container>
                 <Footer {...{

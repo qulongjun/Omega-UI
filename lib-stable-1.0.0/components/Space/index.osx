@@ -1,0 +1,52 @@
+//React 核心
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+//Script 工具
+import {_default, _type, _props} from '../../scripts/utils/_props';
+import {isNumber} from '../../scripts/utils/_is';
+//依赖组件
+import Div from '../Div/index.osx';
+//组件样式
+
+
+const StaticProps = {
+    size: {
+        defaultValue: 10,
+        type: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ])
+    },
+    children: {}
+};
+
+export default class Space extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = _default(StaticProps);
+    static propTypes = _type(StaticProps);
+
+    render() {
+        const props = this.props;
+        const {size} = props;
+        return (
+            <Fragment>
+                <Div ref='Space'
+                     {..._props(
+                         props,
+                         {
+                             _sysClass: (isNumber(size) && [5, 10, 15, 20, 25, 30, 35, 40].includes(parseInt(size)) ? 'm--space-' + size : null),
+                             _sysAttribute: (!([5, 10, 15, 20, 25, 30, 35, 40].includes(size)) ? {
+                                 display: 'block',
+                                 height: 0,
+                                 marginbottom: isNumber(size) ? size + 'px' : size
+                             } : null)
+                         }
+                     )}
+                />
+            </Fragment>
+        );
+    }
+}

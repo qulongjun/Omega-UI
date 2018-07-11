@@ -29,6 +29,11 @@ export {default as Footer} from './components/Footer/index.osx';
 export {default as Header} from './components/Header/index.osx';
 export {default as Menu} from './components/Menu/index.osx';
 export {default as Wrapper} from './components/Wrapper/index.osx';
+export {default as Content} from './components/Content/index.osx';
+export {default as SubHeader} from './components/SubHeader/index.osx';
+export {default as Section} from './components/Section/index.osx';
+export {default as Demo} from './components/Demo/index.osx';
+
 
 export {default as Grid} from './components/Grid/index.osx';
 export {default as GridItem} from './components/GridItem/index.osx';
@@ -42,6 +47,9 @@ export {default as Nav} from './components/Nav/index.osx';
 export {default as Paragraph} from './components/Paragraph/index.osx';
 export {default as Text} from './components/Text/index.osx';
 export {default as Title} from './components/Title/index.osx';
+export {default as Portlet} from './components/Portlet/index.osx';
+export {default as Space} from './components/Space/index.osx';
+export {default as Separator} from './components/Separator/index.osx';
 
 export {default as Badge} from './components/Badge/index.osx';
 export {default as Code} from './components/Code/index.osx';
