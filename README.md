@@ -1,3 +1,10 @@
+
+该项目已迁移至  [Shine Design](https://github.com/shine-design/shine-design)，本项目停止更新。
+
+<hr/>
+
+
+
 <p align="center">
   <a href="javascript:;" rel="noopener" target="_blank"><img width="70%" src="https://cdn.qulongjun.cn/omega/logo_blue.png" alt="Omega-UI logo"></a></p>
 </p>
